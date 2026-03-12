@@ -1,0 +1,90 @@
+---
+title: Prompting Techniques
+description: Zero-Shot, Few-Shot, Chain-of-Thought, and Role-Play — four techniques with concrete examples for your daily work.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 2 of 5 — L2: Intentional Prompting
+
+## Four Techniques You Should Know
+
+In the last lesson, you learned how a good prompt is structured. Now it's time for specific techniques that improve your prompts in targeted ways. Not all are equally important — one of them is dramatically underestimated by most knowledge workers.
+
+## Zero-Shot: Just Ask Directly
+
+<GlossaryTip term="Zero-Shot" definition="An instruction to the AI without any examples — the AI relies entirely on its pre-existing knowledge to complete the task." /> means you give the AI an instruction without any examples. This is the technique you're probably already using instinctively.
+
+**When it works:** For simple, clearly defined tasks that leave little room for interpretation.
+
+> Summarize the following customer review in one sentence and rate the sentiment as Positive, Negative, or Neutral: "The product arrived on time, but the packaging was damaged."
+
+For tasks like this, Zero-Shot is perfectly sufficient. The AI immediately understands what to do.
+
+## Few-Shot: The Underestimated Secret Weapon
+
+<GlossaryTip term="Few-Shot" definition="A technique where you show the AI 2-5 examples with input and output before presenting the actual task. Especially effective for controlling format and style." /> is the technique with the best effort-to-result ratio — and the one almost nobody uses. You give the AI 2-3 examples of what the result should look like before presenting the actual task.
+
+**Why this is so effective:** Instead of writing lengthy explanations about what format, tone, or level of detail you want, you simply *show* it. Showing beats explaining.
+
+> Categorize these support tickets by priority:
+>
+> Ticket: "I can't log in" — Priority: High
+> Ticket: "How do I change my profile picture?" — Priority: Low
+> Ticket: "I was charged twice for my subscription" — Priority: High
+>
+> Ticket: "The dashboard loads slowly on mobile" — Priority: ?
+
+The AI picks up the pattern from your examples and applies it consistently. You don't need to define what "high" and "low" mean — your examples show that.
+
+**Important to know:** With modern models, Few-Shot primarily improves the **format** of the output, not so much the factual quality. That's exactly what makes it so valuable in daily work: you get results you can use right away, without having to reformat them.
+
+## Chain-of-Thought: Thinking Step by Step
+
+<GlossaryTip term="Chain-of-Thought" definition="A technique that asks the AI to show its reasoning step by step before giving an answer. Improves accuracy on complex tasks." /> asks the AI to reveal its reasoning process. The simplest version: add "Think step by step" to your prompt.
+
+> Our team has 80 people. 25% are senior members. 40% of the seniors lead a project. How many seniors lead a project? Think step by step.
+
+Without this instruction, the AI sometimes jumps straight to the answer and makes calculation errors along the way. With Chain-of-Thought, it works through the problem cleanly:
+- 25% of 80 = 20 seniors
+- 40% of 20 = 8 seniors lead a project
+
+**Honest assessment:** For typical office tasks — emails, summaries, drafting text — you rarely need Chain-of-Thought. The technique is strongest for tasks with multiple calculation steps, logical dependencies, or complex trade-offs.
+
+## Role-Play: Assigning a Persona
+
+With Role-Play, you give the AI a specific role. This changes the tone, word choice, and perspective of the response.
+
+> You are an experienced employment attorney with 15 years of practice. A client asks: "Can I deduct my home office on my taxes if I only work from home 2 days a week?" Explain the current general considerations in plain language.
+
+The more specific the role, the better: "Experienced employment attorney with 15 years of practice" delivers more than just "You are a lawyer."
+
+**A word of caution:** Role-Play is overrated in many guides. It reliably changes the **tone and word choice**, but it doesn't actually make the AI an expert. The facts don't get better — only the packaging. Use Role-Play for style — not as a substitute for domain expertise.
+
+## Which Technique When?
+
+| Technique | Strength | Best for |
+|-----------|----------|----------|
+| Zero-Shot | Fast, straightforward | Simple, clear-cut tasks |
+| Few-Shot | Consistent format | Categorizations, recurring formats, style specifications |
+| Chain-of-Thought | Better accuracy | Calculations, trade-offs, multi-step reasoning |
+| Role-Play | Tone and perspective | Domain-specific language, specific audiences |
+
+The techniques can be combined. For example, you can assign a role AND provide examples — that's often the most powerful combination.
+
+## Try It
+
+### Exercise 1: Few-Shot in Daily Work
+Pick a recurring task from your workday — for example, categorizing emails or summarizing meeting notes. Create 2-3 examples and let the AI handle the next one. Compare the result with a Zero-Shot attempt without examples.
+
+### Exercise 2: Testing Chain-of-Thought
+Give the AI a task with multiple steps, for example: *"We have a budget of $50,000. 40% goes to staffing, 25% to marketing, 15% to software. How much is left over?"* Try it once without and once with "Think step by step." Observe the difference.
+
+### Exercise 3: Using Role-Play Deliberately
+Have the AI write the same text twice: once without a role, once with a specific role (e.g., "You are a senior HR manager"). Pay attention to what changes — and what stays the same.
+
+## Think Further
+
+The key takeaway: Few-Shot is the technique with the biggest leverage for everyday work. Instead of writing lengthy explanations of what you want, show it. Two examples say more than two paragraphs of instructions.
+
+In the next lesson, we'll cover iteration — why the first prompt is never perfect and how you systematically get better results.

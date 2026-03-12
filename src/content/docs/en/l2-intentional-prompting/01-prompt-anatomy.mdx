@@ -1,0 +1,89 @@
+---
+title: The Anatomy of a Good Prompt
+description: How a prompt is structured — with Role, Context, Task, Format, and Constraints. A before-and-after comparison and practical guidance.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 1 of 5 — L2: Intentional Prompting
+
+## From Questions to Instructions
+
+In L1, you learned how to have your first conversations with AI. Now comes the next paradigm shift: **A good prompt is not a question — it's an instruction.** And like any good instruction, it has a clear structure.
+
+Most people type a sentence and hope for the best. Professional users build their prompts deliberately — from five building blocks that together make the difference between "meh" and "exactly what I needed."
+
+## The Five Building Blocks
+
+Every strong prompt consists of up to five components. Not every prompt needs all five — but the more you use intentionally, the better the result.
+
+| Building Block | Question It Answers | Example |
+|----------------|---------------------|---------|
+| **Role** | Who should the AI be? | "You are a senior project manager." |
+| **Context** | What's the situation? | "Our team is rolling out a new CRM system." |
+| **Task** | What exactly should it do? | "Create a risk assessment with the five biggest risks." |
+| **Format** | What should the output look like? | "As a table with columns: Risk, Likelihood, Mitigation." |
+| **Constraints** | What should it *not* do? | "No technical jargon, one page max, written in plain English." |
+
+### Role — Setting the Perspective
+
+<GlossaryTip term="Role Prompting" definition="A technique where you assign the AI a specific role or expertise to shape the quality and perspective of its response." /> gives the AI a frame of reference. When you say *"You are an experienced financial advisor"*, it responds differently than without that framing — more domain-specific, more structured, with different vocabulary.
+
+### Context — Explaining the Situation
+
+Without context, the AI guesses. With context, it understands what you actually need. This includes: background, target audience, prior work, or specific constraints of your situation.
+
+### Task — Naming the Job
+
+The task is the core. It answers the question: **What exactly should the AI do?** The more precise the task, the less the AI has to guess.
+
+### Format — Specifying the Shape
+
+Prose, table, bullet list, email, slide outline? If you don't specify the format, the AI picks one — and it's rarely the one you need.
+
+### Constraints — Setting the Boundaries
+
+Constraints are what most people forget. They tell the AI what it should *not* do: no jargon, 200 words max, no speculation, only based on the data provided.
+
+## Before and After
+
+**Without structure:**
+
+> Write something about risks when rolling out a CRM.
+
+*Result: A generic essay about CRM risks — long, broad, not tailored to your team.*
+
+**With all five building blocks:**
+
+> You are a senior project manager specializing in enterprise software rollouts. (**Role**)
+>
+> Our 20-person sales team is switching next month from spreadsheet-based tracking to HubSpot. Most team members have little to no experience with CRM systems. (**Context**)
+>
+> Create a risk assessment covering the five biggest risks for this transition. (**Task**)
+>
+> Format: a table with the columns Risk, Likelihood (high/medium/low), Impact, and Recommended Mitigation. (**Format**)
+>
+> Keep the language simple — no IT jargon. One page max. (**Constraints**)
+
+*Result: A ready-to-use risk table, tailored to your team and your situation.*
+
+The difference is not the length of the prompt — it's the **structure**.
+
+## What Are System Prompt and User Prompt?
+
+You may have come across these terms: A <GlossaryTip term="System Prompt" definition="A hidden instruction that defines the AI's behavior for an entire conversation — set before the actual exchange and typically not visible to the user." /> is an instruction set *before* the conversation that governs the AI's baseline behavior. The <GlossaryTip term="User Prompt" definition="The visible input you send directly to the AI — your question, task, or instruction in the chat." /> is what you type into the chat.
+
+In most tools, you only write the user prompt. But when you use the five building blocks, you're essentially doing what a system prompt does: giving the AI a clear frame before it starts generating.
+
+## Try It
+
+1. Pick a task from your workday — for example, drafting an email, writing a summary, or outlining a presentation.
+2. Write a simple prompt first, without any structure. Note the result.
+3. Rewrite the same prompt using all five building blocks (Role, Context, Task, Format, Constraints). Compare the results.
+4. Experiment: What happens when you leave out the Role? What changes when you skip the Constraints?
+
+## Think Further
+
+A good prompt has structure — not just content. The five building blocks are not a rigid template but a thinking tool. Not every prompt needs all five. But once you know what the building blocks are, you can make deliberate choices about which ones to include.
+
+In the next lesson, you'll learn specific prompting techniques that go beyond basic structure — from Zero-Shot to Chain-of-Thought.

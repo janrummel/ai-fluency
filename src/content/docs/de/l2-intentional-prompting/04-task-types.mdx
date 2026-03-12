@@ -1,0 +1,74 @@
+---
+title: "Aufgabentypen: Dein Prompt-Werkzeugkasten"
+description: Sechs typische Aufgaben — Schreiben, Analysieren, Zusammenfassen, Übersetzen, Brainstormen, Formeln — mit je einem fertigen Prompt-Beispiel.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 4 von 5 — L2: Bewusst Prompten
+
+## Sechs Aufgaben, sechs Prompts
+
+Du kennst jetzt die Anatomie eines guten <GlossaryTip term="Prompt" definition="Die Eingabe, die du an ein AI-Modell sendest — deine Frage, Anweisung oder Aufgabe." /> (Rolle, Kontext, Aufgabe, Format, Einschränkungen) und weisst, wie du iterativ verfeinerst. In dieser Lektion siehst du, wie das Ganze in der Praxis aussieht — für sechs typische Aufgaben aus dem Arbeitsalltag.
+
+Jedes Beispiel nutzt die fünf Bausteine aus Lektion 01. Achte darauf, wie jeder Prompt Rolle, Kontext und Format gezielt einsetzt.
+
+### 1. Schreiben
+
+Texte erstellen — von der internen E-Mail bis zur Kundenansprache.
+
+> Du bist Kommunikationsverantwortlicher in einem mittelständischen Unternehmen. Schreibe eine interne Ankündigungs-E-Mail: Ab 1. Mai gilt ein hybrides Arbeitsmodell (3 Tage Büro, 2 Tage Remote). Ton: positiv, aber sachlich. Nenne als Ansprechpartner die Personalabteilung und kündige ein FAQ-Dokument an. Maximal 200 Wörter.
+
+**Warum das funktioniert:** Rolle (Kommunikationsverantwortlicher) steuert den Ton. Kontext (hybrides Modell, Datum, Aufteilung) eliminiert Rückfragen. Format-Constraints (200 Wörter, E-Mail) verhindern einen Aufsatz.
+
+### 2. Analysieren
+
+Daten auswerten, Muster erkennen, Handlungsempfehlungen ableiten.
+
+> Hier sind unsere Kundenkündigungsdaten der letzten 6 Monate: [Daten einfügen]. Identifiziere die 3 wichtigsten Faktoren, die mit Kündigungen korrelieren. Für jeden Faktor: Evidenz, Konfidenz (hoch/mittel/niedrig) und eine konkrete Gegenmassnahme. Stelle das Ergebnis als Tabelle dar.
+
+**Warum das funktioniert:** Die Aufgabe ist präzise eingegrenzt (3 Faktoren, nicht „alles"). Das Tabellenformat erzwingt Struktur. Die Konfidenz-Bewertung zwingt die AI, ihre eigene Sicherheit einzuordnen — das macht Schwachstellen sichtbar.
+
+### 3. Zusammenfassen
+
+Lange Texte auf das Wesentliche reduzieren — für Leute mit wenig Zeit.
+
+> Fasse den folgenden Artikel (ca. 2.000 Wörter) in 3 Bullet Points zusammen. Jeder Punkt maximal ein Satz. Fokus: Kernaussage, wichtigstes Argument, praktische Relevanz für Projektleiter. Für jemanden, der 30 Sekunden Zeit hat.
+
+**Warum das funktioniert:** „3 Bullet Points, je ein Satz" verhindert eine halbe Seite Zusammenfassung. Der Zielgruppen-Hinweis (Projektleiter, 30 Sekunden) steuert, was relevant ist und was wegfällt.
+
+### 4. Übersetzen
+
+Nicht Wort-für-Wort, sondern Sinn-für-Sinn — mit Gespür für Zielgruppe und Ton.
+
+> Übersetze die folgende Produktbeschreibung von Englisch nach Deutsch. Behalte den Marketing-Ton bei — natürliches Deutsch, keine wörtliche Übersetzung. Technische Begriffe (API, SaaS, Dashboard) bleiben auf Englisch. Zielgruppe: IT-Entscheider im DACH-Raum.
+
+**Warum das funktioniert:** „Natürliches Deutsch, keine wörtliche Übersetzung" ist die entscheidende Einschränkung. Ohne sie produziert AI oft steife Übersetzungen. Der Hinweis auf die Zielgruppe steuert Formalitätsgrad und Wortwahl.
+
+### 5. Brainstormen
+
+Ideen generieren — mit Struktur, damit die Liste brauchbar bleibt.
+
+> Ich muss die Beteiligung an unseren vierteljährlichen All-Hands-Meetings steigern. Aktuell: niedrige Teilnahme, negatives Feedback („zu lang, zu langweilig"). Generiere 10 kreative Ideen. Mischung aus praktisch/kostengünstig und ambitioniert. Für jede Idee: ein Satz zum Umsetzungsaufwand (niedrig/mittel/hoch).
+
+**Warum das funktioniert:** Kontext (niedriges Engagement, konkretes Feedback) verhindert generische Vorschläge. Die Mischung aus pragmatisch und ambitioniert gibt der AI Spielraum. Der Aufwand-Hinweis macht die Liste sofort priorisierbar.
+
+### 6. Formeln und Code (für Nicht-Entwickler)
+
+AI kann auch technische Aufgaben lösen — und sie dir erklären, sodass du sie anpassen kannst.
+
+> Schreibe eine Excel-Formel für den gewichteten Durchschnitt der Zellen B2:B10 mit den Gewichtungen in C2:C10. Erkläre danach in einfacher Sprache, was jeder Teil der Formel tut, damit ich sie für andere Bereiche anpassen kann.
+
+**Warum das funktioniert:** Die Aufgabe allein würde reichen — aber die Erklärung macht den Unterschied. Statt eine Formel blind zu kopieren, verstehst du, was sie tut. Das ist der Unterschied zwischen Abhängigkeit und Kompetenzaufbau.
+
+## Probier es aus
+
+1. Wähle einen der sechs Aufgabentypen, der zu deinem nächsten echten Arbeitsprojekt passt.
+2. Nimm das Beispiel als Vorlage und passe es an deine Situation an — eigene Rolle, eigenen Kontext, eigenes Format.
+3. Vergleiche das Ergebnis mit einem Prompt ohne diese Struktur. Was fällt dir auf?
+
+## Weiter gedacht
+
+Alle sechs Beispiele folgen demselben Muster: Rolle, Kontext, Aufgabe, Format, Einschränkungen. Das Muster ist wichtiger als die einzelnen Vorlagen. Wenn du es einmal verinnerlicht hast, kannst du es auf jede neue Aufgabe anwenden.
+
+In der nächsten Lektion siehst du das Ganze im direkten Vergleich: **[Gute vs. schlechte Prompts](05-good-vs-bad-prompts/)** zeigt dir Seite an Seite, was den Unterschied macht.

@@ -1,0 +1,90 @@
+---
+title: Prompting-Techniken
+description: Zero-Shot, Few-Shot, Chain-of-Thought und Role-Play — vier Techniken mit konkreten Beispielen für den Arbeitsalltag.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 2 von 5 — L2: Bewusst Prompten
+
+## Vier Techniken, die du kennen solltest
+
+In der letzten Lektion hast du gelernt, wie ein guter Prompt aufgebaut ist. Jetzt geht es um spezifische Techniken, die deine Prompts gezielt verbessern. Nicht alle sind gleich wichtig — eine davon wird von den meisten Knowledge Workern völlig unterschätzt.
+
+## Zero-Shot: Einfach direkt fragen
+
+<GlossaryTip term="Zero-Shot" definition="Eine Anweisung an die AI ohne Beispiele — die AI nutzt ausschließlich ihr Vorwissen, um die Aufgabe zu lösen." /> bedeutet: Du gibst der AI eine Anweisung ohne Beispiele. Das ist die Technik, die du vermutlich schon instinktiv nutzt.
+
+**Wann es funktioniert:** Bei einfachen, klar definierten Aufgaben, die wenig Spielraum lassen.
+
+> Fasse die folgende Kundenbewertung in einem Satz zusammen und bewerte die Stimmung als Positiv, Negativ oder Neutral: "Das Produkt kam pünktlich, aber die Verpackung war beschädigt."
+
+Für solche Aufgaben reicht Zero-Shot völlig aus. Die AI versteht sofort, was zu tun ist.
+
+## Few-Shot: Die unterschätzte Geheimwaffe
+
+<GlossaryTip term="Few-Shot" definition="Eine Technik, bei der du der AI 2-5 Beispiele mit Input und Output zeigst, bevor du die eigentliche Aufgabe stellst. Besonders wirksam für Format und Stil." /> ist die Technik mit dem besten Aufwand-Ergebnis-Verhältnis — und die, die fast niemand nutzt. Du gibst der AI 2-3 Beispiele, wie das Ergebnis aussehen soll, bevor du die eigentliche Aufgabe stellst.
+
+**Warum das so wirksam ist:** Statt lang zu erklären, welches Format, welchen Ton oder welchen Detailgrad du willst, *zeigst* du es einfach. Zeigen schlägt Erklären.
+
+> Kategorisiere diese Support-Tickets nach Priorität:
+>
+> Ticket: "Kann mich nicht einloggen" → Priorität: Hoch
+> Ticket: "Wie ändere ich mein Profilbild?" → Priorität: Niedrig
+> Ticket: "Zahlung wurde doppelt abgebucht" → Priorität: Hoch
+>
+> Ticket: "Das Dashboard lädt auf dem Handy langsam" → Priorität: ?
+
+Die AI erkennt das Muster aus deinen Beispielen und wendet es konsistent an. Du musst nicht definieren, was "hoch" und "niedrig" bedeutet — das zeigen deine Beispiele.
+
+**Wichtig zu wissen:** Bei modernen Modellen verbessert Few-Shot vor allem das **Format** des Outputs, weniger die inhaltliche Qualität. Genau das macht es so wertvoll im Alltag: Du bekommst Ergebnisse, die du direkt verwenden kannst, ohne sie umformatieren zu müssen.
+
+## Chain-of-Thought: Schritt für Schritt denken
+
+<GlossaryTip term="Chain-of-Thought" definition="Eine Technik, bei der die AI aufgefordert wird, ihren Denkweg Schritt für Schritt zu zeigen, bevor sie eine Antwort gibt. Verbessert die Genauigkeit bei komplexen Aufgaben." /> fordert die AI auf, ihren Denkprozess offenzulegen. Die einfachste Variante: Füge "Denke Schritt für Schritt" zu deinem Prompt hinzu.
+
+> Unser Team hat 80 Personen. 25% sind Senior-Mitglieder. 40% der Seniors leiten ein Projekt. Wie viele Seniors leiten ein Projekt? Denke Schritt für Schritt.
+
+Ohne diese Anweisung springt die AI manchmal direkt zur Antwort und macht dabei Rechenfehler. Mit Chain-of-Thought arbeitet sie sauber durch:
+- 25% von 80 = 20 Seniors
+- 40% von 20 = 8 Seniors leiten ein Projekt
+
+**Ehrliche Einschätzung:** Für typische Büroaufgaben — E-Mails, Zusammenfassungen, Texte — brauchst du Chain-of-Thought selten. Die Technik ist am stärksten bei Aufgaben mit mehreren Rechenschritten, logischen Abhängigkeiten oder komplexen Abwägungen.
+
+## Role-Play: Persona zuweisen
+
+Beim Role-Play gibst du der AI eine spezifische Rolle. Das ändert Tonalität, Wortwahl und Perspektive der Antwort.
+
+> Du bist eine erfahrene Unternehmenssteuerberaterin mit 15 Jahren Praxis. Ein Mandant fragt: "Kann ich mein Home-Office steuerlich absetzen, wenn ich nur 2 Tage pro Woche von zu Hause arbeite?" Erkläre die aktuelle Regelung in verständlicher Sprache.
+
+Je spezifischer die Rolle, desto besser: "Erfahrene Unternehmenssteuerberaterin mit 15 Jahren Praxis" bringt mehr als "Du bist Anwältin".
+
+**Aber Vorsicht:** Role-Play wird in vielen Anleitungen überbewertet. Es verändert zuverlässig den **Ton und die Wortwahl**, aber es macht die AI nicht tatsächlich zum Experten. Die Fakten werden nicht besser, nur die Verpackung. Nutze Role-Play für Stil — nicht als Ersatz für Fachwissen.
+
+## Welche Technik wann?
+
+| Technik | Stärke | Am besten für |
+|---------|---------|----------------|
+| Zero-Shot | Schnell, unkompliziert | Einfache, klare Aufgaben |
+| Few-Shot | Konsistentes Format | Kategorisierungen, wiederkehrende Formate, Stil-Vorgaben |
+| Chain-of-Thought | Bessere Genauigkeit | Berechnungen, Abwägungen, mehrstufige Logik |
+| Role-Play | Ton und Perspektive | Fachspezifische Sprache, bestimmte Zielgruppen |
+
+Die Techniken lassen sich kombinieren. Du kannst zum Beispiel eine Rolle zuweisen UND Beispiele geben — das ist oft die stärkste Kombination.
+
+## Probier es aus
+
+### Übung 1: Few-Shot im Alltag
+Nimm eine wiederkehrende Aufgabe aus deinem Arbeitsalltag — zum Beispiel das Kategorisieren von E-Mails oder das Zusammenfassen von Meeting-Notizen. Erstelle 2-3 Beispiele und lass die AI das nächste Beispiel bearbeiten. Vergleiche das Ergebnis mit einem Zero-Shot-Versuch ohne Beispiele.
+
+### Übung 2: Chain-of-Thought testen
+Stelle der AI eine Aufgabe mit mehreren Schritten, zum Beispiel: *"Wir haben ein Budget von 50.000 Euro. 40% gehen in Personal, 25% in Marketing, 15% in Software. Wie viel bleibt übrig?"* Einmal ohne und einmal mit "Denke Schritt für Schritt". Beobachte den Unterschied.
+
+### Übung 3: Role-Play bewusst einsetzen
+Lass die AI denselben Text zweimal schreiben: einmal ohne Rolle, einmal mit einer spezifischen Rolle (z.B. "Du bist eine erfahrene HR-Managerin"). Achte darauf, was sich ändert — und was gleich bleibt.
+
+## Weiter gedacht
+
+Die wichtigste Erkenntnis: Few-Shot ist die Technik mit dem größten Hebel für den Alltag. Statt lange zu erklären, was du willst, zeig es. Zwei Beispiele sagen mehr als zwei Absätze Anweisungen.
+
+In der nächsten Lektion geht es um Iteration — warum der erste Prompt nie perfekt ist und wie du systematisch bessere Ergebnisse erzielst.

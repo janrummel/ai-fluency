@@ -1,0 +1,74 @@
+---
+title: "Task Types: Your Prompt Toolkit"
+description: Six typical tasks — Writing, Analyzing, Summarizing, Translating, Brainstorming, Formulas — each with a ready-to-use prompt example.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 4 of 5 — L2: Intentional Prompting
+
+## Six Tasks, Six Prompts
+
+You now know the anatomy of a good <GlossaryTip term="Prompt" definition="The input you send to an AI model — your question, instruction, or task." /> (Role, Context, Task, Format, Constraints) and how to iterate and refine. In this lesson, you'll see how all of that plays out in practice — across six typical tasks from everyday work.
+
+Each example uses the five building blocks from Lesson 01. Pay attention to how each prompt deploys Role, Context, and Format deliberately.
+
+### 1. Writing
+
+Creating text — from internal emails to customer-facing communications.
+
+> You are the head of internal communications at a mid-size company. Write an internal announcement email: Starting June 1, the company is adopting a hybrid work model (3 days in-office, 2 days remote). Tone: positive but professional. Mention HR as the point of contact and reference an upcoming FAQ document. 200 words max.
+
+**Why this works:** The role (head of internal communications) sets the tone. Context (hybrid model, date, split) eliminates guesswork. Format constraints (200 words, email) prevent a rambling essay.
+
+### 2. Analyzing
+
+Evaluating data, identifying patterns, deriving actionable recommendations.
+
+> Here is our customer churn data for the last 6 months: [paste data]. Identify the 3 most significant factors that correlate with churn. For each factor: evidence, confidence level (high/medium/low), and one concrete countermeasure. Present the results as a table.
+
+**Why this works:** The task is tightly scoped (3 factors, not "everything"). The table format enforces structure. The confidence rating forces the AI to assess its own certainty — which makes weak spots visible.
+
+### 3. Summarizing
+
+Reducing long texts to what matters — for people who are short on time.
+
+> Summarize the following article (approximately 2,000 words) in 3 bullet points. Each bullet point: one sentence max. Focus on: core argument, strongest evidence, and practical relevance for project managers. Written for someone with 30 seconds to spare.
+
+**Why this works:** "3 bullet points, one sentence each" prevents a half-page summary. The audience hint (project managers, 30 seconds) steers what's relevant and what gets cut.
+
+### 4. Translating
+
+Not word-for-word, but meaning-for-meaning — with sensitivity to audience and tone.
+
+> Translate the following product description from English to French. Maintain the marketing tone — natural, idiomatic French, not a literal translation. Technical terms (API, SaaS, Dashboard) stay in English. Target audience: IT decision-makers at enterprise companies in France and French-speaking Europe.
+
+**Why this works:** "Natural, idiomatic French, not a literal translation" is the critical constraint. Without it, AI often produces stiff, mechanical translations. The audience hint steers the level of formality and word choice.
+
+### 5. Brainstorming
+
+Generating ideas — with structure, so the list stays usable.
+
+> I need to increase engagement at our quarterly all-hands meetings. Current situation: low attendance, negative feedback ("too long, too boring"). Generate 10 creative ideas. Mix of practical/low-cost and ambitious. For each idea: one sentence on implementation effort (low/medium/high).
+
+**Why this works:** Context (low engagement, specific feedback) prevents generic suggestions. The mix of pragmatic and ambitious gives the AI room to explore. The effort rating makes the list immediately prioritizable.
+
+### 6. Formulas and Code (for Non-Developers)
+
+AI can solve technical tasks — and explain them to you so you can adapt them yourself.
+
+> Write an Excel formula for the weighted average of cells B2:B10 using the weights in C2:C10. Then explain in plain language what each part of the formula does, so I can adapt it for other ranges.
+
+**Why this works:** The task alone would be enough — but the explanation makes the difference. Instead of blindly copying a formula, you understand what it does. That's the difference between dependency and building competence.
+
+## Try It
+
+1. Pick one of the six task types that fits your next real work project.
+2. Use the example as a template and adapt it to your situation — your own role, your own context, your own format.
+3. Compare the result with a prompt that has none of this structure. What do you notice?
+
+## Think Further
+
+All six examples follow the same pattern: Role, Context, Task, Format, Constraints. The pattern matters more than the individual templates. Once you've internalized it, you can apply it to any new task.
+
+In the next lesson, you'll see this in direct comparison: **[Good vs. Bad Prompts](05-good-vs-bad-prompts/)** shows you side by side what makes the difference.
