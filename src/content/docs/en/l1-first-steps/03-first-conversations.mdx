@@ -1,0 +1,93 @@
+---
+title: First Conversations with AI
+description: Three example conversations — what works, what doesn't, and why the first output is always just a draft.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 3 of 5 — L1: First Steps
+
+## The first step: Just start
+
+The most important thing up front: you can't break anything. AI chatbots are made for experimenting. Every conversation is an experiment — and the first answer is always just a draft.
+
+## Three conversations compared
+
+### Conversation 1: Good — Clear context and task
+
+**You:**
+> I'm preparing a team meeting and need an agenda. The meeting is 60 minutes, topic is Q3 quarterly planning. Attendees are 5 people from marketing and sales. Please create a structured agenda with time slots.
+
+**AI:** *(creates a detailed agenda with welcome, Q2 review, Q3 goals, open discussion, and next steps — each with time allocations)*
+
+**Why this works:** You gave the AI everything it needs — duration, topic, context, format. The more relevant information you provide, the better the result.
+
+---
+
+### Conversation 2: Medium — Too vague
+
+**You:**
+> Write something about quarterly planning.
+
+**AI:** *(writes a generic article about quarterly planning — technically correct, but not what you need)*
+
+**The problem:** "Write something" could mean anything — a blog post, an email, a presentation. Without context, the AI guesses, and it usually guesses wrong.
+
+**Simple fix:** Add *what it's for* and *what format* you need.
+
+---
+
+### Conversation 3: Weak — Fact query without verification
+
+**You:**
+> What was Company X's revenue in 2025?
+
+**AI:** *(states a specific number with a source reference)*
+
+**The risk:** The AI might **make the number up**. This is exactly what <GlossaryTip term="Halluzination" definition="An AI response that is false or fabricated but sounds confident and convincing." />s are — confidently stated misinformation. Specific numbers, statistics, and source citations should **always** be independently verified.
+
+## What makes a good conversation?
+
+<DosDonts
+  dos={[
+    "Provide context: Who are you, what do you need this for?",
+    "Name the desired format: List, email, table?",
+    "Treat the first answer as a draft and iterate",
+    "Follow up when something doesn't fit: 'Make it shorter' or 'Focus on point 3'"
+  ]}
+  donts={[
+    "Ask one-word questions and expect perfect answers",
+    "Accept numbers and facts without verification",
+    "Give up when the first answer isn't perfect",
+    "Enter sensitive data like passwords or health information"
+  ]}
+/>
+
+## The art of follow-up
+
+A good AI conversation isn't a single <GlossaryTip term="Prompt" definition="The input you send to an AI model — your question, instruction, or task." /> — it's a dialogue. You can always:
+
+- **Refine:** *"That's good, but make it more formal."*
+- **Focus:** *"Just concentrate on the first point."*
+- **Redirect:** *"Not as a list, but as flowing text."*
+- **Challenge:** *"Are you sure about that number? Where did you get it?"*
+
+The AI forgets nothing within the conversation (as long as the context window holds). So you can work toward the desired result step by step.
+
+## Try it yourself
+
+### Exercise 1: The meeting experiment
+Ask the AI to write an email to your team canceling a meeting. On the first try, just say *"Write a cancellation email."* On the second try, provide the reason, tone, and recipients. Compare the results.
+
+### Exercise 2: The refinement dialogue
+Ask the AI for a text (e.g., a summary of your last project). Regardless of the first answer — ask three follow-up questions that improve the text. Watch how the output evolves.
+
+### Exercise 3: The fact check
+Ask the AI something verifiable — e.g., the CEO of a well-known company or the founding year of an organization. Check the answer with a quick web search.
+
+## Think further
+
+The first answer is never the final product. AI is a sparring partner, not a vending machine. The better you learn to work with it, the better the results become.
+
+In the next lesson, we'll look at the limits: When does AI get things wrong — and why?

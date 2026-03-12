@@ -1,0 +1,57 @@
+---
+title: What Is Generative AI?
+description: What Generative AI is, how it works, and why it's nothing like a search engine.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 1 of 5 — L1: First Steps
+
+## AI is not Google
+
+When you use a search engine, it scans the web and shows you links to existing pages. Generative AI works fundamentally differently: it **creates new text**, word by word, based on patterns learned from billions of texts.
+
+That's the first paradigm shift: **AI is not Google.** It doesn't find answers — it constructs them.
+
+## How does it work?
+
+Think of the autocomplete on your phone. It suggests the next word based on what you've typed so far. Generative AI works on the same principle — just at a completely different scale.
+
+Instead of predicting from your messages, an <GlossaryTip term="LLM" definition="Large Language Model — a neural network trained on massive amounts of text that can generate new text." /> uses billions of books, articles, websites, and conversations as its foundation. The result: a system that can write entire essays, emails, or analyses — choosing the statistically most likely next word, one at a time.
+
+### Another analogy
+
+Imagine a student who has read thousands of textbooks but never attended a single class or lab. When you ask them a question, they write a confident, well-structured answer that *sounds* like a textbook. Most of the time it's right — but sometimes they invent facts, because they're reconstructing from patterns, not from understanding.
+
+## The building blocks: Tokens
+
+AI doesn't read and write in whole words but in <GlossaryTip term="Token" definition="The smallest text units an AI model processes — usually a word or part of a word." />. A token is usually a word or part of a word:
+
+- "apple" = 1 token
+- "friendship" = 2 tokens ("friend" + "ship")
+- A typical page of text ≈ 300 tokens
+
+Why this matters: every AI model has a limited "token budget" — the so-called <GlossaryTip term="Context Window" definition="The maximum amount of text an AI model can process at once — its short-term memory." />. Think of it as the desk the AI works on. What doesn't fit on the desk, it can't see.
+
+## Why does AI give a different answer each time?
+
+If you ask the same question twice, you'll often get slightly different answers. That's not a bug — AI calculates thousands of possibilities for each next word and then picks one.
+
+How adventurous it is depends on a parameter called **temperature**:
+
+- **Low (conservative):** AI picks the most likely words → consistent, predictable answers
+- **High (creative):** AI also picks less likely words → more surprising, varied answers
+
+Think of it like a dial between "follow the recipe exactly" and "improvise in the kitchen."
+
+## Try it yourself
+
+1. Open an AI tool of your choice (ChatGPT, Claude, Gemini, or Copilot — all have free versions).
+2. Ask the same question twice: *"Explain in two sentences what Generative AI is."*
+3. Compare the answers. What's the same? What's different?
+
+## Think further
+
+<GlossaryTip term="Generative AI" definition="AI systems that can create new content — text, images, code, music — rather than just searching or classifying existing information." /> is a tool, not an oracle. It reflects patterns from human knowledge back at you — it has no thoughts, opinions, or beliefs of its own. This understanding is the foundation for everything that follows.
+
+In the next lesson, we'll look at the major tools: ChatGPT, Claude, Gemini, and Microsoft Copilot.
