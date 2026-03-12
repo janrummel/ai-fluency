@@ -1,0 +1,93 @@
+---
+title: Erste Gespräche mit AI
+description: Drei Beispielkonversationen — was funktioniert, was nicht und warum der erste Output nur ein Entwurf ist.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 3 von 5 — L1: Erste Schritte
+
+## Der erste Schritt: Einfach anfangen
+
+Das Wichtigste vorweg: Du kannst nichts kaputt machen. AI-Chatbots sind zum Ausprobieren da. Jede Konversation ist ein Experiment — und die erste Antwort ist immer nur ein Entwurf.
+
+## Drei Gespräche im Vergleich
+
+### Gespräch 1: Gut — Kontext und Aufgabe klar
+
+**Du:**
+> Ich bereite ein Teammeeting vor und brauche eine Agenda. Das Meeting dauert 60 Minuten, Thema ist die Quartalsplanung Q3. Teilnehmer sind 5 Personen aus Marketing und Vertrieb. Bitte erstelle eine strukturierte Agenda mit Zeitangaben.
+
+**AI:** *(erstellt eine detaillierte Agenda mit Begrüssung, Rückblick Q2, Zielsetzung Q3, offene Diskussion und nächste Schritte — jeweils mit Minutenangaben)*
+
+**Warum das funktioniert:** Du hast der AI alles gegeben, was sie braucht — Dauer, Thema, Kontext, Format. Je mehr relevante Information, desto besser das Ergebnis.
+
+---
+
+### Gespräch 2: Mittel — Zu vage
+
+**Du:**
+> Schreib mir was über Quartalsplanung.
+
+**AI:** *(schreibt einen allgemeinen Artikel über Quartalsplanung — technisch korrekt, aber nicht das, was du brauchst)*
+
+**Das Problem:** „Schreib mir was" kann alles bedeuten — einen Blogpost, eine E-Mail, eine Präsentation. Ohne Kontext rät die AI, und meistens rät sie falsch.
+
+**Einfache Lösung:** Ergänze *wofür* du den Text brauchst und *in welchem Format*.
+
+---
+
+### Gespräch 3: Schwach — Faktenabfrage ohne Prüfung
+
+**Du:**
+> Wie hoch war der Umsatz von Unternehmen X im Jahr 2025?
+
+**AI:** *(nennt eine konkrete Zahl mit Quellenangabe)*
+
+**Das Risiko:** Die AI könnte die Zahl **erfinden**. Genau das sind <GlossaryTip term="Halluzination" definition="Eine AI-Antwort, die falsch oder erfunden ist, aber selbstsicher und überzeugend klingt." />en — selbstsicher klingende Falschinformationen. Konkrete Zahlen, Statistiken und Quellenangaben solltest du **immer** unabhängig prüfen.
+
+## Was macht ein gutes Gespräch aus?
+
+<DosDonts
+  dos={[
+    "Kontext geben: Wer bist du, wofür brauchst du das?",
+    "Das gewünschte Format nennen: Liste, E-Mail, Tabelle?",
+    "Die erste Antwort als Entwurf behandeln und weiterentwickeln",
+    "Nachfragen, wenn etwas nicht passt: 'Mach es kürzer' oder 'Fokussiere auf Punkt 3'"
+  ]}
+  donts={[
+    "Einwort-Fragen stellen und perfekte Antworten erwarten",
+    "Zahlen und Fakten ohne Prüfung übernehmen",
+    "Aufgeben, wenn die erste Antwort nicht perfekt ist",
+    "Sensible Daten wie Passwörter oder Gesundheitsdaten eingeben"
+  ]}
+/>
+
+## Die Kunst des Nachfragens
+
+Ein gutes AI-Gespräch ist kein einzelner <GlossaryTip term="Prompt" definition="Die Eingabe, die du an ein AI-Modell sendest — deine Frage, Anweisung oder Aufgabe." /> — es ist ein Dialog. Du kannst jederzeit:
+
+- **Verfeinern:** *„Das ist gut, aber mach es formeller."*
+- **Fokussieren:** *„Konzentriere dich nur auf den ersten Punkt."*
+- **Umlenken:** *„Nicht als Liste, sondern als Fliesstext."*
+- **Hinterfragen:** *„Bist du sicher bei der Zahl? Woher hast du die?"*
+
+Die AI vergisst nichts innerhalb des Gesprächs (solange das Context Window reicht). Du kannst also Schritt für Schritt zum gewünschten Ergebnis arbeiten.
+
+## Probier es aus
+
+### Übung 1: Das Meeting-Experiment
+Bitte die AI, eine E-Mail an dein Team zu schreiben, in der du ein Meeting absagst. Gib beim ersten Versuch nur *„Schreib eine Absage-Mail"*. Beim zweiten Versuch gibst du Grund, Ton und Empfänger an. Vergleiche die Ergebnisse.
+
+### Übung 2: Der Verfeinerungs-Dialog
+Bitte die AI um einen Text (z.B. eine Zusammenfassung deines letzten Projekts). Egal wie die erste Antwort ist — stelle drei Folgefragen, die den Text verbessern. Beobachte, wie sich der Output verändert.
+
+### Übung 3: Der Faktencheck
+Frage die AI etwas Überprüfbares — z.B. nach dem CEO eines bekannten Unternehmens oder dem Gründungsjahr einer Organisation. Prüfe die Antwort mit einer schnellen Websuche.
+
+## Weiter gedacht
+
+Die erste Antwort ist nie das Endprodukt. Die AI ist ein Sparringspartner, kein Automat. Je besser du lernst, mit ihr zu arbeiten, desto besser werden die Ergebnisse.
+
+In der nächsten Lektion geht es um die Grenzen: Wann lügt AI — und warum?

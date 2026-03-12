@@ -1,0 +1,105 @@
+---
+title: Grenzen verstehen
+description: Halluzinationen, Knowledge Cutoff, Datenschutz und Bias — was du über die Grenzen von AI wissen musst.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 4 von 5 — L1: Erste Schritte
+
+## Warum Grenzen kennen?
+
+AI-Tools sind beeindruckend leistungsfähig — aber sie haben systematische Schwächen, die du kennen musst. Nicht um Angst zu haben, sondern um sie richtig einzusetzen. Ein Werkzeug, dessen Grenzen du kennst, ist nützlicher als eines, das du überschätzt.
+
+## Halluzinationen: Wenn AI erfindet
+
+<GlossaryTip term="Halluzination" definition="Eine AI-Antwort, die falsch oder erfunden ist, aber selbstsicher und überzeugend klingt." />en sind keine seltenen Fehler — sie sind ein systemisches Merkmal. AI-Modelle optimieren nicht auf Wahrheit, sondern auf **Plausibilität**. Wenn die „richtigste" Antwort eine erfundene ist, die gut klingt, wird die AI sie liefern.
+
+### Ein realer Fall
+
+Im Jahr 2023 nutzte der US-Anwalt Steven Schwartz ChatGPT für juristische Recherche. ChatGPT generierte sechs **komplett erfundene Gerichtsurteile** — mit realistisch klingenden Namen, Aktenzeichen und sogar Seitenzahlen. Der Anwalt reichte sie beim Gericht ein, ohne sie zu prüfen. Er wurde sanktioniert, der Fall wurde international bekannt.
+
+Seitdem wurden über 700 ähnliche Fälle weltweit dokumentiert. Nicht weil AI schlechter geworden ist, sondern weil mehr Menschen sie nutzen, ohne die Ergebnisse zu prüfen.
+
+### Warnzeichen für Halluzinationen
+
+- Sehr spezifische Zahlen oder Statistiken ohne klare Quelle
+- Quellenangaben, die du online nicht finden kannst
+- Selbstsichere Antworten zu sehr aktuellen Ereignissen
+- Biografische Details über weniger bekannte Personen
+- Antworten, die „zu perfekt" und lückenlos wirken
+
+### Drei Schritte zur Prüfung
+
+1. **Fakten gegenprüfen:** Zahlen, Namen, Daten unabhängig recherchieren
+2. **Quellen anfordern:** Die AI bitten, ihre Quellen zu nennen — dann diese Quellen prüfen
+3. **Den „Zu-perfekt"-Test:** Wenn eine Antwort verdächtig vollständig wirkt, genauer hinschauen. Echte Informationen haben Nuancen und Einschränkungen
+
+## Knowledge Cutoff: Was AI nicht weiss
+
+AI-Modelle werden auf Daten bis zu einem bestimmten Datum trainiert — dem <GlossaryTip term="Knowledge Cutoff" definition="Das Datum, bis zu dem die Trainingsdaten eines AI-Modells reichen. Ereignisse danach kennt das Modell nicht." />. Ereignisse danach kennt das Modell nicht aus eigenem Wissen.
+
+**Beispiel:** Wenn du nach den Ergebnissen einer Wahl fragst, die nach dem Cutoff stattfand, kann die AI entweder:
+- Sagen, dass sie es nicht weiss (gut)
+- Eine plausibel klingende Antwort erfinden (schlecht — Halluzination)
+
+**Einschränkung:** Viele AI-Tools haben inzwischen Websuche integriert und können aktuelle Informationen finden. Aber: Die Qualität dieser Suche variiert, und die AI kann aktuelle mit veralteten Informationen vermischen.
+
+## Datenschutz: Was mit deinen Eingaben passiert
+
+Ein oft unterschätztes Thema. Was du in einen AI-Chatbot eingibst, ist **nicht automatisch privat**.
+
+### Die Kernregel
+
+| Anbieter | Kostenloser Plan | Opt-Out möglich? | Business-Plan |
+|----------|-----------------|------------------|---------------|
+| ChatGPT | Training AN | Ja | Kein Training |
+| Claude | Training AN (seit Sep 2025) | Ja | Kein Training |
+| Gemini | Training AN, 18 Monate gespeichert | Ja | Kein Training |
+| Copilot | Verbesserung AN | Eingeschränkt | Kein Training |
+
+**Was das bedeutet:** Auf kostenlosen Plänen werden deine Gespräche standardmässig zum Training der Modelle verwendet. Du kannst das abschalten, aber du musst es **aktiv tun**.
+
+### Fünf Datenschutz-Regeln für den Anfang
+
+1. **Keine Passwörter, Finanzdaten oder Gesundheitsdaten** in AI-Chatbots eingeben
+2. **Datenschutz-Einstellungen prüfen** — beim ersten Login Opt-Out setzen, wenn gewünscht
+3. **Davon ausgehen, dass jemand mitlesen kann** — alle Anbieter speichern Daten mindestens 30 Tage
+4. **Bezahlte/Business-Pläne sind privater** — vertraglicher Datenschutz
+5. **Gespräche löschen**, die du nicht gespeichert haben willst
+
+## Bias: Die blinden Flecken
+
+AI lernt aus menschengemachten Texten — und übernimmt deren Vorurteile. Wenn die Trainingsdaten mehr englischsprachige Quellen enthalten, sind Antworten auf Englisch besser. Wenn bestimmte Perspektiven in den Daten überrepräsentiert sind, spiegelt die AI das wider.
+
+**Praktisches Beispiel:** Wenn du die AI bittest, „einen erfolgreichen Unternehmer" zu beschreiben, wird sie statistisch häufiger einen Mann aus dem Silicon Valley beschreiben — nicht weil das korrekt ist, sondern weil diese Perspektive in den Trainingsdaten dominiert.
+
+**Was du tun kannst:** Sei dir bewusst, dass AI-Antworten einen eingebauten Bias haben können. Hinterfrage besonders bei Bewertungen, Empfehlungen und Personenbeschreibungen.
+
+## Zusammenfassung
+
+<DosDonts
+  dos={[
+    "AI-Antworten bei wichtigen Fakten immer gegenprüfen",
+    "Datenschutz-Einstellungen beim ersten Login konfigurieren",
+    "AI als Ausgangspunkt nutzen, nicht als letzte Instanz",
+    "Dir bewusst sein, dass AI-Antworten Bias enthalten können"
+  ]}
+  donts={[
+    "Zahlen, Statistiken oder Quellen ungeprüft übernehmen",
+    "Sensible Daten (Passwörter, Gesundheit, Finanzen) eingeben",
+    "AI als objektive, neutrale Instanz behandeln",
+    "Annehmen, dass die AI über aktuelle Ereignisse Bescheid weiss"
+  ]}
+/>
+
+## Probier es aus
+
+1. Frage die AI nach einem Fachbegriff aus deinem Berufsfeld, bei dem du die richtige Antwort kennst. Wie genau ist die Antwort? Wo weicht sie ab?
+2. Prüfe jetzt die Datenschutz-Einstellungen in deinem AI-Tool. Ist der Opt-Out aktiv?
+3. Frage die AI: *„Was weisst du über [ein aktuelles Ereignis der letzten Woche]?"* Beobachte, ob sie über ihren Knowledge Cutoff hinaus antwortet oder ob sie Websuche nutzt.
+
+## Weiter gedacht
+
+Grenzen zu kennen macht dich nicht zum Skeptiker — sondern zum kompetenten Nutzer. In der letzten L1-Lektion fassen wir alles zusammen: Die wichtigsten Do's und Don'ts für deinen Alltag mit AI.

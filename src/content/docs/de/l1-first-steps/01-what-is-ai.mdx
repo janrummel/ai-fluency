@@ -1,0 +1,57 @@
+---
+title: Was ist Generative AI?
+description: Was Generative AI ist, wie sie funktioniert und warum sie nicht mit einer Suchmaschine vergleichbar ist.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 1 von 5 — L1: Erste Schritte
+
+## AI ist nicht Google
+
+Wenn du eine Suchmaschine nutzt, durchsucht sie das Internet und zeigt dir Links zu existierenden Seiten. Generative AI funktioniert grundlegend anders: Sie **erzeugt neuen Text**, Wort für Wort, basierend auf Mustern, die sie aus Milliarden von Texten gelernt hat.
+
+Das ist der erste Paradigmenwechsel: **AI ist nicht Google.** Sie sucht keine Antworten — sie konstruiert sie.
+
+## Wie funktioniert das?
+
+Stell dir die Autokorrektur auf deinem Smartphone vor. Sie schlägt das nächste Wort vor, basierend auf dem, was du bisher getippt hast. Generative AI funktioniert nach demselben Prinzip — nur in einem völlig anderen Massstab.
+
+Statt aus deinen Nachrichten vorherzusagen, nutzt ein <GlossaryTip term="LLM" definition="Large Language Model — ein neuronales Netz, das auf grossen Textmengen trainiert wurde und Text generieren kann." /> Milliarden von Büchern, Artikeln, Websites und Gesprächen als Grundlage. Das Ergebnis: ein System, das ganze Aufsätze, E-Mails oder Analysen schreiben kann — Wort für Wort, jeweils das statistisch wahrscheinlichste nächste Wort wählend.
+
+### Noch eine Analogie
+
+Stell dir einen Studierenden vor, der tausende Fachbücher gelesen hat, aber nie einen Kurs besucht oder ein Labor betreten hat. Wenn du ihn etwas fragst, schreibt er eine selbstsichere, gut strukturierte Antwort, die *klingt* wie aus einem Lehrbuch. Meistens stimmt sie — aber manchmal erfindet er Fakten, weil er aus Mustern rekonstruiert, nicht aus Verständnis.
+
+## Die Bausteine: Token
+
+AI liest und schreibt nicht in ganzen Wörtern, sondern in <GlossaryTip term="Token" definition="Die kleinsten Texteinheiten, die ein AI-Modell verarbeitet — meistens ein Wort oder ein Wortteil." />. Ein Token ist meistens ein Wort oder ein Wortteil:
+
+- „Apfel" = 1 Token
+- „Freundschaft" = 2 Token („Freund" + „schaft")
+- Eine typische Textseite ≈ 300 Token
+
+Warum das wichtig ist: Jedes AI-Modell hat ein begrenztes „Token-Budget" — das sogenannte <GlossaryTip term="Context Window" definition="Die maximale Menge an Text, die ein AI-Modell gleichzeitig verarbeiten kann — sein Kurzzeitgedächtnis." />. Stell es dir als den Schreibtisch vor, auf dem die AI arbeitet. Was nicht auf den Schreibtisch passt, kann sie nicht sehen.
+
+## Warum gibt AI jedes Mal eine andere Antwort?
+
+Wenn du dieselbe Frage zweimal stellst, bekommst du oft leicht unterschiedliche Antworten. Das ist kein Fehler — AI berechnet für jedes nächste Wort Tausende von Möglichkeiten und wählt dann eine aus.
+
+Wie abenteuerlustig sie dabei ist, steuert ein Parameter namens **Temperature**:
+
+- **Niedrig (konservativ):** AI wählt die wahrscheinlichsten Wörter → konsistente, vorhersagbare Antworten
+- **Hoch (kreativ):** AI wählt auch weniger wahrscheinliche Wörter → überraschendere, variiertere Antworten
+
+Stell es dir wie einen Regler zwischen „Rezept genau befolgen" und „in der Küche improvisieren" vor.
+
+## Probier es aus
+
+1. Öffne ein AI-Tool deiner Wahl (ChatGPT, Claude, Gemini oder Copilot — alle haben kostenlose Versionen).
+2. Stelle dieselbe Frage zweimal: *„Erkläre mir in zwei Sätzen, was Generative AI ist."*
+3. Vergleiche die Antworten. Was ist gleich? Was unterscheidet sich?
+
+## Weiter gedacht
+
+<GlossaryTip term="Generative AI" definition="AI-Systeme, die neue Inhalte erzeugen können — Text, Bilder, Code, Musik — statt nur existierende Informationen zu suchen oder zu klassifizieren." /> ist ein Werkzeug, kein Orakel. Sie spiegelt Muster aus menschlichem Wissen zurück — sie hat keine eigenen Gedanken, Meinungen oder Überzeugungen. Dieses Verständnis ist die Grundlage für alles, was folgt.
+
+In der nächsten Lektion schauen wir uns die wichtigsten Tools an: ChatGPT, Claude, Gemini und Microsoft Copilot.
