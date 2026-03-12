@@ -1,0 +1,305 @@
+/* ============================================================
+   AI Fluency — HIG-Inspired Design System
+   Professional, spacious, clean. Apple HIG as visual north star.
+   ============================================================ */
+
+/* --- Design Tokens (Light) --- */
+:root {
+  --af-bg: #FAFAFA;
+  --af-surface: #FFFFFF;
+  --af-text: #1D1D1F;
+  --af-text-secondary: #6E6E73;
+  --af-accent: #0071E3;
+  --af-accent-hover: #0077ED;
+  --af-border: #D2D2D7;
+  --af-border-subtle: #E8E8ED;
+  --af-success: #248A3D;
+  --af-success-bg: #F0FAF2;
+  --af-danger: #D70015;
+  --af-danger-bg: #FFF5F5;
+  --af-code-bg: #F5F5F7;
+  --af-blockquote-bg: #F5F5F7;
+  --af-blockquote-border: #0071E3;
+}
+
+/* --- Design Tokens (Dark) --- */
+:root[data-theme='dark'] {
+  --af-bg: #1C1C1E;
+  --af-surface: #2C2C2E;
+  --af-text: #F5F5F7;
+  --af-text-secondary: #98989D;
+  --af-accent: #2997FF;
+  --af-accent-hover: #40A9FF;
+  --af-border: #38383A;
+  --af-border-subtle: #2C2C2E;
+  --af-success: #30D158;
+  --af-success-bg: #1A2E1F;
+  --af-danger: #FF453A;
+  --af-danger-bg: #2E1A1A;
+  --af-code-bg: #2C2C2E;
+  --af-blockquote-bg: #2C2C2E;
+  --af-blockquote-border: #2997FF;
+}
+
+/* --- Starlight Overrides --- */
+:root {
+  --sl-color-bg: var(--af-bg);
+  --sl-color-bg-nav: var(--af-surface);
+  --sl-color-bg-sidebar: var(--af-surface);
+  --sl-color-hairline: var(--af-border-subtle);
+  --sl-color-hairline-shade: var(--af-border);
+  --sl-color-text: var(--af-text);
+  --sl-color-text-accent: var(--af-accent);
+  --sl-color-accent-low: color-mix(in srgb, var(--af-accent) 10%, transparent);
+  --sl-color-accent: var(--af-accent);
+  --sl-color-accent-high: var(--af-accent);
+  --sl-color-white: var(--af-text);
+  --sl-color-gray-1: var(--af-text-secondary);
+  --sl-color-gray-2: var(--af-border);
+  --sl-color-gray-3: var(--af-border-subtle);
+  --sl-color-gray-5: var(--af-bg);
+  --sl-color-gray-6: var(--af-surface);
+
+  --sl-font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --sl-text-body: var(--sl-font-system);
+  --sl-text-h1: var(--sl-font-system);
+  --sl-text-h2: var(--sl-font-system);
+  --sl-text-h3: var(--sl-font-system);
+  --sl-text-h4: var(--sl-font-system);
+  --sl-text-code: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas,
+    'DejaVu Sans Mono', monospace;
+}
+
+/* --- Typography --- */
+body {
+  font-size: 1rem;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sl-markdown-content {
+  max-width: 44rem;
+}
+
+.sl-markdown-content h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.sl-markdown-content h2 {
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--af-border-subtle);
+}
+
+.sl-markdown-content h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.sl-markdown-content h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.sl-markdown-content p {
+  margin-bottom: 1.25rem;
+}
+
+/* --- Links --- */
+.sl-markdown-content a {
+  color: var(--af-accent);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.sl-markdown-content a:hover {
+  color: var(--af-accent-hover);
+  text-decoration: underline;
+}
+
+/* --- Blockquotes (progress indicator + callouts) --- */
+.sl-markdown-content blockquote {
+  background: var(--af-blockquote-bg);
+  border-left: 3px solid var(--af-blockquote-border);
+  border-radius: 0 8px 8px 0;
+  padding: 0.75rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  color: var(--af-text-secondary);
+  font-size: 0.9rem;
+}
+
+.sl-markdown-content blockquote p {
+  margin: 0;
+}
+
+/* --- Code --- */
+.sl-markdown-content :not(pre) > code {
+  background: var(--af-code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+  font-size: 0.875em;
+  font-family: var(--sl-text-code);
+}
+
+/* --- Tables --- */
+.sl-markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.925rem;
+}
+
+.sl-markdown-content th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--af-border);
+  color: var(--af-text);
+}
+
+.sl-markdown-content td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--af-border-subtle);
+}
+
+.sl-markdown-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- Lists --- */
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.sl-markdown-content li {
+  margin-bottom: 0.4rem;
+  line-height: 1.7;
+}
+
+.sl-markdown-content li > ul,
+.sl-markdown-content li > ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* --- Sidebar --- */
+nav.sidebar .top-level > li {
+  margin-top: 1rem;
+}
+
+nav.sidebar a {
+  font-size: 0.9rem;
+  color: var(--af-text-secondary);
+  padding: 0.35rem 0.75rem;
+  border-left: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+nav.sidebar a:hover {
+  color: var(--af-text);
+}
+
+nav.sidebar a[aria-current='page'] {
+  color: var(--af-accent);
+  font-weight: 600;
+  border-left-color: var(--af-accent);
+  background: color-mix(in srgb, var(--af-accent) 6%, transparent);
+}
+
+nav.sidebar .group-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--af-text-secondary);
+  padding: 0.5rem 0.75rem 0.25rem;
+}
+
+/* --- Details / Collapsible --- */
+.sl-markdown-content details {
+  border: 1px solid var(--af-border-subtle);
+  border-radius: 8px;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.sl-markdown-content summary {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--af-accent);
+  transition: color 0.15s ease;
+}
+
+.sl-markdown-content summary:hover {
+  color: var(--af-accent-hover);
+}
+
+.sl-markdown-content details[open] summary {
+  border-bottom: 1px solid var(--af-border-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.sl-markdown-content details > *:not(summary) {
+  padding: 0 1rem;
+}
+
+/* --- Horizontal Rule --- */
+.sl-markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--af-border-subtle);
+  margin: 3rem 0;
+}
+
+/* --- Splash / Hero Page --- */
+[data-page-type='splash'] .sl-markdown-content {
+  max-width: 48rem;
+  text-align: center;
+}
+
+[data-page-type='splash'] .sl-markdown-content h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+/* --- Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* --- Print --- */
+@media print {
+  nav.sidebar,
+  .right-sidebar {
+    display: none;
+  }
+
+  .sl-markdown-content {
+    max-width: 100%;
+  }
+}
