@@ -1,0 +1,98 @@
+---
+interface Props {
+  dos: string[];
+  donts: string[];
+}
+
+const { dos, donts } = Astro.props;
+---
+
+<div class="dos-donts">
+  <div class="dos-donts__column dos-donts__do">
+    <div class="dos-donts__header dos-donts__header--do">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="10" fill="currentColor" opacity="0.15" />
+        <path d="M6 10.5L8.5 13L14 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>Do</span>
+    </div>
+    <ul>
+      {dos.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+  <div class="dos-donts__column dos-donts__dont">
+    <div class="dos-donts__header dos-donts__header--dont">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="10" fill="currentColor" opacity="0.15" />
+        <path d="M7 7L13 13M13 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <span>Don't</span>
+    </div>
+    <ul>
+      {donts.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .dos-donts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    .dos-donts {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .dos-donts__column {
+    border: 1px solid var(--af-border-subtle, #E8E8ED);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dos-donts__header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .dos-donts__header--do {
+    background: var(--af-success-bg, #F0FAF2);
+    color: var(--af-success, #248A3D);
+    border-bottom: 1px solid color-mix(in srgb, var(--af-success, #248A3D) 20%, transparent);
+  }
+
+  .dos-donts__header--dont {
+    background: var(--af-danger-bg, #FFF5F5);
+    color: var(--af-danger, #D70015);
+    border-bottom: 1px solid color-mix(in srgb, var(--af-danger, #D70015) 20%, transparent);
+  }
+
+  .dos-donts__column ul {
+    list-style: none;
+    padding: 0.75rem 1rem;
+    margin: 0;
+  }
+
+  .dos-donts__column li {
+    padding: 0.4rem 0;
+    font-size: 0.925rem;
+    line-height: 1.55;
+    color: var(--af-text, #1D1D1F);
+  }
+
+  .dos-donts__column li + li {
+    border-top: 1px solid var(--af-border-subtle, #E8E8ED);
+  }
+</style>

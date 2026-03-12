@@ -1,0 +1,74 @@
+---
+interface Props {
+  term: string;
+  definition: string;
+}
+
+const { term, definition } = Astro.props;
+const slug = term.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+---
+
+<span class="glossary-tip">
+  <a href={`../../reference/glossary/#${slug}`} class="glossary-tip__link">
+    {term}
+    <span class="glossary-tip__tooltip" role="tooltip" id={`tip-${slug}`}>
+      {definition}
+    </span>
+  </a>
+</span>
+
+<style>
+  .glossary-tip {
+    position: relative;
+    display: inline;
+  }
+
+  .glossary-tip__link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--af-text-secondary, #6E6E73);
+    cursor: help;
+    transition: border-color 0.15s ease;
+  }
+
+  .glossary-tip__link:hover {
+    border-bottom-color: var(--af-accent, #0071E3);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .glossary-tip__tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--af-surface, #FFFFFF);
+    border: 1px solid var(--af-border, #D2D2D7);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.825rem;
+    line-height: 1.45;
+    color: var(--af-text, #1D1D1F);
+    width: max-content;
+    max-width: 280px;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+  }
+
+  .glossary-tip__link:hover .glossary-tip__tooltip,
+  .glossary-tip__link:focus .glossary-tip__tooltip {
+    display: block;
+  }
+
+  .glossary-tip__tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--af-border, #D2D2D7);
+  }
+</style>
