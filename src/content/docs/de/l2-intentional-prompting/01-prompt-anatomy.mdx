@@ -1,0 +1,89 @@
+---
+title: Die Anatomie eines guten Prompts
+description: Wie ein Prompt aufgebaut ist — mit Role, Context, Task, Format und Constraints. Vorher-Nachher-Vergleich und praktische Anleitung.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 1 von 5 — L2: Bewusst Prompten
+
+## Von Fragen zu Anweisungen
+
+In L1 hast du gelernt, wie du erste Gespräche mit AI führst. Jetzt kommt der nächste Paradigmenwechsel: **Ein guter Prompt ist keine Frage — er ist eine Anweisung.** Und wie jede gute Anweisung hat er eine klare Struktur.
+
+Die meisten Menschen tippen einen Satz ein und hoffen auf das Beste. Professionelle Nutzer bauen ihre Prompts bewusst auf — aus fünf Bausteinen, die zusammen den Unterschied zwischen „naja" und „genau das" ausmachen.
+
+## Die fünf Bausteine
+
+Jeder starke Prompt besteht aus bis zu fünf Komponenten. Nicht jeder Prompt braucht alle fünf — aber je mehr du bewusst einsetzt, desto besser wird das Ergebnis.
+
+| Baustein | Frage, die er beantwortet | Beispiel |
+|----------|---------------------------|----------|
+| **Role** | Wer soll die AI sein? | „Du bist eine erfahrene Projektmanagerin." |
+| **Context** | Was ist die Situation? | „Unser Team plant die Einführung eines neuen CRM-Systems." |
+| **Task** | Was genau soll sie tun? | „Erstelle eine Risikoanalyse mit den fünf grössten Risiken." |
+| **Format** | Wie soll der Output aussehen? | „Als Tabelle mit Spalten: Risiko, Wahrscheinlichkeit, Massnahme." |
+| **Constraints** | Was soll sie *nicht* tun? | „Keine technischen Details, maximal eine Seite, Sprache: Deutsch." |
+
+### Role — Die Perspektive setzen
+
+<GlossaryTip term="Role Prompting" definition="Eine Technik, bei der du der AI eine bestimmte Rolle oder Expertise zuweist, um die Qualität und Perspektive der Antwort zu steuern." /> gibt der AI einen Rahmen. Wenn du sagst *„Du bist ein erfahrener Finanzberater"*, antwortet sie anders als ohne diese Vorgabe — fachspezifischer, strukturierter, mit anderem Vokabular.
+
+### Context — Die Situation erklären
+
+Ohne Kontext rät die AI. Mit Kontext versteht sie, was du wirklich brauchst. Dazu gehören: Hintergrund, Zielgruppe, bisherige Vorarbeit oder spezifische Rahmenbedingungen.
+
+### Task — Die Aufgabe benennen
+
+Die Task ist das Herzstück. Sie beantwortet die Frage: **Was genau soll die AI tun?** Je präziser die Aufgabe, desto weniger muss die AI raten.
+
+### Format — Die Form vorgeben
+
+Text, Tabelle, Liste, E-Mail, Stichpunkte? Wenn du das Format nicht nennst, wählt die AI eines — und es ist selten das, was du brauchst.
+
+### Constraints — Die Grenzen setzen
+
+Constraints sind das, was die meisten vergessen. Sie sagen der AI, was sie *nicht* tun soll: keine Fachbegriffe, maximal 200 Wörter, keine Spekulationen, nur auf Basis der gegebenen Daten.
+
+## Vorher und Nachher
+
+**Ohne Struktur:**
+
+> Schreib mir was über Risiken bei der CRM-Einführung.
+
+*Ergebnis: Ein allgemeiner Aufsatz über CRM-Risiken — lang, generisch, nicht auf dein Team zugeschnitten.*
+
+**Mit allen fünf Bausteinen:**
+
+> Du bist eine erfahrene Projektmanagerin mit Schwerpunkt IT-Einführungen. (**Role**)
+>
+> Unser 20-köpfiges Vertriebsteam wechselt nächsten Monat von Excel-Tracking zu Salesforce. Viele Teammitglieder haben wenig Erfahrung mit CRM-Systemen. (**Context**)
+>
+> Erstelle eine Risikoanalyse mit den fünf grössten Risiken für diese Umstellung. (**Task**)
+>
+> Format: Tabelle mit den Spalten Risiko, Eintrittswahrscheinlichkeit (hoch/mittel/niedrig), Auswirkung und empfohlene Gegenmassnahme. (**Format**)
+>
+> Halte die Sprache einfach — keine IT-Fachbegriffe. Maximal eine Seite. (**Constraints**)
+
+*Ergebnis: Eine sofort nutzbare Risikotabelle, zugeschnitten auf dein Team und deine Situation.*
+
+Der Unterschied ist nicht die Länge des Prompts — es ist die **Struktur**.
+
+## Was sind System Prompt und User Prompt?
+
+Vielleicht hast du die Begriffe schon gehört: Ein <GlossaryTip term="System Prompt" definition="Eine versteckte Anweisung, die das Verhalten der AI für die gesamte Konversation festlegt — sie wird vor dem eigentlichen Gespräch gesetzt und ist in der Regel nicht sichtbar." /> ist eine Anweisung, die *vor* dem Gespräch gesetzt wird und das Grundverhalten der AI steuert. Der <GlossaryTip term="User Prompt" definition="Die sichtbare Eingabe, die du direkt an die AI sendest — deine Frage, Aufgabe oder Anweisung im Chat." /> ist das, was du im Chat eingibst.
+
+In den meisten Tools schreibst du nur den User Prompt. Aber wenn du die fünf Bausteine nutzt, machst du im Grunde das, was ein System Prompt tut: Du gibst der AI einen klaren Rahmen, bevor sie loslegt.
+
+## Probier es aus
+
+1. Nimm eine Aufgabe aus deinem Arbeitsalltag — zum Beispiel eine E-Mail, eine Zusammenfassung oder eine Präsentationsgliederung.
+2. Schreibe zuerst einen einfachen Prompt ohne Struktur. Notiere das Ergebnis.
+3. Schreibe denselben Prompt nochmal, diesmal mit allen fünf Bausteinen (Role, Context, Task, Format, Constraints). Vergleiche die Ergebnisse.
+4. Experimentiere: Was passiert, wenn du nur die Role weglässt? Was, wenn du keine Constraints setzt?
+
+## Weiter gedacht
+
+Ein guter Prompt hat Struktur — nicht nur Inhalt. Die fünf Bausteine sind kein starres Schema, sondern ein Denkwerkzeug. Nicht jeder Prompt braucht alle fünf. Aber wenn du weisst, welche Bausteine es gibt, kannst du bewusst entscheiden, welche du einsetzt.
+
+In der nächsten Lektion lernst du konkrete Prompt-Techniken, die über die Grundstruktur hinausgehen — von Zero-Shot bis Chain-of-Thought.

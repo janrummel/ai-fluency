@@ -1,0 +1,90 @@
+---
+title: "Good vs. Bad Prompts"
+description: Five side-by-side comparisons show the difference between vague inputs and precise instructions — the synthesis of L2.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 5 of 5 — L2: Intentional Prompting
+
+## What You've Learned in L2
+
+You've learned how a <GlossaryTip term="Prompt" definition="The input you send to an AI model — your question, instruction, or task." /> is structured, which techniques move you forward, how iteration works as a method, and how to tailor prompts to different task types. This lesson brings it all together — through five before-and-after comparisons.
+
+## Five Comparisons, Five Principles
+
+### 1. Vague vs. Specific
+
+| Weak Prompt | Strong Prompt |
+|---|---|
+| "Write something about AI in healthcare." | "Write a 200-word summary of AI-assisted diagnostics for an audience of hospital administrators. Include one concrete example and one current limitation." |
+
+**Why:** A specific prompt defines the topic, length, audience, and content requirements. The AI doesn't have to guess — it can deliver.
+
+### 2. No Context vs. Full Context
+
+| Weak Prompt | Strong Prompt |
+|---|---|
+| "Give me feedback on this email." | "I'm writing to a client we've worked with for 3 years. They complained about a late delivery. Review my email for: professional but warm tone, clear apology, and a concrete resolution offer." |
+
+**Why:** Without context about the relationship, the situation, and the review criteria, feedback stays generic. With context, it becomes actionable.
+
+### 3. Everything at Once vs. Focused Single Task
+
+| Weak Prompt | Strong Prompt |
+|---|---|
+| "Summarize the report, find insights, create an outline, and draft talking points." | "Read the report and identify the 3 most important takeaways for our sales team. Structure each takeaway as: key finding (1 sentence), supporting evidence (data from the report), recommended action." |
+
+**Why:** Four tasks at once produce four mediocre results. One focused task with a clear structure produces a strong output that you can build on iteratively.
+
+### 4. No Format vs. Clear Output Format
+
+| Weak Prompt | Strong Prompt |
+|---|---|
+| "Compare these project management tools." | "Create a comparison table for Asana, Monday, and Notion. Columns: Price (team plan), Integrations, Reporting, Learning Curve. One row per tool, ratings as bullet points." |
+
+**Why:** Without a format specification, the AI decides — often producing prose that's hard to scan. With a table format, defined columns, and evaluation criteria, you get exactly the output you can use right away.
+
+### 5. "Make It Better" vs. Targeted Revision
+
+| Weak Prompt | Strong Prompt |
+|---|---|
+| "Improve this text." | "Revise this text: cut it by a third, replace passive constructions with active voice, and shift the tone from academic to 'experienced practitioner briefing colleagues.'" |
+
+**Why:** "Improve" is not an instruction — it's a wish. Targeted iteration names what should change (length, style, tone) and gives the AI a clear direction.
+
+## L2 Summary
+
+<DosDonts
+  dos={[
+    "Structure every prompt with role, task, and output format",
+    "Use techniques like few-shot examples or chain-of-thought deliberately",
+    "Refine results iteratively — with specific, directed feedback",
+    "One task per prompt, one clear goal per task",
+    "Match your prompt to the task type: analysis, creation, summary"
+  ]}
+  donts={[
+    "Give vague instructions without context, audience, or format specification",
+    "Bundle multiple unrelated tasks into a single prompt",
+    "Say 'Make it better' instead of steering with specific feedback",
+    "Assume the AI knows your company, your goals, or your audience",
+    "Use the same generic prompt regardless of the task"
+  ]}
+/>
+
+## Your L2 Checklist
+
+Before moving on to L3, you should be able to answer each of these with "yes":
+
+- [ ] I can break a prompt into its building blocks (Role, Task, Context, Format)
+- [ ] I know at least two prompting techniques and when to use them
+- [ ] I iterate deliberately — with concrete feedback instead of vague change requests
+- [ ] I tailor my prompts to the task type (analysis, writing, comparison, revision)
+- [ ] I write instructions rather than questions when I need a specific output
+
+## What's Next?
+
+In **[L3 — Context as Infrastructure](../l3-context-infrastructure/01-persistent-context/)**, you'll learn how to move from individual conversations to persistent context. Instead of starting from scratch every time, you build knowledge that carries over across sessions.
+
+The paradigm shift of L3: **From single conversations to persistent context.**

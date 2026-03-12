@@ -1,0 +1,113 @@
+---
+title: Iteration als Methode
+description: Der systematische Verfeinerungszyklus — wie du in 3-5 Schritten von einem Entwurf zum fertigen Ergebnis kommst.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 3 von 5 — L2: Bewusst Prompten
+
+## Die erste Antwort ist der Anfang, nicht das Ende
+
+In L1 hast du gelernt, dass AI-Antworten Entwürfe sind, keine Endprodukte. Jetzt machen wir daraus eine Methode. Statt auf den einen perfekten Prompt zu hoffen, arbeitest du in einem gezielten Zyklus: Prompt schreiben, Output bewerten, Lücke diagnostizieren, Prompt anpassen, wiederholen.
+
+Das funktioniert, weil die AI innerhalb eines Gesprächs den gesamten Verlauf im <GlossaryTip term="Context Window" definition="Der Bereich, den ein AI-Modell gleichzeitig 'sehen' kann — deine gesamte bisherige Konversation plus die aktuelle Eingabe. Alles innerhalb dieses Fensters beeinflusst die Antwort." /> behält. Du musst also nicht jedes Mal von vorne anfangen. Stattdessen machst du gezielte Anpassungen — wie ein Gespräch mit einem Kollegen, der deinen Entwurf Schritt für Schritt verbessert.
+
+## Der Verfeinerungszyklus in 5 Schritten
+
+1. **Prompt schreiben** — Erste Version mit Rolle, Kontext, Aufgabe und Format
+2. **Output bewerten** — Stimmt der Ton? Die Länge? Fehlt etwas?
+3. **Lücke diagnostizieren** — Was genau ist das Problem? (Nicht nur "gefällt mir nicht")
+4. **Prompt anpassen** — Eine gezielte Änderung, die das Problem adressiert
+5. **Wiederholen** — Bis das Ergebnis passt
+
+Der entscheidende Schritt ist Nummer 3: Die Diagnose. "Es ist schlecht" hilft weder dir noch der AI. "Der Ton ist zu formell für unsere Zielgruppe" ist eine Anweisung, mit der die AI arbeiten kann.
+
+## Ein konkretes Beispiel: Die Projekt-Update-Mail
+
+### Runde 1: Erster Entwurf
+
+**Du:**
+> Schreibe eine E-Mail an mein Team mit einem Projekt-Update.
+
+**AI:** *(schreibt eine generische, förmliche E-Mail mit Platzhaltern wie "[Projektname]" und "[Meilenstein]")*
+
+**Diagnose:** Zu allgemein, kein konkreter Inhalt, falscher Ton. Die AI hat zu wenig Kontext.
+
+---
+
+### Runde 2: Kontext ergänzen
+
+**Du:**
+> Das Projekt ist die Migration unserer Kundendatenbank auf ein neues CRM. Wir sind 2 Wochen im Verzug, aber die Datenmigration läuft seit gestern. Das Team sind 8 Leute aus Vertrieb und IT. Ton: direkt und ehrlich, nicht beschönigen. Max. 150 Wörter.
+
+**AI:** *(schreibt eine konkretere Mail, erwähnt die Verzögerung und den aktuellen Stand — aber formuliert zu vorsichtig und bürokratisch)*
+
+**Diagnose:** Inhalt stimmt jetzt. Aber der Ton ist zu vorsichtig — "wir befinden uns leider in einer Verzögerungssituation" statt klarer Ansage.
+
+---
+
+### Runde 3: Ton korrigieren
+
+**Du:**
+> Der Ton ist zu bürokratisch. Schreibe direkter — wie ich es in einem Standup sagen würde. Statt "wir befinden uns in einer Verzögerungssituation" einfach: "Wir sind 2 Wochen hinten." Keine Floskeln.
+
+**AI:** *(schreibt eine deutlich direktere Version — klarer Stand, keine Beschönigung, konkreter nächster Schritt)*
+
+**Diagnose:** Ton passt. Aber es fehlt ein konkreter Call-to-Action: Was soll das Team als nächstes tun?
+
+---
+
+### Runde 4: Feinschliff
+
+**Du:**
+> Gut. Ergänze am Ende einen konkreten Call-to-Action: Alle sollen bis Freitag ihre offenen Migrationstickets aktualisieren.
+
+**AI:** *(liefert die finale Version — direkt, ehrlich, mit klarem nächstem Schritt)*
+
+**Ergebnis:** Nach 4 Runden hast du eine E-Mail, die du so absenden kannst. Nicht weil der erste Prompt perfekt war, sondern weil du systematisch verfeinert hast.
+
+## Was bei jeder Runde passiert ist
+
+Beachte: In keiner Runde hast du den gesamten Prompt neu geschrieben. Stattdessen hast du in jeder Runde **eine Sache** gezielt angepasst:
+
+- Runde 2: Kontext hinzugefügt (Scope verengt)
+- Runde 3: Ton korrigiert (mit konkretem Beispiel)
+- Runde 4: Element ergänzt (Call-to-Action)
+
+Das ist die Stärke des Iterationszyklus: Jede Anpassung ist klein und spezifisch. Das macht die Ergebnisse vorhersehbar — und du lernst mit jeder Runde, was die AI braucht.
+
+## Iteration: Do's und Don'ts
+
+<DosDonts
+  dos={[
+    "Die Lücke benennen: 'Der Ton ist zu formell' statt 'Mach es besser'",
+    "Pro Runde eine Sache ändern — Ton, Länge, Inhalt oder Struktur",
+    "Konkrete Beispiele geben: 'Schreibe wie in einem Standup, nicht wie in einem Bericht'",
+    "Den Konversationsverlauf nutzen: Du musst nicht alles wiederholen"
+  ]}
+  donts={[
+    "Nach einer schlechten Antwort den kompletten Prompt neu schreiben",
+    "Mehrere Änderungen gleichzeitig verlangen und hoffen, dass alles klappt",
+    "Vages Feedback geben: 'Das gefällt mir nicht' ohne zu sagen warum",
+    "Einen neuen Chat starten, nur weil die erste Antwort nicht perfekt war"
+  ]}
+/>
+
+## Probier es aus
+
+### Übung 1: Der 4-Runden-Test
+Schreibe einen Text, den du tatsächlich brauchst — eine E-Mail, ein Meeting-Summary, eine Präsentation-Einleitung. Starte bewusst mit einem einfachen Prompt. Verfeinere in genau 4 Runden. Beobachte, wie sich der Output mit jeder Runde verändert.
+
+### Übung 2: Diagnose üben
+Bitte die AI um eine Produktbeschreibung für etwas aus deinem Arbeitsalltag. Bewerte den Output anhand dieser Checkliste: Ton richtig? Länge passend? Zielgruppe getroffen? Inhalt vollständig? Formuliere für jeden Mangel eine gezielte Korrektur.
+
+### Übung 3: Nur eine Sache ändern
+Nimm eine AI-Antwort, die "okay, aber nicht gut" ist. Identifiziere die **eine** Sache, die den größten Unterschied machen würde. Ändere nur diese. Wiederhole das dreimal.
+
+## Weiter gedacht
+
+Iteration ist keine Notlösung für schlechte Prompts — sie ist die Methode. Auch erfahrene Nutzer arbeiten in Zyklen, weil sich die beste Formulierung oft erst im Dialog zeigt.
+
+In der nächsten Lektion siehst du, wie die Bausteine und Techniken für sechs typische Aufgaben im Arbeitsalltag aussehen — vom Schreiben über Analysieren bis zum Brainstormen.

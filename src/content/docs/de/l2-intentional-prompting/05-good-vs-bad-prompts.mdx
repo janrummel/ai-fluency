@@ -1,0 +1,90 @@
+---
+title: "Gute vs. schlechte Prompts"
+description: Fünf Vergleiche zeigen den Unterschied zwischen vagen Eingaben und präzisen Anweisungen — die Synthese aus L2.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 5 von 5 — L2: Bewusst Prompten
+
+## Was du aus L2 mitnimmst
+
+Du hast gelernt, wie ein <GlossaryTip term="Prompt" definition="Die Eingabe, die du an ein AI-Modell sendest — deine Frage, Anweisung oder Aufgabe." /> aufgebaut ist, welche Techniken dich weiterbringen, wie Iteration funktioniert und wie du Prompts auf verschiedene Aufgabentypen zuschneidest. Diese Lektion bringt alles zusammen — an fünf Vorher-Nachher-Vergleichen.
+
+## Fünf Vergleiche, fünf Prinzipien
+
+### 1. Vage vs. spezifisch
+
+| Schwacher Prompt | Starker Prompt |
+|---|---|
+| "Schreib etwas über AI im Gesundheitswesen." | "Schreib eine 200-Wörter-Zusammenfassung über AI-gestützte Diagnostik für ein Fachpublikum aus Klinikmanagern. Nenne ein konkretes Beispiel und eine aktuelle Limitation." |
+
+**Warum:** Ein spezifischer Prompt definiert Thema, Länge, Zielgruppe und inhaltliche Anforderungen. Die AI muss nicht raten — sie kann liefern.
+
+### 2. Kein Kontext vs. vollständiger Kontext
+
+| Schwacher Prompt | Starker Prompt |
+|---|---|
+| "Gib mir Feedback zu dieser E-Mail." | "Ich schreibe an einen Kunden, mit dem wir seit 3 Jahren zusammenarbeiten. Er hat sich über eine verspätete Lieferung beschwert. Prüfe meine E-Mail auf: professionellen aber warmen Ton, klare Entschuldigung, konkreten Lösungsvorschlag." |
+
+**Warum:** Ohne Kontext über Beziehung, Situation und Prüfkriterien bleibt Feedback generisch. Mit Kontext wird es anwendbar.
+
+### 3. Alles auf einmal vs. fokussierte Einzelaufgabe
+
+| Schwacher Prompt | Starker Prompt |
+|---|---|
+| "Fasse den Bericht zusammen, finde Insights, erstelle eine Gliederung und entwirf Talking Points." | "Lies den Bericht und identifiziere die 3 wichtigsten Erkenntnisse für unser Sales-Team. Strukturiere jede Erkenntnis als: Kernaussage (1 Satz), Beleg (Daten aus dem Bericht), Handlungsempfehlung." |
+
+**Warum:** Vier Aufgaben gleichzeitig erzeugen vier mittelmässige Ergebnisse. Eine fokussierte Aufgabe mit klarer Struktur erzeugt einen starken Output, den du iterativ weiterbauen kannst.
+
+### 4. Kein Format vs. klares Ausgabeformat
+
+| Schwacher Prompt | Starker Prompt |
+|---|---|
+| "Vergleiche diese Projektmanagement-Tools." | "Erstelle eine Vergleichstabelle für Asana, Monday und Notion. Spalten: Preis (Team-Plan), Integrationen, Reporting, Lernkurve. Eine Zeile pro Tool, Bewertung in Stichpunkten." |
+
+**Warum:** Ohne Formatvorgabe entscheidet die AI — oft als Fliesstext, der schwer zu scannen ist. Mit Tabellenformat, Spalten und Bewertungskriterien bekommst du genau den Output, den du direkt weiterverwenden kannst.
+
+### 5. "Mach es besser" vs. gezielte Überarbeitung
+
+| Schwacher Prompt | Starker Prompt |
+|---|---|
+| "Verbessere den Text." | "Überarbeite den Text: Kürze ihn um ein Drittel, ersetze Passivkonstruktionen durch aktive Formulierungen, und passe den Ton von akademisch auf 'erfahrener Praktiker, der Kollegen briefet' an." |
+
+**Warum:** "Verbessere" ist keine Anweisung — es ist ein Wunsch. Gezielte Iteration benennt, was sich ändern soll (Länge, Stil, Ton), und gibt der AI eine klare Richtung.
+
+## L2-Zusammenfassung
+
+<DosDonts
+  dos={[
+    "Jeden Prompt mit Rolle, Aufgabe und Ausgabeformat strukturieren",
+    "Techniken wie Few-Shot Examples oder Chain-of-Thought gezielt einsetzen",
+    "Ergebnisse iterativ verfeinern — mit spezifischem, gerichtetem Feedback",
+    "Pro Prompt eine Aufgabe, pro Aufgabe ein klares Ziel",
+    "Den Prompt an den Aufgabentyp anpassen: Analyse, Kreation, Zusammenfassung"
+  ]}
+  donts={[
+    "Vage Anweisungen ohne Kontext, Zielgruppe oder Formatvorgabe geben",
+    "Mehrere unzusammenhängende Aufgaben in einem Prompt bündeln",
+    "Bei unbefriedigenden Ergebnissen 'Mach es besser' sagen statt konkret zu steuern",
+    "Annehmen, die AI kennt dein Unternehmen, deine Ziele oder dein Publikum",
+    "Immer denselben generischen Prompt verwenden, egal für welche Aufgabe"
+  ]}
+/>
+
+## Deine L2-Checkliste
+
+Bevor du zu L3 weitergehst, solltest du diese Punkte mit "Ja" beantworten können:
+
+- [ ] Ich kann einen Prompt in seine Bestandteile zerlegen (Rolle, Aufgabe, Kontext, Format)
+- [ ] Ich kenne mindestens zwei Prompting-Techniken und weiss, wann ich sie einsetze
+- [ ] Ich iteriere gezielt — mit konkretem Feedback statt vagen Änderungswünschen
+- [ ] Ich passe meine Prompts an den Aufgabentyp an (Analyse, Text, Vergleich, Überarbeitung)
+- [ ] Ich formuliere Anweisungen statt Fragen, wenn ich einen bestimmten Output brauche
+
+## Wie geht es weiter?
+
+In **[L3 — Kontext als Infrastruktur](../l3-context-infrastructure/01-persistent-context/)** lernst du, wie du von einzelnen Gesprächen zu persistentem Kontext kommst. Statt jedes Mal bei null anzufangen, baust du Wissen auf, das über Sessions hinweg bestehen bleibt.
+
+Der Paradigmenwechsel von L3: **Von Einzelgesprächen zu persistentem Kontext.**

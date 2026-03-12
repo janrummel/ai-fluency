@@ -1,0 +1,113 @@
+---
+title: Iteration as a Method
+description: The systematic refinement cycle — how to go from a rough draft to a polished result in 3-5 steps.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 3 of 5 — L2: Intentional Prompting
+
+## The First Answer Is the Beginning, Not the End
+
+In L1, you learned that AI responses are drafts, not finished products. Now we turn that insight into a method. Instead of hoping for the one perfect prompt, you work in a deliberate cycle: write a prompt, evaluate the output, diagnose the gap, adjust the prompt, repeat.
+
+This works because the AI retains the entire conversation history within its <GlossaryTip term="Context Window" definition="The span of text an AI model can 'see' at once — your entire conversation history plus the current input. Everything within this window influences the response." />. You don't have to start over each time. Instead, you make targeted adjustments — like a conversation with a colleague who refines your draft step by step.
+
+## The Refinement Cycle in 5 Steps
+
+1. **Write the prompt** — First version with role, context, task, and format
+2. **Evaluate the output** — Is the tone right? The length? Is something missing?
+3. **Diagnose the gap** — What exactly is the problem? (Not just "I don't like it")
+4. **Adjust the prompt** — One targeted change that addresses the problem
+5. **Repeat** — Until the result fits
+
+The critical step is number 3: the diagnosis. "It's bad" doesn't help you or the AI. "The tone is too formal for our audience" is an instruction the AI can work with.
+
+## A Concrete Example: The Project Status Update
+
+### Round 1: First Draft
+
+**You:**
+> Write an email to my team with a project update.
+
+**AI:** *(writes a generic, formal email with placeholders like "[Project Name]" and "[Milestone]")*
+
+**Diagnosis:** Too generic, no concrete content, wrong tone. The AI didn't have enough context.
+
+---
+
+### Round 2: Adding Context
+
+**You:**
+> The project is the migration of our customer database to a new CRM. We're 2 weeks behind schedule, but the data migration kicked off yesterday. The team is 8 people from Sales and Engineering. Tone: direct and honest, don't sugarcoat it. 150 words max.
+
+**AI:** *(writes a more specific email, mentions the delay and current status — but phrases things too cautiously and formally)*
+
+**Diagnosis:** The content is right now. But the tone is too cautious — "we are currently experiencing a delay in our timeline" instead of a straight answer.
+
+---
+
+### Round 3: Fixing the Tone
+
+**You:**
+> The tone is too corporate. Write it the way I'd say it in a standup. Instead of "we are currently experiencing a delay in our timeline," just say: "We're 2 weeks behind." No buzzwords, no filler.
+
+**AI:** *(writes a noticeably more direct version — clear status, no sugarcoating, concrete next step)*
+
+**Diagnosis:** Tone is right. But it's missing a clear call-to-action: what should the team do next?
+
+---
+
+### Round 4: Final Polish
+
+**You:**
+> Good. Add a specific call-to-action at the end: everyone should update their open migration tickets in Jira by Friday.
+
+**AI:** *(delivers the final version — direct, honest, with a clear next step)*
+
+**Result:** After 4 rounds, you have an email you can actually send. Not because the first prompt was perfect, but because you refined systematically.
+
+## What Happened in Each Round
+
+Notice: in no round did you rewrite the entire prompt from scratch. Instead, in each round you adjusted **one thing**:
+
+- Round 2: Added context (narrowed the scope)
+- Round 3: Fixed the tone (with a concrete example)
+- Round 4: Added an element (call-to-action)
+
+This is the strength of the iteration cycle: each adjustment is small and specific. That makes the results predictable — and with each round, you learn what the AI needs.
+
+## Iteration: Do's and Don'ts
+
+<DosDonts
+  dos={[
+    "Name the gap: 'The tone is too formal' instead of 'Make it better'",
+    "Change one thing per round — tone, length, content, or structure",
+    "Give concrete examples: 'Write it like a standup update, not a board report'",
+    "Use the conversation history: you don't need to repeat everything"
+  ]}
+  donts={[
+    "Rewrite the entire prompt after a bad response",
+    "Request multiple changes at once and hope everything lands",
+    "Give vague feedback: 'I don't like it' without saying why",
+    "Start a new chat just because the first answer wasn't perfect"
+  ]}
+/>
+
+## Try It
+
+### Exercise 1: The 4-Round Test
+Write a piece of text you actually need — an email, a meeting summary, a presentation intro. Start deliberately with a simple prompt. Refine in exactly 4 rounds. Observe how the output changes with each iteration.
+
+### Exercise 2: Practice Diagnosing
+Ask the AI for a product description of something from your daily work. Evaluate the output against this checklist: Tone right? Length appropriate? Audience matched? Content complete? For each shortcoming, write a targeted correction.
+
+### Exercise 3: Change Only One Thing
+Take an AI response that's "okay but not good." Identify the **one** thing that would make the biggest difference. Change only that. Repeat three times.
+
+## Think Further
+
+Iteration is not a workaround for bad prompts — it is the method. Even experienced users work in cycles, because the best formulation often only emerges through dialogue.
+
+In the next lesson, you'll see how different task types call for different prompt strategies — from writing and analysis to brainstorming and formulas.
