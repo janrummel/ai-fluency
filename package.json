@@ -1,0 +1,20 @@
+{
+  "name": "ai-fluency",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.37.7",
+    "astro": "^5.18.0",
+    "sharp": "^0.34.2"
+  },
+  "overrides": {
+    "@astrojs/sitemap": "3.7.0"
+  }
+}
