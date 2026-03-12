@@ -1,0 +1,105 @@
+---
+title: Understanding Limits
+description: Hallucinations, knowledge cutoff, data privacy, and bias — what you need to know about AI's limitations.
+---
+
+import DosDonts from '../../../../components/DosDonts.astro';
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 4 of 5 — L1: First Steps
+
+## Why know the limits?
+
+AI tools are impressively capable — but they have systematic weaknesses you need to understand. Not to be afraid, but to use them effectively. A tool whose limits you know is more useful than one you overestimate.
+
+## Hallucinations: When AI invents things
+
+<GlossaryTip term="Halluzination" definition="An AI response that is false or fabricated but sounds confident and convincing." />s aren't rare glitches — they're a systemic feature. AI models don't optimize for truth but for **plausibility**. If the most "correct-sounding" answer is a fabricated one, the AI will deliver it.
+
+### A real case
+
+In 2023, US attorney Steven Schwartz used ChatGPT for legal research. ChatGPT generated six **completely fabricated court cases** — with realistic-sounding names, docket numbers, and even page citations. The lawyer submitted them to court without verification. He was sanctioned, and the case made international news.
+
+Since then, over 700 similar cases have been documented worldwide. Not because AI got worse, but because more people use it without checking the results.
+
+### Warning signs for hallucinations
+
+- Very specific numbers or statistics without a clear source
+- Source citations you can't find online
+- Confident answers about very recent events
+- Biographical details about lesser-known people
+- Answers that seem "too perfect" and gap-free
+
+### Three steps to verify
+
+1. **Cross-check facts:** Research numbers, names, and dates independently
+2. **Ask for sources:** Have the AI cite its sources — then verify those sources exist
+3. **The "too perfect" test:** If an answer seems suspiciously complete, look closer. Real information has nuances and caveats
+
+## Knowledge cutoff: What AI doesn't know
+
+AI models are trained on data up to a specific date — the <GlossaryTip term="Knowledge Cutoff" definition="The date up to which an AI model's training data reaches. It doesn't know about events after this date." />. Events after that date aren't part of the model's knowledge.
+
+**Example:** If you ask about election results that happened after the cutoff, the AI might either:
+- Say it doesn't know (good)
+- Invent a plausible-sounding answer (bad — hallucination)
+
+**Caveat:** Many AI tools now include web search and can find current information. But: search quality varies, and the AI may mix current with outdated information.
+
+## Data privacy: What happens with your inputs
+
+An often underestimated topic. What you type into an AI chatbot is **not automatically private**.
+
+### The core rule
+
+| Provider | Free plan | Opt-out available? | Business plan |
+|----------|----------|-------------------|---------------|
+| ChatGPT | Training ON | Yes | No training |
+| Claude | Training ON (since Sep 2025) | Yes | No training |
+| Gemini | Training ON, stored 18 months | Yes | No training |
+| Copilot | Improvement ON | Limited | No training |
+
+**What this means:** On free plans, your conversations are used for model training by default. You can turn this off, but you have to **actively do so**.
+
+### Five privacy rules for beginners
+
+1. **Never enter passwords, financial data, or health information** into AI chatbots
+2. **Check your privacy settings** — set opt-out on first login if desired
+3. **Assume someone might read it** — all providers store data for at least 30 days
+4. **Paid/business plans are more private** — contractual data protection
+5. **Delete conversations** you don't want stored
+
+## Bias: The blind spots
+
+AI learns from human-written text — and inherits its biases. If training data contains more English-language sources, English answers are better. If certain perspectives are overrepresented, the AI reflects that.
+
+**Practical example:** If you ask AI to describe "a successful entrepreneur," it will statistically more often describe a man from Silicon Valley — not because that's correct, but because that perspective dominates the training data.
+
+**What you can do:** Be aware that AI responses may have built-in bias. Question especially evaluations, recommendations, and descriptions of people.
+
+## Summary
+
+<DosDonts
+  dos={[
+    "Always cross-check AI answers for important facts",
+    "Configure privacy settings on first login",
+    "Use AI as a starting point, not as the final word",
+    "Be aware that AI responses may contain bias"
+  ]}
+  donts={[
+    "Accept numbers, statistics, or sources without verification",
+    "Enter sensitive data (passwords, health, finances)",
+    "Treat AI as an objective, neutral authority",
+    "Assume AI knows about current events"
+  ]}
+/>
+
+## Try it yourself
+
+1. Ask the AI about a technical term from your field where you know the correct answer. How accurate is the response? Where does it deviate?
+2. Check the privacy settings in your AI tool right now. Is the opt-out active?
+3. Ask the AI: *"What do you know about [a current event from the past week]?"* Observe whether it answers beyond its knowledge cutoff or uses web search.
+
+## Think further
+
+Knowing the limits doesn't make you a skeptic — it makes you a competent user. In the final L1 lesson, we'll bring it all together: the essential do's and don'ts for your daily work with AI.
