@@ -24,6 +24,9 @@ export default defineConfig({
         en: { label: 'English', lang: 'en' },
       },
       customCss: ['./src/styles/custom.css'],
+      components: {
+        Head: './src/components/Head.astro',
+      },
       sidebar: [
         {
           label: 'Start',
