@@ -1,0 +1,8 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+<Default {...Astro.props}><slot /></Default>
+<script is:inline>
+(function(){var m=location.pathname.match(/\/l(\d)-/);if(m)document.body.dataset.level=m[1]})();
+</script>

@@ -1,31 +1,13 @@
 /* ============================================================
-   AI Fluency — HIG-Inspired Design System
-   Professional, spacious, clean. Apple HIG as visual north star.
+   AI Fluency — Dark-First Design System with Level Colors
+   Apple HIG Dark Mode as visual north star.
    ============================================================ */
 
-/* --- Design Tokens (Light) --- */
+/* --- Design Tokens (Dark — Default) --- */
 :root {
-  --af-bg: #FAFAFA;
-  --af-surface: #FFFFFF;
-  --af-text: #1D1D1F;
-  --af-text-secondary: #6E6E73;
-  --af-accent: #0071E3;
-  --af-accent-hover: #0077ED;
-  --af-border: #D2D2D7;
-  --af-border-subtle: #E8E8ED;
-  --af-success: #248A3D;
-  --af-success-bg: #F0FAF2;
-  --af-danger: #D70015;
-  --af-danger-bg: #FFF5F5;
-  --af-code-bg: #F5F5F7;
-  --af-blockquote-bg: #F5F5F7;
-  --af-blockquote-border: #0071E3;
-}
-
-/* --- Design Tokens (Dark) --- */
-:root[data-theme='dark'] {
-  --af-bg: #1C1C1E;
-  --af-surface: #2C2C2E;
+  --af-bg: #121214;
+  --af-surface: #1C1C1E;
+  --af-surface-raised: #2C2C2E;
   --af-text: #F5F5F7;
   --af-text-secondary: #98989D;
   --af-accent: #2997FF;
@@ -36,10 +18,46 @@
   --af-success-bg: #1A2E1F;
   --af-danger: #FF453A;
   --af-danger-bg: #2E1A1A;
-  --af-code-bg: #2C2C2E;
-  --af-blockquote-bg: #2C2C2E;
+  --af-code-bg: var(--af-surface-raised);
+  --af-blockquote-bg: var(--af-surface-raised);
   --af-blockquote-border: #2997FF;
+
+  /* Level Colors (Dark) */
+  --af-l1: #2997FF;  --af-l1-bg: rgba(41,151,255,0.15);
+  --af-l2: #30D158;  --af-l2-bg: rgba(48,209,88,0.15);
+  --af-l3: #FF9F0A;  --af-l3-bg: rgba(255,159,10,0.15);
+  --af-l4: #BF5AF2;  --af-l4-bg: rgba(191,90,242,0.15);
 }
+
+/* --- Design Tokens (Light) --- */
+[data-theme='light'] {
+  --af-bg: #FAFAFA;
+  --af-surface: #FFFFFF;
+  --af-surface-raised: #F5F5F7;
+  --af-text: #1D1D1F;
+  --af-text-secondary: #6E6E73;
+  --af-accent: #0071E3;
+  --af-accent-hover: #0077ED;
+  --af-border: #D2D2D7;
+  --af-border-subtle: #E8E8ED;
+  --af-success: #248A3D;
+  --af-success-bg: #F0FAF2;
+  --af-danger: #D70015;
+  --af-danger-bg: #FFF5F5;
+  --af-blockquote-border: #0071E3;
+
+  /* Level Colors (Light) */
+  --af-l1: #0071E3;  --af-l1-bg: rgba(0,113,227,0.1);
+  --af-l2: #248A3D;  --af-l2-bg: rgba(36,138,61,0.1);
+  --af-l3: #E87400;  --af-l3-bg: rgba(232,116,0,0.1);
+  --af-l4: #8B5CF6;  --af-l4-bg: rgba(139,92,246,0.1);
+}
+
+/* --- Contextual Level Colors --- */
+body[data-level="1"] { --af-level-color: var(--af-l1); --af-level-bg: var(--af-l1-bg); }
+body[data-level="2"] { --af-level-color: var(--af-l2); --af-level-bg: var(--af-l2-bg); }
+body[data-level="3"] { --af-level-color: var(--af-l3); --af-level-bg: var(--af-l3-bg); }
+body[data-level="4"] { --af-level-color: var(--af-l4); --af-level-bg: var(--af-l4-bg); }
 
 /* --- Starlight Overrides --- */
 :root {
@@ -121,6 +139,14 @@ body {
 
 .sl-markdown-content p {
   margin-bottom: 1.25rem;
+}
+
+/* --- Gradient Text Utility --- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--af-l1), var(--af-l4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* --- Links --- */
@@ -221,10 +247,10 @@ nav.sidebar a:hover {
 }
 
 nav.sidebar a[aria-current='page'] {
-  color: var(--af-accent);
+  color: var(--af-level-color, var(--af-accent));
   font-weight: 600;
-  border-left-color: var(--af-accent);
-  background: color-mix(in srgb, var(--af-accent) 6%, transparent);
+  border-left-color: var(--af-level-color, var(--af-accent));
+  background: color-mix(in srgb, var(--af-level-color, var(--af-accent)) 6%, transparent);
 }
 
 nav.sidebar .group-label {
