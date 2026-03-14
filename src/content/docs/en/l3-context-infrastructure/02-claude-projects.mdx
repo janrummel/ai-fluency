@@ -1,0 +1,163 @@
+---
+title: "Claude Projects: Your First Persistent Workspace"
+description: Step-by-step guide to setting up a Claude Project — with knowledge base, custom instructions, and practical examples for everyday work.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 2 of 5 — L3: Context as Infrastructure
+
+## From Theory to Practice
+
+In Lesson 1, you understood why persistent context matters. Now let's build one. <GlossaryTip term="Claude Projects" definition="Persistent workspaces in Claude.ai that bundle a knowledge base (uploaded documents), custom instructions, and chat history in one place. Every chat within a project automatically has access to the full project context." /> are the most concrete implementation of the "explain your job once" concept — a workspace that brings together knowledge, rules, and conversations.
+
+## What a Claude Project Is
+
+A Project consists of three elements:
+
+| Element | What It Does | Analogy |
+|---|---|---|
+| **Knowledge Base** | Documents that Claude uses as reference | The shelf with the handbooks |
+| **Custom Instructions** | Rules for behavior, tone, and format | The onboarding document |
+| **Chats** | Individual conversations within the project | Meetings in the same office |
+
+Every chat within a project automatically has access to the knowledge base and instructions. No copying, no explaining — the context is just there.
+
+**Important:** Individual chats do **not** share their history with each other. Only the knowledge base and instructions are shared across the project. If you discuss something in Chat A, Chat B doesn't know about it — unless you add it to the knowledge base.
+
+## Step by Step: Setting Up a Project
+
+### 1. Create the Project
+
+Go to **claude.ai/projects** (or via the sidebar → "Projects") and click **"+ New Project"**. Enter a name and brief description.
+
+*Note: Claude cannot see the project name or description — they're for your organization only. Everything you want Claude to know belongs in the Instructions or Knowledge Base.*
+
+### 2. Fill the Knowledge Base
+
+Click **"+"** in the right sidebar and upload files:
+
+| File Type | Formats | Limit |
+|---|---|---|
+| **Documents** | PDF, DOCX, TXT, CSV, HTML, JSON, EPUB | 30 MB per file |
+| **Spreadsheets** | XLSX (requires Code Execution enabled) | 30 MB per file |
+| **Images** | JPEG, PNG, GIF, WebP | 8000 × 8000 px |
+
+**What to upload?** Anything Claude should reference when answering: style guides, project documentation, competitive analyses, data sheets, templates.
+
+**What not to upload?** Sensitive data you don't want to share with the AI provider. Check your plan's privacy policy first.
+
+### 3. Write Custom Instructions
+
+Click **"Set project instructions"** and write your rules. Here's an example for a content team project:
+
+```
+You are a content strategist for [Company Name].
+
+Context:
+- Audience: CTOs and VP Engineering at companies with 100-500 employees
+- Tone: authoritative but approachable (see Brand Guide)
+- Channels: Blog, LinkedIn, Newsletter
+
+Rules:
+- Every blog post draft includes headline and meta description
+- Use the uploaded SEO keyword list
+- Flag claims that need fact-checking
+- Paragraphs max 4 sentences
+```
+
+### 4. Start Working
+
+Begin a new chat within the project. Claude immediately has access to all uploaded files and follows your instructions — without you having to repeat anything.
+
+## Knowledge Base: Strategies for Practice
+
+### Strategy 1: Reference Documents
+
+Upload the documents you'd otherwise copy-paste into every chat: style guides, process descriptions, templates.
+
+### Strategy 2: Context Anchors
+
+Summarize background knowledge in a short document that Claude uses as a foundation: "Who are our customers?", "What's our product strategy?", "How do we use certain terms?"
+
+### Strategy 3: Living Knowledge Base
+
+Update the knowledge base regularly. Remove outdated documents, add new ones. The knowledge base is the source of truth for the project — if it's outdated, the answers will be too.
+
+## Custom Instructions: Three Patterns
+
+### Pattern 1: Role + Rules (most common)
+
+```
+You are [role] for [context].
+Rules:
+- [Rule 1]
+- [Rule 2]
+- [Rule 3]
+```
+
+Sufficient for most use cases. Clear, concise, maintainable.
+
+### Pattern 2: Workflow Instructions
+
+```
+For every analysis, follow this process:
+1. Summary (2-3 sentences)
+2. Key findings (3 points)
+3. Recommended action
+4. Open questions
+```
+
+Good for recurring tasks with the same workflow.
+
+### Pattern 3: Context + Constraints
+
+```
+My context:
+- [Industry, team, product]
+
+Output rules:
+- When uncertain: say so, don't guess
+- No recommendations without evidence
+- Plain English, avoid jargon
+```
+
+For projects where quality standards matter more than a fixed workflow.
+
+## How Personalization Layers Work Together
+
+Claude offers three tiers that work independently or in combination:
+
+| Tier | Scope | Purpose |
+|---|---|---|
+| **Profile Preferences** | All conversations, account-wide | Global context about you |
+| **Project Instructions** | Single project | Project-specific rules and context |
+| **Styles** | Per conversation or global | Tone and formatting (no content context) |
+
+Profile Preferences provide the "who I am." Project Instructions provide the "what this project needs." Styles provide the "how it should sound." Combining all three creates the strongest context you can build on Claude.
+
+## Availability by Plan
+
+| Plan | Projects | Knowledge Base | RAG | Sharing |
+|---|---|---|---|---|
+| **Free** | Up to 5 | Basic uploads | No | No |
+| **Pro** | Unlimited | Full | Yes (automatic) | No |
+| **Team** | Unlimited | Full | Yes | Yes (team) |
+| **Enterprise** | Unlimited | Full | Yes | Yes (organization) |
+
+On paid plans, the knowledge base automatically scales beyond the <GlossaryTip term="Context Window" definition="The span of text an AI model can 'see' at once — your entire conversation history plus the current input. Everything within this window influences the response." /> — Claude activates <GlossaryTip term="RAG" definition="Retrieval Augmented Generation — a technique where the AI model retrieves relevant information from a knowledge base before responding. This extends capacity beyond the context window." /> automatically and can process up to 10× more content.
+
+## Try It Yourself
+
+### Exercise 1: Your First Project
+Create a Claude Project for a recurring task from your workday. Write custom instructions using the "Role + Rules" pattern. Upload a reference document. Test with 3 typical requests.
+
+### Exercise 2: Iterate on Instructions
+Use the project for a week. Note where Claude deviates from the desired behavior. Adjust instructions with targeted changes — one rule per problem. Observe whether results improve.
+
+### Exercise 3: Knowledge Base vs. Instructions
+Experiment: What belongs in instructions (rules, behavior) vs. the knowledge base (facts, references)? Move content between the two. Observe the difference.
+
+## Looking Ahead
+
+Claude Projects are one of several ways to build persistent context. In the next lesson, you'll learn about **Custom GPTs** — OpenAI's approach to the same problem, with its own strengths and trade-offs. The comparison helps you understand which tool fits which situation.

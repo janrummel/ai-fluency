@@ -1,0 +1,119 @@
+---
+title: "M365 Copilot: AI Embedded in Your Workflow"
+description: How Microsoft 365 Copilot takes a fundamentally different approach to context — integrated into Word, Excel, Outlook, and Teams rather than a separate chat interface.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 4 of 5 — L3: Context as Infrastructure
+
+## A Different Paradigm
+
+Claude Projects and Custom GPTs have something in common: You upload context — documents, instructions, rules. <GlossaryTip term="Microsoft 365 Copilot" definition="An AI assistant integrated directly into Microsoft 365 apps (Word, Excel, PowerPoint, Outlook, Teams) that accesses organizational data through the Microsoft Graph — emails, documents, calendars, chats." /> flips the principle: **The context is already there.** Your emails, documents, calendars, Teams chats — Copilot has access to your existing work life through the <GlossaryTip term="Microsoft Graph" definition="Microsoft's data layer that connects information across all Microsoft 365 services — emails, calendars, files, Teams chats, SharePoint documents. Copilot uses the Graph to ground responses in your work context." />.
+
+No uploading, no separate interface. AI where you already work.
+
+## How the Context Works
+
+M365 Copilot uses a three-layer model:
+
+| Layer | What It Provides | Example |
+|---|---|---|
+| **Microsoft Graph** | Your organizational data | Emails, files, calendars, Teams chats |
+| **Web Grounding** | Current information from the web | Fact-checking, supplementation |
+| **Your Prompt** | Your specific instruction | "Summarize the last 5 emails about Project X" |
+
+The crucial difference: You don't configure a system prompt. The **integration itself** is the context. Copilot knows who wrote to you, what you're working on, and what meetings are coming up — because it sees the same data you do.
+
+## Copilot in Practice: App by App
+
+### Word
+**What Copilot can do:** Generate drafts from bullet points, rewrite text, summarize, adjust tone.
+
+**Typical use:** "Write a first draft based on the project brief in /SharePoint/Project-Alpha/Brief.docx"
+
+**Context source:** The current document + referenced files from SharePoint/OneDrive.
+
+### Excel
+**What Copilot can do:** Suggest formulas, analyze data, identify trends, create visualizations.
+
+**Typical use:** "Which product category had the steepest decline in Q3?"
+
+**Context source:** The current spreadsheet. Copilot in Excel remains the most limited — complex data analysis often requires manual follow-up.
+
+### PowerPoint
+**What Copilot can do:** Generate presentations from documents, suggest designs, restructure slides.
+
+**Typical use:** "Create a presentation based on the quarterly strategy Word document"
+
+**Context source:** Referenced Word or PDF files.
+
+### Outlook
+**What Copilot can do:** Summarize emails, draft replies, distill long threads.
+
+**Typical use:** "Summarize this email thread and suggest a reply"
+
+**Context source:** Email history, calendar, contacts.
+
+### Teams
+**What Copilot can do:** Create meeting summaries, extract action items, search chat histories.
+
+**Typical use:** "What was decided about timelines in the last project meeting?"
+
+**Context source:** Meeting transcripts, chat histories.
+
+## What M365 Copilot Does Well — and What It Doesn't
+
+### Strengths
+
+- **Seamless integration**: No tool-switching — AI is where you already work
+- **Live context**: No document uploads, no setup — your work context is automatically available
+- **Enterprise-grade security**: Data stays within the organization, compliance-ready
+- **Cross-app context**: Copilot can connect information from emails, documents, and chats
+
+### Limitations
+
+- **Price**: $30/user/month for Business — a significant investment that needs to pay off
+- **Lock-in**: Only useful within the Microsoft ecosystem. If you don't work with M365, Copilot isn't an option.
+- **Quality varies**: Strong in Word and Outlook, still limited in Excel. Not every app benefits equally.
+- **No custom tuning**: You can't fine-tune Copilot to your specific needs the way you can with custom instructions
+- **Admin dependency**: IT must enable and configure Copilot — you can't just start using it yourself
+- **Privacy awareness required**: Copilot accesses all data you have access to. That includes documents you may have forgotten about.
+
+## Three Approaches Compared
+
+| Aspect | Claude Projects | Custom GPTs | M365 Copilot |
+|---|---|---|---|
+| **Context source** | Uploaded files | Uploaded files | Live data (Graph) |
+| **Where you work** | Claude.ai | ChatGPT | Inside M365 apps |
+| **Setup** | User creates project | User creates GPT | Admin deploys |
+| **Context control** | You decide what goes in | You decide what goes in | Organization + automatic |
+| **Strength** | Flexible workspace | Shareable, API actions | Seamless workflow |
+| **Weakness** | Only on Claude.ai | Knowledge extractable | Expensive, lock-in |
+| **Ideal for** | Project work with documents | Specialized tools to share | Teams in M365 environments |
+
+## Making the Right Choice
+
+The question isn't "which tool is best" — it's **"which fits your work context"**:
+
+- **You work primarily in Microsoft 365?** → Copilot is the most natural way to bring AI into your workflow. Check whether the price justifies the value.
+- **You need a flexible workspace for project work?** → Claude Projects give you the most control over context and quality.
+- **You want to build and share specialized tools?** → Custom GPTs are the most accessible format for that.
+- **You use multiple tools?** → That's normal, and often the smartest approach. Copilot for daily workflow, Claude Projects for deep work, Custom GPTs for specialized tasks.
+
+## Try It Yourself
+
+### Exercise 1: Context Inventory
+Take stock: Where does the context you need daily actually live? Emails, SharePoint, local files, notes? Which of the three tools (Projects, GPTs, Copilot) would have the easiest access?
+
+### Exercise 2: Workflow Mapping
+Take three recurring tasks from your work week. Assign each to the best-fit tool: Which would benefit from Copilot? Which from a Claude Project? Which from a Custom GPT?
+
+### Exercise 3: Cost-Benefit
+If you have access to M365 Copilot: Test it consciously for one week. Log every use: What saved time? What was disappointing? Calculate: Is $30/month worth it for you?
+
+## Looking Ahead
+
+M365 Copilot shows where things are heading: AI that doesn't live in a separate interface but is embedded in the tools you already use. Context isn't configured — it emerges from your work.
+
+But regardless of the tool, one skill remains central: **Writing good instructions.** Whether you define custom instructions in a Claude Project, configure a Custom GPT, or simply prompt better — the principles are the same. In the next lesson, you'll learn the anatomy of a strong system prompt — the synthesis of L3.

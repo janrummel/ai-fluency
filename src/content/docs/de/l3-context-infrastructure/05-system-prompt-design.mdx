@@ -1,0 +1,187 @@
+---
+title: "System Prompt Design: Die Kunst der guten Anweisung"
+description: Wie du einen System Prompt baust, der funktioniert — Anatomie, drei konkrete Beispiele, häufige Anti-Patterns und die Synthese von L3.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+import DosDonts from '../../../../components/DosDonts.astro';
+
+> Lektion 5 von 5 — L3: Kontext als Infrastruktur
+
+## Die Brücke zwischen Wissen und Wirkung
+
+Du kennst jetzt drei Wege, persistenten Kontext aufzubauen: Claude Projects, Custom GPTs, M365 Copilot. Alle drei haben eines gemeinsam: Die Qualität steht und fällt mit der Qualität deiner Anweisungen. Ob du Custom Instructions in einem Claude Project schreibst, einen Custom GPT konfigurierst oder einen komplexeren Prompt in einem einzelnen Chat verwendest — die Prinzipien sind dieselben.
+
+Diese Lektion ist die Synthese von L3: Wie du einen <GlossaryTip term="System Prompt" definition="Eine versteckte Anweisung, die das Verhalten der AI für die gesamte Konversation festlegt — sie wird vor dem eigentlichen Gespräch gesetzt und ist in der Regel nicht sichtbar." /> baust, der funktioniert.
+
+## Anatomie eines starken System Prompts
+
+Die goldene Regel kommt von Anthropic:
+
+> "Zeige deinen Prompt einem Kollegen mit minimalem Kontext und bitte ihn, danach zu handeln. Wenn er verwirrt wäre, wird die AI es auch sein."
+
+Ein AI-Modell ist wie ein brillanter neuer Mitarbeiter: Hoch kompetent, aber ohne Kontext zu deinen Normen, deinem Stil und deinen Erwartungen. Je klarer du erklärst, was du willst, desto besser das Ergebnis.
+
+### Die sieben Bausteine
+
+Nicht jeder Prompt braucht alle sieben. Aber wenn du sie kennst, kannst du bewusst entscheiden, welche du einsetzt:
+
+| Baustein | Zweck | Beispiel |
+|---|---|---|
+| **Rolle** | Fokussiert Verhalten und Expertise | "Du bist eine erfahrene Strategieberaterin." |
+| **Kontext** | Erklärt das Warum hinter den Regeln | "Die Antwort wird vorgelesen — keine Ellipsen." |
+| **Aufgabe** | Was konkret getan werden soll | "Analysiere Quartalsberichte und identifiziere Trends." |
+| **Format** | Wie der Output aussehen soll | "3–5 Bullet Points, max. 2 Sätze pro Punkt." |
+| **Constraints** | Grenzen und Einschränkungen | "Nur Informationen aus den bereitgestellten Dokumenten." |
+| **Beispiele** | Konkrete Input/Output-Paare | Ein gutes Beispiel zeigt mehr als zehn Regeln. |
+| **Tonalität** | Sprachstil und Ansprache | "Professionell aber zugänglich, Du-Ansprache." |
+
+### Die wichtigste Erkenntnis
+
+**Kontext erklärt das Warum.** Und das Warum ist der stärkste Baustein.
+
+Vergleiche:
+- "Verwende keine Ellipsen." → Die AI folgt der Regel, aber nur buchstäblich.
+- "Die Antwort wird von einer Text-to-Speech-Engine vorgelesen. Verwende keine Ellipsen, da die Engine sie nicht aussprechen kann." → Die AI versteht den Grund und vermeidet auch andere TTS-Probleme, die du nicht explizit genannt hast.
+
+## Drei Beispiele: Vom Entwurf zum starken Prompt
+
+### Beispiel 1: Fachredakteur
+
+```
+Du bist ein erfahrener Fachredakteur für technische Themen. Dein
+Publikum hat solides Grundwissen, aber keine Spezialisierung.
+
+Stil:
+- Professionell aber zugänglich
+- Aktive Formulierungen bevorzugen
+- Fachbegriffe beim ersten Auftreten kurz erklären
+- Deutsch mit englischen Fachbegriffen wo branchenüblich
+
+Format:
+- Fliesstext mit klarer Absatzstruktur
+- Zwischenüberschriften nur bei Texten über 500 Wörter
+
+Qualität:
+- Behauptungen mit Quellenhinweisen stützen
+- Bei Unsicherheit: "Hier bin ich nicht sicher, aber..."
+- Keine Marketing-Sprache oder Superlative ohne Beleg
+```
+
+**Warum es funktioniert:** Klare Rolle mit Zielgruppen-Definition. Positiv formulierte Stilregeln. Ehrlichkeits-Constraint bei Unsicherheit.
+
+### Beispiel 2: Datenanalyse-Sparringspartner
+
+```
+Du bist ein analytischer Sparringspartner für Geschäftsdaten.
+
+Workflow bei jeder Analyse:
+1. Zusammenfassung: Was zeigen die Daten? (2-3 Sätze)
+2. Kernerkenntnisse: Die 3 wichtigsten Muster
+3. Kontext: Was könnte die Daten erklären?
+4. Handlungsempfehlung: Was würde ich tun?
+5. Offene Fragen: Welche Daten fehlen?
+
+Regeln:
+- Korrelation nie als Kausalität darstellen
+- Bei Prozentwerten immer Absolutzahlen mitnennen
+- Keine Empfehlungen ohne datenbasierte Begründung
+
+Mein Kontext:
+Product Manager, B2B SaaS, 200 Kunden.
+Wichtigste Metriken: MRR, Churn Rate, NPS, Feature Adoption.
+```
+
+**Warum es funktioniert:** Strukturierter Workflow mit nummerierten Schritten. Harte analytische Regeln. Persönlicher Kontext macht Empfehlungen relevant.
+
+### Beispiel 3: Kundensupport-Assistent
+
+```
+Du hilfst mir, Kundenanfragen professionell zu beantworten.
+Unser Produkt: Projektmanagement-Software für Teams.
+
+Ton:
+- Freundlich und lösungsorientiert
+- Direkt — keine Floskeln wie "Gerne helfe ich Ihnen"
+- Siezen, ausser der Kunde duzt zuerst
+
+Ablauf:
+1. Problem in eigenen Worten zusammenfassen
+2. Lösung oder nächsten Schritt vorschlagen
+3. Fragen ob das weiterhilft
+
+Eskalation:
+Wenn du unsicher bist oder das Problem technisch ist:
+- Ehrlich sagen: "Das muss ich intern klären."
+- Konkreten Zeitrahmen nennen
+- KEINE Lösungen für technische Probleme erfinden
+```
+
+**Warum es funktioniert:** Spezifische Ton-Guidance ("keine Floskeln wie..."). Eskalationsregeln verhindern Halluzinationen.
+
+## Die fünf häufigsten Anti-Patterns
+
+### 1. Vage Instruktionen
+
+| Problem | Besser |
+|---|---|
+| "Sei hilfreich" | "Beantworte in 2–3 Sätzen mit einem Beispiel." |
+| "Formatiere gut" | "Fliesstext, Bullet Points nur für 4+ Elemente." |
+| "Sei professionell" | "Fachsprache wo nötig, Abkürzungen beim ersten Auftreten erklären." |
+
+### 2. Widersprüchliche Regeln
+
+"Halte dich kurz." + "Erkläre jeden Punkt ausführlich." → Die AI rät, was du meinst.
+
+**Lösung:** Priorisieren. "Standardmässig kurz (2–3 Sätze). Bei technischen Erklärungen ausführlicher mit Beispiel."
+
+### 3. Nur Verbote
+
+"Verwende KEIN Markdown." — "Keine langen Sätze." — "Halluziniere NICHT."
+
+**Besser:** Sage was du willst, nicht was du nicht willst. "Antworte in fliessendem Prosatext mit kurzen Sätzen."
+
+### 4. Überladene Prompts
+
+System Prompts mit 500+ Zeilen führen zu sinkender Befolgungsrate, Widersprüchen und hohem Token-Verbrauch. Unter 200 Zeilen bleiben. Für komplexere Setups: Aufteilen in modulare Blöcke.
+
+### 5. Kontext ohne Begründung
+
+"Verwende NIEMALS Ellipsen." → Die AI befolgt die Regel, aber versteht nicht warum.
+
+"Die Antwort wird von einer TTS-Engine vorgelesen. Keine Ellipsen, da die Engine sie nicht aussprechen kann." → Die AI generalisiert und vermeidet ähnliche Probleme automatisch.
+
+## L3-Zusammenfassung
+
+<DosDonts
+  dos={[
+    "Persistenten Kontext für wiederkehrende Aufgaben aufbauen — erkläre deinen Job einmal",
+    "Das richtige Tool für den Kontext wählen: Workspace, Werkzeug oder integrierte AI",
+    "System Prompts positiv formulieren: was die AI tun soll, nicht was sie lassen soll",
+    "Das Warum hinter Regeln erklären — die AI generalisiert besser",
+    "Iterativ verfeinern: Starte minimal, beobachte, korrigiere gezielt"
+  ]}
+  donts={[
+    "Jeden Chat bei null anfangen, obwohl sich Kontext und Aufgabe wiederholen",
+    "Mehr als 200 Zeilen in einen System Prompt packen — weniger mit Struktur schlägt mehr ohne",
+    "Vertrauliche Daten in unsichere Wissensspeicher hochladen (z.B. Custom GPT Knowledge Files)",
+    "Alles auf einmal perfekt machen wollen — der Compound Effect braucht Zeit",
+    "Ein Tool für alles erzwingen — verschiedene Aufgaben brauchen verschiedene Werkzeuge"
+  ]}
+/>
+
+## Deine L3-Checkliste
+
+Bevor du zu L4 weitergehst, solltest du diese Punkte mit "Ja" beantworten können:
+
+- [ ] Ich verstehe den Unterschied zwischen transaktionaler und persistenter AI-Nutzung
+- [ ] Ich habe mindestens einen persistenten Workspace eingerichtet (Claude Project, Custom GPT oder äquivalent)
+- [ ] Ich kann die Stärken und Schwächen von Claude Projects, Custom GPTs und M365 Copilot benennen
+- [ ] Ich kann einen System Prompt mit Rolle, Kontext, Regeln und Beispiel schreiben
+- [ ] Ich kenne die fünf Anti-Patterns und weiss, wie ich sie vermeide
+
+## Wie geht es weiter?
+
+In **[L4 — AI als Coworker](../l4-ai-coworker/01-from-chat-to-delegation/)** machst du den nächsten Schritt: Von Kontext zu Delegation. Du lernst, wie du Aufgaben nicht nur besser formulierst, sondern ganze Workflows an AI übergibst — mit dem richtigen Mass an Vertrauen und Kontrolle.
+
+Der Paradigmenwechsel von L4: **Von "AI antwortet mir" zu "AI arbeitet für mich".**

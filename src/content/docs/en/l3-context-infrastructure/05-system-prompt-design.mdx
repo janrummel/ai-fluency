@@ -1,0 +1,187 @@
+---
+title: "System Prompt Design: The Art of Good Instructions"
+description: How to build a system prompt that works — anatomy, three real examples, common anti-patterns, and the synthesis of L3.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+import DosDonts from '../../../../components/DosDonts.astro';
+
+> Lesson 5 of 5 — L3: Context as Infrastructure
+
+## The Bridge Between Knowledge and Impact
+
+You now know three ways to build persistent context: Claude Projects, Custom GPTs, M365 Copilot. All three share one thing: Quality rises and falls with the quality of your instructions. Whether you write custom instructions in a Claude Project, configure a Custom GPT, or craft a complex prompt in a single chat — the principles are the same.
+
+This lesson is the synthesis of L3: How to build a <GlossaryTip term="System Prompt" definition="A hidden instruction that sets the AI's behavior for the entire conversation — it's set before the actual conversation starts and is typically invisible to the user." /> that works.
+
+## Anatomy of a Strong System Prompt
+
+The golden rule comes from Anthropic:
+
+> "Show your prompt to a colleague with minimal context and ask them to follow it. If they'd be confused, the AI will be too."
+
+An AI model is like a brilliant new hire: Highly capable, but without context on your norms, style, and expectations. The clearer you explain what you want, the better the result.
+
+### The Seven Building Blocks
+
+Not every prompt needs all seven. But knowing them lets you consciously decide which to use:
+
+| Building Block | Purpose | Example |
+|---|---|---|
+| **Role** | Focuses behavior and expertise | "You are a senior strategy consultant." |
+| **Context** | Explains the why behind the rules | "The response will be read aloud — no ellipses." |
+| **Task** | What specifically should be done | "Analyze quarterly reports and identify trends." |
+| **Format** | How the output should look | "3–5 bullet points, max 2 sentences each." |
+| **Constraints** | Boundaries and limitations | "Only use information from the provided documents." |
+| **Examples** | Concrete input/output pairs | One good example shows more than ten rules. |
+| **Tone** | Language style and register | "Professional but approachable, use 'you.'" |
+
+### The Most Important Insight
+
+**Context explains the why.** And the why is the most powerful building block.
+
+Compare:
+- "Don't use ellipses." → The AI follows the rule, but only literally.
+- "The response will be read by a text-to-speech engine. Don't use ellipses because the engine can't pronounce them." → The AI understands the reason and also avoids other TTS problems you didn't explicitly mention.
+
+## Three Examples: From Draft to Strong Prompt
+
+### Example 1: Technical Editor
+
+```
+You are an experienced technical editor. Your audience has solid
+foundational knowledge but no deep specialization.
+
+Style:
+- Professional but approachable
+- Prefer active voice
+- Explain technical terms on first use
+- Plain English with industry-standard terminology
+
+Format:
+- Flowing prose with clear paragraph structure
+- Subheadings only for texts over 500 words
+
+Quality:
+- Support claims with source references
+- When uncertain: "I'm not confident here, but..."
+- No marketing language or superlatives without evidence
+```
+
+**Why it works:** Clear role with audience definition. Positively stated style rules. Honesty constraint for uncertainty.
+
+### Example 2: Data Analysis Sparring Partner
+
+```
+You are an analytical sparring partner for business data.
+
+Workflow for every analysis:
+1. Summary: What do the data show? (2-3 sentences)
+2. Key findings: The 3 most important patterns
+3. Context: What might explain the data?
+4. Recommended action: What would I do?
+5. Open questions: What data are missing?
+
+Rules:
+- Never present correlation as causation
+- Always include absolute numbers alongside percentages
+- No recommendations without data-backed reasoning
+
+My context:
+Product Manager, B2B SaaS, 200 customers.
+Key metrics: MRR, Churn Rate, NPS, Feature Adoption.
+```
+
+**Why it works:** Structured workflow with numbered steps. Hard analytical rules. Personal context makes recommendations relevant.
+
+### Example 3: Customer Support Assistant
+
+```
+You help me respond to customer inquiries professionally.
+Our product: project management software for teams.
+
+Tone:
+- Friendly and solution-oriented
+- Direct — no filler phrases like "I'd be happy to help you"
+- Formal register unless the customer uses informal first
+
+Process:
+1. Restate the problem in your own words
+2. Suggest a solution or next step
+3. Ask if that helps or offer further assistance
+
+Escalation:
+If you're unsure or the issue is technical:
+- Be honest: "I need to check this internally."
+- Give a concrete timeframe
+- DO NOT invent solutions for technical problems you don't understand
+```
+
+**Why it works:** Specific tone guidance ("no filler phrases like..."). Escalation rules prevent hallucination.
+
+## The Five Most Common Anti-Patterns
+
+### 1. Vague Instructions
+
+| Problem | Better |
+|---|---|
+| "Be helpful" | "Answer in 2–3 sentences with one example." |
+| "Format nicely" | "Flowing prose, bullet points only for 4+ items." |
+| "Be professional" | "Use technical terms where needed, define abbreviations on first use." |
+
+### 2. Contradictory Rules
+
+"Keep it short." + "Explain every point in detail." → The AI guesses what you mean.
+
+**Solution:** Prioritize. "Default to concise (2–3 sentences). For technical explanations, go deeper with an example."
+
+### 3. Nothing but Prohibitions
+
+"Do NOT use Markdown." — "No long sentences." — "Do NOT hallucinate."
+
+**Better:** Say what you want, not what you don't. "Respond in flowing prose with short sentences."
+
+### 4. Overloaded Prompts
+
+System prompts with 500+ lines lead to declining compliance, contradictions, and high token costs. Stay under 200 lines. For more complex setups: break into modular blocks.
+
+### 5. Rules without Reasons
+
+"NEVER use ellipses." → The AI follows the rule but doesn't understand why.
+
+"The response will be read by a TTS engine. No ellipses because the engine can't pronounce them." → The AI generalizes and avoids similar problems automatically.
+
+## L3 Summary
+
+<DosDonts
+  dos={[
+    "Build persistent context for recurring tasks — explain your job once",
+    "Choose the right tool for the context: workspace, specialized tool, or embedded AI",
+    "Write system prompts positively: what the AI should do, not what it shouldn't",
+    "Explain the why behind rules — the AI generalizes better",
+    "Iterate: start minimal, observe, correct with intention"
+  ]}
+  donts={[
+    "Start every chat from zero when context and task repeat",
+    "Cram more than 200 lines into a system prompt — less with structure beats more without",
+    "Upload confidential data to insecure knowledge stores (e.g., Custom GPT Knowledge Files)",
+    "Try to make everything perfect at once — the compound effect takes time",
+    "Force one tool for everything — different tasks need different tools"
+  ]}
+/>
+
+## Your L3 Checklist
+
+Before moving to L4, you should be able to answer these with "yes":
+
+- [ ] I understand the difference between transactional and persistent AI usage
+- [ ] I've set up at least one persistent workspace (Claude Project, Custom GPT, or equivalent)
+- [ ] I can name the strengths and weaknesses of Claude Projects, Custom GPTs, and M365 Copilot
+- [ ] I can write a system prompt with role, context, rules, and an example
+- [ ] I know the five anti-patterns and how to avoid them
+
+## What's Next?
+
+In **[L4 — AI as Coworker](../l4-ai-coworker/01-from-chat-to-delegation/)**, you take the next step: From context to delegation. You'll learn how to not just formulate tasks better, but hand over entire workflows to AI — with the right balance of trust and control.
+
+The paradigm shift of L4: **From "AI answers me" to "AI works for me."**
