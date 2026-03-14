@@ -1,0 +1,140 @@
+---
+title: "Custom GPTs: Building Specialized AI Assistants"
+description: How to create your own ChatGPT versions with Custom GPTs — instructions, knowledge files, actions, and how they compare to Claude Projects.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 3 of 5 — L3: Context as Infrastructure
+
+## A Different Approach, Same Goal
+
+Claude Projects are workspaces — you work *inside* them. <GlossaryTip term="Custom GPTs" definition="Specialized versions of ChatGPT configured with custom instructions, knowledge files, and optional API actions. They can be used privately, shared via link, or published in the GPT Store." /> take a different approach: You build a specialized assistant that's particularly good at one thing. Less workspace, more tool.
+
+The concept is related — persistent context through predefined rules and knowledge — but the implementation differs.
+
+## Anatomy of a Custom GPT
+
+Every Custom GPT consists of three elements:
+
+| Element | What It Does | Required? |
+|---|---|---|
+| **Instructions** | System prompt — role, rules, behavior | Yes |
+| **Knowledge Files** | Uploaded documents as reference | Optional |
+| **Actions** | API calls to external services | Optional |
+
+### Instructions
+
+The core. A free-text field (up to ~8,000 characters) that loads as the <GlossaryTip term="System Prompt" definition="A hidden instruction that sets the AI's behavior for the entire conversation — it's set before the actual conversation starts and is typically invisible to the user." /> in **every** conversation. This is where you define who the GPT is, what it can do, and how it should behave.
+
+### Knowledge Files
+
+Documents the GPT uses as a knowledge base. Formats: PDF, DOCX, TXT, CSV, and more. Files are automatically indexed — the GPT searches them when a question is relevant.
+
+### Actions
+
+The distinguishing strength of Custom GPTs: Through <GlossaryTip term="Actions" definition="API calls that a Custom GPT can make to external services — configured via an OpenAPI specification. Enables real tool integration, e.g., fetching data or triggering operations." />, a GPT can call external APIs. This turns it from a conversation partner into a real tool — it can fetch data, trigger calculations, or write to external systems. This requires technical knowledge (OpenAPI specifications), though.
+
+## Step by Step: Creating a Custom GPT
+
+### 1. Open the GPT Builder
+
+In ChatGPT: **"Create a GPT"** (available for Plus, Team, and Enterprise users). The GPT Builder offers two modes:
+
+- **Create** (guided): ChatGPT asks questions and builds the GPT interactively
+- **Configure** (manual): You write instructions, upload files, and configure actions directly
+
+For maximum control, use Configure mode.
+
+### 2. Write Instructions
+
+Example for a meeting notes GPT:
+
+```
+You are a meeting assistant for a product team.
+
+Your task:
+When given meeting notes or a transcript, create a structured summary.
+
+Format:
+- Attendees (who was there)
+- Decisions (what was agreed)
+- Action items (who does what by when)
+- Open questions (what still needs clarification)
+
+Rules:
+- Keep the summary under 300 words
+- Format action items as "Who + What + By when"
+- For unclear points: flag as "Unclear from notes"
+```
+
+### 3. Upload Knowledge Files
+
+For the meeting GPT, for example: a list of team members with their roles, the project roadmap, the meeting protocol template. The GPT uses these files as reference — it knows the names, understands who's responsible for what, and uses the right format.
+
+### 4. Publish
+
+Three options:
+
+| Option | For Whom |
+|---|---|
+| **Only me** | Personal assistant |
+| **Anyone with a link** | Team or selected people |
+| **GPT Store** | Public for all ChatGPT users |
+
+## What Custom GPTs Do Well — and What They Don't
+
+### Strengths
+
+- **Visual builder**: No code required, accessible even for non-technical users
+- **Actions**: Real tool integration via API calls — something no Claude Project can do
+- **Shareability**: Share via link or publish to a store with millions of users
+- **Broadest user base**: ChatGPT has the largest user base of any AI platform
+
+### Limitations
+
+- **Knowledge files aren't secure**: With targeted prompts, users can extract the content of uploaded files. Don't upload confidential data you wouldn't want shared.
+- **No real memory**: Every conversation with a Custom GPT starts from zero. There's no cross-session memory.
+- **Single context type**: Instructions and knowledge files — no separation between "rules" and "reference knowledge" like Claude Projects.
+- **GPT Store monetization discontinued**: The revenue program for the GPT Store was shut down in mid-2025.
+
+## Comparison: Custom GPTs vs. Claude Projects
+
+| Aspect | Custom GPTs | Claude Projects |
+|---|---|---|
+| **Metaphor** | Specialized tool | Persistent workspace |
+| **Context setup** | Instructions + files in one field | Instructions and knowledge base separated |
+| **Multi-chat** | Every chat starts fresh | Knowledge base applies across all chats |
+| **Shareability** | GPT Store, link, or private | Team sharing (Team/Enterprise) |
+| **API integration** | Yes (Actions) | No |
+| **Knowledge security** | Extractable | Protected within project |
+| **Availability** | ChatGPT Plus/Team/Enterprise | Claude Free (5 projects) through Enterprise |
+
+### When to Choose Which?
+
+**Custom GPT** when you:
+- Need a specialized assistant for a recurring task
+- Want to share the assistant with others (even outside your team)
+- Need API integration (e.g., pulling data from a CRM)
+
+**Claude Project** when you:
+- Need a workspace for ongoing work (multiple chats, one context)
+- Want to use confidential documents as a knowledge base
+- Value the separation of rules and reference knowledge
+
+**Both** when you use different AI tools for different tasks — which is the most sensible approach for most knowledge workers.
+
+## Try It Yourself
+
+### Exercise 1: Your First Custom GPT
+Create a Custom GPT for a task you do at least weekly. Write instructions with role, task, format, and rules. Test with 3 real requests.
+
+### Exercise 2: Test Knowledge Files
+Upload a non-confidential document as a knowledge file (e.g., a public style guide). Ask questions about it. Observe how the GPT uses the document — and where it ignores it.
+
+### Exercise 3: Comparison Test
+Take the same task and set it up as both a Custom GPT and a Claude Project. Send identical requests to both. Note the differences in quality, convenience, and control.
+
+## Looking Ahead
+
+Custom GPTs and Claude Projects solve the same fundamental problem — persistent context — with different philosophies. GPTs are specialized tools for sharing. Projects are workspaces for working. In the next lesson, you'll see a fundamentally different approach: **Microsoft 365 Copilot**, where context isn't uploaded but comes live from your everyday work.
