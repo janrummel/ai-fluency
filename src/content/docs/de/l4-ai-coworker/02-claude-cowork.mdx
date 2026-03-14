@@ -1,0 +1,136 @@
+---
+title: "Claude Cowork: Der Desktop-Agent"
+description: Was Claude Cowork kann, wie du es einrichtest und wofür es sich eignet — lokaler Dateizugriff, Connectors, Scheduled Tasks und die Grenzen.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lektion 2 von 5 — L4: AI als Coworker
+
+## AI, die auf deinem Computer arbeitet
+
+In L3 hast du Claude Projects kennengelernt — Workspaces, in denen du mit Claude im Browser arbeitest. <GlossaryTip term="Claude Cowork" definition="Anthropics Desktop-Agent-Feature in der Claude Desktop App. Cowork kann direkt auf lokale Dateien zugreifen, mehrstufige Aufgaben eigenständig bearbeiten, Dokumente erstellen und über Connectors mit externen Diensten interagieren." /> geht einen Schritt weiter: Claude arbeitet nicht mehr nur *mit* dir im Chat — es arbeitet *für* dich auf deinem Computer. Dateien lesen, Dokumente erstellen, Präsentationen bauen, Daten analysieren — eigenständig, mehrstufig, mit Zugriff auf deine lokalen Ordner.
+
+Das ist der Sprung von L3 (persistenter Kontext) zu L4 (Delegation).
+
+## Was Cowork kann
+
+| Fähigkeit | Details |
+|---|---|
+| **Lokaler Dateizugriff** | Liest, erstellt und bearbeitet Dateien in einem von dir freigegebenen Ordner |
+| **Dokumentenerstellung** | Excel mit echten Formeln, PowerPoint, Word, PDF |
+| **Cross-App-Workflows** | Daten in Excel analysieren und direkt eine PowerPoint daraus erstellen |
+| **Websuche** | Integrierte Recherche mit Zusammenfassung |
+| **Browser-Steuerung** | Über die Chrome-Extension kann Cowork Websites navigieren |
+| **Sub-Agents** | Parallele Workstreams für komplexe Aufgaben |
+| **Scheduled Tasks** | Wiederkehrende Aufgaben automatisch ausführen |
+
+### Praktische Beispiele
+
+- "Geh durch die 30 PDFs in diesem Ordner und erstelle eine Excel-Übersicht mit Firmennamen, Umsatz und Mitarbeiterzahl."
+- "Erstelle eine Präsentation basierend auf diesem Strategiepapier — 10 Folien, Executive Summary auf Folie 1."
+- "Recherchiere die letzten 5 Pressemitteilungen von Wettbewerber X und fasse die wichtigsten Punkte zusammen."
+
+## Schritt für Schritt: Cowork einrichten
+
+### Voraussetzungen
+
+- **Claude Desktop App** (macOS oder Windows x64)
+- Bezahlter Plan: Pro ($20/Monat), Max ($100–200/Monat) oder Team/Enterprise
+- Aktuelle App-Version
+
+### 1. Ordner freigeben
+
+Cowork kann nur auf Ordner zugreifen, die du explizit freigibst. Das ist der wichtigste Sicherheitsmechanismus: Du entscheidest, was Claude sehen darf.
+
+### 2. Aufgabe beschreiben
+
+Starte einen Cowork-Task mit einer klaren Beschreibung. Je mehr Kontext du gibst, desto besser das Ergebnis — wie bei jedem guten Prompt. Aber anders als im Chat arbeitet Cowork danach eigenständig weiter.
+
+### 3. Ergebnis prüfen
+
+Cowork liefert fertige Ergebnisse: Dateien, Dokumente, Analysen. Prüfe sie, bevor du sie weiterverwendest.
+
+## Connectors: Claude verbinden
+
+<GlossaryTip term="Connectors" definition="Integrationen, die Claude über das Model Context Protocol (MCP) mit externen Diensten verbinden — Gmail, Google Drive, Slack und andere. Claude kann Daten suchen und abrufen, ohne die Cowork-Oberfläche zu verlassen." /> erweitern Cowork über lokale Dateien hinaus:
+
+| Connector | Was Claude kann |
+|---|---|
+| **Gmail** | E-Mails suchen und lesen, Entwürfe erstellen (nicht senden) |
+| **Google Calendar** | Events anzeigen, erstellen, ändern |
+| **Google Drive** | Dokumente suchen und abrufen |
+| **Slack** | Nachrichten suchen, Kontext aus Channels ziehen |
+| **GitHub** | Repositories durchsuchen |
+
+Weitere Connectors: DocuSign, WordPress, HubSpot, Figma und andere. Die Einrichtung dauert typischerweise unter einer Minute — Authentifizierung über OAuth oder API-Keys.
+
+**Wichtig:** Connectors respektieren deine bestehenden Berechtigungen. Claude sieht nur, was du auch siehst.
+
+## Scheduled Tasks: AI, die von alleine arbeitet
+
+Scheduled Tasks sind der Schritt von L3 (reagiert auf Anfragen) zu L4 (arbeitet proaktiv):
+
+| Frequenz | Beispiel |
+|---|---|
+| **Stündlich** | Monitoring von Metriken oder Newsfeeds |
+| **Täglich** | Morning Briefing: E-Mails + Kalender + Slack zusammenfassen |
+| **Wöchentlich** | Wettbewerber-Update, Team-Statusbericht |
+| **Werktags** | Tägliche Datenaufbereitung, Report-Erstellung |
+
+### Einschränkung
+
+Scheduled Tasks laufen nur, wenn dein Computer aktiv und die Claude Desktop App geöffnet ist. Verpasste Tasks werden beim nächsten App-Start nachgeholt.
+
+## Preise und Pläne
+
+| Plan | Preis | Cowork |
+|---|---|---|
+| **Free** | $0/Monat | Kein Zugang |
+| **Pro** | $20/Monat | Ja (Basis-Kontingent) |
+| **Max 5x** | $100/Monat | Ja (5× Pro) |
+| **Max 20x** | $200/Monat | Ja (20× Pro) |
+| **Team** | ab $25/Monat | Nur mit Premium Seat ($100–125) |
+
+**Wichtig:** Cowork-Tasks verbrauchen deutlich mehr Kontingent als normaler Chat. Ein komplexer Task kann so viel verbrauchen wie Dutzende Chat-Nachrichten.
+
+## Stärken und Grenzen
+
+### Stärken
+
+- **Lokaler Dateizugriff** — der grösste Unterschied zu ChatGPT Agent: Cowork arbeitet direkt mit deinen Dateien
+- **Cross-App-Workflows** — Excel-Analyse → PowerPoint-Präsentation in einer Session
+- **Sub-Agents** — parallele Bearbeitung komplexer Aufgaben
+- **Connectors** — nahtlose Integration mit Gmail, Drive, Slack etc.
+- **Scheduled Tasks** — proaktive Automation
+
+### Grenzen
+
+- **Desktop-only** — kein Web-Zugang, kein Mobile, kein Multi-Device-Sync
+- **Kein Session-Memory** — jede Cowork-Session startet ohne Erinnerung an vorherige Sessions
+- **Keine Audit Logs** — Cowork-Aktivität wird nicht in Compliance-Logs erfasst, nicht geeignet für regulierte Umgebungen
+- **Sicherheitsrisiko Prompt Injection** — Sicherheitsforscher haben gezeigt, dass präparierte Dokumente Claude manipulieren können. Keinen Zugriff auf sensible Dateien gewähren, die du nicht kontrollierst.
+- **Hoher Kontingentverbrauch** — komplexe Tasks können das Usage-Limit schnell ausschöpfen
+
+### Was du nicht tun solltest
+
+- Keinen Zugriff auf Ordner mit sensiblen Daten (Credentials, Finanzdokumente, persönliche Daten)
+- Keine Scheduled Tasks für Nachrichten-Versand oder Käufe
+- Keine unbekannten Plugins oder MCPs ohne vorherige Prüfung installieren
+
+## Probier es aus
+
+### Übung 1: Erster Cowork-Task
+Erstelle einen Ordner mit 5–10 nicht-sensiblen Dateien (PDFs, Dokumente). Gib Cowork Zugriff und stelle eine Aufgabe: "Erstelle eine Zusammenfassung aller Dokumente als Excel-Tabelle." Prüfe das Ergebnis.
+
+### Übung 2: Connector testen
+Verbinde einen Connector (z.B. Google Calendar). Stelle eine Aufgabe: "Zeige meine Termine für nächste Woche und identifiziere Konflikte." Bewerte: War das schneller als selbst nachschauen?
+
+### Übung 3: Scheduled Task
+Richte einen täglichen Task ein: "Fasse meine ungelesenen Slack-Nachrichten aus Channel X zusammen." Beobachte eine Woche lang: Ist der Output nützlich? Was fehlt?
+
+## Weiter gedacht
+
+Claude Cowork zeigt, wie AI vom Gesprächspartner zum Ausführer wird — mit echtem Zugriff auf deine Dateien und Werkzeuge. Das ist mächtig, bringt aber neue Verantwortung: Du musst wissen, was du freigibst, was du delegierst und was du prüfst.
+
+In der nächsten Lektion siehst du den Vergleich: **ChatGPT Agent Mode** — OpenAIs Ansatz, der nicht auf dem Desktop, sondern im Web arbeitet.

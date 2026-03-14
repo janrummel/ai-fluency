@@ -1,0 +1,136 @@
+---
+title: "Claude Cowork: The Desktop Agent"
+description: What Claude Cowork can do, how to set it up, and where it fits — local file access, connectors, scheduled tasks, and the limits.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 2 of 5 — L4: AI as Coworker
+
+## AI That Works on Your Computer
+
+In L3, you learned about Claude Projects — workspaces where you work with Claude in the browser. <GlossaryTip term="Claude Cowork" definition="Anthropic's desktop agent feature in the Claude Desktop app. Cowork can directly access local files, independently execute multi-step tasks, create documents, and interact with external services through connectors." /> takes it a step further: Claude doesn't just work *with* you in a chat — it works *for* you on your computer. Reading files, creating documents, building presentations, analyzing data — independently, multi-step, with access to your local folders.
+
+That's the leap from L3 (persistent context) to L4 (delegation).
+
+## What Cowork Can Do
+
+| Capability | Details |
+|---|---|
+| **Local file access** | Reads, creates, and edits files in a folder you've shared |
+| **Document creation** | Excel with real formulas, PowerPoint, Word, PDF |
+| **Cross-app workflows** | Analyze data in Excel and create a PowerPoint from it directly |
+| **Web search** | Integrated research with summarization |
+| **Browser control** | Via the Chrome extension, Cowork can navigate websites |
+| **Sub-agents** | Parallel workstreams for complex tasks |
+| **Scheduled tasks** | Automated recurring tasks |
+
+### Practical Examples
+
+- "Go through the 30 PDFs in this folder and create an Excel overview with company names, revenue, and headcount."
+- "Create a presentation based on this strategy paper — 10 slides, executive summary on slide 1."
+- "Research the latest 5 press releases from competitor X and summarize the key points."
+
+## Step by Step: Setting Up Cowork
+
+### Requirements
+
+- **Claude Desktop App** (macOS or Windows x64)
+- Paid plan: Pro ($20/month), Max ($100–200/month), or Team/Enterprise
+- Latest app version
+
+### 1. Share a Folder
+
+Cowork can only access folders you explicitly share. This is the key security mechanism: You decide what Claude can see.
+
+### 2. Describe the Task
+
+Start a Cowork task with a clear description. The more context you provide, the better the result — just like any good prompt. But unlike chat, Cowork then works independently.
+
+### 3. Review the Result
+
+Cowork delivers finished outputs: files, documents, analyses. Review them before using them further.
+
+## Connectors: Extending Claude's Reach
+
+<GlossaryTip term="Connectors" definition="Integrations that connect Claude to external services through the Model Context Protocol (MCP) — Gmail, Google Drive, Slack, and others. Claude can search and retrieve data without leaving the Cowork interface." /> extend Cowork beyond local files:
+
+| Connector | What Claude Can Do |
+|---|---|
+| **Gmail** | Search and read emails, create drafts (not send) |
+| **Google Calendar** | View, create, modify events |
+| **Google Drive** | Search and retrieve documents |
+| **Slack** | Search messages, pull context from channels |
+| **GitHub** | Browse repositories |
+
+Additional connectors: DocuSign, WordPress, HubSpot, Figma, and more. Setup typically takes under a minute — authentication via OAuth or API keys.
+
+**Important:** Connectors respect your existing permissions. Claude only sees what you can see.
+
+## Scheduled Tasks: AI That Works on Its Own
+
+Scheduled tasks are the step from L3 (responds to requests) to L4 (works proactively):
+
+| Frequency | Example |
+|---|---|
+| **Hourly** | Monitoring metrics or news feeds |
+| **Daily** | Morning briefing: emails + calendar + Slack summarized |
+| **Weekly** | Competitor update, team status report |
+| **Weekdays** | Daily data preparation, report creation |
+
+### Limitation
+
+Scheduled tasks only run when your computer is awake and the Claude Desktop app is open. Missed tasks are caught up on the next app launch.
+
+## Pricing
+
+| Plan | Price | Cowork |
+|---|---|---|
+| **Free** | $0/month | No access |
+| **Pro** | $20/month | Yes (base quota) |
+| **Max 5x** | $100/month | Yes (5× Pro) |
+| **Max 20x** | $200/month | Yes (20× Pro) |
+| **Team** | from $25/month | Only with Premium Seat ($100–125) |
+
+**Important:** Cowork tasks consume significantly more quota than normal chat. A complex task can use as much as dozens of chat messages.
+
+## Strengths and Limits
+
+### Strengths
+
+- **Local file access** — the biggest difference from ChatGPT Agent: Cowork works directly with your files
+- **Cross-app workflows** — Excel analysis → PowerPoint presentation in one session
+- **Sub-agents** — parallel processing of complex tasks
+- **Connectors** — seamless integration with Gmail, Drive, Slack, etc.
+- **Scheduled tasks** — proactive automation
+
+### Limits
+
+- **Desktop only** — no web access, no mobile, no multi-device sync
+- **No session memory** — every Cowork session starts without memory of previous sessions
+- **No audit logs** — Cowork activity isn't captured in compliance logs, not suitable for regulated environments
+- **Prompt injection risk** — security researchers demonstrated that prepared documents can manipulate Claude. Don't grant access to sensitive files you don't control.
+- **High quota consumption** — complex tasks can quickly exhaust usage limits
+
+### What You Shouldn't Do
+
+- Don't grant access to folders with sensitive data (credentials, financial documents, personal data)
+- Don't use scheduled tasks for sending messages or making purchases
+- Don't install unknown plugins or MCPs without prior review
+
+## Try It Yourself
+
+### Exercise 1: First Cowork Task
+Create a folder with 5–10 non-sensitive files (PDFs, documents). Give Cowork access and set a task: "Create a summary of all documents as an Excel table." Review the result.
+
+### Exercise 2: Test a Connector
+Connect a connector (e.g., Google Calendar). Set a task: "Show my appointments for next week and identify conflicts." Evaluate: Was that faster than checking yourself?
+
+### Exercise 3: Scheduled Task
+Set up a daily task: "Summarize my unread Slack messages from channel X." Observe for a week: Is the output useful? What's missing?
+
+## Looking Ahead
+
+Claude Cowork shows how AI evolves from conversation partner to executor — with real access to your files and tools. That's powerful, but brings new responsibility: You need to know what you share, what you delegate, and what you verify.
+
+In the next lesson, you'll see the comparison: **ChatGPT Agent Mode** — OpenAI's approach that works not on the desktop but on the web.

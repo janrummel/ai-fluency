@@ -1,0 +1,147 @@
+---
+title: "Calibrating Trust"
+description: When you can trust AI results, when you must verify, and how to find the right level of control — with the Intern-to-Expert model.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+import DosDonts from '../../../../components/DosDonts.astro';
+
+> Lesson 4 of 5 — L4: AI as Coworker
+
+## The Core Problem
+
+You delegate a task to AI. It delivers a result. Now the question: **Is it correct?**
+
+Blind trust is dangerous. Checking everything manually makes delegation pointless. The answer lies in between — and finding that precise in-between is the core skill of L4.
+
+## Why This Matters
+
+The numbers are stark:
+
+- **47% of enterprise AI users** made at least one major business decision based on hallucinated content
+- The Harvard/BCG study showed: On tasks *outside* AI strengths, quality **dropped** — because consultants trusted the output without checking
+- Air Canada was held liable because their chatbot gave a customer false information about refund policies
+
+The problem isn't that AI hallucinates. The problem is that people follow the output uncritically. The EU AI Act names this explicitly: <GlossaryTip term="Automation Bias" definition="The tendency to trust automated systems more than your own judgment — even when there are signs the system is wrong. The EU AI Act recognizes automation bias as an explicit risk." /> — the tendency to believe machine-generated results over your own judgment.
+
+## The Intern-to-Expert Model
+
+Imagine you're not delegating to "AI" but to a new team member. How much oversight do you provide? It depends on their track record — and on the task.
+
+| Trust Level | Analogy | What AI May Do | How You Verify |
+|---|---|---|---|
+| **Intern** | First day | Observe, read, summarize | Check everything |
+| **Junior** | 3 months in | Make suggestions, create drafts | Review every result |
+| **Senior** | Proven track record | Execute independently with monitoring | Spot checks, outcome review |
+| **Expert** | Full trust | Work autonomously | Only on anomalies |
+
+### How to Apply the Model
+
+**Step 1:** Start every new task type at "Intern" level. Even if the tool is generally capable.
+
+**Step 2:** Observe quality over 5–10 runs. Note: Where does it get it right? Where doesn't it?
+
+**Step 3:** If quality is consistent, level up. If not, stay at the current level or adjust your prompt.
+
+**Step 4:** For every new task type: Back to "Intern." Trust is task-specific, not blanket.
+
+## Two Decision Axes
+
+Whether you need to verify an AI result depends on two questions:
+
+### Axis 1: Is the Result Verifiable?
+
+| Verifiability | Example | Effort to Check |
+|---|---|---|
+| **Easy to check** | Formatting, summaries, data extraction | Seconds |
+| **Checkable with effort** | Factual claims, calculations, source citations | Minutes |
+| **Hard to check** | Strategic recommendations, causal claims, forecasts | Requires your own expertise |
+
+### Axis 2: Is a Mistake Reversible?
+
+| Reversibility | Example | Risk |
+|---|---|---|
+| **Easy to undo** | Internal draft, notes, brainstorming | Low |
+| **Costly to undo** | Sent email, published report | Medium |
+| **Irreversible** | Contractual commitment, financial transaction, termination | High |
+
+### The Decision Matrix
+
+|  | Easy to Verify | Hard to Verify |
+|---|---|---|
+| **Reversible** | Delegate, spot check is enough | Delegate, but review |
+| **Irreversible** | Delegate, verify completely | **Don't delegate** — do it yourself |
+
+## Quality Signals: What to Watch For
+
+### Green Flags (more likely trustworthy)
+
+- Output is consistent across multiple requests
+- Claims are supported with sources
+- AI flags uncertainty ("I'm not confident here, but...")
+- Format and structure match the brief
+- Fact-checking the first 3 claims confirms accuracy
+
+### Red Flags (look more closely)
+
+- Overly confident language on complex topics
+- Specific numbers without source attribution
+- Output that fits "too perfectly" — sounds good but lacks substance
+- Contradictions within the same output
+- Claims you can't confirm with a quick search
+
+## Three Cautionary Tales
+
+### 1. The Klarna Warning
+
+Klarna replaced 700 customer service agents with AI. Efficiency metrics looked great: 82% faster, 75% of queries automated. But quality dropped — generic responses, rising complaints. The CEO publicly reversed course: "We went too far."
+
+**Lesson:** Efficiency metrics can mask quality deterioration. Measure both.
+
+### 2. The Lawyer Hallucination
+
+Multiple lawyers submitted legal briefs with AI-generated citations — cases and quotes that didn't exist. ChatGPT had fabricated them, and the lawyers hadn't checked.
+
+**Lesson:** AI can generate fact-like content that's entirely invented. For factual claims: always verify.
+
+### 3. The Air Canada Liability
+
+A chatbot gave a customer wrong refund information. Air Canada argued the chatbot was "a separate legal entity." The tribunal: No — the company is liable for all information its AI tools provide.
+
+**Lesson:** You're responsible for what AI communicates on your behalf.
+
+## Trust Calibration as a Habit
+
+<DosDonts
+  dos={[
+    "Start every new task type at 'Intern' level and systematically level up",
+    "Before delegating, ask: Is the result verifiable? Is a mistake reversible?",
+    "Spot-check factual claims — verify the first 3 points",
+    "Measure both efficiency AND quality, not just one",
+    "When uncertain: use AI for a draft, not a final product"
+  ]}
+  donts={[
+    "Accept AI results unchecked because they sound professional",
+    "Build blanket trust because it worked well for one task type",
+    "Treat all AI results the same — trust level depends on the task",
+    "Use numbers, quotes, or factual claims without cross-checking",
+    "Transfer responsibility to AI — your name is on the result"
+  ]}
+/>
+
+## Try It Yourself
+
+### Exercise 1: Trust Level Journal
+Keep a trust log for one week: For every AI use, note the task, trust level (Intern to Expert), whether you checked, and whether the check found anything problematic. End of week: spot the patterns.
+
+### Exercise 2: The Verifiability Matrix
+Take 5 tasks you regularly delegate to AI. Plot each on the two axes: How easy to verify? How reversible if wrong? Does your current checking behavior match the matrix?
+
+### Exercise 3: Red Flag Detection
+Give the AI a task where you already know the right answer. Check: Where are green flags? Where are red flags? How confident does the AI sound — and is the result actually correct?
+
+## Looking Ahead
+
+Trust calibration isn't a one-time decision — it's an ongoing practice. Like with a human colleague, you build trust over time, task by task, based on evidence. The best AI users aren't those who trust the most or the least — but those who calibrate most precisely.
+
+In the next lesson, you'll learn about the legal framework: **Compliance Basics** — what the EU AI Act means for you as a knowledge worker and why "AI told me" isn't an excuse.
