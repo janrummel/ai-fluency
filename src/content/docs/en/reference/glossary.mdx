@@ -1,0 +1,174 @@
+---
+title: Glossary
+description: All key terms from L1–L4, briefly explained — from Agentic AI to Zero-Shot.
+---
+
+> Terms you'll encounter in the lessons. Click any underlined term in the text to jump here.
+
+### Actions
+
+API calls that a Custom GPT can make to external services — configured via an OpenAPI specification. Enables real tool integration, e.g., fetching data or triggering operations.
+
+*Appears in: [L3 — Custom GPTs](../l3-context-infrastructure/03-custom-gpts/)*
+
+### Agentic AI
+
+AI systems that can independently execute multi-step tasks — they plan steps, use tools, and make decisions without the human directing every move.
+
+*Appears in: [L4 — From Chat to Delegation](../l4-ai-coworker/01-from-chat-to-delegation/)*
+
+### Automation Bias
+
+The tendency to trust automated systems more than your own judgment — even when there are signs the system is wrong. The EU AI Act recognizes automation bias as an explicit risk.
+
+*Appears in: [L4 — Calibrating Trust](../l4-ai-coworker/04-calibrating-trust/)*
+
+### Chain-of-Thought
+
+A technique that asks the AI to show its reasoning step by step before giving an answer. Improves accuracy on complex tasks.
+
+*Appears in: [L2 — Prompting Techniques](../l2-intentional-prompting/02-prompting-techniques/)*
+
+### ChatGPT Agent Mode
+
+OpenAI's agentic feature in ChatGPT that combines a visual browser, code execution, file editing, and app integrations. The agent works in the cloud and can independently execute multi-step tasks on the web.
+
+*Appears in: [L4 — ChatGPT Agent Mode](../l4-ai-coworker/03-chatgpt-agent-mode/)*
+
+### Claude Cowork
+
+Anthropic's desktop agent feature in the Claude Desktop app. Cowork can directly access local files, independently execute multi-step tasks, create documents, and interact with external services through connectors.
+
+*Appears in: [L4 — Claude Cowork](../l4-ai-coworker/02-claude-cowork/)*
+
+### Claude Projects
+
+Persistent workspaces in Claude.ai that bundle a knowledge base (uploaded documents), custom instructions, and chat history in one place. Every chat within a project automatically has access to the full project context.
+
+*Appears in: [L3 — Claude Projects](../l3-context-infrastructure/02-claude-projects/)*
+
+### Connectors
+
+Integrations that connect Claude to external services through the Model Context Protocol (MCP) — Gmail, Google Drive, Slack, and others. Claude can search and retrieve data without leaving the Cowork interface.
+
+*Appears in: [L4 — Claude Cowork](../l4-ai-coworker/02-claude-cowork/)*
+
+### Context Window
+
+The maximum amount of text an AI model can process at once — its short-term memory. Everything within this window influences the response. What doesn't fit, the AI can't see.
+
+*Appears in: [L1 — What Is AI?](../l1-first-steps/01-what-is-ai/), [L2](../l2-intentional-prompting/03-iteration-as-method/), [L3](../l3-context-infrastructure/02-claude-projects/)*
+
+### Custom GPT
+
+A customizable version of ChatGPT with your own instructions and knowledge files — no coding required.
+
+*Appears in: [L1 — Tools Overview](../l1-first-steps/02-tools-overview/)*
+
+### Custom GPTs
+
+Specialized versions of ChatGPT configured with custom instructions, knowledge files, and optional API actions. They can be used privately, shared via link, or published in the GPT Store.
+
+*Appears in: [L3 — Custom GPTs](../l3-context-infrastructure/03-custom-gpts/)*
+
+### EU AI Act
+
+The world's first comprehensive regulation for artificial intelligence (Regulation (EU) 2024/1689). Classifies AI systems by risk and mandates transparency, human control, and accountability.
+
+*Appears in: [L4 — Compliance Basics](../l4-ai-coworker/05-compliance-basics/)*
+
+### Few-Shot
+
+A technique where you show the AI 2–5 examples with input and output before presenting the actual task. Especially effective for controlling format and style.
+
+*Appears in: [L2 — Prompting Techniques](../l2-intentional-prompting/02-prompting-techniques/)*
+
+### Generative AI
+
+AI systems that can create new content — text, images, code, music — rather than just searching or classifying existing information.
+
+*Appears in: [L1 — What Is AI?](../l1-first-steps/01-what-is-ai/), [L1 — Do's and Don'ts](../l1-first-steps/05-dos-and-donts/)*
+
+### Halluzination
+
+An AI response that is false or fabricated but sounds confident and convincing. Not a rare glitch but a systemic feature — AI optimizes for plausibility, not truth.
+
+*Appears in: [L1 — First Conversations](../l1-first-steps/03-first-conversations/), [L1 — Understanding Limits](../l1-first-steps/04-understanding-limits/)*
+
+### Human-in-the-Loop
+
+The principle that a human remains involved in an AI system's decision process — whether as approver, supervisor, or final decision-maker. The EU AI Act mandates this for high-risk AI systems.
+
+*Appears in: [L4 — Compliance Basics](../l4-ai-coworker/05-compliance-basics/)*
+
+### Knowledge Cutoff
+
+The date up to which an AI model's training data reaches. It doesn't know about events after this date from its own knowledge.
+
+*Appears in: [L1 — Understanding Limits](../l1-first-steps/04-understanding-limits/)*
+
+### LLM
+
+Large Language Model — a neural network trained on massive amounts of text that can generate new text. The foundation behind ChatGPT, Claude, Gemini, and other AI chatbots.
+
+*Appears in: [L1 — What Is AI?](../l1-first-steps/01-what-is-ai/), [L1 — Tools Overview](../l1-first-steps/02-tools-overview/)*
+
+### Microsoft 365 Copilot
+
+An AI assistant integrated directly into Microsoft 365 apps (Word, Excel, PowerPoint, Outlook, Teams) that accesses organizational data through the Microsoft Graph.
+
+*Appears in: [L3 — M365 Copilot](../l3-context-infrastructure/04-m365-copilot/)*
+
+### Microsoft Graph
+
+Microsoft's data layer that connects information across all Microsoft 365 services — emails, calendars, files, Teams chats, SharePoint documents. Copilot uses the Graph to ground responses in your work context.
+
+*Appears in: [L3 — M365 Copilot](../l3-context-infrastructure/04-m365-copilot/)*
+
+### Persistent Context
+
+Information that persists beyond a single conversation — roles, rules, knowledge, preferences — and automatically flows into every new interaction.
+
+*Appears in: [L3 — Persistent Context](../l3-context-infrastructure/01-persistent-context/)*
+
+### Prompt
+
+The input you send to an AI model — your question, instruction, or task. The more precise the prompt, the better the result.
+
+*Appears in: [L1](../l1-first-steps/03-first-conversations/), [L2](../l2-intentional-prompting/01-prompt-anatomy/), [L3](../l3-context-infrastructure/05-system-prompt-design/)*
+
+### RAG
+
+Retrieval Augmented Generation — a technique where the AI model retrieves relevant information from a knowledge base before responding. This extends capacity beyond the context window.
+
+*Appears in: [L3 — Claude Projects](../l3-context-infrastructure/02-claude-projects/)*
+
+### Role Prompting
+
+A technique where you assign the AI a specific role or expertise to shape the quality and perspective of its response.
+
+*Appears in: [L2 — Prompt Anatomy](../l2-intentional-prompting/01-prompt-anatomy/)*
+
+### System Prompt
+
+A hidden instruction that sets the AI's behavior for the entire conversation — it's set before the actual conversation starts and is typically invisible to the user.
+
+*Appears in: [L2 — Prompt Anatomy](../l2-intentional-prompting/01-prompt-anatomy/), [L3 — System Prompt Design](../l3-context-infrastructure/05-system-prompt-design/)*
+
+### Token
+
+The smallest text units an AI model processes — usually a word or part of a word. A typical English sentence has 10–20 tokens.
+
+*Appears in: [L1 — What Is AI?](../l1-first-steps/01-what-is-ai/)*
+
+### User Prompt
+
+The visible input you send directly to the AI — your question, task, or instruction in the chat. Unlike the system prompt, the user prompt is visible to you and under your control.
+
+*Appears in: [L2 — Prompt Anatomy](../l2-intentional-prompting/01-prompt-anatomy/)*
+
+### Zero-Shot
+
+An instruction to the AI without any examples — the AI relies entirely on its pre-existing knowledge to complete the task. The simplest form of prompting.
+
+*Appears in: [L2 — Prompting Techniques](../l2-intentional-prompting/02-prompting-techniques/)*
