@@ -1,0 +1,145 @@
+---
+title: "ChatGPT Agent Mode: AI on the Web"
+description: How ChatGPT Agent Mode works, what Operator and Deep Research can do, and how the approach differs from Claude Cowork.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+
+> Lesson 3 of 5 — L4: AI as Coworker
+
+## A Different Approach: Cloud Instead of Desktop
+
+Claude Cowork works on your computer — with your local files. <GlossaryTip term="ChatGPT Agent Mode" definition="OpenAI's agentic feature in ChatGPT that combines a visual browser, code execution, file editing, and app integrations. The agent works in the cloud and can independently execute multi-step tasks on the web." /> works in the cloud — with its own virtual browser that can navigate websites, fill out forms, and complete online tasks.
+
+Both solve the same problem: AI that doesn't just answer, but acts. But their strengths lie in different places.
+
+## What Agent Mode Can Do
+
+Agent Mode unifies three capabilities that OpenAI originally developed separately:
+
+| Component | What It Does | Originally |
+|---|---|---|
+| **Visual Browser** | Navigates websites, clicks, scrolls, fills forms | Operator (Jan 2025) |
+| **Deep Research** | Searches the web for 5–30 minutes, analyzes hundreds of sources | Deep Research (Feb 2025) |
+| **ChatGPT Core** | Conversation, code execution, file editing | ChatGPT |
+
+### Toolkit
+
+| Tool | Function |
+|---|---|
+| **Visual Browser** | Interacts with websites via GUI (clicking, scrolling, typing) |
+| **Text Browser** | Simpler, reasoning-based web queries |
+| **Terminal** | Code execution (Python), data analysis |
+| **File System** | Create spreadsheets, presentations, documents |
+| **Apps** | Gmail, Google Calendar, Drive, GitHub, Slack, Notion, HubSpot, and more |
+
+### Practical Examples
+
+- "Check my calendar and brief me on upcoming meetings based on recent news about the participants."
+- "Research the three largest competitors in our market and create a comparison slide deck."
+- "Find the cheapest flights to Berlin next week and create a comparison table."
+
+## Deep Research: The Research Assistant
+
+Deep Research deserves special attention because it solves a task knowledge workers face daily: **Comprehensive research with sources.**
+
+- Independently searches the web for 5–30 minutes
+- Analyzes hundreds of sources
+- Creates structured reports with citations
+- Can narrow scope to specific websites
+- Can work with uploaded files
+
+| Plan | Deep Research Queries/Month |
+|---|---|
+| Free | 5 |
+| Plus ($20) | 25 |
+| Pro ($200) | 250 |
+
+**Limitation:** Occasional hallucinations. Always spot-check sources.
+
+## Scheduled Tasks
+
+ChatGPT can plan recurring tasks:
+
+- One-time, daily, weekly, monthly, or yearly
+- Maximum: 10 active tasks at once
+- Works on web, desktop, and mobile
+
+**Examples:**
+- "Every Friday: Weekend plan based on weather and location"
+- "Every Monday: Summary of my GitHub activity"
+- "Daily at 7 AM: Industry news briefing"
+
+## Pricing
+
+| Plan | Price | Agent Mode | Deep Research |
+|---|---|---|---|
+| **Free** | $0 | No | 5/month |
+| **Plus** | $20/month | Yes (40 msg/month) | 25/month |
+| **Pro** | $200/month | Yes (400 msg/month) | 250/month |
+| **Team** | $25–30/user/month | Yes | 25/month |
+
+**Important:** Only initial requests count toward the quota. Follow-up questions and clarifications within a task don't.
+
+## Strengths and Limits
+
+### Strengths
+
+- **Web automation** — the biggest difference from Cowork: Agent Mode can navigate websites, fill forms, conduct interactive web research
+- **Cross-platform** — web, desktop (Mac + Windows), iOS, Android
+- **Deep Research** — one of the best available solutions for comprehensive web research
+- **App integrations** — Gmail, Calendar, Drive, Slack, Notion, GitHub, and many more
+
+### Limits
+
+- **No local file access** — everything runs in the cloud. You can upload files, but Agent Mode can't access your local folders
+- **Anti-bot blocks** — many websites (Amazon, LinkedIn, social media) block the visual browser
+- **CAPTCHAs** — needs your help with "I'm not a robot"
+- **Speed** — multi-step tasks take 1–10 minutes as each page is processed individually
+- **Complex authentication** — MFA, SSO redirects, and OAuth are problematic
+- **Audit gap** — agent actions are indistinguishable from user actions in logs
+
+## Comparison: Cowork vs. Agent Mode
+
+| Aspect | Claude Cowork | ChatGPT Agent Mode |
+|---|---|---|
+| **Focus** | Desktop and local files | Web and cloud |
+| **Local file access** | Yes (folder sandbox) | No |
+| **Web browsing** | Chrome extension | Dedicated visual browser |
+| **Platforms** | macOS + Windows desktop | Web, desktop, iOS, Android |
+| **Sub-agents** | Yes (parallel) | No |
+| **Deep Research** | Web search with summarization | 5–30 min autonomous research |
+| **Scheduled tasks** | Yes (requires app open) | Yes (up to 10 active) |
+| **Entry price** | $20/month | $20/month |
+| **Best for** | Document creation, file work | Web automation, research |
+
+### When to Choose Which?
+
+**Cowork** when you:
+- Work with local files (organizing PDFs, Excel analysis, presentations)
+- Need cross-app workflows (Excel → PowerPoint)
+- Primarily work at your desktop
+
+**Agent Mode** when you:
+- Have web-based tasks (research, bookings, forms)
+- Need Deep Research for comprehensive analysis
+- Want to work mobile or cross-platform
+
+**Both** when you have different task types — which is the case for most knowledge workers.
+
+## Try It Yourself
+
+### Exercise 1: Test Agent Mode
+Activate Agent Mode in ChatGPT (Tools dropdown or `/agent`). Set a multi-step web task: "Find the 3 most-cited studies on [your field] from 2025 and summarize each in 3 sentences."
+
+### Exercise 2: Use Deep Research
+Start a Deep Research query on a topic you need to research anyway. Compare the output with what you would have found in 30 minutes on your own.
+
+### Exercise 3: Comparison Test
+Take a task and complete it with both Cowork and Agent Mode. Document: Which was faster? Which produced higher quality? Which was more convenient?
+
+## Looking Ahead
+
+Claude Cowork and ChatGPT Agent Mode represent two philosophies: desktop-first vs. cloud-first. Both are improving, both will converge. For you as a knowledge worker, the most important skill isn't mastering one tool perfectly — it's knowing when each is the right choice.
+
+In the next lesson, you'll tackle perhaps the most important skill when working with AI agents: **Trust Calibration** — when you can trust, when you must verify, and how to calibrate that balance over time.

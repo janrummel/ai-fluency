@@ -1,0 +1,158 @@
+---
+title: "Compliance Basics: What You Need to Know"
+description: The EU AI Act at awareness level — AI literacy obligations, transparency, liability, and what it concretely means for your daily work.
+---
+
+import GlossaryTip from '../../../../components/GlossaryTip.astro';
+import DosDonts from '../../../../components/DosDonts.astro';
+
+> Lesson 5 of 5 — L4: AI as Coworker
+
+## Why This Is Relevant Now
+
+In the previous lessons, you learned to use AI agents and calibrate trust. Now for the framework that wraps it all together: The <GlossaryTip term="EU AI Act" definition="The world's first comprehensive regulation for artificial intelligence (Regulation (EU) 2024/1689). Classifies AI systems by risk and mandates transparency, human control, and accountability." /> has been in force since August 2024 — and it affects everyone who uses AI professionally. Not someday, but now.
+
+This lesson gives you awareness-level knowledge: What you need to know as a knowledge worker. Not law, but orientation.
+
+## What Already Applies (as of March 2026)
+
+The AI Act is being rolled out in phases. Two provisions are already active:
+
+### 1. AI Literacy Obligation (since February 2025)
+
+Your employer is legally required to ensure that you understand the AI systems you use. This includes:
+
+- Basic knowledge of capabilities and risks
+- Awareness of potential harms
+- Ability to critically assess AI output
+- Appropriate to your role and context
+
+**What this means concretely:** "Just read the manual" isn't sufficient according to the European Commission. Your company must provide training and document it. There's no external certification requirement — but the obligation itself is real.
+
+**Push for this** if your employer provides AI tools but no training.
+
+### 2. Prohibited AI Practices (since February 2025)
+
+Certain AI applications are completely banned:
+
+- Subliminal manipulation (influencing without awareness)
+- Exploitation of vulnerabilities (age, disability)
+- Social scoring by public authorities
+- Emotion recognition in the workplace
+- Untargeted facial image scraping
+
+Not directly relevant for most knowledge workers — but good to know where the hard line is.
+
+## What's Coming in August 2026
+
+### Transparency Obligations
+
+| Situation | Obligation |
+|---|---|
+| AI interacts with a person | Disclose that it's AI |
+| AI-generated text on public matters | Label as AI-generated |
+| Deep fakes (image, audio, video) | Mark as artificially generated |
+| AI-generated content generally | Machine-readable AI labeling |
+
+**For you concretely:** If you publish AI-generated text (blog, report, external communications), it must be identifiable as such. Internally, it depends on your company's policy.
+
+### High-Risk Rules
+
+Stricter requirements for AI in sensitive areas: human resources (CV screening, performance evaluation), education, credit decisions, public services. If you use AI in these areas, special requirements apply for documentation, human oversight, and risk management.
+
+## Three Roles, Three Responsibilities
+
+| Role | Who | Responsibility |
+|---|---|---|
+| **Provider** | Anthropic, OpenAI, Microsoft | Safety and conformity of the AI system |
+| **Deployer** | Your employer | Appropriate use, training, logging, human oversight |
+| **User** | You | Professional responsibility for decisions based on AI output |
+
+**Important:** You typically don't bear direct liability under the AI Act. But: If you use AI for decisions that affect others — candidate screening, customer communication, financial recommendations — you carry professional responsibility. "AI told me" is not an excuse.
+
+## Where Do AI Agents Stand?
+
+The AI Act was finalized before agentic AI systems like Cowork or Agent Mode were widely available. There's no separate category for "AI agents." The classification depends on the **specific use case**:
+
+| What You Do | Risk Level | Requirements |
+|---|---|---|
+| AI summarizes emails | Minimal | None specific |
+| AI creates presentation drafts | Minimal | None specific |
+| AI evaluates job applications | High | Documentation, human oversight, risk management |
+| AI makes credit decisions | High | Full compliance requirements |
+
+**The rule of thumb:** The more autonomy and the higher the consequences for other people, the stricter the requirements.
+
+## <GlossaryTip term="Human-in-the-Loop" definition="The principle that a human remains involved in an AI system's decision process — whether as approver, supervisor, or final decision-maker. The EU AI Act mandates this for high-risk AI systems." />: What the Law Requires
+
+For high-risk systems, the following must be guaranteed:
+
+1. **Understand:** You can comprehend the AI system's capabilities and limitations
+2. **Monitor:** You can detect anomalies and unexpected behavior
+3. **Recognize automation bias:** You're aware of the tendency to blindly trust AI
+4. **Interpret:** You can correctly contextualize AI results
+5. **Reject:** You can always decide not to use the AI output
+
+This is essentially what you learned about trust calibration in Lesson 4 — now with a legal framework.
+
+## Audit Trail: Document Your AI Usage
+
+For high-risk systems, logs must be maintained — 6-month retention, traceable decisions. But even outside of mandatory requirements, it's smart to document critical AI usage:
+
+- **What:** What did you use AI for?
+- **Input:** What did you give the AI?
+- **Output:** What did it deliver?
+- **Decision:** What did you do with the output?
+- **Verification:** Did you check the result?
+
+This isn't bureaucratic overhead — it's your evidence of responsible work.
+
+## Penalties
+
+| Violation | Maximum Fine |
+|---|---|
+| Prohibited AI practices | €35M or 7% of global annual revenue |
+| High-risk requirements | €15M or 3% |
+| False information to authorities | €7.5M or 1.5% |
+
+Penalties primarily target companies, not individual employees. But they show how seriously the EU takes this.
+
+## L4 Summary
+
+<DosDonts
+  dos={[
+    "Steer delegation consciously: task decomposition, autonomy level, verification depth",
+    "Choose the right tool for the task: desktop agent, web agent, or manual",
+    "Calibrate trust: task-specific, evidence-based, over time",
+    "Keep responsibility: Your name is on the result, not the AI's",
+    "Take AI literacy seriously: understand what the tool can do, where the limits are, when to verify"
+  ]}
+  donts={[
+    "Trust AI blindly because the output sounds professional",
+    "Prioritize efficiency over quality — Klarna showed how that ends",
+    "Let AI work autonomously on irreversible, high-consequence decisions",
+    "Assume that 'AI told me' is an adequate justification",
+    "Ignore compliance because 'that only affects big companies' — AI literacy obligation has been in effect since February 2025"
+  ]}
+/>
+
+## Your L4 Checklist
+
+Before continuing your AI fluency journey, you should be able to answer these with "yes":
+
+- [ ] I can break tasks into delegable and non-delegable parts
+- [ ] I know the strengths and limits of Claude Cowork and ChatGPT Agent Mode
+- [ ] I calibrate trust consciously — task-specific, with verification
+- [ ] I know what the EU AI Act means for my daily AI usage
+- [ ] I document critical AI usage and maintain professional responsibility
+
+## What's Next?
+
+You've now completed all four levels of the AI Fluency Explorer path:
+
+- **L1:** First Steps — understanding and trying AI
+- **L2:** Intentional Prompting — structure, techniques, iteration
+- **L3:** Context as Infrastructure — persistent workspaces, system prompt design
+- **L4:** AI as Coworker — delegation, trust calibration, compliance
+
+That's a solid foundation. Future phases will add specialized paths: **Maker** (building AI into workflows), **Coworker** (organizing teams with AI), and **Leader** (AI strategy and governance). Your foundation is set.
