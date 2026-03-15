@@ -1,33 +1,59 @@
 ---
 title: AI Fluency
-description: Deine Lernreise von der ersten AI-Konversation bis zum AI-gestützten Arbeiten.
+description: Der kostenlose Lernpfad fuer Wissensarbeiter — von der ersten AI-Konversation bis zum AI-gestuetzten Arbeiten.
 template: splash
 hero:
   title: '<span class="gradient-text">Von Chat zu Kompetenz</span>'
-  tagline: Deine Lernreise von der ersten AI-Konversation bis zum AI-gestützten Arbeiten — Schritt für Schritt, praktisch, kostenlos.
+  tagline: Du nutzt AI jeden Tag. Aber nutzt Du sie bewusst?
   actions:
     - text: Mit L1 starten
       link: ../l1-first-steps/01-what-is-ai/
       icon: right-arrow
-    - text: Wo stehst du?
+    - text: Wo stehst Du?
       link: ../start/level-check/
       variant: secondary
 ---
 
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import LevelCard from '../../../../components/LevelCard.astro';
+
+## Das Problem
+
+Du hast ChatGPT ausprobiert. Vielleicht nutzt Du es taeglich. Aber Du kopierst Prompts von Twitter, bekommst inkonsistente Ergebnisse und weisst nicht ob Du es gut nutzt oder einfach Glueck hast. Die AI-Tools sind maechtig — aber niemand hat Dir beigebracht sie systematisch zu nutzen.
+
+**AI Fluency aendert das.** 4 Levels. 20 Lektionen. Kein Coding noetig. Von Deiner ersten strukturierten Konversation bis zum Delegieren echter Arbeit an AI — Schritt fuer Schritt.
+
+## Nach diesem Kurs wirst Du...
+
+<CardGrid>
+  <Card title="Echte Gespraeche mit AI fuehren" icon="rocket">
+    Verstehen was AI kann und was nicht. Das richtige Tool waehlen. Beim ersten Versuch nuetzliche Ergebnisse bekommen.
+  </Card>
+  <Card title="Prompts schreiben die funktionieren" icon="pencil">
+    Prompt-Anatomie, Techniken, Iteration — von zufaelligen Ergebnissen zu zuverlaessigem Output.
+  </Card>
+  <Card title="Persistente AI-Workspaces bauen" icon="puzzle">
+    Claude Projects, Custom GPTs, System Prompts — AI die Deinen Kontext kennt.
+  </Card>
+  <Card title="Arbeit an AI delegieren" icon="star">
+    Vom Chat zum Coworker. Trust Calibration, Compliance, autonome Agents.
+  </Card>
+</CardGrid>
+
+## 4 Levels — starte wo Du stehst
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem auto;max-width:44rem;text-align:left;">
   <LevelCard
     level={1}
     title="Erste Schritte"
-    description="Was AI ist, welche Tools es gibt und wie du dein erstes Gespräch führst."
+    description="Was AI ist, welche Tools es gibt und wie Du Dein erstes echtes Gespraech fuehrst."
     lessons={5}
     href="../l1-first-steps/01-what-is-ai/"
   />
   <LevelCard
     level={2}
     title="Bewusst Prompten"
-    description="Prompt-Anatomie, Techniken, Iteration und der Unterschied zwischen gut und schlecht."
+    description="Prompt-Anatomie, Techniken, Iteration — der Unterschied zwischen Raten und Engineering."
     lessons={5}
     href="../l2-intentional-prompting/01-prompt-anatomy/"
   />
@@ -41,14 +67,66 @@ import LevelCard from '../../../../components/LevelCard.astro';
   <LevelCard
     level={4}
     title="AI als Coworker"
-    description="Delegation, Claude Cowork, ChatGPT Agent Mode, Trust Calibration und Compliance."
+    description="Delegation, autonome Agents, Trust Calibration und Compliance-Grundlagen."
     lessons={5}
     href="../l4-ai-coworker/01-from-chat-to-delegation/"
   />
 </div>
 
-<div style="text-align:center;margin-top:1rem;">
+## Fuer wen ist das?
 
-Nicht sicher, wo du stehst? Mach den [Level Check](../start/level-check/). Oder schau dir das [komplette Curriculum](../start/curriculum/) an.
+<CardGrid>
+  <Card title="Das bist Du" icon="approve-check-circle">
+    Wissensarbeiter der AI nutzt, aber besser nutzen will. PM, Analyst, Autor, Berater — jeder dessen Arbeit aus Denken und Kommunizieren besteht.
+  </Card>
+  <Card title="Was Du brauchst" icon="list-format">
+    Kein Coding. Kein technischer Hintergrund. Nur Neugier und ein kostenloses AI-Tool (ChatGPT, Claude oder Gemini).
+  </Card>
+</CardGrid>
 
-</div>
+**Zeitaufwand:** ~10-20 Stunden gesamt. Jedes Level funktioniert einzeln (2-4 Stunden). Im eigenen Tempo.
+
+Nicht sicher wo Du starten sollst? Mach den [Level Check](../start/level-check/). Oder erkunde das [volle Curriculum](../start/curriculum/).
+
+## Haeufig gestellte Fragen
+
+<details>
+<summary>Brauche ich technische Skills oder Coding-Erfahrung?</summary>
+
+Nein. Dieser Kurs ist fuer Wissensarbeiter, nicht fuer Entwickler. Jedes Konzept wird in verstaendlicher Sprache erklaert. Wenn Du E-Mail und einen Browser nutzen kannst, kannst Du diesen Kurs machen.
+</details>
+
+<details>
+<summary>Welches AI-Tool brauche ich?</summary>
+
+Jeder grosse AI-Assistent funktioniert: ChatGPT (kostenlos), Claude (kostenlos) oder Google Gemini. Der Kurs erklaert die Unterschiede und hilft Dir bei der Wahl. Die meisten Lektionen funktionieren mit jedem Tool.
+</details>
+
+<details>
+<summary>Wie unterscheidet sich das von YouTube-Tutorials?</summary>
+
+Tutorials zeigen Tricks. Dieser Kurs baut Skills auf. Jede Lektion folgt einem strukturierten Muster — Konzept, Beispiel, Uebung. Du baust auf dem Gelernten auf. Nach 4 Levels brauchst Du keine Tutorials mehr, weil Du die Prinzipien verstehst.
+</details>
+
+<details>
+<summary>Kann ich Levels ueberspringen?</summary>
+
+Ja. Mach den Level Check um Deinen Einstiegspunkt zu finden. Wenn Du schon bewusst promptest, starte bei Level 3. Wenn Du schon AI-Workspaces baust, starte bei Level 4.
+</details>
+
+<details>
+<summary>Gibt es den Kurs auf Englisch?</summary>
+
+Ja. Jede Lektion existiert auf Deutsch und Englisch. Nutze den Language Switcher oben in der Navigation.
+</details>
+
+## Verwandte Projekte
+
+<CardGrid>
+  <LinkCard title="Level Up AI" href="https://janrummel.github.io/level-up-ai/" description="Das Gegenstueck fuer Entwickler: AI Engineering mit dem Vercel AI SDK. Code-Challenges statt Konversationen." />
+  <LinkCard title="AI Product Thinking" href="https://janrummel.github.io/ai-product-thinking/" description="Das Gegenstueck fuer PMs: AI-Produktentscheidungen mit echten Szenarien. Strategie statt Skills." />
+</CardGrid>
+
+## Warum es das gibt
+
+Die Luecke zwischen "Ich hab ChatGPT ausprobiert" und "Ich nutze AI um bessere Arbeit zu machen" ist groesser als sie aussieht. Die meisten bleiben im Chatbot-Stadium — zufaellige Fragen, zufaellige Ergebnisse. Dieser Kurs existiert weil strukturierte AI-Skills keinen Informatik-Abschluss erfordern sollten. Gebaut fuer Leute die fuer's Denken bezahlt werden.
