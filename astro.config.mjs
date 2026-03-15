@@ -31,7 +31,7 @@ export default defineConfig({
         {
           label: 'Start',
           translations: { de: 'Start' },
-          items: [{ slug: 'start' }, { slug: 'start/level-check' }],
+          items: [{ slug: 'start' }, { slug: 'start/curriculum' }, { slug: 'start/level-check' }],
         },
         {
           label: 'L1 — First Steps',
