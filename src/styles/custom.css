@@ -311,6 +311,25 @@ nav.sidebar .group-label {
   margin-bottom: 1rem;
 }
 
+/* --- Right Sidebar (Table of Contents) --- */
+.right-sidebar a,
+.right-sidebar-panel a,
+starlight-toc a {
+  color: var(--af-text-secondary);
+}
+
+.right-sidebar a:hover,
+.right-sidebar-panel a:hover,
+starlight-toc a:hover {
+  color: var(--af-text);
+}
+
+.right-sidebar h2,
+.right-sidebar-panel h2,
+starlight-toc h2 {
+  color: var(--af-text);
+}
+
 /* --- Accessibility --- */
 @media (prefers-reduced-motion: reduce) {
   * {
