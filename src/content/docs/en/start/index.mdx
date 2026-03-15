@@ -3,7 +3,7 @@ title: AI Fluency
 description: Your learning journey from first AI conversations to AI-powered work.
 template: splash
 hero:
-  title: AI Fluency
+  title: '<span class="gradient-text">From Chat to Competency</span>'
   tagline: From your first AI conversation to AI-powered work — step by step, hands-on, free.
   actions:
     - text: Start with L1
@@ -14,25 +14,41 @@ hero:
       variant: secondary
 ---
 
-## What is AI Fluency?
+import LevelCard from '../../../../components/LevelCard.astro';
 
-AI Fluency is an open learning journey for knowledge workers. From your first conversation with ChatGPT to systematic collaboration with AI — at your own pace, with practical exercises.
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem auto;max-width:44rem;text-align:left;">
+  <LevelCard
+    level={1}
+    title="First Steps"
+    description="What AI is, which tools exist, and how to have your first conversation."
+    lessons={5}
+    href="../l1-first-steps/01-what-is-ai/"
+  />
+  <LevelCard
+    level={2}
+    title="Intentional Prompting"
+    description="Prompt anatomy, techniques, iteration, and the difference between good and bad."
+    lessons={5}
+    href="../l2-intentional-prompting/01-prompt-anatomy/"
+  />
+  <LevelCard
+    level={3}
+    title="Context as Infrastructure"
+    description="Persistent workspaces, Claude Projects, Custom GPTs, and system prompt design."
+    lessons={5}
+    href="../l3-context-infrastructure/01-persistent-context/"
+  />
+  <LevelCard
+    level={4}
+    title="AI as Coworker"
+    description="Delegation, Claude Cowork, ChatGPT Agent Mode, trust calibration, and compliance."
+    lessons={5}
+    href="../l4-ai-coworker/01-from-chat-to-delegation/"
+  />
+</div>
 
-## Who is it for?
+<div style="text-align:center;margin-top:1rem;">
 
-For anyone who wants to work with AI professionally — whether you're in marketing, sales, finance, legal, or engineering. No technical background required.
+Not sure where you stand? Take the [Level Check](../start/level-check/).
 
-## The Learning Journey
-
-| Level | Topic | Paradigm Shift |
-|-------|-------|----------------|
-| **L1** | [First Steps](../l1-first-steps/01-what-is-ai/) | AI is not Google |
-| **L2** | [Intentional Prompting](../l2-intentional-prompting/01-prompt-anatomy/) | From questions to instructions |
-| **L3** | [Context as Infrastructure](../l3-context-infrastructure/01-persistent-context/) | Invest once, benefit continuously |
-| **L4** | [AI as Coworker](../l4-ai-coworker/01-from-chat-to-delegation/) | From the text box to the task queue |
-
-Each level builds on the previous one. You can check the [Level Check](../start/level-check/) anytime to find your starting point.
-
-## Open and free
-
-AI Fluency is an open-source project. All content is freely available and regularly updated.
+</div>
