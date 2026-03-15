@@ -1,0 +1,60 @@
+---
+interface Props {
+  level: number;
+  title: string;
+  description: string;
+}
+
+const { level, title, description } = Astro.props;
+---
+
+<div class={`level-hero level-hero--l${level}`}>
+  <div class="level-hero__badge">Level {level}</div>
+  <h2 class="level-hero__title">{title}</h2>
+  <p class="level-hero__description">{description}</p>
+</div>
+
+<style>
+  .level-hero {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .level-hero--l1 { background: linear-gradient(135deg, var(--af-l1-bg), rgba(41,151,255,0.05)); border: 1px solid rgba(41,151,255,0.2); }
+  .level-hero--l2 { background: linear-gradient(135deg, var(--af-l2-bg), rgba(48,209,88,0.05)); border: 1px solid rgba(48,209,88,0.2); }
+  .level-hero--l3 { background: linear-gradient(135deg, var(--af-l3-bg), rgba(255,159,10,0.05)); border: 1px solid rgba(255,159,10,0.2); }
+  .level-hero--l4 { background: linear-gradient(135deg, var(--af-l4-bg), rgba(191,90,242,0.05)); border: 1px solid rgba(191,90,242,0.2); }
+
+  .level-hero__badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .level-hero--l1 .level-hero__badge { color: var(--af-l1); }
+  .level-hero--l2 .level-hero__badge { color: var(--af-l2); }
+  .level-hero--l3 .level-hero__badge { color: var(--af-l3); }
+  .level-hero--l4 .level-hero__badge { color: var(--af-l4); }
+
+  .level-hero__title {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin: 0 0 0.5rem;
+    color: var(--af-text);
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .level-hero__description {
+    font-size: 0.95rem;
+    color: var(--af-text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+</style>

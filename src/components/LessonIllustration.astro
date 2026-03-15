@@ -1,0 +1,32 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<div class="lesson-illustration" role="img" aria-label={alt}>
+  <img src={src} alt={alt} loading="lazy" />
+</div>
+
+<style>
+  .lesson-illustration {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: center;
+    background: var(--af-surface);
+    border: 1px solid var(--af-border-subtle);
+    border-radius: 10px;
+    padding: 1.5rem;
+    overflow: hidden;
+  }
+
+  .lesson-illustration img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
