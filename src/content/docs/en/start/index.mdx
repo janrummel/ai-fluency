@@ -1,10 +1,10 @@
 ---
 title: AI Fluency
-description: Your learning journey from first AI conversations to AI-powered work.
+description: The free learning path for knowledge workers — from first AI conversations to AI-powered work.
 template: splash
 hero:
   title: '<span class="gradient-text">From Chat to Competency</span>'
-  tagline: From your first AI conversation to AI-powered work — step by step, hands-on, free.
+  tagline: You use AI every day. But are you using it deliberately?
   actions:
     - text: Start with L1
       link: ../l1-first-steps/01-what-is-ai/
@@ -14,20 +14,46 @@ hero:
       variant: secondary
 ---
 
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import LevelCard from '../../../../components/LevelCard.astro';
+
+## The problem
+
+You've tried ChatGPT. Maybe you use it daily. But you're copy-pasting prompts from Twitter, getting inconsistent results, and you have no idea if you're using it well or just getting lucky. The AI tools are powerful — but nobody taught you how to use them systematically.
+
+**AI Fluency changes that.** 4 levels. 20 lessons. No coding required. From your first structured conversation to delegating real work to AI — step by step.
+
+## After this course, you will...
+
+<CardGrid>
+  <Card title="Have real conversations with AI" icon="rocket">
+    Understand what AI can and can't do. Choose the right tool. Get useful results on the first try.
+  </Card>
+  <Card title="Write prompts that work" icon="pencil">
+    Prompt anatomy, techniques, iteration — move from random results to reliable output.
+  </Card>
+  <Card title="Build persistent AI workspaces" icon="puzzle">
+    Claude Projects, Custom GPTs, system prompts — AI that remembers your context.
+  </Card>
+  <Card title="Delegate work to AI" icon="star">
+    From chat to coworker. Trust calibration, compliance, autonomous agents.
+  </Card>
+</CardGrid>
+
+## 4 Levels — start where you are
 
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem auto;max-width:44rem;text-align:left;">
   <LevelCard
     level={1}
     title="First Steps"
-    description="What AI is, which tools exist, and how to have your first conversation."
+    description="What AI is, which tools exist, and how to have your first real conversation."
     lessons={5}
     href="../l1-first-steps/01-what-is-ai/"
   />
   <LevelCard
     level={2}
     title="Intentional Prompting"
-    description="Prompt anatomy, techniques, iteration, and the difference between good and bad."
+    description="Prompt anatomy, techniques, iteration — the difference between guessing and engineering."
     lessons={5}
     href="../l2-intentional-prompting/01-prompt-anatomy/"
   />
@@ -41,14 +67,66 @@ import LevelCard from '../../../../components/LevelCard.astro';
   <LevelCard
     level={4}
     title="AI as Coworker"
-    description="Delegation, Claude Cowork, ChatGPT Agent Mode, trust calibration, and compliance."
+    description="Delegation, autonomous agents, trust calibration, and compliance basics."
     lessons={5}
     href="../l4-ai-coworker/01-from-chat-to-delegation/"
   />
 </div>
 
-<div style="text-align:center;margin-top:1rem;">
+## Who is this for?
 
-Not sure where you stand? Take the [Level Check](../start/level-check/). Or explore the [full curriculum](../start/curriculum/).
+<CardGrid>
+  <Card title="This is you" icon="approve-check-circle">
+    Knowledge worker who uses AI but wants to use it better. PM, analyst, writer, consultant — anyone whose work involves thinking and communicating.
+  </Card>
+  <Card title="What you need" icon="list-format">
+    No coding. No technical background. Just curiosity and a free AI tool (ChatGPT, Claude, or Gemini).
+  </Card>
+</CardGrid>
 
-</div>
+**Time:** ~10-20 hours total. Each level works standalone (2-4 hours). At your own pace.
+
+Not sure where to start? Take the [Level Check](../start/level-check/). Or explore the [full curriculum](../start/curriculum/).
+
+## Frequently asked questions
+
+<details>
+<summary>Do I need technical skills or coding experience?</summary>
+
+No. This course is designed for knowledge workers, not developers. Every concept is explained in plain language. If you can use email and a web browser, you can do this course.
+</details>
+
+<details>
+<summary>Which AI tool do I need?</summary>
+
+Any of the major AI assistants works: ChatGPT (free tier), Claude (free tier), or Google Gemini. The course explains the differences and helps you choose. Most lessons work with any tool.
+</details>
+
+<details>
+<summary>How is this different from watching YouTube tutorials?</summary>
+
+Tutorials show tricks. This course builds skills. Each lesson follows a structured pattern — concept, example, practice. You build on what you learned before. After 4 levels, you don't need tutorials anymore because you understand the principles.
+</details>
+
+<details>
+<summary>Can I skip levels?</summary>
+
+Yes. Take the Level Check to find your starting point. If you already prompt deliberately, start at Level 3. If you're already building AI workspaces, start at Level 4.
+</details>
+
+<details>
+<summary>Is this available in German?</summary>
+
+Yes. Every lesson exists in both English and German. Use the language switcher in the top navigation.
+</details>
+
+## Related projects
+
+<CardGrid>
+  <LinkCard title="Level Up AI" href="https://janrummel.github.io/level-up-ai/" description="The developer counterpart: AI Engineering with the Vercel AI SDK. Code challenges instead of conversations." />
+  <LinkCard title="AI Product Thinking" href="https://janrummel.github.io/ai-product-thinking/" description="The PM counterpart: AI product decisions with real scenarios. Strategy instead of skills." />
+</CardGrid>
+
+## Why this exists
+
+The gap between "I've tried ChatGPT" and "I use AI to do better work" is bigger than it looks. Most people stay at the chatbot stage — asking random questions, getting random results. This course exists because structured AI skills shouldn't require a computer science degree. Built for people who think for a living.
