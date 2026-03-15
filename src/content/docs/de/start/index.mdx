@@ -3,8 +3,8 @@ title: AI Fluency
 description: Deine Lernreise von der ersten AI-Konversation bis zum AI-gestützten Arbeiten.
 template: splash
 hero:
-  title: AI Fluency
-  tagline: Von der ersten AI-Konversation bis zum AI-gestützten Arbeiten — Schritt für Schritt, praktisch, kostenlos.
+  title: '<span class="gradient-text">Von Chat zu Kompetenz</span>'
+  tagline: Deine Lernreise von der ersten AI-Konversation bis zum AI-gestützten Arbeiten — Schritt für Schritt, praktisch, kostenlos.
   actions:
     - text: Mit L1 starten
       link: ../l1-first-steps/01-what-is-ai/
@@ -14,25 +14,41 @@ hero:
       variant: secondary
 ---
 
-## Was ist AI Fluency?
+import LevelCard from '../../../../components/LevelCard.astro';
 
-AI Fluency ist eine offene Lernreise für Wissensarbeiter. Vom ersten Gespräch mit ChatGPT bis zur systematischen Zusammenarbeit mit AI — in deinem Tempo, mit praktischen Übungen.
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem auto;max-width:44rem;text-align:left;">
+  <LevelCard
+    level={1}
+    title="Erste Schritte"
+    description="Was AI ist, welche Tools es gibt und wie du dein erstes Gespräch führst."
+    lessons={5}
+    href="../l1-first-steps/01-what-is-ai/"
+  />
+  <LevelCard
+    level={2}
+    title="Bewusst Prompten"
+    description="Prompt-Anatomie, Techniken, Iteration und der Unterschied zwischen gut und schlecht."
+    lessons={5}
+    href="../l2-intentional-prompting/01-prompt-anatomy/"
+  />
+  <LevelCard
+    level={3}
+    title="Kontext als Infrastruktur"
+    description="Persistente Workspaces, Claude Projects, Custom GPTs und System Prompt Design."
+    lessons={5}
+    href="../l3-context-infrastructure/01-persistent-context/"
+  />
+  <LevelCard
+    level={4}
+    title="AI als Coworker"
+    description="Delegation, Claude Cowork, ChatGPT Agent Mode, Trust Calibration und Compliance."
+    lessons={5}
+    href="../l4-ai-coworker/01-from-chat-to-delegation/"
+  />
+</div>
 
-## Für wen?
+<div style="text-align:center;margin-top:1rem;">
 
-Für alle, die beruflich mit AI arbeiten wollen — egal ob Marketing, Vertrieb, Finanzen, Recht oder Entwicklung. Du brauchst keine technischen Vorkenntnisse.
+Nicht sicher, wo du stehst? Mach den [Level Check](../start/level-check/).
 
-## Die Lernreise
-
-| Level | Thema | Paradigmenwechsel |
-|-------|-------|-------------------|
-| **L1** | [Erste Schritte](../l1-first-steps/01-what-is-ai/) | AI ist nicht Google |
-| **L2** | [Bewusst Prompten](../l2-intentional-prompting/01-prompt-anatomy/) | Von Fragen zu Anweisungen |
-| **L3** | [Kontext als Infrastruktur](../l3-context-infrastructure/01-persistent-context/) | Einmal investieren, dauerhaft profitieren |
-| **L4** | [AI als Coworker](../l4-ai-coworker/01-from-chat-to-delegation/) | Vom Textfeld zur Aufgabenliste |
-
-Jedes Level baut auf dem vorherigen auf. Du kannst jederzeit beim [Level Check](../start/level-check/) prüfen, wo du stehst.
-
-## Offen und kostenlos
-
-AI Fluency ist ein Open-Source-Projekt. Alle Inhalte sind frei verfügbar und werden regelmässig aktualisiert.
+</div>

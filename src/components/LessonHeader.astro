@@ -1,0 +1,119 @@
+---
+interface Props {
+  level: number;
+  lesson: number;
+  total: number;
+}
+
+const { level, lesson, total } = Astro.props;
+const isEN = Astro.url.pathname.includes('/en/');
+const label = isEN
+  ? `Lesson ${lesson} of ${total}`
+  : `Lektion ${lesson} von ${total}`;
+const levelLabels: Record<number, { de: string; en: string }> = {
+  1: { de: 'Erste Schritte', en: 'First Steps' },
+  2: { de: 'Bewusst Prompten', en: 'Intentional Prompting' },
+  3: { de: 'Kontext als Infrastruktur', en: 'Context as Infrastructure' },
+  4: { de: 'AI als Coworker', en: 'AI as Coworker' },
+};
+const levelName = isEN ? levelLabels[level]?.en : levelLabels[level]?.de;
+const dots = Array.from({ length: total }, (_, i) => i + 1);
+---
+
+<div class="lesson-header" aria-label={label}>
+  <div class="lesson-header__meta">
+    <span class={`lesson-header__badge lesson-header__badge--l${level}`}>L{level}</span>
+    <span class="lesson-header__label">{label} — {levelName}</span>
+  </div>
+  <div class="lesson-header__progress" role="group" aria-label={label}>
+    {dots.map((dot, i) => (
+      <Fragment>
+        {i > 0 && <div class={`lesson-header__line ${dot <= lesson ? `lesson-header__line--l${level}` : ''}`} />}
+        <div
+          class={`lesson-header__dot ${dot === lesson ? `lesson-header__dot--active lesson-header__dot--l${level}` : dot < lesson ? `lesson-header__dot--done lesson-header__dot--l${level}` : ''}`}
+          aria-current={dot === lesson ? 'step' : undefined}
+        >
+          {dot}
+        </div>
+      </Fragment>
+    ))}
+  </div>
+</div>
+
+<style>
+  .lesson-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--af-border-subtle);
+  }
+
+  .lesson-header__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .lesson-header__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .lesson-header__badge--l1 { background: var(--af-l1-bg); color: var(--af-l1); }
+  .lesson-header__badge--l2 { background: var(--af-l2-bg); color: var(--af-l2); }
+  .lesson-header__badge--l3 { background: var(--af-l3-bg); color: var(--af-l3); }
+  .lesson-header__badge--l4 { background: var(--af-l4-bg); color: var(--af-l4); }
+
+  .lesson-header__label {
+    font-size: 0.825rem;
+    color: var(--af-text-secondary);
+  }
+
+  .lesson-header__progress {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .lesson-header__dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: var(--af-surface-raised);
+    color: var(--af-text-secondary);
+    flex-shrink: 0;
+  }
+
+  .lesson-header__dot--active.lesson-header__dot--l1 { background: var(--af-l1); color: white; }
+  .lesson-header__dot--active.lesson-header__dot--l2 { background: var(--af-l2); color: white; }
+  .lesson-header__dot--active.lesson-header__dot--l3 { background: var(--af-l3); color: white; }
+  .lesson-header__dot--active.lesson-header__dot--l4 { background: var(--af-l4); color: white; }
+
+  .lesson-header__dot--done.lesson-header__dot--l1 { background: var(--af-l1-bg); color: var(--af-l1); }
+  .lesson-header__dot--done.lesson-header__dot--l2 { background: var(--af-l2-bg); color: var(--af-l2); }
+  .lesson-header__dot--done.lesson-header__dot--l3 { background: var(--af-l3-bg); color: var(--af-l3); }
+  .lesson-header__dot--done.lesson-header__dot--l4 { background: var(--af-l4-bg); color: var(--af-l4); }
+
+  .lesson-header__line {
+    width: 1.25rem;
+    height: 2px;
+    background: var(--af-border-subtle);
+    flex-shrink: 0;
+  }
+
+  .lesson-header__line--l1 { background: var(--af-l1-bg); }
+  .lesson-header__line--l2 { background: var(--af-l2-bg); }
+  .lesson-header__line--l3 { background: var(--af-l3-bg); }
+  .lesson-header__line--l4 { background: var(--af-l4-bg); }
+</style>
