@@ -54,7 +54,7 @@ No code. No setup. Just clear explanations and actionable knowledge.
 - **Team leads and managers** who want their teams to use AI effectively and responsibly
 - **Anyone curious** about AI beyond the hype — no technical background required
 - **Prerequisites:** None. A browser and curiosity.
-- **Time:** ~10-15 hours at your own pace
+- **Time:** ~10-20 hours at your own pace
 
 ## Built on
 
@@ -83,7 +83,7 @@ npm run build      # Production build
 No. AI Fluency is designed for knowledge workers, not developers. Every lesson uses plain language and real-world examples. No coding, no terminal, no setup.
 
 **How long does it take?**
-About 10-15 hours total, at your own pace. Each lesson takes 20-40 minutes. You can stop and resume anytime.
+About 10-20 hours total, at your own pace. Each lesson takes 20-40 minutes. You can stop and resume anytime.
 
 **Can I skip levels?**
 Yes, but each level builds on the previous one. If you're already comfortable with basic prompting, start at Level 3 (Context as Infrastructure).
