@@ -493,6 +493,46 @@ starlight-toc h2 {
   }
 }
 
+/* --- Mobile Language Switcher (fixed, always visible) --- */
+.mobile-lang-switch {
+  display: none;
+  position: fixed;
+  top: 0.6rem;
+  right: 3.5rem;
+  z-index: 50;
+  gap: 0.2rem;
+  background: var(--af-surface);
+  border: 1px solid var(--af-border);
+  border-radius: 8px;
+  padding: 0.15rem;
+}
+
+.mobile-lang-switch a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--af-text-secondary);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.mobile-lang-switch a.active {
+  background: var(--af-accent);
+  color: var(--af-bg);
+}
+
+.mobile-lang-switch a:hover:not(.active) {
+  color: var(--af-text);
+  text-decoration: none;
+}
+
+@media (max-width: 50rem) {
+  .mobile-lang-switch {
+    display: flex;
+  }
+}
+
 /* --- Accessibility --- */
 @media (prefers-reduced-motion: reduce) {
   * {
