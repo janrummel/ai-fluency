@@ -59,7 +59,7 @@ No code. No setup. Just clear explanations and actionable knowledge.
 
 ## Built on
 
-Designed for non-technical users. Bilingual (English + German). Every lesson reviewed for clarity and accuracy. No tracking, no cookies, no backend. Built with [Astro](https://astro.build) + [Starlight](https://starlight.astro.build).
+Designed for non-technical users. Bilingual (English + German). Every lesson reviewed for clarity and accuracy. No cookies, no backend. Visits are counted cookie-free with GoatCounter. Built with [Astro](https://astro.build) + [Starlight](https://starlight.astro.build).
 
 ## Run locally
 
