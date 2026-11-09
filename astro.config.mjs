@@ -30,6 +30,7 @@ export default defineConfig({
         Footer: './src/components/Footer.astro',
       },
       head: [
+        { tag: 'link', attrs: { rel: 'stylesheet', href: 'https://janrummel.github.io/ai-learning/jr.css' } },
         { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
         { tag: 'meta', attrs: { property: 'og:site_name', content: 'AI Fluency' } },
         { tag: 'meta', attrs: { property: 'og:title', content: 'AI Fluency — From Chat to Competency' } },
