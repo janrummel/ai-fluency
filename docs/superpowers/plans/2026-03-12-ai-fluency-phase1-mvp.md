@@ -234,7 +234,7 @@ export default defineConfig({
 
 - [ ] **Step 6: Install dependencies and verify build**
 
-Run: `cd /Users/janrummel/Projects/ai-fluency && npm install`
+Run: `cd ai-fluency && npm install`
 Run: `npm run build`
 Expected: Build succeeds (may warn about missing content, that's fine)
 
