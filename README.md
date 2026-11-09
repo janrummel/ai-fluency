@@ -71,7 +71,7 @@ npm run build      # Production build
 
 ## Tech Stack
 
-[Astro](https://astro.build) + [Starlight](https://starlight.astro.build) · MDX · i18n (EN/DE) · Deployed via GitHub Actions to GitHub Pages
+[Astro](https://astro.build) + [Starlight](https://starlight.astro.build) · MDX · i18n (EN/DE) · Deployed via GitHub Actions (`.github/workflows/deploy.yml`, `npm run build`) to GitHub Pages on every push to `main`
 
 ## Related Projects
 
