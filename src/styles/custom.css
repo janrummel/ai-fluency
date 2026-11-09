@@ -58,10 +58,10 @@
 }
 
 /* --- Contextual Level Colors --- */
-body[data-level="1"] { --af-level-color: var(--af-l1); --af-level-bg: var(--af-l1-bg); }
-body[data-level="2"] { --af-level-color: var(--af-l2); --af-level-bg: var(--af-l2-bg); }
-body[data-level="3"] { --af-level-color: var(--af-l3); --af-level-bg: var(--af-l3-bg); }
-body[data-level="4"] { --af-level-color: var(--af-l4); --af-level-bg: var(--af-l4-bg); }
+html[data-level="1"] { --af-level-color: var(--af-l1); --af-level-bg: var(--af-l1-bg); }
+html[data-level="2"] { --af-level-color: var(--af-l2); --af-level-bg: var(--af-l2-bg); }
+html[data-level="3"] { --af-level-color: var(--af-l3); --af-level-bg: var(--af-l3-bg); }
+html[data-level="4"] { --af-level-color: var(--af-l4); --af-level-bg: var(--af-l4-bg); }
 
 /* --- Starlight Overrides --- */
 :root {
