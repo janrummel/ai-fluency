@@ -14,6 +14,8 @@
   --af-accent-hover: #40A9FF;
   --af-border: #38383A;
   --af-border-subtle: #2C2C2E;
+  --af-gray-2: #AEAEB2;  /* Starlight-Grau fuer Text (Suche, Taglines) */
+  --af-gray-3: #8E8E93;  /* Starlight-Grau fuer Text (Kartenbeschreibung) */
   --af-success: #30D158;
   --af-success-bg: #1A2E1F;
   --af-danger: #FF453A;
@@ -26,7 +28,7 @@
   --af-l1: #2997FF;  --af-l1-bg: rgba(41,151,255,0.15);
   --af-l2: #30D158;  --af-l2-bg: rgba(48,209,88,0.15);
   --af-l3: #FF9F0A;  --af-l3-bg: rgba(255,159,10,0.15);
-  --af-l4: #BF5AF2;  --af-l4-bg: rgba(191,90,242,0.15);
+  --af-l4: #D18AF7;  --af-l4-bg: rgba(209,138,247,0.15);
 }
 
 /* --- Design Tokens (Light) --- */
@@ -36,10 +38,12 @@
   --af-surface-raised: #F5F5F7;
   --af-text: #1D1D1F;
   --af-text-secondary: #6E6E73;
-  --af-accent: #0071E3;
+  --af-accent: #0066CC;
   --af-accent-hover: #0077ED;
   --af-border: #D2D2D7;
   --af-border-subtle: #E8E8ED;
+  --af-gray-2: #515154;
+  --af-gray-3: #6E6E73;
   --af-success: #248A3D;
   --af-success-bg: #F0FAF2;
   --af-danger: #D70015;
@@ -47,10 +51,10 @@
   --af-blockquote-border: #0071E3;
 
   /* Level Colors (Light) */
-  --af-l1: #0071E3;  --af-l1-bg: rgba(0,113,227,0.1);
-  --af-l2: #248A3D;  --af-l2-bg: rgba(36,138,61,0.1);
-  --af-l3: #E87400;  --af-l3-bg: rgba(232,116,0,0.1);
-  --af-l4: #8B5CF6;  --af-l4-bg: rgba(139,92,246,0.1);
+  --af-l1: #0066CC;  --af-l1-bg: rgba(0,102,204,0.1);
+  --af-l2: #1A7030;  --af-l2-bg: rgba(26,112,48,0.1);
+  --af-l3: #9E4F00;  --af-l3-bg: rgba(158,79,0,0.1);
+  --af-l4: #7040D8;  --af-l4-bg: rgba(112,64,216,0.1);
 }
 
 /* --- Contextual Level Colors --- */
@@ -73,8 +77,8 @@ body[data-level="4"] { --af-level-color: var(--af-l4); --af-level-bg: var(--af-l
   --sl-color-accent-high: var(--af-accent);
   --sl-color-white: var(--af-text);
   --sl-color-gray-1: var(--af-text-secondary);
-  --sl-color-gray-2: var(--af-border);
-  --sl-color-gray-3: var(--af-border-subtle);
+  --sl-color-gray-2: var(--af-gray-2);
+  --sl-color-gray-3: var(--af-gray-3);
   --sl-color-gray-5: var(--af-bg);
   --sl-color-gray-6: var(--af-surface);
 
@@ -87,6 +91,11 @@ body[data-level="4"] { --af-level-color: var(--af-l4); --af-level-bg: var(--af-l
   --sl-text-h4: var(--sl-font-system);
   --sl-text-code: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas,
     'DejaVu Sans Mono', monospace;
+}
+
+/* Aktiver Lektionspunkt: im Dunkelmodus dunkle Schrift auf heller Levelfarbe (weiss erreicht dort nur 2:1) */
+:root:not([data-theme='light']) .lesson-header__dot--active {
+  color: var(--af-bg);
 }
 
 /* --- Typography --- */
