@@ -46,7 +46,7 @@ header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
 .etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
 .etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
 .etappe li[aria-current="step"] b{color:var(--rot)}
-.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
 
 /* Schema */
 figure.schema{margin:0}
@@ -61,7 +61,7 @@ figure.schema svg{display:block;width:100%;max-width:100%;height:auto}
 .schema .pf{stroke:var(--tinte);stroke-width:1.5;fill:none}
 .schema .pf.rot{stroke:var(--rot);stroke-width:2;stroke-dasharray:6 4}
 .schema .spitze{fill:var(--tinte)}.schema .spitze.rot{fill:var(--rot)}
-figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
+figcaption{margin-top:12px;font-size:15px;color:var(--grau)}
 
 .merk{background:var(--rot-hell);padding:14px 18px;border-left:3px solid var(--rot)}
 .merk p:last-child{margin-bottom:0}
@@ -72,14 +72,14 @@ figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
 .dokument dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 16px;margin:6px 0 10px}
 .dokument dt{color:var(--grau)}
 .dokument dd{font-variant-numeric:tabular-nums}
-.dokument .klein{font-size:12.5px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
+.dokument .klein{font-size:14px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
 .dokument mark,.antwort mark{background:none;color:inherit;border-bottom:2px solid var(--rot)}
-.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15.5px}
+.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15px}
 .chat p{margin-bottom:6px}
-.chat .baustein{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+.chat .baustein{font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
 table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}
 th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--linie);vertical-align:top}
-th{font-family:var(--f-etikett);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+th{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
 td.fehl{color:var(--rot)}
 .funde{list-style:none;counter-reset:f;margin-top:8px}
 .funde li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie)}
@@ -87,7 +87,7 @@ td.fehl{color:var(--rot)}
 
 /* Ausprobieren */
 .anfrage{position:relative;background:var(--sand);padding:16px 18px;margin:10px 0}
-.anfrage pre{font-family:var(--f-etikett);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
+.anfrage pre{font-family:var(--f-etikett);font-size:14px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
 .knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);background:transparent;border:1px solid var(--rot);padding:9px 14px;cursor:pointer;border-radius:0}
 .knopf:hover{background:var(--rot);color:var(--papier)}
 .rueck{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:12px}
@@ -96,7 +96,7 @@ td.fehl{color:var(--rot)}
 [role="tab"][aria-selected="true"]{color:var(--tinte);border-bottom-color:var(--rot)}
 [role="tabpanel"]{padding:14px 0 4px}
 [role="tabpanel"] p{margin-bottom:8px}
-.stand{font-size:13.5px;color:var(--grau)}
+.stand{font-size:14px;color:var(--grau)}
 .andere{border:1px solid var(--linie);padding:12px 16px;margin:16px 0}
 .andere p{margin:4px 0 0}
 .sehen{border-top:1px solid var(--tinte);padding-top:10px;margin-top:18px}
@@ -105,7 +105,7 @@ td.fehl{color:var(--rot)}
 .griffe{list-style:none;counter-reset:g}
 .griffe li{counter-increment:g;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--linie)}
 .griffe li::before{content:counter(g);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:30px;line-height:1}
-.quelle{font-size:14.5px;color:var(--grau);margin-top:14px}
+.quelle{font-size:15px;color:var(--grau);margin-top:14px}
 
 details{border-top:1px solid var(--linie)}
 details:last-of-type{border-bottom:1px solid var(--linie)}
@@ -117,7 +117,7 @@ details p{padding:0 0 14px;color:var(--tinte)}
 
 footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
 .weiter{font-family:var(--f-titel);font-size:24px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--rot);justify-self:start}
-@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:11.5px}}
+@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:12px}}
 footer .knopf{justify-self:start;text-decoration:none}
 
 /* v2 */
@@ -134,12 +134,12 @@ footer .knopf{justify-self:start;text-decoration:none}
 .ampel li:first-child{border-top:0}
 .ampel b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
 @media (max-width:560px){.ampel li{grid-template-columns:1fr}}
-.chat .erkl{font-family:var(--f-etikett);font-size:11px;color:var(--grau);margin-left:6px;white-space:nowrap}
-.uebung pre{font-size:13px}
+.chat .erkl{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:6px;white-space:nowrap}
+.uebung pre{font-size:14px}
 .klapp{border:0;margin-top:4px}
 .klapp:last-of-type{border-bottom:0}
 .klapp summary{font-weight:400;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau);justify-content:start;grid-template-columns:auto auto}
-.klapp p{font-size:14.5px;padding-bottom:6px}
+.klapp p{font-size:15px;padding-bottom:6px}
 .handy{border-top:1px solid var(--linie);padding-top:10px;margin-top:10px}
 
 /* v3 */
@@ -150,13 +150,13 @@ footer .knopf{justify-self:start;text-decoration:none}
 .gut td q{font-style:italic;color:var(--grau)}
 .gut td q::before{content:"„"}.gut td q::after{content:"“"}
 .gut td.ok{color:var(--tinte)}
-.gut .weg{font-size:14.5px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
+.gut .weg{font-size:15px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
 .datei{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0}
-.datei .name{font-family:var(--f-etikett);font-size:13.5px}
+.datei .name{font-family:var(--f-etikett);font-size:14px}
 .schritte{list-style:none;counter-reset:s;margin:6px 0 10px}
-.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15.5px}
+.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15px}
 .schritte li::before{content:counter(s);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
-.klapp pre{font-family:var(--f-etikett);font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
+.klapp pre{font-family:var(--f-etikett);font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
 .waehle{display:block;background:var(--sand);border-left:3px solid var(--rot);padding:10px 14px;margin:14px 0 0}
 .waehle .pfeil{color:var(--rot);font-weight:700}
 [role="tab"]{border:1px solid var(--linie);border-bottom:3px solid transparent;margin-right:6px}
@@ -304,10 +304,10 @@ footer .knopf{justify-self:start;text-decoration:none}
     </dl>
     <p class="klein">* <mark>Preis gilt nur bei Lieferung der Gesamtmenge auf einmal. Teillieferungen kosten 4 % Aufschlag.</mark></p>
   </div>
-  <p class="leise" style="font-size:14.5px">Netto heißt ohne Mehrwertsteuer (USt.), brutto mit. Skonto ist ein Nachlass für schnelles Zahlen.</p>
+  <p class="leise" style="font-size:15px">Netto heißt ohne Mehrwertsteuer (USt.), brutto mit. Skonto ist ein Nachlass für schnelles Zahlen.</p>
 
   <h3>Die Anfrage, mit den fünf Bausteinen</h3>
-  <p class="leise" style="font-size:14.5px">Die roten Wörter hinter jeder Zeile (Rolle, Lage und so weiter) sind die fünf Bausteine aus Einheit 1. Sie zeigen, was die Zeile leistet. Du tippst sie nicht mit ein.</p>
+  <p class="leise" style="font-size:15px">Die roten Wörter hinter jeder Zeile (Rolle, Lage und so weiter) sind die fünf Bausteine aus Einheit 1. Sie zeigen, was die Zeile leistet. Du tippst sie nicht mit ein.</p>
   <div class="chat">
     <p>Du bist eine sorgfältige Sachbearbeiterin. <span class="baustein">Rolle</span><span class="erkl">aus welcher Sicht</span></p>
     <p>Im Anhang ist ein Angebot für 40 Bürostühle. Wir vergleichen drei Angebote. <span class="baustein">Lage</span><span class="erkl">worum es geht</span></p>
@@ -328,7 +328,7 @@ footer .knopf{justify-self:start;text-decoration:none}
         <tr><td>Gewährleistung</td><td>24 Monate</td></tr>
       </tbody>
     </table>
-    <p class="leise" style="font-size:14.5px">Klingt vollständig. Aber: Eine Zahl ist falsch, und eine wichtige Bedingung fehlt.</p>
+    <p class="leise" style="font-size:15px">Klingt vollständig. Aber: Eine Zahl ist falsch, und eine wichtige Bedingung fehlt.</p>
   </div>
 
   <h3>Gegenprüfen</h3>
@@ -356,7 +356,7 @@ footer .knopf{justify-self:start;text-decoration:none}
       <p class="weg"><b>Weggelassen:</b> Firmenname (Sitzwerk Muster GmbH), Angebotsnummer 118 und die Stückzahl 40.</p>
     </div>
   </figure>
-  <p class="leise" style="font-size:14.5px">Du erkennst sie an drei Dingen: Jede Zahl hat ein wörtliches Zitat daneben, Fehlendes heißt „steht nicht drin“, und am Ende steht, was weggelassen wurde. Prüfen musst du trotzdem, aber es geht schneller.</p>
+  <p class="leise" style="font-size:15px">Du erkennst sie an drei Dingen: Jede Zahl hat ein wörtliches Zitat daneben, Fehlendes heißt „steht nicht drin“, und am Ende steht, was weggelassen wurde. Prüfen musst du trotzdem, aber es geht schneller.</p>
 </section>
 
 <section aria-labelledby="h-tun">
@@ -373,7 +373,7 @@ footer .knopf{justify-self:start;text-decoration:none}
     <li><span><b>Am iPhone:</b> Öffne das PDF, tippe auf das Teilen-Symbol (Quadrat mit Pfeil nach oben) und dann auf „In Dateien sichern“. Beim Anhängen wählst du „Dateien“ und findest das PDF unter „Zuletzt“.</span></li>
     <li><span><b>Am Android-Handy:</b> Öffne das PDF und tippe auf „Herunterladen“ (Pfeil nach unten). Beim Anhängen wählst du „Dateien“ und dann „Downloads“.</span></li>
   </ol>
-  <p class="leise" style="font-size:14.5px">Klappt das Speichern nicht, nimm den Text weiter unten unter „Anhängen klappt nicht?“ oder ein eigenes Dokument, das du gut kennst.</p>
+  <p class="leise" style="font-size:15px">Klappt das Speichern nicht, nimm den Text weiter unten unter „Anhängen klappt nicht?“ oder ein eigenes Dokument, das du gut kennst.</p>
 
   <h3>Zweitens: die Datei anhängen</h3>
   <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
@@ -389,10 +389,10 @@ footer .knopf{justify-self:start;text-decoration:none}
   </div>
   <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
     <p>Im Job meldest du dich mit deinem Arbeitskonto an, privat mit deinem Microsoft-Konto. Klicke auf das <b>Plus</b> links im Eingabefeld und dann auf <b>„Bilder und Dateien hochladen“</b>. Wähle die Datei aus. Mit dem Arbeitskonto liest Copilot laut Microsoft Word, PDF, Excel, PowerPoint und E-Mails.</p>
-    <p class="leise" style="font-size:14.5px">Microsoft Copilot (privat) und Microsoft 365 Copilot (über die Firma) sind zwei Angebote mit ähnlicher Oberfläche.</p>
+    <p class="leise" style="font-size:15px">Microsoft Copilot (privat) und Microsoft 365 Copilot (über die Firma) sind zwei Angebote mit ähnlicher Oberfläche.</p>
     <figure class="shot"><img src="bilder/copilot-1-plusmenue.png" width="790" height="320" alt="Copilot: Das Menü hinter dem Plus ist offen, darin Bilder und Dateien hochladen." loading="lazy"><figcaption>1 · Plus, dann „Bilder und Dateien hochladen“</figcaption></figure>
     <figure class="shot"><img src="bilder/copilot-2-angehaengt.png" width="790" height="455" alt="Copilot: Das Übungs-PDF hängt an, darüber der Hinweis, dass eine Kopie an OneDrive gesendet wird." loading="lazy"><figcaption>2 · Das PDF hängt an. Beachte den Hinweis oben.</figcaption></figure>
-    <p class="leise" style="font-size:14.5px">Mit privatem Konto zeigt Copilot: „Beim Hochladen vom Gerät aus wird eine Kopie an OneDrive (Privat) gesendet.“ Die Datei liegt danach also auch in deinem OneDrive. Ein Grund mehr, nur Dokumente hochzuladen, die dort liegen dürfen.</p>
+    <p class="leise" style="font-size:15px">Mit privatem Konto zeigt Copilot: „Beim Hochladen vom Gerät aus wird eine Kopie an OneDrive (Privat) gesendet.“ Die Datei liegt danach also auch in deinem OneDrive. Ein Grund mehr, nur Dokumente hochzuladen, die dort liegen dürfen.</p>
     <details class="klapp">
       <summary>Welche Dateien gehen?</summary>
       <p>Mit dem Arbeitskonto liest Copilot laut Microsoft unter anderem .docx, .doc, .pdf, .txt, .rtf, .md, .xlsx, .xls, .csv, .pptx sowie E-Mail-Dateien .eml und .msg. <a href="https://support.microsoft.com/en-gb/topic/file-formats-supported-by-copilot-1afb9a70-2232-4753-85c2-602c422af3a8">Liste bei Microsoft</a></p>
@@ -415,7 +415,7 @@ Nimm nur auf, was im Dokument steht. Fehlt etwas, schreib „steht nicht drin“
 Zum Schluss: Was hast du weggelassen?</pre>
     <button class="knopf" type="button" data-kopie="anfrage-text">Anfrage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
-  <p class="leise" style="font-size:14.5px">Fundstelle heißt: wo genau es im Dokument steht. Bei einem eigenen Dokument ersetzt du alles nach „Es geht um:“ bis zum Zeilenende durch deinen eigenen Satz, zum Beispiel: „die Nebenkostenabrechnung für meine Wohnung; ich will wissen, ob ich nachzahlen muss.“</p>
+  <p class="leise" style="font-size:15px">Fundstelle heißt: wo genau es im Dokument steht. Bei einem eigenen Dokument ersetzt du alles nach „Es geht um:“ bis zum Zeilenende durch deinen eigenen Satz, zum Beispiel: „die Nebenkostenabrechnung für meine Wohnung; ich will wissen, ob ich nachzahlen muss.“</p>
   <details class="klapp">
     <summary>Anhängen klappt nicht? Text zum Einfügen</summary>
     <p>Markiere den Text, kopiere ihn und füge ihn unter die Anfrage ein.</p>
@@ -436,7 +436,7 @@ Wartungsvertrag für 3 Kopierer
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
     <p>Eine Tabelle mit Fundstelle je Punkt und eine Liste, was die KI weggelassen hat. Prüfe dann mit den drei Handgriffen unten, ob die Antwort die vier entscheidenden Punkte 5.1 bis 5.4 enthält.</p>
-    <p class="leise" style="font-size:14.5px">Am 10.11.2026 echt getestet mit ChatGPT (Bezahlversion, am Rechner und in der iPhone-App), Copilot (privates Konto, am Rechner und in der App) und Gemini (App, kostenlos): Alle fanden die vier entscheidenden Punkte 5.1 bis 5.4. Gemini schrieb kein einziges Mal „steht nicht drin“, und zwei der Werkzeuge ließen „Schwarzweiß-Seiten inklusive“ weg, ohne es unter „Weggelassen“ zu nennen. Kostenlose Versionen von ChatGPT und Copilot haben wir nicht getestet. Und eine gute Antwort heute heißt nicht, dass die nächste auch gut ist. Deshalb trotzdem nachsehen.</p>
+    <p class="leise" style="font-size:15px">Am 10.11.2026 echt getestet mit ChatGPT (Bezahlversion, am Rechner und in der iPhone-App), Copilot (privates Konto, am Rechner und in der App) und Gemini (App, kostenlos): Alle fanden die vier entscheidenden Punkte 5.1 bis 5.4. Gemini schrieb kein einziges Mal „steht nicht drin“, und zwei der Werkzeuge ließen „Schwarzweiß-Seiten inklusive“ weg, ohne es unter „Weggelassen“ zu nennen. Kostenlose Versionen von ChatGPT und Copilot haben wir nicht getestet. Und eine gute Antwort heute heißt nicht, dass die nächste auch gut ist. Deshalb trotzdem nachsehen.</p>
   </div>
   <p style="margin-top:14px">Das Gleiche geht mit der Rechnung für die Hallenmiete im Verein oder den Bedingungen deines Stromvertrags. Namen, Adressen und Kontonummern vorher schwärzen, wie oben bei „Was darf hinein?“ beschrieben.</p>
 </section>
@@ -477,7 +477,7 @@ Wartungsvertrag für 3 Kopierer
 
 <footer>
   <a class="weiter" href="https://claude.ai/artifact/MgrJBfUYMzMaBE6WigSaST">Weiter: Einheit 3 · In Runden verbessern →</a>
-  <span class="leise" style="font-size:14.5px"><a href="https://claude.ai/artifact/UJyTgyB68HE5AcWNbgsnVt">Zurück: Einheit 1 · Eine Anfrage aus fünf Bausteinen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="leise" style="font-size:15px"><a href="https://claude.ai/artifact/UJyTgyB68HE5AcWNbgsnVt">Zurück: Einheit 1 · Eine Anfrage aus fünf Bausteinen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
   <span class="etikett">Stand 10.11.2026 · Bildschirmfotos ChatGPT und Copilot privat, 10.11.2026</span>
 </footer>
 </div>

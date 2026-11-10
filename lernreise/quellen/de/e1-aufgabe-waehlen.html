@@ -46,7 +46,7 @@ header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
 .etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
 .etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
 .etappe li[aria-current="step"] b{color:var(--rot)}
-.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
 
 /* Schema */
 figure.schema{margin:0}
@@ -61,7 +61,7 @@ figure.schema svg{display:block;width:100%;max-width:100%;height:auto}
 .schema .pf{stroke:var(--tinte);stroke-width:1.5;fill:none}
 .schema .pf.rot{stroke:var(--rot);stroke-width:2;stroke-dasharray:6 4}
 .schema .spitze{fill:var(--tinte)}.schema .spitze.rot{fill:var(--rot)}
-figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
+figcaption{margin-top:12px;font-size:15px;color:var(--grau)}
 
 .merk{background:var(--rot-hell);padding:14px 18px;border-left:3px solid var(--rot)}
 .merk p:last-child{margin-bottom:0}
@@ -72,14 +72,14 @@ figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
 .dokument dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 16px;margin:6px 0 10px}
 .dokument dt{color:var(--grau)}
 .dokument dd{font-variant-numeric:tabular-nums}
-.dokument .klein{font-size:12.5px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
+.dokument .klein{font-size:14px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
 .dokument mark,.antwort mark{background:none;color:inherit;border-bottom:2px solid var(--rot)}
-.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15.5px}
+.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15px}
 .chat p{margin-bottom:6px}
-.chat .baustein{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+.chat .baustein{font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
 table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}
 th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--linie);vertical-align:top}
-th{font-family:var(--f-etikett);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+th{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
 td.fehl{color:var(--rot)}
 .funde{list-style:none;counter-reset:f;margin-top:8px}
 .funde li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie)}
@@ -87,7 +87,7 @@ td.fehl{color:var(--rot)}
 
 /* Ausprobieren */
 .anfrage{position:relative;background:var(--sand);padding:16px 18px;margin:10px 0}
-.anfrage pre{font-family:var(--f-etikett);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
+.anfrage pre{font-family:var(--f-etikett);font-size:14px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
 .knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);background:transparent;border:1px solid var(--rot);padding:9px 14px;cursor:pointer;border-radius:0}
 .knopf:hover{background:var(--rot);color:var(--papier)}
 .rueck{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:12px}
@@ -96,7 +96,7 @@ td.fehl{color:var(--rot)}
 [role="tab"][aria-selected="true"]{color:var(--tinte);border-bottom-color:var(--rot)}
 [role="tabpanel"]{padding:14px 0 4px}
 [role="tabpanel"] p{margin-bottom:8px}
-.stand{font-size:13.5px;color:var(--grau)}
+.stand{font-size:14px;color:var(--grau)}
 .andere{border:1px solid var(--linie);padding:12px 16px;margin:16px 0}
 .andere p{margin:4px 0 0}
 .sehen{border-top:1px solid var(--tinte);padding-top:10px;margin-top:18px}
@@ -105,7 +105,7 @@ td.fehl{color:var(--rot)}
 .griffe{list-style:none;counter-reset:g}
 .griffe li{counter-increment:g;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--linie)}
 .griffe li::before{content:counter(g);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:30px;line-height:1}
-.quelle{font-size:14.5px;color:var(--grau);margin-top:14px}
+.quelle{font-size:15px;color:var(--grau);margin-top:14px}
 
 details{border-top:1px solid var(--linie)}
 details:last-of-type{border-bottom:1px solid var(--linie)}
@@ -117,7 +117,7 @@ details p{padding:0 0 14px;color:var(--tinte)}
 
 footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
 .weiter{font-family:var(--f-titel);font-size:24px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--rot);justify-self:start}
-@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:11.5px}}
+@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:12px}}
 footer .knopf{justify-self:start;text-decoration:none}
 
 /* v2 */
@@ -134,12 +134,12 @@ footer .knopf{justify-self:start;text-decoration:none}
 .ampel li:first-child{border-top:0}
 .ampel b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
 @media (max-width:560px){.ampel li{grid-template-columns:1fr}}
-.chat .erkl{font-family:var(--f-etikett);font-size:11px;color:var(--grau);margin-left:6px;white-space:nowrap}
-.uebung pre{font-size:13px}
+.chat .erkl{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:6px;white-space:nowrap}
+.uebung pre{font-size:14px}
 .klapp{border:0;margin-top:4px}
 .klapp:last-of-type{border-bottom:0}
 .klapp summary{font-weight:400;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau);justify-content:start;grid-template-columns:auto auto}
-.klapp p{font-size:14.5px;padding-bottom:6px}
+.klapp p{font-size:15px;padding-bottom:6px}
 .handy{border-top:1px solid var(--linie);padding-top:10px;margin-top:10px}
 
 /* v3 */
@@ -150,13 +150,13 @@ footer .knopf{justify-self:start;text-decoration:none}
 .gut td q{font-style:italic;color:var(--grau)}
 .gut td q::before{content:"„"}.gut td q::after{content:"“"}
 .gut td.ok{color:var(--tinte)}
-.gut .weg{font-size:14.5px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
+.gut .weg{font-size:15px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
 .datei{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0}
-.datei .name{font-family:var(--f-etikett);font-size:13.5px}
+.datei .name{font-family:var(--f-etikett);font-size:14px}
 .schritte{list-style:none;counter-reset:s;margin:6px 0 10px}
-.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15.5px}
+.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15px}
 .schritte li::before{content:counter(s);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
-.klapp pre{font-family:var(--f-etikett);font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
+.klapp pre{font-family:var(--f-etikett);font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
 .waehle{display:block;background:var(--sand);border-left:3px solid var(--rot);padding:10px 14px;margin:14px 0 0}
 .waehle .pfeil{color:var(--rot);font-weight:700}
 [role="tab"]{border:1px solid var(--linie);border-bottom:3px solid transparent;margin-right:6px}
@@ -240,7 +240,7 @@ footer .knopf{justify-self:start;text-decoration:none}
     <li><b>Wer macht was</b><span>Die KI bringt die Angebote in eine Tabelle und schreibt einen Entwurf der Mail. Ich entscheide, prüfe die Zahlen und schicke ab.</span></li>
   </ul>
   <p>Damit weiß Sabine, was sie von der KI verlangt und woran sie die Antwort misst. Die Entscheidung selbst gibt sie nicht ab.</p>
-  <p class="leise" style="font-size:14.5px">Bei einer Textaufgabe sieht der zweite Satz zum Beispiel so aus: „Gut ist es, wenn die Mail höchstens fünf Sätze hat und Datum, Ort und Rückmeldefrist drinstehen.“</p>
+  <p class="leise" style="font-size:15px">Bei einer Textaufgabe sieht der zweite Satz zum Beispiel so aus: „Gut ist es, wenn die Mail höchstens fünf Sätze hat und Datum, Ort und Rückmeldefrist drinstehen.“</p>
 
   <h3>Wofür KI schlecht taugt</h3>
   <div class="tabelle-wrap">
@@ -254,7 +254,7 @@ footer .knopf{justify-self:start;text-decoration:none}
   </table>
   </div>
   <p>Und manches geht ohne KI schlicht schneller, etwa eine Telefonnummer nachschlagen, die du im Adressbuch hast.</p>
-  <p class="leise" style="font-size:14.5px">Gut geeignet sind dagegen meist Entwürfe, Zusammenfassungen, Umformulieren, Ordnen und Ideen sammeln. Das ist eine Faustregel, kein Messwert.</p>
+  <p class="leise" style="font-size:15px">Gut geeignet sind dagegen meist Entwürfe, Zusammenfassungen, Umformulieren, Ordnen und Ideen sammeln. Das ist eine Faustregel, kein Messwert.</p>
 </section>
 
 <section aria-labelledby="h-tun">
@@ -304,7 +304,7 @@ Wer macht was: Die KI übernimmt [welchen Teil]. Ich übernehme [welchen Teil] u
 
 <footer>
   <a class="weiter" href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Weiter: Einheit 2 · Das richtige Konto und was du hineingeben darfst →</a>
-  <span class="leise" style="font-size:14.5px"><a href="lr:start">Zurück: Start der Reise</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="leise" style="font-size:15px"><a href="lr:start">Zurück: Start der Reise</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
   <span class="etikett">Stand 10.11.2026</span>
 </footer>
 </div>

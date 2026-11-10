@@ -36,7 +36,7 @@ SEITEN_DE = [
 
 LEISTE_CSS = """
 .lr-leiste{border-bottom:1px solid var(--linie,#DAD8D0);background:var(--papier,#FBFAF6)}
-.lr-leiste-innen{max-width:var(--lr-breite,760px);margin:0 auto;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.lr-leiste-innen{max-width:var(--lr-breite,760px);margin:0 auto;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
 .lr-leiste a{color:var(--tinte,#17181A);text-decoration:none;display:inline-flex;align-items:center;min-height:36px}
 .lr-leiste a:hover{text-decoration:underline;text-decoration-color:var(--rot,#C4472B)}
 .lr-leiste .lr-name{font-family:var(--f-titel,'Newsreader',Georgia,serif);font-size:17px;letter-spacing:0;text-transform:none;margin-right:auto}
@@ -51,7 +51,7 @@ LEISTE_CSS = """
 .lr-fuss-innen{max-width:var(--lr-breite,760px);margin:0 auto;padding-block:26px 34px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:12px}
 .lr-fuss b{font-weight:500}
 .lr-fuss a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot,#C4472B)}
-.lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:11.5px;letter-spacing:.05em;color:var(--grau,#6A6A66);display:flex;flex-wrap:wrap;gap:4px 16px}
+.lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:12px;letter-spacing:.05em;color:var(--grau,#6A6A66);display:flex;flex-wrap:wrap;gap:4px 16px}
 .lr-fuss .lr-klein a{display:inline-flex;align-items:center;min-height:32px}
 """
 
