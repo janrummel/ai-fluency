@@ -35,6 +35,10 @@ SEITEN_DE = [
     ("e3-1-quelle.html", "etappe-3/gegen-die-quelle/", "lr:e3-1", "Etappe 3 · Einheit 1"),
     ("e3-2-websuche.html", "etappe-3/websuche/", "lr:e3-2", "Etappe 3 · Einheit 2"),
     ("e3-3-rollen.html", "etappe-3/gegenlesen/", "lr:e3-3", "Etappe 3 · Einheit 3"),
+    ("e4-1-daueranweisung.html", "etappe-4/daueranweisung/", "lr:e4-1", "Etappe 4 · Einheit 1"),
+    ("e4-2-projekte.html", "etappe-4/projekte/", "lr:e4-2", "Etappe 4 · Einheit 2"),
+    ("e4-3-ablage-regeln.html", "etappe-4/ablage-und-regeln/", "lr:e4-3", "Etappe 4 · Einheit 3"),
+    ("e5-ausblick-agenten.html", "etappe-5/ausblick-agenten/", "lr:e5", "Etappe 5 · Ausblick"),
 ]
 
 LEISTE_CSS = """
