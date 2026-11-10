@@ -1,0 +1,214 @@
+<title>Erst das Problem, dann die KI</title>
+<meta name="description" content="Eine kostenlose Lernreise für die Arbeit mit ChatGPT, Copilot und Gemini im Büro: erst die Aufgabe klären, dann fragen, dann prüfen.">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#6A6A66; --linie:#DAD8D0;
+  --rot:#C4472B; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+a:focus-visible,button:focus-visible,input:focus-visible+span{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:760px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.etikett.rot{color:var(--rot)}
+h1,h2{font-family:var(--f-titel);font-weight:400;letter-spacing:-.015em}
+h1{font-size:clamp(38px,7vw,60px);line-height:1.05;margin:12px 0 18px;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.15;margin-bottom:14px;text-wrap:balance}
+p{margin-bottom:12px}
+.ziel{font-family:var(--f-titel);font-size:clamp(20px,3vw,24px);line-height:1.35;margin-bottom:18px;max-width:36em}
+.leise{color:var(--grau)}
+section{padding:36px 0;border-top:1px solid var(--linie)}
+header{padding-bottom:30px;border-bottom:2px solid var(--tinte)}
+.fakten{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:6px}
+.fakten li{font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau)}
+.fakten b{color:var(--tinte);font-weight:500}
+
+/* Einstiegsfragen */
+.frage{border:0;padding:14px 0;border-top:1px solid var(--linie);display:grid;gap:10px}
+.frage:last-of-type{border-bottom:1px solid var(--linie)}
+.frage legend{font-weight:500;padding:0;margin-bottom:10px;float:left;width:100%}
+.frage legend .nr{font-family:var(--f-titel);font-style:italic;color:var(--rot);margin-right:8px;font-weight:400}
+.wahl{display:flex;flex-wrap:wrap;gap:8px;clear:both}
+.wahl label{position:relative;cursor:pointer}
+.wahl input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.wahl span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--linie);background:var(--flaeche);font-size:15.5px}
+.wahl input:checked+span{border-color:var(--rot);background:var(--rot-hell);color:var(--tinte);font-weight:500}
+.ergebnis{margin-top:20px;background:var(--sand);border-left:3px solid var(--rot);padding:16px 18px}
+.ergebnis p:last-child{margin-bottom:0}
+.ergebnis .los{font-family:var(--f-titel);font-size:22px;text-decoration:none;border-bottom:2px solid var(--rot);display:inline-flex;align-items:center;min-height:44px}
+
+/* Etappen */
+.reise{list-style:none;border-top:2px solid var(--tinte)}
+.reise>li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 12px;padding:16px 0;border-bottom:1px solid var(--linie)}
+.reise .nrz{font-family:var(--f-titel);font-style:italic;font-size:28px;line-height:1;color:var(--rot)}
+.reise .spaeter .nrz{color:var(--grau)}
+.reise h3{font-family:var(--f-titel);font-weight:400;font-size:22px;line-height:1.2;margin-bottom:4px}
+.reise .status{font-family:var(--f-etikett);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+.reise .spaeter .status{color:var(--grau)}
+.reise p{margin-bottom:6px}
+.einheiten{list-style:none;display:grid;gap:2px;margin-top:4px}
+.einheiten a{display:inline-flex;align-items:center;min-height:36px}
+.einheiten .min{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;color:var(--grau);margin-left:8px}
+.karte-link{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--flaeche);border:1px solid var(--linie);padding:16px 18px;text-decoration:none}
+.karte-link b{font-family:var(--f-titel);font-weight:400;font-size:22px;display:block}
+.karte-link .pfeil{color:var(--rot);font-size:24px}
+.zwei{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+@media (max-width:620px){.zwei{grid-template-columns:minmax(0,1fr)}}
+.zwei h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin-bottom:6px}
+</style>
+
+<div class="seite">
+<header>
+  <span class="etikett rot">Die Lernreise · kostenlos · ohne Anmeldung</span>
+  <h1>Erst das Problem, dann die KI.</h1>
+  <p class="ziel">Für alle, die im Büro mit ChatGPT, Copilot oder Gemini arbeiten wollen, ohne sich auf die erste Antwort zu verlassen. Du übst an deinen eigenen Aufgaben: klären, fragen, prüfen.</p>
+  <ul class="fakten">
+    <li><b>4 Etappen</b> plus Ausblick</li>
+    <li><b>je 3 Einheiten</b> zu 10 bis 15 Minuten</li>
+    <li><b>Etappe 1 und 2</b> sind fertig</li>
+  </ul>
+</header>
+
+<section aria-labelledby="h-start">
+  <h2 id="h-start">Wo fängst du an?</h2>
+  <p class="leise">Drei Fragen, dann weißt du, mit welcher Etappe du beginnst. Deine Antworten werden nirgends gespeichert.</p>
+  <form id="einstieg" novalidate>
+    <fieldset class="frage">
+      <legend><span class="nr">1</span>Hast du ChatGPT, Copilot oder Gemini schon für eine echte Aufgabe benutzt?</legend>
+      <div class="wahl">
+        <label><input type="radio" name="f1" value="ja"><span>Ja</span></label>
+        <label><input type="radio" name="f1" value="nein"><span>Nein, noch nicht</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="frage">
+      <legend><span class="nr">2</span>Weißt du, welches Konto du für Arbeitsdaten nehmen darfst und was nicht hineingehört?</legend>
+      <div class="wahl">
+        <label><input type="radio" name="f2" value="ja"><span>Ja</span></label>
+        <label><input type="radio" name="f2" value="nein"><span>Nicht sicher</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="frage">
+      <legend><span class="nr">3</span>Prüfst du Zahlen aus einer KI-Antwort, bevor du sie weitergibst?</legend>
+      <div class="wahl">
+        <label><input type="radio" name="f3" value="ja"><span>Ja, immer</span></label>
+        <label><input type="radio" name="f3" value="nein"><span>Selten oder nie</span></label>
+      </div>
+    </fieldset>
+  </form>
+  <div class="ergebnis" id="ergebnis" aria-live="polite">
+    <p id="ergebnis-text">Noch keine Antwort? Dann fang vorne an. Etappe 1 dauert etwa 45 Minuten, verteilt auf drei Einheiten.</p>
+    <p><a class="los" id="ergebnis-link" href="etappe-1/aufgabe-waehlen/">Etappe 1 · Loslegen, aber richtig →</a></p>
+  </div>
+</section>
+
+<section aria-labelledby="h-reise">
+  <h2 id="h-reise">Die Reise</h2>
+  <ol class="reise">
+    <li>
+      <span class="nrz">1</span>
+      <div>
+        <h3>Loslegen, aber richtig <span class="status">fertig</span></h3>
+        <p class="leise">Eine Aufgabe wählen, das erlaubte Konto finden und die erste Antwort an einer Zahl prüfen.</p>
+        <ul class="einheiten">
+          <li><a href="etappe-1/aufgabe-waehlen/">Aufgabe wählen: Soll die KI das machen?</a></li>
+          <li><a href="etappe-1/konto-und-daten/">Das richtige Konto und was du hineingeben darfst</a></li>
+          <li><a href="etappe-1/erste-anfrage/">Die erste Anfrage und die erste geprüfte Zahl</a></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <span class="nrz">2</span>
+      <div>
+        <h3>Mit Absicht fragen <span class="status">fertig</span></h3>
+        <p class="leise">Eine Anfrage aus fünf Bausteinen bauen, ein Dokument hineingeben und die Antwort in Runden verbessern.</p>
+        <ul class="einheiten">
+          <li><a href="etappe-2/anfrage-bauen/">Eine Anfrage aus fünf Bausteinen</a></li>
+          <li><a href="etappe-2/dokument-pruefen/">Ein Dokument hineingeben und die Antwort prüfen</a></li>
+          <li><a href="etappe-2/in-runden/">In Runden verbessern</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="spaeter">
+      <span class="nrz">3</span>
+      <div>
+        <h3>Prüfen wie ein Profi <span class="status">in Arbeit</span></h3>
+        <p class="leise">Gegen die Quelle prüfen, Auslassungen finden, Quellen aus der Websuche bewerten und die Prüftiefe wählen.</p>
+      </div>
+    </li>
+    <li class="spaeter">
+      <span class="nrz">4</span>
+      <div>
+        <h3>Ein Gedächtnis geben <span class="status">in Arbeit</span></h3>
+        <p class="leise">Daueranweisungen und Projekte anlegen, Vorlagen und Regeln fürs Team, Wissen ablegen.</p>
+      </div>
+    </li>
+    <li class="spaeter">
+      <span class="nrz">5</span>
+      <div>
+        <h3>Ausblick: Agenten <span class="status">später</span></h3>
+        <p class="leise">Was ein Agent anders macht als ein Chat, und was du ihm überlassen kannst.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-karte">
+  <h2 id="h-karte" class="etikett">Das ganze Bild</h2>
+  <a class="karte-link" href="karte/">
+    <span><b>Die Bausteinkarte</b><span class="leise">Zehn Bausteine auf einer Seite: was du tust, was das Werkzeug mitbringt und wo in der Reise du jedem begegnest.</span></span>
+    <span class="pfeil" aria-hidden="true">→</span>
+  </a>
+</section>
+
+<section aria-labelledby="h-brauchst">
+  <h2 id="h-brauchst" class="etikett">Gut zu wissen</h2>
+  <div class="zwei">
+    <div>
+      <h3>Was du brauchst</h3>
+      <p>Ein KI-Werkzeug, privat oder über deine Firma, und eine Aufgabe aus deinem Alltag. Ohne Werkzeug zeigt dir Etappe 1, wie du an eines kommst. Installieren musst du nichts.</p>
+    </div>
+    <div>
+      <h3>Was diese Reise nicht ist</h3>
+      <p>Keine Produkttour und keine Prompt-Sammlung. Knöpfe und Modellnamen ändern sich alle paar Monate, die Handgriffe bleiben: Aufgabe klären, gut fragen, Antwort prüfen.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('einstieg'),text=document.getElementById('ergebnis-text'),link=document.getElementById('ergebnis-link');
+  var E1={href:'etappe-1/aufgabe-waehlen/',label:'Etappe 1 · Loslegen, aber richtig →'};
+  var E1K={href:'etappe-1/konto-und-daten/',label:'Etappe 1 · Einheit 2 · Das richtige Konto →'};
+  var E2={href:'etappe-2/anfrage-bauen/',label:'Etappe 2 · Mit Absicht fragen →'};
+  function wert(n){var el=form.querySelector('input[name="'+n+'"]:checked');return el?el.value:null}
+  function zeigen(){
+    var a=wert('f1'),b=wert('f2'),c=wert('f3'),z,t;
+    if(!a&&!b&&!c)return;
+    if(a==='nein'){z=E1;t='Fang vorne an. Etappe 1 zeigt dir, wie du an ein passendes Werkzeug kommst, und führt dich durch die erste Aufgabe.'}
+    else if(b==='nein'){z=E1K;t='Du kennst die Werkzeuge schon. Wichtig für dich ist Einheit 2 von Etappe 1: welches Konto du für Arbeitsdaten nehmen darfst und was nicht hineingehört. Danach geht es mit Etappe 2 weiter.'}
+    else if(c==='nein'){z=E1;t='Fang mit Etappe 1 an, auch wenn du schon chattest. Dort steckt der wichtigste Handgriff der Reise: die erste Zahl gegen die Quelle prüfen. Einheit 1 und 2 kannst du überfliegen.'}
+    else if(a&&b&&c){z=E2;t='Du nutzt die Werkzeuge schon, kennst die Regeln und prüfst. Steig bei Etappe 2 ein. Etappe 1 bleibt zum Nachschlagen.'}
+    else{z=E1;t='Beantworte noch die übrigen Fragen. Bis dahin: Etappe 1 ist der sichere Start.'}
+    text.textContent=t;link.textContent=z.label;link.setAttribute('href',z.href);
+  }
+  form.addEventListener('change',zeigen);
+  zeigen();
+})();
+</script>

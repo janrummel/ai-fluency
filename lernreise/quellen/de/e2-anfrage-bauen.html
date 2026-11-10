@@ -1,0 +1,370 @@
+<title>Fünf Bausteine einer Anfrage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#6A6A66; --linie:#DAD8D0;
+  --rot:#C4472B; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[role="tab"]:focus-visible{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:760px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.etikett.rot{color:var(--rot)}
+h1,h2{font-family:var(--f-titel);font-weight:400;letter-spacing:-.015em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;margin:12px 0 16px;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.15;margin-bottom:14px}
+h2 .nr{font-style:italic;color:var(--rot);margin-right:10px}
+h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin:22px 0 8px}
+p{margin-bottom:12px}
+.ziel{font-family:var(--f-titel);font-size:clamp(20px,3vw,24px);line-height:1.35;margin-bottom:14px}
+.leise{color:var(--grau)}
+section{padding:36px 0;border-top:1px solid var(--linie)}
+header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
+.kopfzeile{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.etappe{list-style:none;margin-top:22px;border-top:1px solid var(--linie)}
+.etappe li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--linie);color:var(--grau)}
+.etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
+.etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
+.etappe li[aria-current="step"] b{color:var(--rot)}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+
+/* Schema */
+figure.schema{margin:0}
+figure.schema svg{display:block;width:100%;max-width:100%;height:auto}
+.schema .breit{display:block}.schema .hoch{display:none}
+@media (max-width:560px){.schema .breit{display:none}.schema .hoch{display:block;max-width:380px;margin:0 auto}}
+.schema .kasten{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .kasten.pruef{fill:var(--rot-hell);stroke:var(--rot);stroke-width:2}
+.schema .t{font-family:var(--f-etikett);font-size:13px;fill:var(--tinte)}
+.schema .k{font-family:var(--f-etikett);font-size:11px;fill:var(--grau);letter-spacing:.04em}
+.schema .t.rot,.schema .k.rot{fill:var(--rot)}
+.schema .pf{stroke:var(--tinte);stroke-width:1.5;fill:none}
+.schema .pf.rot{stroke:var(--rot);stroke-width:2;stroke-dasharray:6 4}
+.schema .spitze{fill:var(--tinte)}.schema .spitze.rot{fill:var(--rot)}
+figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
+
+.merk{background:var(--rot-hell);padding:14px 18px;border-left:3px solid var(--rot)}
+.merk p:last-child{margin-bottom:0}
+
+/* Dokument und Chat */
+.dokument{background:var(--flaeche);border:1px solid var(--tinte);padding:18px 20px;margin:10px 0 6px;font-size:15px}
+.dokument .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding-bottom:8px;margin-bottom:10px}
+.dokument dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 16px;margin:6px 0 10px}
+.dokument dt{color:var(--grau)}
+.dokument dd{font-variant-numeric:tabular-nums}
+.dokument .klein{font-size:12.5px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
+.dokument mark,.antwort mark{background:none;color:inherit;border-bottom:2px solid var(--rot)}
+.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15.5px}
+.chat p{margin-bottom:6px}
+.chat .baustein{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}
+th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-family:var(--f-etikett);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+td.fehl{color:var(--rot)}
+.funde{list-style:none;counter-reset:f;margin-top:8px}
+.funde li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie)}
+.funde li::before{content:counter(f);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+
+/* Ausprobieren */
+.anfrage{position:relative;background:var(--sand);padding:16px 18px;margin:10px 0}
+.anfrage pre{font-family:var(--f-etikett);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
+.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);background:transparent;border:1px solid var(--rot);padding:9px 14px;cursor:pointer;border-radius:0}
+.knopf:hover{background:var(--rot);color:var(--papier)}
+.rueck{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:12px}
+[role="tablist"]{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--tinte);margin-top:18px}
+[role="tab"]{min-height:44px;padding:10px 14px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:none;border:0;border-bottom:3px solid transparent;color:var(--grau);cursor:pointer;margin-bottom:-1px}
+[role="tab"][aria-selected="true"]{color:var(--tinte);border-bottom-color:var(--rot)}
+[role="tabpanel"]{padding:14px 0 4px}
+[role="tabpanel"] p{margin-bottom:8px}
+.stand{font-size:13.5px;color:var(--grau)}
+.andere{border:1px solid var(--linie);padding:12px 16px;margin:16px 0}
+.andere p{margin:4px 0 0}
+.sehen{border-top:1px solid var(--tinte);padding-top:10px;margin-top:18px}
+.sehen .etikett{display:block;color:var(--rot);margin-bottom:4px}
+
+.griffe{list-style:none;counter-reset:g}
+.griffe li{counter-increment:g;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--linie)}
+.griffe li::before{content:counter(g);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:30px;line-height:1}
+.quelle{font-size:14.5px;color:var(--grau);margin-top:14px}
+
+details{border-top:1px solid var(--linie)}
+details:last-of-type{border-bottom:1px solid var(--linie)}
+summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;min-height:44px;padding:10px 0;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-etikett);color:var(--rot);font-size:18px}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 14px;color:var(--tinte)}
+
+footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
+.weiter{font-family:var(--f-titel);font-size:24px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--rot);justify-self:start}
+@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:11.5px}}
+footer .knopf{justify-self:start;text-decoration:none}
+
+/* v2 */
+.schema .feld{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .chip{fill:var(--sand);stroke:var(--grau);stroke-width:1}
+.schema .kreis{fill:none;stroke:var(--rot);stroke-width:2.2}
+.schema .linie{stroke:var(--linie);stroke-width:2}
+.schema .s{font-family:var(--f-etikett);font-size:11.5px;fill:var(--tinte)}
+.schema .s.rot{fill:var(--rot)}
+.schema .nrz{font-family:var(--f-titel);font-style:italic;font-size:22px;fill:var(--rot)}
+.schema .weiss{stroke:var(--papier);stroke-width:2;fill:none}
+.ampel{list-style:none;margin-top:8px}
+.ampel li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px solid var(--linie)}
+.ampel li:first-child{border-top:0}
+.ampel b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
+@media (max-width:560px){.ampel li{grid-template-columns:1fr}}
+.chat .erkl{font-family:var(--f-etikett);font-size:11px;color:var(--grau);margin-left:6px;white-space:nowrap}
+.uebung pre{font-size:13px}
+.klapp{border:0;margin-top:4px}
+.klapp:last-of-type{border-bottom:0}
+.klapp summary{font-weight:400;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau);justify-content:start;grid-template-columns:auto auto}
+.klapp p{font-size:14.5px;padding-bottom:6px}
+.handy{border-top:1px solid var(--linie);padding-top:10px;margin-top:10px}
+
+/* v3 */
+.platzhalter{border:2px dashed var(--grau);padding:18px;margin:10px 0;text-align:center;color:var(--grau);font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;line-height:1.5}
+.gut{border:1px solid var(--tinte);background:var(--flaeche);margin:10px 0 6px}
+.gut .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding:8px 14px}
+.gut .innen{padding:12px 14px 6px;overflow-x:auto}
+.gut td q{font-style:italic;color:var(--grau)}
+.gut td q::before{content:"„"}.gut td q::after{content:"“"}
+.gut td.ok{color:var(--tinte)}
+.gut .weg{font-size:14.5px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
+.datei{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0}
+.datei .name{font-family:var(--f-etikett);font-size:13.5px}
+.schritte{list-style:none;counter-reset:s;margin:6px 0 10px}
+.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15.5px}
+.schritte li::before{content:counter(s);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+.klapp pre{font-family:var(--f-etikett);font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
+.waehle{display:block;background:var(--sand);border-left:3px solid var(--rot);padding:10px 14px;margin:14px 0 0}
+.waehle .pfeil{color:var(--rot);font-weight:700}
+[role="tab"]{border:1px solid var(--linie);border-bottom:3px solid transparent;margin-right:6px}
+.shot{margin:12px 0;border:1px solid var(--linie);background:var(--flaeche)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;color:var(--grau);padding:8px 12px;border-top:1px solid var(--linie)}
+</style>
+
+<style>
+.vergleich{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:10px 0}
+@media (max-width:640px){.vergleich{grid-template-columns:1fr}}
+.vergleich>div{border:1px solid var(--linie);background:var(--flaeche);padding:14px 16px;min-width:0}
+.vergleich>div.stark{border-color:var(--tinte)}
+.vergleich .etikett{display:block;margin-bottom:6px}
+.vergleich .frage{font-family:var(--f-etikett);font-size:13px;line-height:1.55;background:var(--sand);padding:10px 12px;margin-bottom:10px;overflow-wrap:anywhere}
+.vergleich .ant{font-size:14.5px;border-top:1px solid var(--linie);padding-top:8px}
+.vergleich .ant p{margin-bottom:6px}
+.tabelle-wrap{overflow-x:auto}
+.schema .kasten.schwach{fill:var(--flaeche);stroke:var(--grau);stroke-width:1.2;stroke-dasharray:4 3}
+.schema .t.grau{fill:var(--grau)}
+</style>
+
+<div class="seite">
+<header>
+  <div class="kopfzeile">
+    <span class="etikett rot">Etappe 2 · Einheit 1 von 3</span>
+    <span class="etikett">Lesen etwa 6 Minuten · Üben etwa 8 Minuten (Schätzung)</span>
+  </div>
+  <h1>Eine Anfrage aus fünf Bausteinen</h1>
+  <p class="ziel">Danach kannst du eine Anfrage aus fünf Bausteinen bauen und weißt, welcher davon am meisten bewirkt.</p>
+  <span class="etikett">Etappe 2 · Mit Absicht fragen</span>
+  <ol class="etappe">
+    <li aria-current="step"><b>1</b><span>Eine Anfrage aus fünf Bausteinen</span></li>
+    <li><b>2</b><span>Ein Dokument hineingeben und die Antwort prüfen</span></li>
+    <li><b>3</b><span>In Runden verbessern</span></li>
+  </ol>
+</header>
+
+<section aria-labelledby="h-schema">
+  <h2 id="h-schema" class="etikett">Die fünf Bausteine, nach Wirkung</h2>
+  <figure class="schema">
+    <svg class="breit" viewBox="0 0 720 250" role="img" aria-labelledby="s1t"><title id="s1t">Fünf Bausteine einer Anfrage. Die Lage ist rot hervorgehoben als stärkster Hebel, die Aufgabe kräftig umrandet, Format und Grenzen normal, die Rolle gestrichelt als schwächster Hebel.</title>
+      <rect class="kasten pruef" x="0" y="10" width="720" height="58"/>
+      <text class="t rot" x="16" y="35">LAGE</text><text class="s" x="120" y="35">Worum geht es, und wozu brauchst du das Ergebnis?</text>
+      <text class="k rot" x="120" y="55">stärkster Hebel: nur du kennst sie</text>
+      <rect class="kasten" x="0" y="80" width="720" height="44" style="stroke-width:2"/>
+      <text class="t" x="16" y="107">AUFGABE</text><text class="s" x="120" y="107">Was genau soll die KI tun? Ein Verb, ein Ergebnis.</text>
+      <rect class="kasten" x="0" y="134" width="350" height="44"/>
+      <text class="t" x="16" y="161">FORMAT</text><text class="s" x="110" y="161">Wie soll es aussehen?</text>
+      <rect class="kasten" x="370" y="134" width="350" height="44"/>
+      <text class="t" x="386" y="161">GRENZEN</text><text class="s" x="480" y="161">Was soll sie nicht tun?</text>
+      <rect class="kasten schwach" x="0" y="190" width="350" height="44"/>
+      <text class="t grau" x="16" y="217">ROLLE</text><text class="s" x="110" y="217">Aus welcher Sicht?</text>
+      <text class="k" x="370" y="217">schwächster Hebel: ein Satz genügt</text>
+    </svg>
+    <svg class="hoch" viewBox="0 0 340 430" role="img" aria-labelledby="s1h"><title id="s1h">Fünf Bausteine einer Anfrage, untereinander nach Wirkung: Lage als stärkster Hebel rot, dann Aufgabe, Format, Grenzen, zuletzt Rolle gestrichelt als schwächster Hebel.</title>
+      <rect class="kasten pruef" x="1" y="4" width="338" height="96"/>
+      <text class="t rot" x="14" y="28">LAGE</text>
+      <text class="s" x="14" y="52">Worum geht es, und wozu</text><text class="s" x="14" y="70">brauchst du das Ergebnis?</text>
+      <text class="k rot" x="14" y="90">stärkster Hebel: nur du kennst sie</text>
+      <rect class="kasten" x="1" y="112" width="338" height="72" style="stroke-width:2"/>
+      <text class="t" x="14" y="136">AUFGABE</text>
+      <text class="s" x="14" y="158">Was genau soll die KI tun?</text><text class="s" x="14" y="175">Ein Verb, ein Ergebnis.</text>
+      <rect class="kasten" x="1" y="196" width="338" height="56"/>
+      <text class="t" x="14" y="220">FORMAT</text><text class="s" x="14" y="240">Wie soll es aussehen?</text>
+      <rect class="kasten" x="1" y="264" width="338" height="56"/>
+      <text class="t" x="14" y="288">GRENZEN</text><text class="s" x="14" y="308">Was soll sie nicht tun?</text>
+      <rect class="kasten schwach" x="1" y="332" width="338" height="76"/>
+      <text class="t grau" x="14" y="356">ROLLE</text><text class="s" x="14" y="376">Aus welcher Sicht?</text>
+      <text class="k" x="14" y="396">schwächster Hebel: ein Satz genügt</text>
+    </svg>
+    <figcaption>Faustregel aus der Praxis, nicht gemessen: Am meisten bewirkt die Lage, dann eine klare Aufgabe. Die Rolle bringt am wenigsten. Probier es unten selbst aus.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="h-ampel">
+  <div class="merk">
+    <span class="etikett rot" id="h-ampel">Vorher kurz: Was darf hinein?</span>
+    <ul class="ampel">
+      <li><b>Im Job</b><span>Nur mit dem Konto, das deine Firma bereitstellt, und nur, wenn sie das Werkzeug freigegeben hat. Ein Gratiskonto, das du mit deiner Firmenadresse anlegst, zählt nicht: Das ist ein Privatkonto. Welches Konto und welche Werkzeuge freigegeben sind, sagt dir die IT oder das Intranet. Im Zweifel nichts Echtes hochladen, sondern beschreiben.</span></li>
+      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten.</span></li>
+      <li><b>Zum Üben</b><span>Eine Aufgabe aus deiner Woche, beschrieben ohne echte Namen und ohne vertrauliche Zahlen.</span></li>
+    </ul>
+    <p style="margin-top:6px"><a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr dazu in Etappe 1, Einheit 2</a></p>
+  </div>
+</section>
+
+<section aria-labelledby="h-beispiel">
+  <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel: vorher und nachher</h2>
+  <p>Thomas leitet ein Team im Kundenservice. Ab Januar gilt eine neue Regel für Urlaubsanträge, und er will das Team per Mail informieren. <span class="leise">(Erfunden.)</span></p>
+
+  <div class="vergleich">
+    <div>
+      <span class="etikett">Vorher</span>
+      <div class="frage">Schreib eine Mail zur Urlaubsplanung.</div>
+      <div class="ant">
+        <span class="etikett">So ungefähr sieht die Antwort aus · nachgebaut</span>
+        <p>„Liebes Team, wie jedes Jahr möchten wir rechtzeitig mit der Urlaubsplanung beginnen. Bitte reicht eure Wünsche bis [Datum] ein …“</p>
+        <p class="leise">Höflich, allgemein, voller Platzhalter. Die neue Regel kommt nicht vor, denn die KI kennt sie nicht.</p>
+      </div>
+    </div>
+    <div class="stark">
+      <span class="etikett rot">Nachher</span>
+      <div class="frage">Du bist Teamleiter.<br>Ab 1. Januar gilt: Urlaub über drei Tage muss vier Wochen vorher im Portal beantragt werden, nicht mehr per Mail. Das Team (12 Leute) weiß das noch nicht. Ich will, dass im Januar niemand überrascht wird.<br>Schreib eine Mail ans Team, die die Regel erklärt.<br>Höchstens 120 Wörter, Betreff plus drei kurze Absätze.<br>Keine Floskeln, nichts dazuerfinden, was ich nicht genannt habe.</div>
+      <div class="ant">
+        <span class="etikett">So ungefähr sieht die Antwort aus · nachgebaut</span>
+        <p>„Betreff: Neue Regel für Urlaubsanträge ab 1. Januar. Ab Januar beantragt ihr Urlaub von mehr als drei Tagen bitte vier Wochen vorher im Portal …“</p>
+        <p class="leise">Kurz, konkret, die Regel steht im ersten Satz.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Die Bausteine in der Nachher-Anfrage</h3>
+  <p class="leise" style="font-size:14.5px">Die roten Wörter hinter jeder Zeile sind die Bausteine. Du tippst sie nicht mit ein.</p>
+  <div class="chat">
+    <p>Du bist Teamleiter. <span class="baustein">Rolle</span><span class="erkl">aus welcher Sicht</span></p>
+    <p>Ab 1. Januar gilt: Urlaub über drei Tage muss vier Wochen vorher im Portal beantragt werden, nicht mehr per Mail. Das Team (12 Leute) weiß das noch nicht. Ich will, dass im Januar niemand überrascht wird. <span class="baustein">Lage</span><span class="erkl">worum es geht, wozu</span></p>
+    <p>Schreib eine Mail ans Team, die die Regel erklärt. <span class="baustein">Aufgabe</span><span class="erkl">was zu tun ist</span></p>
+    <p>Höchstens 120 Wörter, Betreff plus drei kurze Absätze. <span class="baustein">Format</span><span class="erkl">wie es aussieht</span></p>
+    <p>Keine Floskeln, nichts dazuerfinden, was ich nicht genannt habe. <span class="baustein">Grenzen</span><span class="erkl">was sie nicht tun soll</span></p>
+  </div>
+  <p>Der Unterschied kommt vor allem aus der Lage: Nur Thomas weiß, welche Regel neu ist und wozu die Mail da ist. Ohne diese Zeile muss die KI raten, und sie rät allgemein. Die Rolle ändert wenig, denn wie ein Teamleiter klingt, ergibt sich schon aus der Lage.</p>
+
+  <h3>Drei typische Schwächen</h3>
+  <div class="tabelle-wrap">
+  <table>
+    <thead><tr><th scope="col">Schwach</th><th scope="col">Besser</th><th scope="col">Warum</th></tr></thead>
+    <tbody>
+      <tr><td>„Gib mir Feedback zu dieser Mail.“</td><td>„Die Mail geht an einen Kunden, der sich über eine verspätete Lieferung beschwert hat. Prüfe: freundlicher Ton, klare Entschuldigung, ein konkreter Vorschlag.“</td><td>Ohne Lage und Maßstab bleibt Feedback allgemein.</td></tr>
+      <tr><td>„Fasse zusammen, finde Erkenntnisse und schreib Sprechpunkte.“</td><td>„Nenne die drei wichtigsten Punkte für unser Teammeeting, je ein Satz.“</td><td>Mehrere Aufgaben auf einmal ergeben mehrere halbe Ergebnisse. Eine nach der anderen.</td></tr>
+      <tr><td>„Verbessere den Text.“</td><td>„Kürze um ein Drittel, schreib aktiv statt passiv.“</td><td>„Verbessere“ sagt nicht, was anders werden soll.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section aria-labelledby="h-tun">
+  <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
+  <p>Nimm eine kleine Aufgabe aus deiner Woche: eine Mail, eine Einladung, eine kurze Zusammenfassung, eine Liste. Ohne echte Namen und ohne vertrauliche Zahlen.</p>
+  <ol class="schritte">
+    <li><span><b>Erst knapp fragen.</b> Schreib deine Aufgabe in einem Satz in den Chat, so wie du es sonst tun würdest, und schick sie ab.</span></li>
+    <li><span><b>Dann mit den fünf Bausteinen.</b> Öffne einen neuen Chat, kopiere die Vorlage unten und fülle die eckigen Klammern aus. Schick sie ab.</span></li>
+    <li><span><b>Den Hebel spüren.</b> Schick die Vorlage in einem dritten Chat noch einmal, diesmal ohne die Zeile zur Lage. Vergleiche die drei Antworten.</span></li>
+  </ol>
+  <div class="anfrage">
+<pre id="vorlage">Du bist [deine Rolle, zum Beispiel Sachbearbeiterin im Einkauf].
+Es geht um: [die Lage in zwei Sätzen: was ist passiert oder geplant, wer liest das Ergebnis, und wozu brauchst du es].
+Schreib [die Aufgabe: was genau soll entstehen].
+Format: [zum Beispiel höchstens 100 Wörter, Stichpunkte, Tabelle mit den Spalten …].
+Grenzen: Erfinde nichts dazu, was ich nicht genannt habe. [Weitere Grenzen, zum Beispiel keine Fachbegriffe.]</pre>
+    <button class="knopf" type="button" data-kopie="vorlage">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
+  </div>
+  <p class="leise" style="font-size:14.5px">Das geht in ChatGPT, Copilot, Gemini und ähnlichen Werkzeugen gleich: Text ins Eingabefeld, abschicken. Einen neuen Chat startest du über „Neuer Chat“.</p>
+  <div class="platzhalter" role="note" hidden>Hier kommt bald ein Bild hin.<br>Du brauchst es nicht für die Übung.</div>
+
+  <div class="sehen">
+    <span class="etikett">Du solltest sehen</span>
+    <p>Die knappe Anfrage liefert etwas Allgemeines. Mit den fünf Bausteinen passt die Antwort zu deiner Lage. Ohne die Lage wird sie meist wieder allgemeiner, auch wenn Rolle, Format und Grenzen noch dastehen. Wenn nicht, steckt die Lage vermutlich schon in deiner Aufgabe.</p>
+  </div>
+  <p style="margin-top:14px">Speichere deine ausgefüllte Vorlage, zum Beispiel in einer Notiz oder einer Mail an dich selbst. Du brauchst sie in Einheit 3 wieder.</p>
+</section>
+
+<section aria-labelledby="h-pruef">
+  <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
+  <p>Auch eine gute Anfrage schützt nicht davor, dass die KI etwas dazuerfindet. In Etappe 2 gilt deshalb: drei Zahlen nachsehen.</p>
+  <ol class="griffe">
+    <li><span><b>Drei Zahlen nachsehen, samt dem, was dabeisteht (netto oder brutto, Wochen, Monate).</b> Vergleiche sie mit deiner Lage. Bei Thomas: 1. Januar, drei Tage, vier Wochen. Keine Zahlen drin? Dann drei Fakten: Termine, Namen, Zusagen.</span></li>
+    <li><span><b>Nach Dazuerfundenem suchen.</b> Steht etwas drin, das du nie genannt hast, etwa eine Frist für Rückfragen oder ein Ansprechpartner? Streichen oder nachfragen.</span></li>
+    <li><span><b>Nachfragen, wenn du unsicher bist.</b> Schreib: „Was davon stand nicht in meiner Anfrage?“ Die Antwort ist ein Hinweis, kein Beweis. Sicher bist du erst, wenn du selbst verglichen hast.</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-check">
+  <h2 id="h-check"><span class="nr">4</span>Selbstcheck</h2>
+  <details>
+    <summary>„Du bist Marketingexpertin. Schreib einen Post über unser neues Produkt.“ Was fehlt am meisten?</summary>
+    <p>Die Lage: welches Produkt, für wen, wo der Post erscheint und was er erreichen soll. Danach Format und Grenzen. Rolle und Aufgabe sind schon da.</p>
+  </details>
+  <details>
+    <summary>Warum bringt die Rolle allein wenig?</summary>
+    <p>Sie sagt nur, aus welcher Sicht die KI schreibt. Über deine Lage erfährt die KI dadurch nichts, und genau die kann sie nicht erraten.</p>
+  </details>
+  <details>
+    <summary>Muss jede Anfrage alle fünf Bausteine haben?</summary>
+    <p>Nein. Eine einfache Frage braucht keine Rolle und kein Format. Die Bausteine sind eine Checkliste für den Fall, dass die Antwort nicht passt. Fang dann bei der Lage an.</p>
+  </details>
+</section>
+
+<footer>
+  <a class="weiter" href="https://claude.ai/artifact/M835sRMTgTn6hWcvfv5ZqK">Weiter: Einheit 2 · Ein Dokument hineingeben und die Antwort prüfen →</a>
+  <span class="leise" style="font-size:14.5px"><a href="https://claude.ai/artifact/Vn6TnYtQievpv3kZUJAgjs">Zurück: Etappe 1 · Einheit 3 · Die erste Anfrage und die erste geprüfte Zahl</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="etikett">Stand 10.11.2026</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-kopie]'),function(btn){
+    var pre=document.getElementById(btn.getAttribute('data-kopie')),rueck=btn.nextElementSibling;
+    function markieren(){
+      try{var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
+      rueck.textContent='Text ist markiert. Jetzt kopieren.';
+    }
+    btn.addEventListener('click',function(){
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(pre.textContent).then(function(){rueck.textContent='Kopiert.';},markieren);
+      }else{markieren();}
+    });
+  });
+})();
+</script>

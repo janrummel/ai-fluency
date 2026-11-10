@@ -1,0 +1,327 @@
+<title>Aufgabe wählen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#6A6A66; --linie:#DAD8D0;
+  --rot:#C4472B; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[role="tab"]:focus-visible{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:760px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.etikett.rot{color:var(--rot)}
+h1,h2{font-family:var(--f-titel);font-weight:400;letter-spacing:-.015em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;margin:12px 0 16px;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.15;margin-bottom:14px}
+h2 .nr{font-style:italic;color:var(--rot);margin-right:10px}
+h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin:22px 0 8px}
+p{margin-bottom:12px}
+.ziel{font-family:var(--f-titel);font-size:clamp(20px,3vw,24px);line-height:1.35;margin-bottom:14px}
+.leise{color:var(--grau)}
+section{padding:36px 0;border-top:1px solid var(--linie)}
+header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
+.kopfzeile{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.etappe{list-style:none;margin-top:22px;border-top:1px solid var(--linie)}
+.etappe li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--linie);color:var(--grau)}
+.etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
+.etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
+.etappe li[aria-current="step"] b{color:var(--rot)}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+
+/* Schema */
+figure.schema{margin:0}
+figure.schema svg{display:block;width:100%;max-width:100%;height:auto}
+.schema .breit{display:block}.schema .hoch{display:none}
+@media (max-width:560px){.schema .breit{display:none}.schema .hoch{display:block;max-width:380px;margin:0 auto}}
+.schema .kasten{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .kasten.pruef{fill:var(--rot-hell);stroke:var(--rot);stroke-width:2}
+.schema .t{font-family:var(--f-etikett);font-size:13px;fill:var(--tinte)}
+.schema .k{font-family:var(--f-etikett);font-size:11px;fill:var(--grau);letter-spacing:.04em}
+.schema .t.rot,.schema .k.rot{fill:var(--rot)}
+.schema .pf{stroke:var(--tinte);stroke-width:1.5;fill:none}
+.schema .pf.rot{stroke:var(--rot);stroke-width:2;stroke-dasharray:6 4}
+.schema .spitze{fill:var(--tinte)}.schema .spitze.rot{fill:var(--rot)}
+figcaption{margin-top:12px;font-size:14.5px;color:var(--grau)}
+
+.merk{background:var(--rot-hell);padding:14px 18px;border-left:3px solid var(--rot)}
+.merk p:last-child{margin-bottom:0}
+
+/* Dokument und Chat */
+.dokument{background:var(--flaeche);border:1px solid var(--tinte);padding:18px 20px;margin:10px 0 6px;font-size:15px}
+.dokument .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding-bottom:8px;margin-bottom:10px}
+.dokument dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 16px;margin:6px 0 10px}
+.dokument dt{color:var(--grau)}
+.dokument dd{font-variant-numeric:tabular-nums}
+.dokument .klein{font-size:12.5px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
+.dokument mark,.antwort mark{background:none;color:inherit;border-bottom:2px solid var(--rot)}
+.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15.5px}
+.chat p{margin-bottom:6px}
+.chat .baustein{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}
+th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-family:var(--f-etikett);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+td.fehl{color:var(--rot)}
+.funde{list-style:none;counter-reset:f;margin-top:8px}
+.funde li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie)}
+.funde li::before{content:counter(f);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+
+/* Ausprobieren */
+.anfrage{position:relative;background:var(--sand);padding:16px 18px;margin:10px 0}
+.anfrage pre{font-family:var(--f-etikett);font-size:13.5px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
+.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);background:transparent;border:1px solid var(--rot);padding:9px 14px;cursor:pointer;border-radius:0}
+.knopf:hover{background:var(--rot);color:var(--papier)}
+.rueck{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:12px}
+[role="tablist"]{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--tinte);margin-top:18px}
+[role="tab"]{min-height:44px;padding:10px 14px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:none;border:0;border-bottom:3px solid transparent;color:var(--grau);cursor:pointer;margin-bottom:-1px}
+[role="tab"][aria-selected="true"]{color:var(--tinte);border-bottom-color:var(--rot)}
+[role="tabpanel"]{padding:14px 0 4px}
+[role="tabpanel"] p{margin-bottom:8px}
+.stand{font-size:13.5px;color:var(--grau)}
+.andere{border:1px solid var(--linie);padding:12px 16px;margin:16px 0}
+.andere p{margin:4px 0 0}
+.sehen{border-top:1px solid var(--tinte);padding-top:10px;margin-top:18px}
+.sehen .etikett{display:block;color:var(--rot);margin-bottom:4px}
+
+.griffe{list-style:none;counter-reset:g}
+.griffe li{counter-increment:g;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--linie)}
+.griffe li::before{content:counter(g);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:30px;line-height:1}
+.quelle{font-size:14.5px;color:var(--grau);margin-top:14px}
+
+details{border-top:1px solid var(--linie)}
+details:last-of-type{border-bottom:1px solid var(--linie)}
+summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;min-height:44px;padding:10px 0;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-etikett);color:var(--rot);font-size:18px}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 14px;color:var(--tinte)}
+
+footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
+.weiter{font-family:var(--f-titel);font-size:24px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--rot);justify-self:start}
+@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:11.5px}}
+footer .knopf{justify-self:start;text-decoration:none}
+
+/* v2 */
+.schema .feld{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .chip{fill:var(--sand);stroke:var(--grau);stroke-width:1}
+.schema .kreis{fill:none;stroke:var(--rot);stroke-width:2.2}
+.schema .linie{stroke:var(--linie);stroke-width:2}
+.schema .s{font-family:var(--f-etikett);font-size:11.5px;fill:var(--tinte)}
+.schema .s.rot{fill:var(--rot)}
+.schema .nrz{font-family:var(--f-titel);font-style:italic;font-size:22px;fill:var(--rot)}
+.schema .weiss{stroke:var(--papier);stroke-width:2;fill:none}
+.ampel{list-style:none;margin-top:8px}
+.ampel li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px solid var(--linie)}
+.ampel li:first-child{border-top:0}
+.ampel b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
+@media (max-width:560px){.ampel li{grid-template-columns:1fr}}
+.chat .erkl{font-family:var(--f-etikett);font-size:11px;color:var(--grau);margin-left:6px;white-space:nowrap}
+.uebung pre{font-size:13px}
+.klapp{border:0;margin-top:4px}
+.klapp:last-of-type{border-bottom:0}
+.klapp summary{font-weight:400;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau);justify-content:start;grid-template-columns:auto auto}
+.klapp p{font-size:14.5px;padding-bottom:6px}
+.handy{border-top:1px solid var(--linie);padding-top:10px;margin-top:10px}
+
+/* v3 */
+.platzhalter{border:2px dashed var(--grau);padding:18px;margin:10px 0;text-align:center;color:var(--grau);font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;line-height:1.5}
+.gut{border:1px solid var(--tinte);background:var(--flaeche);margin:10px 0 6px}
+.gut .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding:8px 14px}
+.gut .innen{padding:12px 14px 6px;overflow-x:auto}
+.gut td q{font-style:italic;color:var(--grau)}
+.gut td q::before{content:"„"}.gut td q::after{content:"“"}
+.gut td.ok{color:var(--tinte)}
+.gut .weg{font-size:14.5px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
+.datei{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0}
+.datei .name{font-family:var(--f-etikett);font-size:13.5px}
+.schritte{list-style:none;counter-reset:s;margin:6px 0 10px}
+.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15.5px}
+.schritte li::before{content:counter(s);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+.klapp pre{font-family:var(--f-etikett);font-size:12.5px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
+.waehle{display:block;background:var(--sand);border-left:3px solid var(--rot);padding:10px 14px;margin:14px 0 0}
+.waehle .pfeil{color:var(--rot);font-weight:700}
+[role="tab"]{border:1px solid var(--linie);border-bottom:3px solid transparent;margin-right:6px}
+.shot{margin:12px 0;border:1px solid var(--linie);background:var(--flaeche)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;color:var(--grau);padding:8px 12px;border-top:1px solid var(--linie)}
+</style>
+
+<style>
+.tabelle-wrap{overflow-x:auto}
+.zerlegt{list-style:none;margin:10px 0}
+.zerlegt li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:4px 14px;padding:9px 0;border-top:1px solid var(--linie)}
+.zerlegt b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
+@media (max-width:560px){.zerlegt li{grid-template-columns:1fr}}
+</style>
+
+<div class="seite">
+<header>
+  <div class="kopfzeile">
+    <span class="etikett rot">Etappe 1 · Einheit 1 von 3</span>
+    <span class="etikett">Lesen etwa 5 Minuten · Üben etwa 8 Minuten (Schätzung)</span>
+  </div>
+  <h1>Aufgabe wählen: Soll die KI das machen?</h1>
+  <p class="ziel">Danach kannst du bei einer Aufgabe entscheiden, ob KI dabei hilft, und die Arbeit zwischen dir und der KI aufteilen.</p>
+  <span class="etikett">Etappe 1 · Loslegen, aber richtig</span>
+  <ol class="etappe">
+    <li aria-current="step"><b>1</b><span>Aufgabe wählen: Soll die KI das machen?</span></li>
+    <li><b>2</b><span>Das richtige Konto und was du hineingeben darfst</span></li>
+    <li><b>3</b><span>Die erste Anfrage und die erste geprüfte Zahl</span></li>
+  </ol>
+</header>
+
+<section aria-labelledby="h-schema">
+  <h2 id="h-schema" class="etikett">Drei Sätze vor jeder Anfrage</h2>
+  <figure class="schema">
+<svg class="breit" viewBox="0 0 720 96" role="img" aria-labelledby="a1b"><title id="a1b">Drei Sätze nacheinander: Ergebnis, Gut ist es, wenn, Wer macht was. Der dritte ist rot markiert.</title>
+<defs><marker id="a1m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="kasten " x="0" y="10" width="216" height="76"/>
+<text class="nrz" x="10" y="56">1</text>
+<text class="t" x="34" y="52">Ergebnis</text>
+<line class="pf" x1="216" y1="48" x2="250" y2="48" marker-end="url(#a1m)"/>
+<rect class="kasten " x="252" y="10" width="216" height="76"/>
+<text class="nrz" x="262" y="56">2</text>
+<text class="t" x="286" y="52">Gut ist es, wenn</text>
+<line class="pf" x1="468" y1="48" x2="502" y2="48" marker-end="url(#a1m)"/>
+<rect class="kasten pruef" x="504" y="10" width="216" height="76"/>
+<text class="nrz" x="514" y="56">3</text>
+<text class="t rot" x="538" y="52">Wer macht was</text>
+</svg>
+<svg class="hoch" viewBox="0 0 340 276" role="img" aria-labelledby="a1h"><title id="a1h">Drei Sätze nacheinander: Ergebnis, Gut ist es, wenn, Wer macht was. Der dritte ist rot markiert.</title>
+<defs><marker id="a1n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="kasten " x="1" y="4" width="338" height="62"/>
+<text class="nrz" x="12" y="43">1</text>
+<text class="t" x="38" y="39">Ergebnis</text>
+<line class="pf" x1="170" y1="66" x2="170" y2="94" marker-end="url(#a1n)"/>
+<rect class="kasten " x="1" y="96" width="338" height="62"/>
+<text class="nrz" x="12" y="135">2</text>
+<text class="t" x="38" y="131">Gut ist es, wenn</text>
+<line class="pf" x1="170" y1="158" x2="170" y2="186" marker-end="url(#a1n)"/>
+<rect class="kasten pruef" x="1" y="188" width="338" height="62"/>
+<text class="nrz" x="12" y="227">3</text>
+<text class="t rot" x="38" y="223">Wer macht was</text>
+</svg>
+    <figcaption>Erst das Problem, dann die KI. Wer die ersten beiden Sätze geschrieben hat, sieht beim dritten, welcher Teil zur KI passt und welcher bei dir bleibt. Das Prüfen bleibt immer bei dir.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="h-merk">
+  <div class="merk">
+    <span class="etikett rot" id="h-merk">Für diese Einheit</span>
+    <p style="margin-top:6px">Du brauchst noch kein KI-Werkzeug. Ein Zettel oder eine Notiz reicht.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-beispiel">
+  <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
+  <p>Sabine aus dem Einkauf hat diese Woche eine Aufgabe: Sie soll drei Angebote für Bürostühle vergleichen. <span class="leise">(Erfunden.)</span> Bevor sie ein KI-Werkzeug öffnet, zerlegt sie die Aufgabe in drei Sätze:</p>
+  <ul class="zerlegt">
+    <li><b>Ergebnis</b><span>Am Ende will ich eine kurze Empfehlung an meine Chefin, welches Angebot wir nehmen, mit Begründung.</span></li>
+    <li><b>Gut ist es, wenn</b><span>Preise, Lieferzeiten und Gewährleistung stimmen und die Stühle in spätestens acht Wochen da sind.</span></li>
+    <li><b>Wer macht was</b><span>Die KI bringt die Angebote in eine Tabelle und schreibt einen Entwurf der Mail. Ich entscheide, prüfe die Zahlen und schicke ab.</span></li>
+  </ul>
+  <p>Damit weiß Sabine, was sie von der KI verlangt und woran sie die Antwort misst. Die Entscheidung selbst gibt sie nicht ab.</p>
+  <p class="leise" style="font-size:14.5px">Bei einer Textaufgabe sieht der zweite Satz zum Beispiel so aus: „Gut ist es, wenn die Mail höchstens fünf Sätze hat und Datum, Ort und Rückmeldefrist drinstehen.“</p>
+
+  <h3>Wofür KI schlecht taugt</h3>
+  <div class="tabelle-wrap">
+  <table>
+    <thead><tr><th scope="col">Schwachstelle</th><th scope="col">Beispiel</th><th scope="col">Besser</th></tr></thead>
+    <tbody>
+      <tr><td>Exakte Fakten ohne Quelle</td><td>„Welche Frist gilt bei uns für Reisekostenabrechnungen?“</td><td>In der Richtlinie nachsehen, oder das Dokument mitgeben und die Stelle zeigen lassen.</td></tr>
+      <tr><td>Summen und Rechnungen im Chat</td><td>Die Summe von vierzehn Rechnungsposten</td><td>Tabellenprogramm oder Taschenrechner. Eine Summe aus dem Chat immer nachrechnen.</td></tr>
+      <tr><td>Entscheidungen über Menschen</td><td>„Welche der fünf Bewerberinnen laden wir ein?“</td><td>Selbst entscheiden. KI hat aus vielen alten Texten gelernt und übernimmt deren Vorurteile, etwa über Alter, Geschlecht oder Herkunft.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Und manches geht ohne KI schlicht schneller, etwa eine Telefonnummer nachschlagen, die du im Adressbuch hast.</p>
+  <p class="leise" style="font-size:14.5px">Gut geeignet sind dagegen meist Entwürfe, Zusammenfassungen, Umformulieren, Ordnen und Ideen sammeln. Das ist eine Faustregel, kein Messwert.</p>
+</section>
+
+<section aria-labelledby="h-tun">
+  <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
+  <p>Nimm eine Aufgabe aus deiner Woche, die dich Zeit kostet: eine Mail, eine Zusammenfassung, eine Liste, eine Einladung.</p>
+  <ol class="schritte">
+    <li><span><b>Kopiere die drei Sätze</b> (Ergebnis, Gut ist es, wenn, Wer macht was) in eine Notiz und fülle die eckigen Klammern aus.</span></li>
+    <li><span><b>Vergleiche den KI-Teil mit der Tabelle oben.</b> Fällt er in eine der drei Schwachstellen? Dann verkleinere ihn oder nimm eine andere Aufgabe.</span></li>
+    <li><span><b>Heb die drei Sätze auf.</b> In Einheit 3 machst du daraus deine erste Anfrage.</span></li>
+  </ol>
+  <div class="anfrage">
+<pre id="drei-saetze">Ergebnis: Am Ende will ich [was genau, für wen].
+Gut ist es, wenn [woran du es erkennst: eine Zahl, eine Frist, eine Länge].
+Wer macht was: Die KI übernimmt [welchen Teil]. Ich übernehme [welchen Teil] und prüfe [was].</pre>
+    <button class="knopf" type="button" data-kopie="drei-saetze">Drei Sätze kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
+  </div>
+  <div class="sehen">
+    <span class="etikett">Du solltest sehen</span>
+    <p>Drei Sätze, die auf deine Aufgabe passen. Der zweite Satz nennt etwas, das du nachprüfen kannst. Im dritten steht, was bei dir bleibt.</p>
+  </div>
+</section>
+
+<section aria-labelledby="h-pruef">
+  <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
+  <ol class="griffe">
+    <li><span><b>Ist das Ergebnis greifbar?</b> Eine Mail, eine Tabelle, eine Liste: etwas, das du abschicken oder ablegen kannst. „Mehr Überblick“ ist kein Ergebnis.</span></li>
+    <li><span><b>Kannst du „gut“ nachprüfen?</b> Der zweite Satz nennt eine Zahl, eine Frist, eine Länge oder eine Bedingung. Nur dann weißt du später, ob die Antwort taugt.</span></li>
+    <li><span><b>Bleibt das Prüfen bei dir?</b> Der KI-Teil liegt außerhalb der drei Schwachstellen, und das Entscheiden und Nachsehen hast du dir selbst zugeteilt, und es geht nicht ohne KI schneller.</span></li>
+  </ol>
+</section>
+
+<section aria-labelledby="h-check">
+  <h2 id="h-check"><span class="nr">4</span>Selbstcheck</h2>
+  <details>
+    <summary>„Schreib mir, wen wir von den fünf Bewerberinnen einladen sollen.“ Passt das als Aufgabe für die KI?</summary>
+    <p>Nein. Das ist eine Entscheidung über Menschen. KI hat aus vielen alten Texten gelernt und übernimmt deren Vorurteile, etwa über Alter, Geschlecht oder Herkunft. Entscheiden musst du. Dazu kommt: Bewerbungen enthalten personenbezogene Daten. Was du hineingeben darfst, klärt Einheit 2.</p>
+  </details>
+  <details>
+    <summary>Der Chat nennt dir die Summe von vierzehn Rechnungsposten. Was tust du?</summary>
+    <p>Nachrechnen, mit Tabellenprogramm oder Taschenrechner. Summen und Rechnungen im Chat gehören zu den Schwachstellen.</p>
+  </details>
+  <details>
+    <summary>Warum legst du vorher fest, woran du ein gutes Ergebnis erkennst?</summary>
+    <p>Sonst hältst du die erste Antwort für fertig, weil sie überzeugend klingt. Mit dem zweiten Satz hast du einen Maßstab, an dem du sie misst.</p>
+  </details>
+</section>
+
+<footer>
+  <a class="weiter" href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Weiter: Einheit 2 · Das richtige Konto und was du hineingeben darfst →</a>
+  <span class="leise" style="font-size:14.5px"><a href="lr:start">Zurück: Start der Reise</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="etikett">Stand 10.11.2026</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-kopie]'),function(btn){
+    var pre=document.getElementById(btn.getAttribute('data-kopie')),rueck=btn.nextElementSibling;
+    function markieren(){
+      try{var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
+      rueck.textContent='Text ist markiert. Jetzt kopieren.';
+    }
+    btn.addEventListener('click',function(){
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(pre.textContent).then(function(){rueck.textContent='Kopiert.';},markieren);
+      }else{markieren();}
+    });
+  });
+})();
+</script>
