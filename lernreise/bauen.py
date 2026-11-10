@@ -56,6 +56,9 @@ LEISTE_CSS = """
 .lr-fuss a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot,#C4472B)}
 .lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:12px;letter-spacing:.05em;color:var(--grau,#6A6A66);display:flex;flex-wrap:wrap;gap:4px 16px}
 .lr-fuss .lr-klein a{display:inline-flex;align-items:center;min-height:32px}
+.lr-zaehlen{font:inherit;letter-spacing:inherit;color:inherit;background:transparent;border:0;padding:0;min-height:32px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--rot,#C4472B);text-underline-offset:3px}
+.lr-zaehlen[hidden]{display:none}
+[data-zaehlen-status]{display:inline-flex;align-items:center}
 """
 
 
@@ -106,7 +109,14 @@ def fuss() -> str:
         '<a href="https://janrummel.eu/impressum.html">Impressum</a>'
         '<a href="https://janrummel.eu/datenschutz.html">Datenschutz</a>'
         '<a href="https://github.com/janrummel/ai-fluency">Quelltext</a>'
+        '<button type="button" class="lr-zaehlen" data-zaehlen hidden>Nicht mitzählen</button>'
+        '<span data-zaehlen-status role="status"></span>'
         '</div></div></div>'
+        '<script>(function(){var b=document.querySelector("[data-zaehlen]"),s=document.querySelector("[data-zaehlen-status]");'
+        'function aus(){try{return localStorage.getItem("skipgc")==="t"}catch(e){return null}}'
+        'function zeig(){var a=aus();if(a===null)return;b.hidden=false;b.textContent=a?"Wieder mitzählen":"Nicht mitzählen";'
+        's.textContent=a?"Dieser Browser wird hier nicht gezählt.":""}'
+        'b.addEventListener("click",function(){try{aus()?localStorage.removeItem("skipgc"):localStorage.setItem("skipgc","t")}catch(e){}zeig()});zeig()})();</script>'
     )
 
 
