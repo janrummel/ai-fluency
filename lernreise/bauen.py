@@ -32,6 +32,9 @@ SEITEN_DE = [
     ("e2-anfrage-bauen.html", "etappe-2/anfrage-bauen/", "UJyTgyB68HE5AcWNbgsnVt", "Etappe 2 · Einheit 1"),
     ("e2-dokument-pruefen.html", "etappe-2/dokument-pruefen/", "M835sRMTgTn6hWcvfv5ZqK", "Etappe 2 · Einheit 2"),
     ("e2-in-runden.html", "etappe-2/in-runden/", "MgrJBfUYMzMaBE6WigSaST", "Etappe 2 · Einheit 3"),
+    ("e3-1-quelle.html", "etappe-3/gegen-die-quelle/", "lr:e3-1", "Etappe 3 · Einheit 1"),
+    ("e3-2-websuche.html", "etappe-3/websuche/", "lr:e3-2", "Etappe 3 · Einheit 2"),
+    ("e3-3-rollen.html", "etappe-3/gegenlesen/", "lr:e3-3", "Etappe 3 · Einheit 3"),
 ]
 
 LEISTE_CSS = """
