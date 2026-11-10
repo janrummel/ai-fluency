@@ -1,0 +1,293 @@
+<title>Bausteinkarte Lernreise</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#6A6A66; --linie:#DAD8D0;
+  --rot:#C4472B; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:1080px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.rot{color:var(--rot)}
+h1{font-family:var(--f-titel);font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.1;text-wrap:balance;margin:10px 0 12px}
+h2{font-family:var(--f-titel);font-weight:400;font-size:26px;line-height:1.2;text-wrap:balance}
+.lead{max-width:62ch;color:var(--grau);font-size:17.5px}
+.kasten{background:var(--sand);border-left:3px solid var(--rot);padding:12px 16px;margin:22px 0 0;max-width:68ch;font-size:15.5px}
+
+/* Etappenwahl */
+.wahl{margin-top:30px;display:grid;gap:8px}
+.etappen{display:flex;flex-wrap:wrap;gap:6px}
+.etappen button{min-height:44px;padding:8px 12px;border:1px solid var(--linie);background:var(--flaeche);cursor:pointer;text-align:left;display:flex;flex-direction:column;line-height:1.25}
+.etappen button small{font-family:var(--f-etikett);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau)}
+.etappen button span{font-size:14.5px}
+.etappen button[aria-pressed="true"]{border:2px solid var(--rot);background:var(--rot-hell)}
+.legende{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13.5px;color:var(--grau)}
+.legende i{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px;border:1px solid var(--tinte)}
+.legende .l-neu{background:var(--rot);border-color:var(--rot)}
+.legende .l-da{background:var(--tinte)}
+.legende .l-spaeter{border-style:dashed;border-color:var(--grau)}
+
+/* Karte + Zoom */
+.arbeit{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;margin-top:22px;align-items:start}
+@media (max-width:820px){.arbeit{grid-template-columns:minmax(0,1fr)}}
+.stufe{border-top:1px solid var(--tinte);padding:12px 0 16px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px}
+@media (max-width:520px){.stufe{grid-template-columns:minmax(0,1fr)}}
+.stufe-kopf b{display:block;font-family:var(--f-titel);font-weight:400;font-size:20px;line-height:1.2}
+.stufe-kopf small{font-size:13px;color:var(--grau);line-height:1.35;display:block;margin-top:2px}
+.kacheln{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.kachel{cursor:pointer;text-align:left;border:1px solid var(--linie);background:var(--flaeche);padding:10px 12px 11px;min-height:76px;display:flex;flex-direction:column;gap:3px;position:relative;transition:opacity .2s,border-color .2s}
+.kachel b{font-weight:600;font-size:15px;line-height:1.25}
+.kachel small{font-size:13px;color:var(--grau);line-height:1.35}
+.kachel .zst{font-family:var(--f-etikett);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase}
+.kachel[data-z="neu"]{border:2px solid var(--rot);background:var(--rot-hell)}
+.kachel[data-z="neu"] .zst{color:var(--rot)}
+.kachel[data-z="da"]{border-color:var(--tinte)}
+.kachel[data-z="da"] .zst{color:var(--tinte)}
+.kachel[data-z="spaeter"]{border-style:dashed;opacity:.55}
+.kachel[data-z="spaeter"] .zst{color:var(--grau)}
+.kachel[aria-current="true"]{box-shadow:0 0 0 3px var(--papier),0 0 0 5px var(--rot);opacity:1}
+@media (prefers-reduced-motion:reduce){.kachel{transition:none}}
+
+.zoom{position:sticky;top:calc(16px + env(safe-area-inset-top,0px));border:1px solid var(--tinte);background:var(--flaeche);padding:20px 20px 22px;min-width:0}
+@media (max-width:820px){.zoom{position:static}}
+.zoom h2{margin:4px 0 6px}
+.zoom .kurz{color:var(--grau);margin-bottom:12px}
+.zoom dl{display:grid;gap:12px}
+.zoom dt{font-family:var(--f-etikett);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.zoom dd{font-size:15.5px}
+.zoom .fehler dd{border-left:3px solid var(--rot);padding-left:10px}
+.zoom .probe dd{background:var(--sand);padding:10px 12px}
+.begriffe{display:flex;flex-wrap:wrap;gap:6px}
+.begriffe button{cursor:pointer;border:1px solid var(--linie);background:var(--papier);padding:4px 9px;min-height:32px;font-size:13.5px}
+.begriffe button[aria-expanded="true"]{border-color:var(--rot);color:var(--rot)}
+.erkl{font-size:14.5px;margin-top:8px;padding:8px 10px;border:1px dashed var(--linie)}
+.ort{font-size:14.5px}
+.ort b{font-weight:600}
+
+/* Zusammenhang */
+.zusammen{margin-top:44px;border-top:1px solid var(--tinte);padding-top:18px}
+.zusammen p{max-width:66ch;color:var(--grau);margin:6px 0 14px}
+.schema{overflow-x:auto;border:1px solid var(--linie);background:var(--flaeche);padding:12px}
+.schema svg{display:block;min-width:640px;width:100%;height:auto}
+.schema .box{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.2}
+.schema .kern{fill:var(--rot-hell);stroke:var(--rot);stroke-width:2}
+.schema .rahmen{fill:none;stroke:var(--grau);stroke-width:1.2;stroke-dasharray:5 4}
+.schema text{fill:var(--tinte);font-family:var(--f-text);font-size:13px}
+.schema .klein{fill:var(--grau);font-size:11px;font-family:var(--f-etikett);letter-spacing:.05em}
+.schema .pfeil{stroke:var(--tinte);stroke-width:1.3;fill:none;marker-end:url(#spitze)}
+.schema .pfeil.rueck{stroke:var(--rot);stroke-dasharray:4 3;marker-end:url(#spitze-rot)}
+.schema #spitze path{fill:var(--tinte)} .schema #spitze-rot path{fill:var(--rot)}
+.fuss{margin-top:44px;border-top:1px solid var(--linie);padding-top:14px;font-size:13.5px;color:var(--grau);display:grid;gap:4px}
+.wer{font-family:var(--f-etikett);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:1px 5px;border:1px solid currentColor;align-self:flex-start;margin-top:4px}
+.wer-du{color:var(--rot)} .wer-wz{color:var(--grau)}
+.kachel .kopf{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}
+.recht{margin-top:22px;border:2px solid var(--tinte);padding:6px 14px 4px;position:relative}
+.recht-knopf{cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;width:100%;text-align:left;background:var(--papier);border:0;padding:6px 8px;margin:-20px 0 4px -8px;width:auto}
+.recht-knopf b{font-family:var(--f-titel);font-weight:400;font-size:19px}
+.recht-knopf small{font-size:13px;color:var(--grau)}
+.recht-knopf[aria-current="true"] b{color:var(--rot)}
+.weiter{margin-top:6px;font-size:14.5px}
+.schema .mensch{fill:var(--sand);stroke:var(--rot);stroke-width:1.4}
+</style>
+
+<div class="seite">
+  <span class="etikett">Erst das Problem, dann die KI · Die Lernreise</span>
+  <h1>Die Bausteinkarte</h1>
+  <p class="lead">Zehn Bausteine vom ersten Chat bis zum Agenten, der selbst Schritte macht. Vier davon sind, was <b>du tust</b>, sechs sind, woraus <b>das Werkzeug</b> besteht. Um alles herum liegt der Rahmen aus Recht und Verantwortung.</p>
+  <div class="kasten"><b>So benutzt du die Karte:</b> Wähle unten, bei welcher Etappe du bist. Rot leuchtet, was dort neu dazukommt oder vertieft wird. Tippe auf einen Baustein, um hineinzuzoomen: was er ist, woran du einen typischen Fehler erkennst und was du in einer Minute ausprobieren kannst.</div>
+
+  <div class="wahl">
+    <span class="etikett">Ich bin bei</span>
+    <div class="etappen" id="etappen" role="group" aria-label="Etappe wählen"></div>
+    <div class="legende" aria-hidden="true"><span><i class="l-neu"></i>neu oder vertieft</span><span><i class="l-da"></i>kennst du schon</span><span><i class="l-spaeter"></i>kommt später</span><span><span class="wer wer-du">du</span> was du tust</span><span><span class="wer wer-wz">Werkzeug</span> woraus es besteht</span></div>
+  </div>
+
+  <div class="arbeit">
+    <div>
+      <div class="recht">
+        <button type="button" class="recht-knopf" id="recht-knopf" aria-current="false"><b>Recht und Verantwortung</b><small>gilt auf jeder Stufe · antippen</small></button>
+        <div id="karte" aria-label="Bausteine nach Ausbaustufe"></div>
+      </div>
+      <p class="weiter">Danach geht es weiter mit zwei Aufbaukursen: Agenten verstehen und einen eigenen Agenten einrichten.</p>
+    </div>
+    <aside class="zoom" id="zoom" aria-live="polite"></aside>
+  </div>
+
+  <section class="zusammen" aria-labelledby="h-zus">
+    <h2 id="h-zus">So hängen die Bausteine zusammen</h2>
+    <p>Erst wählst du die Aufgabe. Anfrage und Kontext gehen ins Modell, die Antwort kommt zurück, du prüfst und legst ab, was taugt. Ein Agent legt eine Schleife um das Modell: Er nutzt selbst Werkzeuge, sieht das Ergebnis an und entscheidet den nächsten Schritt. An den Stellen, an denen etwas nach außen geht, gibt ein Mensch frei.</p>
+    <div class="schema">
+      <svg viewBox="0 0 900 360" role="img" aria-labelledby="schema-t">
+        <title id="schema-t">Schema: Aufgabe wählen führt zu Anfrage und Kontext, beide gehen ins Modell in der Oberfläche. Die Antwort geht zur Prüfung und von dort in die Ablage. Gedächtnis und Regeln speisen den Kontext. Beim Agenten liegt um das Modell eine Schleife mit Werkzeugen und einer Freigabe durch den Menschen.</title>
+        <defs>
+          <marker id="spitze" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+          <marker id="spitze-rot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
+        </defs>
+        <rect class="mensch" x="20" y="20" width="170" height="44" rx="2"/><text x="105" y="40" text-anchor="middle" font-weight="600">Aufgabe wählen</text><text class="klein" x="105" y="56" text-anchor="middle">DU · ETAPPE 1</text>
+        <rect class="box" x="20" y="100" width="170" height="46" rx="2"/><text x="105" y="120" text-anchor="middle" font-weight="600">Anfrage</text><text class="klein" x="105" y="137" text-anchor="middle">DU · ETAPPE 1–2</text>
+        <rect class="box" x="20" y="180" width="170" height="46" rx="2"/><text x="105" y="200" text-anchor="middle" font-weight="600">Kontext</text><text class="klein" x="105" y="217" text-anchor="middle">ETAPPE 2</text>
+        <rect class="box" x="20" y="270" width="170" height="52" rx="2"/><text x="105" y="291" text-anchor="middle" font-weight="600">Gedächtnis · Regeln</text><text class="klein" x="105" y="309" text-anchor="middle">ETAPPE 4</text>
+        <rect class="rahmen" x="245" y="40" width="380" height="290" rx="4"/>
+        <text class="klein" x="257" y="60">AGENT: SCHLEIFE · ETAPPE 5</text>
+        <rect class="box" x="290" y="80" width="290" height="140" rx="2"/>
+        <text class="klein" x="302" y="100">KONTO UND OBERFLÄCHE · ETAPPE 1</text>
+        <rect class="kern" x="355" y="120" width="160" height="58" rx="2"/>
+        <text x="435" y="146" text-anchor="middle" font-weight="600">Modell</text>
+        <text class="klein" x="435" y="165" text-anchor="middle">ETAPPE 1</text>
+        <rect class="box" x="290" y="250" width="140" height="30" rx="2"/><text x="360" y="270" text-anchor="middle" font-size="12.5">Werkzeuge · Etappe 3</text>
+        <rect class="mensch" x="450" y="250" width="130" height="30" rx="2"/><text x="515" y="270" text-anchor="middle" font-size="12.5">Freigabe · du</text>
+        <rect class="mensch" x="700" y="120" width="170" height="58" rx="2"/><text x="785" y="146" text-anchor="middle" font-weight="600">Prüfen</text><text class="klein" x="785" y="165" text-anchor="middle">DU · ETAPPE 1 BIS 3</text>
+        <rect class="mensch" x="700" y="260" width="170" height="52" rx="2"/><text x="785" y="282" text-anchor="middle" font-weight="600">Ablegen</text><text class="klein" x="785" y="300" text-anchor="middle">DU · ETAPPE 4</text>
+        <path class="pfeil" d="M105 64 L105 98"/>
+        <path class="pfeil" d="M190 123 C 270 123, 290 140, 353 142"/>
+        <path class="pfeil" d="M190 203 C 270 203, 290 165, 353 160"/>
+        <path class="pfeil" d="M105 270 L105 228"/>
+        <path class="pfeil" d="M517 149 L698 149"/>
+        <text class="klein" x="636" y="139">ANTWORT</text>
+        <path class="pfeil" d="M785 180 L785 258"/>
+        <path class="pfeil rueck" d="M400 180 L370 248"/>
+        <path class="pfeil rueck" d="M430 265 L448 265"/>
+        <path class="pfeil rueck" d="M545 248 L490 182"/>
+        <text class="klein" x="470" y="304" style="fill:var(--rot)">BEOBACHTEN</text>
+        <path class="pfeil rueck" d="M785 118 C 785 0, 160 -6, 150 98"/>
+        <text class="klein" x="400" y="16" style="fill:var(--rot)">VERBESSERN IN RUNDEN</text>
+      </svg>
+    </div>
+  </section>
+
+  <div class="fuss">
+    <span>Stand 10.11.2026 · abgeglichen mit den Rahmenwerken AILit (EU und OECD), DigComp 3.0 (EU), 4D AI Fluency (Anthropic) und Art. 4 KI-Verordnung</span>
+    <span>Die Begriffe sind bewusst vereinfacht. Die Hinweise zu Recht und Verantwortung sind keine Rechtsberatung.</span>
+  </div>
+</div>
+
+<script>
+const ETAPPEN=[
+ {nr:1,titel:"Loslegen, aber richtig"},
+ {nr:2,titel:"Mit Absicht fragen"},
+ {nr:3,titel:"Prüfen wie ein Profi"},
+ {nr:4,titel:"Ein Gedächtnis geben"},
+ {nr:5,titel:"Ausblick: Agenten"}
+];
+const STUFEN=[
+ {n:"Chatten",k:"Fragen stellen, Antwort bekommen, nachsehen",b:["aufgabe","anfrage","pruefen","konto","modell"]},
+ {n:"Arbeiten",k:"mit eigenen Unterlagen und Werkzeugen",b:["kontext","werkzeuge"]},
+ {n:"Dauerhaft",k:"Ergebnisse bleiben, Regeln gelten weiter",b:["ablegen","gedaechtnis"]},
+ {n:"Agent",k:"es macht selbst Schritte",b:["schleife"]}
+];
+const RECHT={n:"Recht und Verantwortung",k:"gilt auf jeder Stufe",du:true,
+ was:"Für das Ergebnis bist du verantwortlich, nicht das Werkzeug. Personenbezogene Daten fallen unter die DSGVO, Kunden- und Geschäftsdaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Viele Firmen regeln die KI-Nutzung in einer Richtlinie oder Betriebsvereinbarung. Die KI-Verordnung der EU (Art. 4, Fassung von 2026) verlangt von Unternehmen, die KI einsetzen, Maßnahmen zur Unterstützung der KI-Kompetenz ihrer Leute. Ein Zertifikat ist dafür nicht nötig.",
+ fehler:"„Die KI hat das so geschrieben“ entlastet niemanden. Typisch sind ein fremdes Bild oder ein fremder Text, der ungeprüft veröffentlicht wird, oder eine Beurteilung von Menschen, die von der KI stammt und die niemand hinterfragt.",
+ probe:"Such im Intranet nach „KI-Richtlinie“ oder frag deine Führungskraft: Welche KI-Werkzeuge sind bei uns freigegeben, und für welche Daten?",
+ ort:"Grundlagen in Etappe 1, Erinnerung bei jeder Übung mit eigenen Dokumenten",
+ begr:{"DSGVO":"Datenschutz-Grundverordnung der EU. Sie regelt, was mit Daten über Personen geschehen darf, also auch, ob du sie in ein KI-Werkzeug geben darfst.","Offenlegen":"Ob du sagen musst, dass ein Text mit KI entstanden ist, regelt oft deine Firma. Für bestimmte veröffentlichte Inhalte, etwa täuschend echte Bilder oder Videos, gelten seit dem 2. August 2026 Kennzeichnungspflichten (Art. 50 KI-Verordnung, für manche ältere Systeme mit Übergangsfrist bis Dezember 2026). Eine normale Büro-Mail gehört nicht dazu.","Urheberrecht":"Was die KI erzeugt, kann fremden Texten oder Bildern sehr ähnlich sein. Vor einer Veröffentlichung prüfen, und im Zweifel nachfragen.","Fairness":"KI übernimmt Verzerrungen aus ihren Trainingsdaten. Entscheidungen über Menschen, etwa Bewerbungen oder Beurteilungen, überlässt man ihr deshalb nicht."}};
+const B={
+ aufgabe:{n:"Aufgabe wählen",k:"soll die KI das überhaupt machen?",du:true,et:[1],
+  was:"Der erste Schritt vor jeder Anfrage: Was will ich eigentlich erreichen, und ist KI dafür das richtige Werkzeug? Dann die Arbeit teilen: Was macht die KI, was mache ich, wo prüfe ich?",
+  fehler:"KI für etwas nehmen, das sie schlecht kann: exakte Fakten ohne Quelle, Rechnen ohne Werkzeug, Entscheidungen über Menschen. Oder für etwas, das ohne KI schneller ginge.",
+  probe:"Nimm eine Aufgabe von heute und schreib in einem Satz auf: Was ist das Ergebnis, woran erkenne ich, dass es gut ist, und welchen Teil soll die KI übernehmen?",
+  begr:{"Delegation":"Bewusst entscheiden, welchen Teil einer Aufgabe die KI übernimmt und welchen du behältst.","Erst das Problem":"Die Grundidee der Reise: erst klären, was gelöst werden soll, dann das Werkzeug wählen."}},
+ anfrage:{n:"Anfrage",k:"was du hineinschreibst",du:true,et:[1,2],
+  was:"Der Prompt. Fünf Bausteine machen ihn gut: Rolle, Lage, Aufgabe, Format, Grenzen. Am meisten bringen meist eine klare Aufgabe und die Lage, also worum es geht und wozu du es brauchst.",
+  fehler:"Zu knapp gefragt, allgemein geantwortet. Wer nur „Fasse das zusammen“ schreibt, bekommt eine Zusammenfassung, aber nicht die, die er braucht.",
+  probe:"Frag einmal knapp und einmal mit dem Satz „Ich brauche das für …, bitte als Tabelle mit …“. Vergleiche.",
+  ort:"Etappe 1 Grundlage, Etappe 2 mit allen fünf Bausteinen",
+  begr:{"Prompt":"Die Eingabe, mit der du dem Modell sagst, was du willst.","Rolle":"„Du bist eine sorgfältige Sachbearbeiterin.“ Sie gibt die Sicht vor. Sie hilft, ist aber nicht der stärkste Hebel."}},
+ pruefen:{n:"Prüfen",k:"was ein Ergebnis belastbar macht",du:true,et:[1,2,3],
+  was:"Gegen das Original nachsehen. In Etappe 1 eine Zahl, in Etappe 2 drei Zahlen samt dem, was dabeisteht (netto oder brutto, Wochen), und die Frage nach Auslassungen, in Etappe 3 gründlich: Quellen aus der Websuche prüfen, aus anderen Rollen gegenlesen, Prüftiefe nach Wichtigkeit wählen.",
+  fehler:"Weglassen ist schwerer zu sehen als Erfinden. Und die Frage „Was hast du weggelassen?“ gibt nur Hinweise, denn das Modell kann sich auch Auslassungen ausdenken. Belastbar ist nur der Blick ins Original.",
+  probe:"Nimm eine Zahl aus einer KI-Antwort und such sie im Original. Steht sie da genauso, auch mit dem, was dabeisteht, etwa netto oder brutto?",
+  ort:"Etappe 1 eine Zahl, Etappe 2 drei Zahlen, Etappe 3 · Prüfen wie ein Profi",
+  begr:{"Fundstelle":"Die Stelle im Original, aus der eine Angabe stammt, am besten wörtlich.","Gegenlesen":"Eine andere Sicht findet andere Schwächen. Aber dasselbe Modell macht oft dieselben Fehler, das ersetzt das Original nicht."}},
+ konto:{n:"Konto und Oberfläche",k:"die App und mit wem du angemeldet bist",du:false,et:[1],
+  was:"ChatGPT, Copilot oder Gemini im Browser, als App oder direkt in Outlook, Word und Teams. Welche Regeln für deine Daten gelten, hängt vom Konto und seiner Lizenz ab, nicht vom Modell.",
+  fehler:"Firmendaten landen im privaten Konto. Auch ein Gratiskonto, das du mit deiner Firmenadresse angelegt hast, ist ein Privatkonto.",
+  probe:"Schau im Profil nach: Bist du gerade privat angemeldet oder mit dem Konto, das deine Firma bereitstellt?",
+  begr:{"Arbeitskonto":"Ein Konto innerhalb der Firmenlizenz, etwa Microsoft 365 Copilot über deine Firma oder ChatGPT Business oder Enterprise. Nur dann gelten die Regeln, die deine Firma mit dem Anbieter vereinbart hat.","Datenampel":"Die Faustregel, was du wo hochladen darfst. Im Job nur mit dem Arbeitskonto und nur in freigegebenen Werkzeugen. Privat nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten, oder diese Stellen vorher schwärzen."}},
+ modell:{n:"Modell",k:"das Rechenwerk, das Text erzeugt",du:false,et:[1],
+  was:"Ein großes Sprachmodell (LLM). Es hat an sehr viel Text gelernt, welche Wörter typischerweise aufeinander folgen, und erzeugt die Antwort Stück für Stück. Was nach seinem Stichtag passiert ist oder in deinem Intranet steht, weiß es nicht, außer du gibst es mit oder ein Werkzeug holt es herein.",
+  fehler:"Es klingt immer sicher, auch wenn es falsch liegt. Es erfindet manchmal Zahlen, Quellen oder Zitate, die es nicht gibt.",
+  probe:"Stell zweimal genau dieselbe Frage, jeweils in einem neuen Chat. Die Antworten sind ähnlich, aber nicht gleich. Das ist normal.",
+  begr:{"LLM":"Large Language Model, großes Sprachmodell. Das eigentliche Rechenwerk hinter ChatGPT, Copilot oder Gemini.","Token":"Die Wortstücke, in die das Modell Text zerlegt. Längen und Grenzen werden in Token gezählt.","Halluzination":"Eine erfundene Angabe, die überzeugend klingt. Kein Absturz, sondern ein normales Verhalten des Modells.","Wissensstand":"Der Stichtag, bis zu dem das Modell gelernt hat. Neueres kennt es nur, wenn du es mitgibst oder eine Websuche es holt.","Reasoning":"Modelle, die vor der Antwort Zwischenschritte ausformulieren. Oft genauer bei schwierigen Aufgaben, aber langsamer."}},
+ kontext:{n:"Kontext",k:"alles, was das Modell gerade sieht",du:false,et:[2],
+  was:"Der bisherige Gesprächsverlauf, angehängte Dokumente, gespeicherte Anweisungen. Microsoft 365 Copilot (über die Firma) kann zusätzlich selbst Mails und Dateien heranziehen, aus allem, worauf du Zugriff hast.",
+  fehler:"Große Dateien werden oft nur in Teilen gelesen, und in langen Chats gerät Früheres aus dem Blick. Bei Copilot kann eine Datei in die Antwort rutschen, die zwar für dich freigegeben ist, die du aber nie hättest sehen sollen.",
+  probe:"Häng ein kurzes Dokument an und frag nach einer Zahl auf der letzten Seite. Lass dir die Stelle wörtlich zeigen.",
+  ort:"Etappe 2 · Einheit „Ein Dokument hineingeben und die Antwort prüfen“",
+  begr:{"Kontextfenster":"Wie viel das Modell auf einmal verarbeiten kann, gezählt in Token. Bei heutigen Werkzeugen oft viel, aber nicht alles wird gleich gut beachtet.","Anhang":"Eine Datei, die du in den Chat hochlädst. Je nach Werkzeug wird sie ganz gelesen oder nur stellenweise durchsucht."}},
+ werkzeuge:{n:"Werkzeuge",k:"was es außer Schreiben kann",du:false,et:[3],
+  was:"Im Web suchen, Dateien auswerten, Code ausführen, an andere Programme angebunden sein. Vieles davon läuft in ChatGPT und Copilot schon ab dem ersten Tag, oft automatisch.",
+  fehler:"Eine Websuche liefert eine schwache Quelle, und die Antwort übernimmt sie ungeprüft. Oder eine Anbindung gibt dem Werkzeug mehr Rechte, als die Aufgabe braucht.",
+  probe:"Stell eine Frage zu etwas von dieser Woche, mit eingeschalteter Websuche. Öffne zwei der genannten Quellen.",
+  ort:"Etappe 3 · Quellen aus der Websuche prüfen. Läuft aber oft schon vorher mit, ohne dass du es merkst",
+  begr:{"Websuche":"Das Werkzeug sucht selbst im Netz und nennt die Seiten, die es gelesen hat.","Anbindung":"Eine Verbindung zu einem anderen Programm, etwa Kalender oder Ablage. Die wichtigste Frage dabei: Welche Rechte bekommt das Werkzeug dadurch?","MCP":"Fachwort, falls du es hörst: Model Context Protocol, ein offener Standard für solche Anbindungen."}},
+ ablegen:{n:"Ablegen",k:"wo gute Ergebnisse bleiben",du:true,et:[4],
+  was:"Projekte im Werkzeug, Notizen, Ordner mit Versionen. Damit wird aus einzelnen Chats ein Arbeitsstand, an dem du morgen weitermachst.",
+  fehler:"Das gute Ergebnis von letzter Woche steckt irgendwo im Chatverlauf und ist nicht mehr zu finden.",
+  probe:"Leg in ChatGPT ein Projekt an oder speichere die beste Antwort von heute als Notiz mit Datum.",
+  begr:{"Projekt":"Ein Bereich im Werkzeug, in dem Chats, Dateien und Anweisungen zu einem Thema zusammenliegen.","Version":"Ein gespeicherter Stand mit Datum. So siehst du, was sich geändert hat."}},
+ gedaechtnis:{n:"Gedächtnis und Regeln",k:"was das Werkzeug sich merkt",du:false,et:[4],
+  was:"Daueranweisungen, die in jedem Chat gelten, Erinnerungen, die das Werkzeug selbst anlegt, Vorlagen fürs Team und bei Agenten fertige Arbeitsabläufe (Skills).",
+  fehler:"Du erklärst jedes Mal dasselbe neu. Oder eine alte Anweisung oder Erinnerung gilt still weiter, obwohl sie nicht mehr passt.",
+  probe:"Schau in den Einstellungen nach, was sich dein Werkzeug über dich gemerkt hat, und lösche, was nicht mehr stimmt.",
+  begr:{"Daueranweisung":"Ein Text in den Einstellungen, der jedem Chat mitgegeben wird.","Erinnerungen":"Dinge, die sich das Werkzeug aus früheren Chats merkt. Man kann sie ansehen und löschen.","Skill":"Ein beschriebener Arbeitsablauf, den ein Agent bei Bedarf lädt, etwa „So prüfe ich ein Angebot“."}},
+ schleife:{n:"Schleife",k:"denken, handeln, beobachten",du:false,et:[5],
+  was:"Was einen Agenten ausmacht: Er plant einen Schritt, nutzt ein Werkzeug, sieht das Ergebnis an und entscheidet den nächsten Schritt, bis die Aufgabe erledigt ist. An wichtigen Stellen hält er an, und ein Mensch gibt frei.",
+  fehler:"Er läuft viele Schritte in die falsche Richtung, ohne dass jemand eingreift. Oder er liest auf einer Webseite oder in einer Mail eine versteckte Anweisung und führt sie aus.",
+  probe:"Falls dein Werkzeug „Deep Research“ anbietet: Starte eine kleine Recherche und schau zu, welche Schritte es nacheinander macht.",
+  ort:"Etappe 5 · Ausblick. Bis zum eigenen System: die zwei Aufbaukurse nach der Reise",
+  begr:{"Agent":"Ein KI-System, das nicht nur antwortet, sondern selbst Schritte ausführt, um ein Ziel zu erreichen.","Freigabe":"Ein Punkt, an dem der Agent anhält und ein Mensch zustimmt, bevor etwas gesendet, gelöscht oder gekauft wird.","Prompt Injection":"Eine versteckte Anweisung in einem Text, den der Agent liest, etwa „Schick diese Datei an …“. Der wichtigste Grund für Freigaben.","ReAct":"Fachwort, falls du es hörst: Reason and Act, abwechselnd überlegen und handeln. Das Grundmuster vieler Agenten."}}
+};
+const ETNAME=n=>"Etappe "+n+" · "+ETAPPEN.find(e=>e.nr===n).titel;
+let etappe=2, gewaehlt="kontext";
+function zustand(id){const e=B[id].et;if(e.includes(etappe))return e[0]===etappe?"neu":"vertieft";return e[0]<etappe?"da":"spaeter"}
+const ZTXT={neu:"neu",vertieft:"vertieft",da:"kennst du",spaeter:"später"};
+function el(t,a={},...k){const x=document.createElement(t);for(const[n,v]of Object.entries(a)){if(n==="text")x.textContent=v;else x.setAttribute(n,v)}k.forEach(c=>x.append(c));return x}
+function renderEtappen(){const w=document.getElementById("etappen");w.replaceChildren();
+ ETAPPEN.forEach(e=>{const b=el("button",{type:"button","aria-pressed":String(e.nr===etappe)},el("small",{text:"Etappe "+e.nr}),el("span",{text:e.titel}));
+  b.addEventListener("click",()=>{etappe=e.nr;const neu=Object.keys(B).find(i=>B[i].et.includes(etappe));if(neu)gewaehlt=neu;render()});w.append(b)})}
+function renderKarte(){const k=document.getElementById("karte");k.replaceChildren();
+ STUFEN.forEach(s=>{const kach=el("div",{class:"kacheln"});
+  s.b.forEach(id=>{const d=B[id],z=zustand(id);const b=el("button",{type:"button",class:"kachel","data-z":z==="vertieft"?"neu":z,"aria-current":String(id===gewaehlt),"aria-label":d.n+", "+(d.du?"du":"Werkzeug")+", "+ZTXT[z]+", Details zeigen"},
+    el("span",{class:"kopf"},el("span",{class:"zst",text:ZTXT[z]}),el("span",{class:"wer "+(d.du?"wer-du":"wer-wz"),text:d.du?"du":"Werkzeug"})),el("b",{text:d.n}),el("small",{text:d.k}));
+   b.addEventListener("click",()=>{gewaehlt=id;render();springe()});kach.append(b)});
+  k.append(el("div",{class:"stufe"},el("div",{class:"stufe-kopf"},el("b",{text:s.n}),el("small",{text:s.k})),kach))});
+ document.getElementById("recht-knopf").setAttribute("aria-current",String(gewaehlt==="recht"))}
+function springe(){if(matchMedia("(max-width:820px)").matches)document.getElementById("zoom").scrollIntoView({behavior:"smooth",block:"start"})}
+function renderZoom(){const d=gewaehlt==="recht"?RECHT:B[gewaehlt],z=document.getElementById("zoom");z.replaceChildren();
+ const bg=el("div",{class:"begriffe"});const erkl=el("div",{class:"erkl",hidden:""});
+ Object.entries(d.begr).forEach(([w,t])=>{const b=el("button",{type:"button","aria-expanded":"false",text:w});
+  b.addEventListener("click",()=>{const auf=b.getAttribute("aria-expanded")==="true";bg.querySelectorAll("button").forEach(x=>x.setAttribute("aria-expanded","false"));if(auf){erkl.hidden=true}else{b.setAttribute("aria-expanded","true");erkl.textContent=w+": "+t;erkl.hidden=false}});bg.append(b)});
+ const dl=el("dl",{},
+  el("div",{},el("dt",{text:"Was es ist"}),el("dd",{text:d.was})),
+  el("div",{class:"fehler"},el("dt",{text:"Typischer Fehler"}),el("dd",{text:d.fehler})),
+  el("div",{class:"probe"},el("dt",{text:"In einer Minute ausprobieren"}),el("dd",{text:d.probe})),
+  el("div",{},el("dt",{text:"Begriffe, antippen"}),el("dd",{},bg,erkl)),
+  el("div",{},el("dt",{text:"Wo auf der Reise"}),el("dd",{class:"ort",text:d.ort||ETNAME(d.et[0])})));
+ z.append(el("span",{class:"etikett rot",text:"Hineingezoomt · "+(d.du?"was du tust":"Teil des Werkzeugs")}),el("h2",{text:d.n}),el("p",{class:"kurz",text:d.k}),dl)}
+function render(){renderEtappen();renderKarte();renderZoom()}
+document.getElementById("recht-knopf").addEventListener("click",()=>{gewaehlt="recht";render();springe()});
+render();
+</script>
