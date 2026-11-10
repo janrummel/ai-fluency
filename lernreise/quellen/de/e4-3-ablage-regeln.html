@@ -1,0 +1,360 @@
+<title>Vorlagen und Teamregeln</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#6A6A66; --linie:#DAD8D0;
+  --rot:#C4472B; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[role="tab"]:focus-visible{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:760px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.etikett.rot{color:var(--rot)}
+h1,h2{font-family:var(--f-titel);font-weight:400;letter-spacing:-.015em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;margin:12px 0 16px;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.15;margin-bottom:14px}
+h2 .nr{font-style:italic;color:var(--rot);margin-right:10px}
+h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin:22px 0 8px}
+p{margin-bottom:12px}
+.ziel{font-family:var(--f-titel);font-size:clamp(20px,3vw,24px);line-height:1.35;margin-bottom:14px}
+.leise{color:var(--grau)}
+section{padding:36px 0;border-top:1px solid var(--linie)}
+header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
+.kopfzeile{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.etappe{list-style:none;margin-top:22px;border-top:1px solid var(--linie)}
+.etappe li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--linie);color:var(--grau)}
+.etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
+.etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
+.etappe li[aria-current="step"] b{color:var(--rot)}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+
+/* Schema */
+figure.schema{margin:0}
+figure.schema svg{display:block;width:100%;max-width:100%;height:auto}
+.schema .breit{display:block}.schema .hoch{display:none}
+@media (max-width:560px){.schema .breit{display:none}.schema .hoch{display:block;max-width:380px;margin:0 auto}}
+.schema .kasten{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .kasten.pruef{fill:var(--rot-hell);stroke:var(--rot);stroke-width:2}
+.schema .t{font-family:var(--f-etikett);font-size:13px;fill:var(--tinte)}
+.schema .k{font-family:var(--f-etikett);font-size:11px;fill:var(--grau);letter-spacing:.04em}
+.schema .t.rot,.schema .k.rot{fill:var(--rot)}
+.schema .pf{stroke:var(--tinte);stroke-width:1.5;fill:none}
+.schema .pf.rot{stroke:var(--rot);stroke-width:2;stroke-dasharray:6 4}
+.schema .spitze{fill:var(--tinte)}.schema .spitze.rot{fill:var(--rot)}
+figcaption{margin-top:12px;font-size:15px;color:var(--grau)}
+
+.merk{background:var(--rot-hell);padding:14px 18px;border-left:3px solid var(--rot)}
+.merk p:last-child{margin-bottom:0}
+
+/* Dokument und Chat */
+.dokument{background:var(--flaeche);border:1px solid var(--tinte);padding:18px 20px;margin:10px 0 6px;font-size:15px}
+.dokument .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding-bottom:8px;margin-bottom:10px}
+.dokument dl{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:4px 16px;margin:6px 0 10px}
+.dokument dt{color:var(--grau)}
+.dokument dd{font-variant-numeric:tabular-nums}
+.dokument .klein{font-size:14px;color:var(--grau);line-height:1.45;border-top:1px solid var(--linie);padding-top:8px;margin:0}
+.dokument mark,.antwort mark{background:none;color:inherit;border-bottom:2px solid var(--rot)}
+.chat{border-left:2px solid var(--linie);padding:4px 0 4px 16px;margin:8px 0 6px;font-size:15px}
+.chat p{margin-bottom:6px}
+.chat .baustein{font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--rot);margin-left:6px;white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0}
+th,td{text-align:left;padding:7px 8px 7px 0;border-bottom:1px solid var(--linie);vertical-align:top}
+th{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+td.fehl{color:var(--rot)}
+.funde{list-style:none;counter-reset:f;margin-top:8px}
+.funde li{counter-increment:f;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie)}
+.funde li::before{content:counter(f);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+
+/* Ausprobieren */
+.anfrage{position:relative;background:var(--sand);padding:16px 18px;margin:10px 0}
+.anfrage pre{font-family:var(--f-etikett);font-size:14px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 12px}
+.knopf{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);background:transparent;border:1px solid var(--rot);padding:9px 14px;cursor:pointer;border-radius:0}
+.knopf:hover{background:var(--rot);color:var(--papier)}
+.rueck{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:12px}
+[role="tablist"]{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--tinte);margin-top:18px}
+[role="tab"]{min-height:44px;padding:10px 14px;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;background:none;border:0;border-bottom:3px solid transparent;color:var(--grau);cursor:pointer;margin-bottom:-1px}
+[role="tab"][aria-selected="true"]{color:var(--tinte);border-bottom-color:var(--rot)}
+[role="tabpanel"]{padding:14px 0 4px}
+[role="tabpanel"] p{margin-bottom:8px}
+.stand{font-size:14px;color:var(--grau)}
+.andere{border:1px solid var(--linie);padding:12px 16px;margin:16px 0}
+.andere p{margin:4px 0 0}
+.sehen{border-top:1px solid var(--tinte);padding-top:10px;margin-top:18px}
+.sehen .etikett{display:block;color:var(--rot);margin-bottom:4px}
+
+.griffe{list-style:none;counter-reset:g}
+.griffe li{counter-increment:g;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid var(--linie)}
+.griffe li::before{content:counter(g);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:30px;line-height:1}
+.quelle{font-size:15px;color:var(--grau);margin-top:14px}
+
+details{border-top:1px solid var(--linie)}
+details:last-of-type{border-bottom:1px solid var(--linie)}
+summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;min-height:44px;padding:10px 0;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--f-etikett);color:var(--rot);font-size:18px}
+details[open] summary::after{content:"−"}
+details p{padding:0 0 14px;color:var(--tinte)}
+
+footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
+.weiter{font-family:var(--f-titel);font-size:24px;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;border-bottom:2px solid var(--rot);justify-self:start}
+@media (max-width:560px){[role="tab"]{padding:10px 7px;letter-spacing:.02em;font-size:12px}}
+footer .knopf{justify-self:start;text-decoration:none}
+
+/* v2 */
+.schema .feld{fill:var(--flaeche);stroke:var(--tinte);stroke-width:1.5}
+.schema .chip{fill:var(--sand);stroke:var(--grau);stroke-width:1}
+.schema .kreis{fill:none;stroke:var(--rot);stroke-width:2.2}
+.schema .linie{stroke:var(--linie);stroke-width:2}
+.schema .s{font-family:var(--f-etikett);font-size:11.5px;fill:var(--tinte)}
+.schema .s.rot{fill:var(--rot)}
+.schema .nrz{font-family:var(--f-titel);font-style:italic;font-size:22px;fill:var(--rot)}
+.schema .weiss{stroke:var(--papier);stroke-width:2;fill:none}
+.ampel{list-style:none;margin-top:8px}
+.ampel li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 14px;padding:8px 0;border-top:1px solid var(--linie)}
+.ampel li:first-child{border-top:0}
+.ampel b{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);padding-top:3px}
+@media (max-width:560px){.ampel li{grid-template-columns:1fr}}
+.chat .erkl{font-family:var(--f-etikett);font-size:12px;color:var(--grau);margin-left:6px;white-space:nowrap}
+.uebung pre{font-size:14px}
+.klapp{border:0;margin-top:4px}
+.klapp:last-of-type{border-bottom:0}
+.klapp summary{font-weight:400;font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grau);justify-content:start;grid-template-columns:auto auto}
+.klapp p{font-size:15px;padding-bottom:6px}
+.handy{border-top:1px solid var(--linie);padding-top:10px;margin-top:10px}
+
+/* v3 */
+.platzhalter{border:2px dashed var(--grau);padding:18px;margin:10px 0;text-align:center;color:var(--grau);font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;line-height:1.5}
+.gut{border:1px solid var(--tinte);background:var(--flaeche);margin:10px 0 6px}
+.gut .kennung{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--linie);padding:8px 14px}
+.gut .innen{padding:12px 14px 6px;overflow-x:auto}
+.gut td q{font-style:italic;color:var(--grau)}
+.gut td q::before{content:"„"}.gut td q::after{content:"“"}
+.gut td.ok{color:var(--tinte)}
+.gut .weg{font-size:15px;border-top:1px solid var(--linie);padding-top:8px;margin-top:6px}
+.datei{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0}
+.datei .name{font-family:var(--f-etikett);font-size:14px}
+.schritte{list-style:none;counter-reset:s;margin:6px 0 10px}
+.schritte li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-top:1px solid var(--linie);font-size:15px}
+.schritte li::before{content:counter(s);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:20px;line-height:1.3}
+.klapp pre{font-family:var(--f-etikett);font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--sand);padding:12px 14px;margin:0 0 10px;user-select:all;-webkit-user-select:all}
+.waehle{display:block;background:var(--sand);border-left:3px solid var(--rot);padding:10px 14px;margin:14px 0 0}
+.waehle .pfeil{color:var(--rot);font-weight:700}
+[role="tab"]{border:1px solid var(--linie);border-bottom:3px solid transparent;margin-right:6px}
+.shot{margin:12px 0;border:1px solid var(--linie);background:var(--flaeche)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-family:var(--f-etikett);font-size:12px;letter-spacing:.04em;color:var(--grau);padding:8px 12px;border-top:1px solid var(--linie)}
+</style>
+
+<style>
+.tabelle-wrap{overflow-x:auto}
+.regeln{border:1px solid var(--tinte);background:var(--flaeche);padding:14px 16px;margin:10px 0;font-size:15px}
+.regeln .etikett{display:block;margin-bottom:6px}
+.regeln ol{margin:0 0 0 20px}
+.regeln li{margin-bottom:4px}
+</style>
+
+<div class="seite">
+<header>
+  <div class="kopfzeile">
+    <span class="etikett rot">Etappe 4 · Einheit 3 von 3</span>
+    <span class="etikett">Lesen etwa 5 Minuten · Üben etwa 10 Minuten (Schätzung)</span>
+  </div>
+  <h1>Vorlagen ablegen und Regeln fürs Team</h1>
+  <p class="ziel">Danach liegen deine Vorlagen an einem festen Ort, und du kannst mit deinem Team drei Regeln für die Arbeit mit KI vereinbaren.</p>
+  <span class="etikett">Etappe 4 · Ein Gedächtnis geben</span>
+  <ol class="etappe">
+    <li><b>1</b><span>Eine Daueranweisung geben</span></li>
+    <li><b>2</b><span>Ein Projekt für wiederkehrende Aufgaben</span></li>
+    <li aria-current="step"><b>3</b><span>Vorlagen ablegen und Regeln fürs Team</span></li>
+  </ol>
+</header>
+
+<section aria-labelledby="h-schema">
+  <h2 id="h-schema" class="etikett">Drei Regeln fürs Team</h2>
+  <figure class="schema">
+<svg class="breit" viewBox="0 0 720 96" role="img" aria-labelledby="t1b"><title id="t1b">Drei Teamregeln: Was darf hinein? Wie wird geprüft? Wer gibt frei? Die dritte ist rot markiert.</title>
+<defs><marker id="t1m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="kasten " x="0" y="10" width="216" height="76"/>
+<text class="nrz" x="10" y="56">1</text>
+<text class="t" x="34" y="43">Was darf</text>
+<text class="t" x="34" y="61">hinein?</text>
+<line class="pf" x1="216" y1="48" x2="250" y2="48" marker-end="url(#t1m)"/>
+<rect class="kasten " x="252" y="10" width="216" height="76"/>
+<text class="nrz" x="262" y="56">2</text>
+<text class="t" x="286" y="43">Wie wird</text>
+<text class="t" x="286" y="61">geprüft?</text>
+<line class="pf" x1="468" y1="48" x2="502" y2="48" marker-end="url(#t1m)"/>
+<rect class="kasten pruef" x="504" y="10" width="216" height="76"/>
+<text class="nrz" x="514" y="56">3</text>
+<text class="t rot" x="538" y="43">Wer gibt</text>
+<text class="t rot" x="538" y="61">frei?</text>
+</svg>
+<svg class="hoch" viewBox="0 0 340 276" role="img" aria-labelledby="t1h"><title id="t1h">Drei Teamregeln: Was darf hinein? Wie wird geprüft? Wer gibt frei? Die dritte ist rot markiert.</title>
+<defs><marker id="t1n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
+<rect class="kasten " x="1" y="4" width="338" height="62"/>
+<text class="nrz" x="12" y="43">1</text>
+<text class="t" x="38" y="39">Was darf hinein?</text>
+<line class="pf" x1="170" y1="66" x2="170" y2="94" marker-end="url(#t1n)"/>
+<rect class="kasten " x="1" y="96" width="338" height="62"/>
+<text class="nrz" x="12" y="135">2</text>
+<text class="t" x="38" y="131">Wie wird geprüft?</text>
+<line class="pf" x1="170" y1="158" x2="170" y2="186" marker-end="url(#t1n)"/>
+<rect class="kasten pruef" x="1" y="188" width="338" height="62"/>
+<text class="nrz" x="12" y="227">3</text>
+<text class="t rot" x="38" y="223">Wer gibt frei?</text>
+</svg>
+    <figcaption>Drei Fragen, die jedes Team einmal klären sollte. Die dritte ist rot, weil an ihr hängt, wer für ein Ergebnis geradesteht.</figcaption>
+  </figure>
+</section>
+
+<section aria-labelledby="h-ampel">
+  <p class="leise" style="font-size:15px" id="h-ampel"><b>Daten:</b> im Job nur das Arbeitskonto, im Zweifel nichts Echtes hochladen, sondern beschreiben. <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr in Etappe 1, Einheit 2</a></p>
+</section>
+
+<section aria-labelledby="h-beispiel">
+  <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
+  <p>Sabine hat in dieser Reise sieben Vorlagen gesammelt, verteilt auf Chats, Notizen und Mails an sich selbst. <span class="leise">(Erfunden.)</span> Sie legt sie an einem Ort ab, in einem Dokument, jede mit Namen und Datum:</p>
+  <div class="tabelle-wrap">
+  <table>
+    <thead><tr><th scope="col">Name in der Ablage</th><th scope="col">Aus</th></tr></thead>
+    <tbody>
+      <tr><td>Aufgabe in drei Sätzen · 2026-11-10</td><td>Etappe 1, Einheit 1</td></tr>
+      <tr><td>Anfrage aus fünf Bausteinen · 2026-11-10</td><td>Etappe 2, Einheit 1</td></tr>
+      <tr><td>Dokument zusammenfassen mit Fundstellen · 2026-11-10</td><td>Etappe 2, Einheit 2</td></tr>
+      <tr><td>Rückmeldung in Runden · 2026-11-10</td><td>Etappe 2, Einheit 3</td></tr>
+      <tr><td>Gegenlesen aus einer Rolle · 2026-11-10</td><td>Etappe 3, Einheit 3</td></tr>
+      <tr><td>Daueranweisung · 2026-11-10</td><td>Etappe 4, Einheit 1</td></tr>
+      <tr><td>Projekt-Anweisung · 2026-11-10</td><td>Etappe 4, Einheit 2</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Das Datum zeigt ihr später, welche Vorlage alt ist. Ändert sie eine, speichert sie die neue Fassung mit neuem Datum und lässt die alte stehen.</p>
+
+  <p>Thomas bespricht mit seinem Team drei Regeln, abgestimmt mit seiner Führungskraft. Sie ergänzen die KI-Richtlinie der Firma, sie ersetzen sie nicht:</p>
+  <div class="regeln">
+    <span class="etikett rot">Unsere drei Regeln · Stand November 2026 · erfunden</span>
+    <ol>
+      <li><b>Was darf hinein?</b> Nur Microsoft 365 Copilot mit dem Arbeitskonto. Kundennamen und Vertragsdaten nur, wenn die Richtlinie es erlaubt, sonst beschreiben.</li>
+      <li><b>Wie wird geprüft?</b> Nach den Folgen: bei Notizen nur für uns eine Zahl nachsehen, bei Mails ans Team die drei Handgriffe, alles an Kunden gründlich, mit einer zweiten Person.</li>
+      <li><b>Wer gibt frei?</b> Was nach außen geht, gibt die Person frei, die es abschickt. Bei Zusagen über 500 € die Teamleitung.</li>
+    </ol>
+  </div>
+  <p>Und für alle gilt: Was du abschickst, verantwortest du, als hättest du es selbst geschrieben.</p>
+</section>
+
+<section aria-labelledby="h-tun">
+  <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
+  <ol class="schritte">
+    <li><span><b>Ablage anlegen:</b> ein Dokument, eine Notiz oder einen Ordner, im Job dort, wo deine Firma es erlaubt.</span></li>
+    <li><span><b>Eintragen, was du in 5 Minuten findest,</b> je mit Namen und Datum. Den Rest ergänzt du später.</span></li>
+    <li><span><b>Drei Regeln entwerfen,</b> fürs Team oder, wenn du kein Team leitest, nur für dich. Ansprechen kannst du es etwa so: „Ich habe mir drei Regeln für die Arbeit mit KI aufgeschrieben. Wollen wir uns im Team auf so etwas einigen?“</span></li>
+  </ol>
+  <div class="anfrage">
+<pre id="regeln">Unsere drei Regeln für KI · Stand [Monat Jahr]
+1. Was darf hinein? [Welches Werkzeug, welches Konto, welche Daten nicht.]
+2. Wie wird geprüft? [Prüftiefe nach Folgen: gering, spürbar, hoch.]
+3. Wer gibt frei? [Wer schaut vor dem Abschicken drauf, ab wann die Leitung.]
+Für alle gilt: Was du abschickst, verantwortest du.</pre>
+    <button class="knopf" type="button" data-kopie="regeln">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
+  </div>
+  <div class="sehen">
+    <span class="etikett">Du solltest sehen</span>
+    <p>Eine Ablage mit deinen Vorlagen, jede mit Namen und Datum, und einen Entwurf mit drei Regeln. Bei Regel 1 hilft die KI-Richtlinie deiner Firma, bei Regel 2 die Tabelle zur Prüftiefe aus Etappe 3. Gibt es keine Richtlinie, frag nach, und nimm bis dahin nur Privates und Erfundenes, wie in <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Etappe 1, Einheit 2</a>.</p>
+  </div>
+
+  <p class="leise" style="font-size:15px">Zum Weiterlesen: Obsidian speichert Notizen als Textdateien auf deinem Rechner, GitHub hält jede Fassung eines Textes fest. Im Job nur mit Freigabe der IT, und Ablagen auf GitHub stellst du auf privat.</p>
+</section>
+
+<section aria-labelledby="h-pruef">
+  <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
+  <p>Die drei Handgriffe bleiben, im Wortlaut in <a href="lr:e3-1">Etappe 3, Einheit 1</a>. Für die Ablage gilt außerdem:</p>
+  <ul class="ampel">
+    <li><b>Datum</b><span>Jede Vorlage und jede Regel trägt ein Datum, damit du siehst, was alt ist.</span></li>
+    <li><b>Nachsehen</b><span>Prüf ab und zu, ob die Vorlagen noch passen. Faustregel: einmal im Quartal.</span></li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-check">
+  <h2 id="h-check"><span class="nr">4</span>Selbstcheck</h2>
+  <details>
+    <summary>Wozu das Datum im Namen einer Vorlage?</summary>
+    <p>Du siehst sofort, welche Fassung die neueste ist und welche lange nicht mehr geprüft wurde.</p>
+  </details>
+  <details>
+    <summary>Nach Thomas' Regeln: Wer gibt eine Mail mit einer Zusage über 800 € an einen Kunden frei?</summary>
+    <p>Die Teamleitung, weil die Zusage über 500 € liegt. Geprüft wird gründlich, mit einer zweiten Person, weil sie an einen Kunden geht.</p>
+  </details>
+  <details>
+    <summary>Aus Einheit 2: Wann ist ein neuer Chat besser als ein Projekt?</summary>
+    <p>Bei einer einmaligen Frage, wenn das Thema wechselt, wenn alte Dateien die Antwort verfälschen würden. Zum Gegenlesen nimmst du einen temporären Chat, weil ein normaler neuer Chat mit Gedächtnis deine Absicht kennen kann.</p>
+  </details>
+</section>
+
+<section aria-labelledby="h-rueck">
+  <h2 id="h-rueck" class="etikett">Das kannst du jetzt</h2>
+  <ol class="griffe"><li><span>Eine Daueranweisung schreiben und das Gedächtnis einsehen.</span></li><li><span>Ein Projekt für eine wiederkehrende Aufgabe anlegen.</span></li><li><span>Vorlagen ablegen und drei Teamregeln vereinbaren.</span></li></ol>
+  <p class="leise" style="font-size:15px">Mitnehmen: deine Vorlagensammlung und den Entwurf der drei Teamregeln.</p>
+</section>
+
+<footer>
+  <a class="weiter" href="lr:e5">Weiter: Etappe 5 · Ausblick: Agenten →</a>
+  <span class="leise" style="font-size:15px"><a href="lr:e4-2">Zurück: Einheit 2 · Ein Projekt für wiederkehrende Aufgaben</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
+  <span class="etikett">Stand 10.11.2026</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-kopie]'),function(btn){
+    var pre=document.getElementById(btn.getAttribute('data-kopie')),rueck=btn.nextElementSibling;
+    function markieren(){
+      try{var r=document.createRange();r.selectNodeContents(pre);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}
+      rueck.textContent='Text ist markiert. Jetzt kopieren.';
+    }
+    btn.addEventListener('click',function(){
+      if(navigator.clipboard&&window.isSecureContext){
+        navigator.clipboard.writeText(pre.textContent).then(function(){rueck.textContent='Kopiert.';},markieren);
+      }else{markieren();}
+    });
+  });
+  var tabs=Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function waehle(t,fokus){
+    tabs.forEach(function(x){
+      var an=x===t;x.setAttribute('aria-selected',an?'true':'false');x.tabIndex=an?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!an;
+    });
+    if(fokus)t.focus();
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){waehle(t,false);});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      else if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      else if(e.key==='Home')n=tabs[0];
+      else if(e.key==='End')n=tabs[tabs.length-1];
+      if(n){e.preventDefault();waehle(n,true);}
+    });
+  });
+})();
+</script>
