@@ -272,8 +272,9 @@ footer .knopf{justify-self:start;text-decoration:none}
   <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
   <div role="tablist" aria-label="Werkzeug wählen">
     <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">ChatGPT</button>
-    <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Microsoft Copilot</button>
-    <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Google Gemini</button>
+    <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Copilot</button>
+    <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Gemini</button>
+    <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Claude</button>
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
     <p>Einen neuen Chat startest du am Rechner oben in der linken Seitenleiste mit „Neuer Chat“. Den Text fügst du unten in das Eingabefeld „ChatGPT fragen“ ein und schickst ihn ab.</p>
@@ -285,8 +286,13 @@ footer .knopf{justify-self:start;text-decoration:none}
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
     <p>Einen neuen Chat startest du über „Neuer Chat“ in der Seitenleiste, in der App über das Stift-Symbol. Den Text fügst du unten in das Eingabefeld ein und schickst ihn ab.</p>
+    <figure class="shot" hidden><img data-src="bilder/gemini-1-plusmenue.png" alt="Gemini: das Eingabefeld für eine neue Anfrage." loading="lazy"><figcaption>Unten das Eingabefeld.</figcaption></figure>
   </div>
-  <p class="stand">Stand: November 2026. Oberflächen ändern sich oft. Wo „neuer Chat“ genau sitzt, haben wir bei Copilot und Gemini nicht selbst nachgeprüft.</p>
+  <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
+    <p>Einen neuen Chat startest du links oben mit „Neuer Chat“. Den Text fügst du unten in das Eingabefeld ein und schickst ihn ab.</p>
+    <figure class="shot" hidden><img data-src="bilder/claude-1-plusmenue.png" alt="Claude: das Eingabefeld für eine neue Anfrage." loading="lazy"><figcaption>Unten das Eingabefeld.</figcaption></figure>
+  </div>
+  <p class="stand">Stand: November 2026. Oberflächen ändern sich oft. Wo „neuer Chat“ genau sitzt, haben wir bei Copilot, Gemini und Claude nicht selbst nachgeprüft.</p>
   <div class="anfrage">
 <pre id="erste-anfrage">Fasse den folgenden Text in drei Stichpunkten zusammen. Ich brauche das für eine kurze Info an mein Team.
 
