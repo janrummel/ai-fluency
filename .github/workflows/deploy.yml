@@ -32,6 +32,9 @@ jobs:
           path: ./site
 
   deploy:
+    # Pausiert bis zum Release mit allen Etappen: Pages zeigt den Zweig "pausiert". Live nur per Hand
+    # (Actions > Deploy to GitHub Pages > Run workflow), nachdem Pages auf build_type=workflow steht.
+    if: github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
