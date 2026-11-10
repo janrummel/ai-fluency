@@ -41,6 +41,12 @@ LEISTE_CSS = """
 .lr-leiste a:hover{text-decoration:underline;text-decoration-color:var(--rot,#C4472B)}
 .lr-leiste .lr-name{font-family:var(--f-titel,'Newsreader',Georgia,serif);font-size:17px;letter-spacing:0;text-transform:none;margin-right:auto}
 .lr-leiste .lr-hier{color:var(--grau,#6A6A66)}
+.lr-farbe{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--tinte,#17181A);background:transparent;border:1px solid var(--linie,#DAD8D0);min-height:36px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.lr-farbe[hidden]{display:none}
+.lr-farbe:hover{border-color:var(--rot,#C4472B)}
+.lr-farbe svg{width:14px;height:14px;flex:none}
+.lr-farbe:focus-visible{outline:2px solid var(--rot,#C4472B);outline-offset:2px}
+@media (max-width:560px){.lr-leiste .lr-hier{display:none}.lr-leiste .lr-name{flex-basis:100%}.lr-leiste-innen{gap:0 18px;padding-block:8px}}
 .lr-fuss{border-top:1px solid var(--linie,#DAD8D0);background:var(--sand,#EFE9DD);color:var(--tinte,#17181A);font-family:var(--f-text,'IBM Plex Sans',system-ui,sans-serif);font-size:15px;line-height:1.55}
 .lr-fuss-innen{max-width:var(--lr-breite,760px);margin:0 auto;padding-block:26px 34px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:12px}
 .lr-fuss b{font-weight:500}
@@ -48,6 +54,21 @@ LEISTE_CSS = """
 .lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:11.5px;letter-spacing:.05em;color:var(--grau,#6A6A66);display:flex;flex-wrap:wrap;gap:4px 16px}
 .lr-fuss .lr-klein a{display:inline-flex;align-items:center;min-height:32px}
 """
+
+
+FARBE_JS = """(function(){var k='farbe',r=document.documentElement,v=null;
+try{v=localStorage.getItem(k)}catch(e){}
+function setze(x){if(x==='hell')r.setAttribute('data-theme','light');else if(x==='dunkel')r.setAttribute('data-theme','dark');else r.removeAttribute('data-theme')}
+setze(v);
+document.addEventListener('DOMContentLoaded',function(){var b=document.querySelector('[data-farbe]');if(!b)return;
+var n={auto:'Auto',hell:'Hell',dunkel:'Dunkel'},a=v||'auto';
+function zeig(){b.querySelector('span').textContent=n[a];b.setAttribute('aria-label','Farbmodus '+n[a]+', wechseln')}
+zeig();b.hidden=false;
+b.addEventListener('click',function(){a=a==='auto'?'hell':a==='hell'?'dunkel':'auto';try{a==='auto'?localStorage.removeItem(k):localStorage.setItem(k,a)}catch(e){}setze(a);zeig()})})})();"""
+
+FARBE_KNOPF = ('<button class="lr-farbe" type="button" data-farbe hidden>'
+               '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/>'
+               '<path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg><span>Auto</span></button>')
 
 
 def tiefe_prefix(zielpfad: str, sprache: str) -> str:
@@ -63,6 +84,7 @@ def leiste(prefix: str, sprache: str, kurz: str | None) -> str:
         teile.append(f'<span class="lr-hier">{html.escape(kurz)}</span>')
     teile.append(f'<a href="{start}">Start</a>')
     teile.append(f'<a href="{start}karte/">Karte</a>')
+    teile.append(FARBE_KNOPF)
     return ('<nav class="lr-leiste" aria-label="Lernreise">'
             f'<div class="lr-leiste-innen">{"".join(teile)}</div></nav>')
 
@@ -100,6 +122,7 @@ def kopf(titel: str, beschreibung: str | None, prefix: str, url: str, sprache: s
         f'<link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml">',
         f'<link rel="stylesheet" href="{prefix}assets/schriften.css">',
         f'<script data-goatcounter="https://janrummel.goatcounter.com/count" async src="{prefix}assets/count.js"></script>',
+        f"<script>{FARBE_JS}</script>",
         f"<style>{LEISTE_CSS}</style>",
     ]
     return "\n".join(zeilen)
