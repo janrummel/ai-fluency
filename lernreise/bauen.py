@@ -83,7 +83,8 @@ def leiste(prefix: str, sprache: str, kurz: str | None) -> str:
     if kurz:
         teile.append(f'<span class="lr-hier">{html.escape(kurz)}</span>')
     teile.append(f'<a href="{start}">Start</a>')
-    teile.append(f'<a href="{start}karte/">Karte</a>')
+    if kurz != "Bausteinkarte":
+        teile.append(f'<a href="{start}karte/">Karte</a>')
     teile.append(FARBE_KNOPF)
     return ('<nav class="lr-leiste" aria-label="Lernreise">'
             f'<div class="lr-leiste-innen">{"".join(teile)}</div></nav>')
