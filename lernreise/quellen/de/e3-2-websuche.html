@@ -289,8 +289,9 @@ Nenne zu jeder Aussage die Quelle mit Link und dem Datum, das auf der Seite steh
   <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
   <div role="tablist" aria-label="Werkzeug wählen">
     <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">ChatGPT</button>
-    <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Microsoft Copilot</button>
-    <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Google Gemini</button>
+    <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Copilot</button>
+    <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Gemini</button>
+    <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Claude</button>
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
     <p>Schalte die Websuche im Eingabefeld ein (dann steht dort „Websuche“) oder schreib „Such im Web“. Quellen erscheinen als kleine Verweise bei den Sätzen, als Links in Tabellen und gesammelt unter „Quellen“. Fehlen sie, frag: „Hast du im Web gesucht? Nenne die Quellen mit Link.“</p>
@@ -303,8 +304,13 @@ Nenne zu jeder Aussage die Quelle mit Link und dem Datum, das auf der Seite steh
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
     <p>Gemini zeigt Quellen meist unter der Antwort. Öffne sie und prüf die Stelle wie oben.</p>
+    <figure class="shot" hidden><img data-src="bilder/gemini-3-websuche.png" alt="Gemini: Antwort mit Quellen unter dem Text." loading="lazy"><figcaption>Gemini mit Quellen unter der Antwort.</figcaption></figure>
   </div>
-  <p class="stand">Stand: November 2026. ChatGPT und Copilot selbst ausprobiert am 10.11.2026 (Privatkonten), Gemini nicht selbst nachgeprüft.</p>
+  <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
+    <p>Claude sucht oft von selbst im Web, wenn die Frage es braucht. Sonst schaltest du die Websuche über das Plus unten links im Eingabefeld ein oder schreibst „Such im Web“. Zur Antwort nennt Claude Quellen mit Link. Öffne sie und prüf die Stelle wie oben. <a href="https://support.claude.com/en/articles/10684626-enabling-and-using-web-search">Hilfeseite bei Anthropic</a></p>
+    <figure class="shot" hidden><img data-src="bilder/claude-3-websuche.png" alt="Claude: Antwort mit Quellenverweisen hinter den Sätzen." loading="lazy"><figcaption>Claude mit Websuche: Quellen hinter den Sätzen.</figcaption></figure>
+  </div>
+  <p class="stand">Stand: November 2026. ChatGPT und Copilot selbst ausprobiert am 10.11.2026 (Privatkonten), Gemini und Claude nicht selbst nachgeprüft (Claude laut Anthropic).</p>
 
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
