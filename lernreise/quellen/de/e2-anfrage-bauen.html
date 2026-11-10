@@ -233,15 +233,7 @@ footer .knopf{justify-self:start;text-decoration:none}
 </section>
 
 <section aria-labelledby="h-ampel">
-  <div class="merk">
-    <span class="etikett rot" id="h-ampel">Vorher kurz: Was darf hinein?</span>
-    <ul class="ampel">
-      <li><b>Im Job</b><span>Nur mit dem Konto, das deine Firma bereitstellt, und nur, wenn sie das Werkzeug freigegeben hat. Ein Gratiskonto, das du mit deiner Firmenadresse anlegst, zählt nicht: Das ist ein Privatkonto. Welches Konto und welche Werkzeuge freigegeben sind, sagt dir die IT oder das Intranet. Im Zweifel nichts Echtes hochladen, sondern beschreiben.</span></li>
-      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten.</span></li>
-      <li><b>Zum Üben</b><span>Eine Aufgabe aus deiner Woche, beschrieben ohne echte Namen und ohne vertrauliche Zahlen.</span></li>
-    </ul>
-    <p style="margin-top:6px"><a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr dazu in Etappe 1, Einheit 2</a></p>
-  </div>
+  <p class="leise" style="font-size:15px" id="h-ampel"><b>Daten:</b> im Job nur das Arbeitskonto, im Zweifel nichts Echtes hochladen, sondern beschreiben. <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr in Etappe 1, Einheit 2</a></p>
 </section>
 
 <section aria-labelledby="h-beispiel">
@@ -255,12 +247,12 @@ footer .knopf{justify-self:start;text-decoration:none}
       <div class="ant">
         <span class="etikett">So ungefähr sieht die Antwort aus · nachgebaut</span>
         <p>„Liebes Team, wie jedes Jahr möchten wir rechtzeitig mit der Urlaubsplanung beginnen. Bitte reicht eure Wünsche bis [Datum] ein …“</p>
-        <p class="leise">Höflich, allgemein, voller Platzhalter. Die neue Regel kommt nicht vor, denn die KI kennt sie nicht.</p>
+        <p class="leise">Allgemein, voller Platzhalter, ohne die neue Regel.</p>
       </div>
     </div>
     <div class="stark">
       <span class="etikett rot">Nachher</span>
-      <div class="frage">Du bist Teamleiter.<br>Ab 1. Januar gilt: Urlaub über drei Tage muss vier Wochen vorher im Portal beantragt werden, nicht mehr per Mail. Das Team (12 Leute) weiß das noch nicht. Ich will, dass im Januar niemand überrascht wird.<br>Schreib eine Mail ans Team, die die Regel erklärt.<br>Höchstens 120 Wörter, Betreff plus drei kurze Absätze.<br>Keine Floskeln, nichts dazuerfinden, was ich nicht genannt habe.</div>
+      <div class="frage">Die Anfrage mit allen fünf Bausteinen steht unten, Zeile für Zeile.</div>
       <div class="ant">
         <span class="etikett">So ungefähr sieht die Antwort aus · nachgebaut</span>
         <p>„Betreff: Neue Regel für Urlaubsanträge ab 1. Januar. Ab Januar beantragt ihr Urlaub von mehr als drei Tagen bitte vier Wochen vorher im Portal …“</p>
@@ -278,27 +270,16 @@ footer .knopf{justify-self:start;text-decoration:none}
     <p>Höchstens 120 Wörter, Betreff plus drei kurze Absätze. <span class="baustein">Format</span><span class="erkl">wie es aussieht</span></p>
     <p>Keine Floskeln, nichts dazuerfinden, was ich nicht genannt habe. <span class="baustein">Grenzen</span><span class="erkl">was sie nicht tun soll</span></p>
   </div>
-  <p>Der Unterschied kommt vor allem aus der Lage: Nur Thomas weiß, welche Regel neu ist und wozu die Mail da ist. Ohne diese Zeile muss die KI raten, und sie rät allgemein. Die Rolle ändert wenig, denn wie ein Teamleiter klingt, ergibt sich schon aus der Lage.</p>
+  <p>Der Unterschied kommt vor allem aus der Lage: Nur Thomas weiß, welche Regel neu ist und wozu die Mail da ist. Ohne diese Zeile rät die KI, und zwar allgemein.</p>
 
-  <h3>Drei typische Schwächen</h3>
-  <div class="tabelle-wrap">
-  <table>
-    <thead><tr><th scope="col">Schwach</th><th scope="col">Besser</th><th scope="col">Warum</th></tr></thead>
-    <tbody>
-      <tr><td>„Gib mir Feedback zu dieser Mail.“</td><td>„Die Mail geht an einen Kunden, der sich über eine verspätete Lieferung beschwert hat. Prüfe: freundlicher Ton, klare Entschuldigung, ein konkreter Vorschlag.“</td><td>Ohne Lage und Maßstab bleibt Feedback allgemein.</td></tr>
-      <tr><td>„Fasse zusammen, finde Erkenntnisse und schreib Sprechpunkte.“</td><td>„Nenne die drei wichtigsten Punkte für unser Teammeeting, je ein Satz.“</td><td>Mehrere Aufgaben auf einmal ergeben mehrere halbe Ergebnisse. Eine nach der anderen.</td></tr>
-      <tr><td>„Verbessere den Text.“</td><td>„Kürze um ein Drittel, schreib aktiv statt passiv.“</td><td>„Verbessere“ sagt nicht, was anders werden soll.</td></tr>
-    </tbody>
-  </table>
-  </div>
 </section>
 
 <section aria-labelledby="h-tun">
   <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
-  <p>Nimm eine kleine Aufgabe aus deiner Woche: eine Mail, eine Einladung, eine kurze Zusammenfassung, eine Liste. Ohne echte Namen und ohne vertrauliche Zahlen.</p>
+  <p>Nimm eine kleine Aufgabe aus deiner Woche, ohne echte Namen und vertrauliche Zahlen.</p>
   <ol class="schritte">
-    <li><span><b>Erst knapp fragen.</b> Schreib deine Aufgabe in einem Satz in den Chat, so wie du es sonst tun würdest, und schick sie ab.</span></li>
-    <li><span><b>Dann mit den fünf Bausteinen.</b> Öffne einen neuen Chat, kopiere die Vorlage unten und fülle die eckigen Klammern aus. Schick sie ab.</span></li>
+    <li><span><b>Erst knapp fragen:</b> deine Aufgabe in einem Satz, wie du es sonst tun würdest.</span></li>
+    <li><span><b>Dann mit den fünf Bausteinen:</b> neuer Chat, Vorlage kopieren, Klammern ausfüllen.</span></li>
     <li><span><b>Den Hebel spüren.</b> Schick die Vorlage in einem dritten Chat noch einmal, diesmal ohne die Zeile zur Lage. Vergleiche die drei Antworten.</span></li>
   </ol>
   <div class="anfrage">
@@ -309,23 +290,22 @@ Format: [zum Beispiel höchstens 100 Wörter, Stichpunkte, Tabelle mit den Spalt
 Grenzen: Erfinde nichts dazu, was ich nicht genannt habe. [Weitere Grenzen, zum Beispiel keine Fachbegriffe.]</pre>
     <button class="knopf" type="button" data-kopie="vorlage">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
-  <p class="leise" style="font-size:15px">Das geht in ChatGPT, Copilot, Gemini und ähnlichen Werkzeugen gleich: Text ins Eingabefeld, abschicken. Einen neuen Chat startest du über „Neuer Chat“.</p>
+  <p class="leise" style="font-size:15px">Das geht in ChatGPT, Copilot und Gemini gleich. Einen neuen Chat startest du über „Neuer Chat“.</p>
   <div class="platzhalter" role="note" hidden>Hier kommt bald ein Bild hin.<br>Du brauchst es nicht für die Übung.</div>
 
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
-    <p>Die knappe Anfrage liefert etwas Allgemeines. Mit den fünf Bausteinen passt die Antwort zu deiner Lage. Ohne die Lage wird sie meist wieder allgemeiner, auch wenn Rolle, Format und Grenzen noch dastehen. Wenn nicht, steckt die Lage vermutlich schon in deiner Aufgabe.</p>
+    <p>Knapp gefragt kommt etwas Allgemeines, mit den fünf Bausteinen passt die Antwort. Ohne die Lage wird sie meist wieder allgemeiner. Wenn nicht, steckt die Lage vermutlich schon in deiner Aufgabe.</p>
   </div>
   <p style="margin-top:14px">Speichere deine ausgefüllte Vorlage, zum Beispiel in einer Notiz oder einer Mail an dich selbst. Du brauchst sie in Einheit 3 wieder.</p>
 </section>
 
 <section aria-labelledby="h-pruef">
   <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
-  <p>Auch eine gute Anfrage schützt nicht davor, dass die KI etwas dazuerfindet. In Etappe 2 gilt deshalb: drei Zahlen nachsehen.</p>
   <ol class="griffe">
     <li><span><b>Drei Zahlen nachsehen, samt dem, was dabeisteht (netto oder brutto, Wochen, Monate).</b> Vergleiche sie mit deiner Lage. Bei Thomas: 1. Januar, drei Tage, vier Wochen. Keine Zahlen drin? Dann drei Fakten: Termine, Namen, Zusagen.</span></li>
-    <li><span><b>Nach Dazuerfundenem suchen.</b> Steht etwas drin, das du nie genannt hast, etwa eine Frist für Rückfragen oder ein Ansprechpartner? Streichen oder nachfragen.</span></li>
-    <li><span><b>Nachfragen, wenn du unsicher bist.</b> Schreib: „Was davon stand nicht in meiner Anfrage?“ Die Antwort ist ein Hinweis, kein Beweis. Sicher bist du erst, wenn du selbst verglichen hast.</span></li>
+    <li><span><b>Nach Auslassungen fragen.</b> Fehlt etwas aus deiner Lage, oder steht etwas drin, das du nie genannt hast, etwa eine Frist für Rückfragen? Frag: „Was davon stand nicht in meiner Anfrage?“ Die Antwort ist ein Hinweis, kein Beweis.</span></li>
+    <li><span><b>Bei Abweichung die Fundstelle verlangen.</b> Weicht etwas von deiner Lage ab, frag, woher es kommt. Steht es nirgends, streich es.</span></li>
   </ol>
 </section>
 
@@ -336,10 +316,6 @@ Grenzen: Erfinde nichts dazu, was ich nicht genannt habe. [Weitere Grenzen, zum 
     <p>Die Lage: welches Produkt, für wen, wo der Post erscheint und was er erreichen soll. Danach Format und Grenzen. Rolle und Aufgabe sind schon da.</p>
   </details>
   <details>
-    <summary>Warum bringt die Rolle allein wenig?</summary>
-    <p>Sie sagt nur, aus welcher Sicht die KI schreibt. Über deine Lage erfährt die KI dadurch nichts, und genau die kann sie nicht erraten.</p>
-  </details>
-  <details>
     <summary>Muss jede Anfrage alle fünf Bausteine haben?</summary>
     <p>Nein. Eine einfache Frage braucht keine Rolle und kein Format. Die Bausteine sind eine Checkliste für den Fall, dass die Antwort nicht passt. Fang dann bei der Lage an.</p>
   </details>
@@ -347,7 +323,7 @@ Grenzen: Erfinde nichts dazu, was ich nicht genannt habe. [Weitere Grenzen, zum 
 
 <footer>
   <a class="weiter" href="https://claude.ai/artifact/M835sRMTgTn6hWcvfv5ZqK">Weiter: Einheit 2 · Ein Dokument hineingeben und die Antwort prüfen →</a>
-  <span class="leise" style="font-size:15px"><a href="https://claude.ai/artifact/Vn6TnYtQievpv3kZUJAgjs">Zurück: Etappe 1 · Einheit 3 · Die erste Anfrage und die erste geprüfte Zahl</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="leise" style="font-size:15px"><a href="https://claude.ai/artifact/Vn6TnYtQievpv3kZUJAgjs">Zurück: Etappe 1 · Einheit 3 · Die erste Anfrage und die erste geprüfte Zahl</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
   <span class="etikett">Stand 10.11.2026</span>
 </footer>
 </div>

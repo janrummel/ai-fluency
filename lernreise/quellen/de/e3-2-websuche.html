@@ -172,15 +172,13 @@ td.fehl{color:var(--rot)}
 .leiter{list-style:none;counter-reset:l;margin:8px 0}
 .leiter li{counter-increment:l;display:grid;grid-template-columns:40px minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid var(--linie)}
 .leiter li::before{content:counter(l);font-family:var(--f-titel);font-style:italic;color:var(--rot);font-size:26px;line-height:1}
-.basis{border:1px solid var(--linie);padding:4px 16px 8px;margin:10px 0}
-.basis .etikett{display:block;margin:10px 0 2px}
 </style>
 
 <div class="seite">
 <header>
   <div class="kopfzeile">
     <span class="etikett rot">Etappe 3 · Einheit 2 von 3</span>
-    <span class="etikett">Lesen etwa 7 Minuten · Üben etwa 10 Minuten (Schätzung)</span>
+    <span class="etikett">Lesen etwa 5 Minuten · Üben etwa 10 Minuten (Schätzung)</span>
   </div>
   <h1>Quellen aus der Websuche prüfen</h1>
   <p class="ziel">Danach kannst du die Quellen hinter einer Antwort öffnen, die Stelle darin finden und einschätzen, ob die Quelle die Aussage trägt.</p>
@@ -232,56 +230,55 @@ td.fehl{color:var(--rot)}
 
 <section aria-labelledby="h-baustein">
   <div class="merk">
-    <span class="etikett rot" id="h-baustein">Baustein Werkzeuge: alles, womit die KI mehr tut als schreiben</span>
-    <p style="margin-top:6px">Im Web suchen, Dateien auswerten, an andere Programme angebunden sein: Vieles davon läuft in ChatGPT und Copilot schon ab dem ersten Tag, oft automatisch. Eine Websuche erkennst du meist an Quellenangaben oder Links in der Antwort. Fehlen sie, hat das Werkzeug vermutlich aus dem geantwortet, was es gelernt hat, und kennt Neues nicht.</p>
+    <span class="etikett rot" id="h-baustein">Websuche im Chat</span>
+    <p style="margin-top:6px">Eine Websuche läuft in ChatGPT und Copilot oft automatisch. Du erkennst sie an Quellenangaben oder Links in der Antwort. Auf der Bausteinkarte gehört sie zu den Werkzeugen: allem, womit die KI mehr tut als schreiben.</p>
   </div>
   <details class="klapp">
     <summary>Woher wir wissen, dass sich Prüfen lohnt</summary>
-    <p>Journalistinnen und Journalisten aus 22 öffentlich-rechtlichen Medienorganisationen in 18 Ländern bewerteten mehr als 3.000 Antworten von vier KI-Assistenten auf Nachrichtenfragen. 45 % hatten mindestens ein erhebliches Problem, 31 % gravierende Probleme mit den Quellen: fehlend, irreführend oder falsch (<a href="https://www.bbc.co.uk/mediacentre/2025/new-ebu-research-ai-assistants-news-content">EBU und BBC, veröffentlicht am 22. Oktober 2025</a>). Getestet wurde 2025, neuere Versionen können anders abschneiden. Es ging um Nachrichten, nicht um Büroalltag. Den vollständigen Bericht haben wir nicht selbst nachgeprüft, nur die Pressemitteilung.</p>
+    <p>Journalistinnen und Journalisten aus 22 öffentlich-rechtlichen Medienorganisationen in 18 Ländern bewerteten mehr als 3.000 Antworten von vier KI-Assistenten auf Nachrichtenfragen. 45 % hatten mindestens ein erhebliches Problem, 31 % gravierende Probleme mit den Quellen: fehlend, irreführend oder falsch (<a href="https://www.bbc.co.uk/mediacentre/2025/new-ebu-research-ai-assistants-news-content">EBU und BBC, veröffentlicht am 22. Oktober 2025</a>). Getestet wurde 2025 mit Nachrichtenfragen, neuere Versionen und Büroaufgaben können anders abschneiden. Den vollständigen Bericht haben wir nicht selbst nachgeprüft, nur die Pressemitteilung.</p>
   </details>
 </section>
 
 <section aria-labelledby="h-beispiel">
   <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
-  <p>Sabine fragt mit Websuche nach einer Antragsfrist für ein Förderprogramm. Die Antwort nennt eine Frist und drei Quellen. <span class="leise">(Nachgebaut, Programm und Quellen erfunden.)</span> Sabine öffnet alle drei:</p>
+  <p>Sabine fragt mit Websuche nach einer Antragsfrist. Die Antwort nennt eine Frist und drei Quellen. <span class="leise">(Nachgebaut, Programm und Quellen erfunden.)</span></p>
   <div class="tabelle-wrap">
   <table>
-    <thead><tr><th scope="col">Quelle</th><th scope="col">Was Sabine findet</th><th scope="col">Trägt sie die Aussage?</th></tr></thead>
+    <thead><tr><th scope="col">Quelle</th><th scope="col">Was Sabine findet</th><th scope="col">Trägt sie?</th></tr></thead>
     <tbody>
-      <tr><td>1 · Seite des Förderträgers</td><td>Die Frist steht wörtlich da, Seite aktualisiert im laufenden Monat.</td><td class="ok">ja</td></tr>
-      <tr><td>2 · Beitrag in einem Firmenblog</td><td>Nennt eine andere Frist, geschrieben vor drei Jahren.</td><td class="fehl">nein, veraltet</td></tr>
-      <tr><td>3 · Link auf ein Nachrichtenportal</td><td>Der Link führt auf die Startseite. Die genannte Stelle ist nicht zu finden.</td><td class="fehl">nein, nicht auffindbar</td></tr>
+      <tr><td>1 · Seite des Förderträgers</td><td>Die Frist steht wörtlich da, aktualisiert im laufenden Monat.</td><td class="ok">ja</td></tr>
+      <tr><td>2 · Firmenblog</td><td>Nennt eine andere Frist, geschrieben vor drei Jahren.</td><td class="fehl">nein, veraltet</td></tr>
+      <tr><td>3 · Nachrichtenportal</td><td>Der Link führt auf die Startseite, die Stelle ist nicht zu finden.</td><td class="fehl">nein, nicht auffindbar</td></tr>
     </tbody>
   </table>
   </div>
-  <p>Von drei Quellen trägt eine. Das reicht, weil es die Seite des Förderträgers selbst ist und die Frist dort wörtlich steht. Hätte nur der Blog die Frist genannt, wäre die Antwort nicht belegt.</p>
+  <p>Eine Quelle trägt, und das reicht, weil es die zuständige Stelle ist.</p>
 
   <h3>Wie viel eine Quelle wert ist</h3>
   <ol class="leiter">
-    <li><span><b>Amtlich oder begutachtet:</b> Behörden, Statistikämter, Gesetzestexte, Fachzeitschriften, in denen andere Fachleute jeden Beitrag vorher prüfen.</span></li>
-    <li><span><b>Seriöse Einrichtung mit offengelegter Methode:</b> Verbände (mit eigenem Interesse), Forschungsinstitute, Umfragen, die sagen, wen sie wann wie gefragt haben.</span></li>
-    <li><span><b>Anbieter, Presse, Blog:</b> brauchbar als Hinweis, aber oft verkürzt, veraltet oder mit eigenem Interesse.</span></li>
+    <li><span><b>Amtlich oder geprüft:</b> Behörden, Gesetzestexte, Fachzeitschriften, in denen andere Fachleute jeden Beitrag vorher prüfen.</span></li>
+    <li><span><b>Mit offengelegter Methode:</b> Verbände (mit eigenem Interesse), Forschungsinstitute, Umfragen.</span></li>
+    <li><span><b>Anbieter, Presse, Blog:</b> nur als Hinweis.</span></li>
     <li><span><b>Behauptung ohne Quelle:</b> zählt nicht.</span></li>
   </ol>
-  <p class="leise" style="font-size:15px">Die Reihenfolge ist eine Faustregel. Auch eine amtliche Seite kann veraltet sein, deshalb zählt das Datum immer mit.</p>
+  <p class="leise" style="font-size:15px">Faustregel. Auch eine amtliche Seite kann veraltet sein, das Datum zählt immer mit.</p>
 
   <h3>Woran du erfundene oder falsch zugeordnete Links erkennst</h3>
   <ul class="ampel">
     <li><b>Seite fehlt</b><span>Der Link öffnet nicht oder zeigt „Seite nicht gefunden“.</span></li>
-    <li><b>Falsche Seite</b><span>Er führt auf eine Startseite oder eine Seite zu einem anderen Thema.</span></li>
-    <li><b>Stelle fehlt</b><span>Die Seite gibt es, aber die Aussage steht nicht darin. Such mit „Auf Seite suchen“ nach einem Stichwort oder der Zahl.</span></li>
-    <li><b>Datum passt nicht</b><span>Die Quelle ist älter als die Regel, um die es geht, oder ohne Datum.</span></li>
+    <li><b>Falsche Seite</b><span>Er führt auf eine Startseite oder ein anderes Thema.</span></li>
+    <li><b>Stelle fehlt</b><span>Die Aussage steht nicht auf der Seite. Such mit „Auf Seite suchen“ nach der Zahl oder einem Stichwort.</span></li>
   </ul>
 </section>
 
 <section aria-labelledby="h-tun">
   <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
-  <p>Die Frage ist schon eingesetzt: Sie passt zu dieser Reise, und es gibt eine amtliche Quelle dafür. Du kannst auch eine eigene Frage zu etwas aus dieser Woche nehmen. Firmendaten brauchst du nicht.</p>
+  <p>In der Anfrage unten steht schon eine Beispielfrage. Zu ihr gibt es eine amtliche Quelle, an der du prüfen kannst. Du kannst sie auch durch eine eigene Frage ersetzen.</p>
   <ol class="schritte">
-    <li><span><b>Mit Websuche fragen.</b> Kopiere die Anfrage, setz deine Frage ein und schick sie ab.</span></li>
-    <li><span><b>Zwei Quellen öffnen.</b> Nimm die zwei, auf die sich die wichtigste Aussage stützt. Zwei, weil eine einzelne Quelle zufällig passen kann. Widersprechen sie sich, weißt du, dass du weitersuchen musst.</span></li>
-    <li><span><b>Die Stelle finden.</b> Such auf der Seite nach der Zahl oder einem Stichwort. Steht die Aussage dort, samt dem, was dabeisteht?</span></li>
-    <li><span><b>Bewerten.</b> Von wem ist die Seite? Welches Datum steht auf der Seite selbst, nicht in der Antwort? Ordne sie in die Liste oben ein.</span></li>
+    <li><span><b>Mit Websuche fragen.</b> Anfrage kopieren und abschicken.</span></li>
+    <li><span><b>Zwei Quellen öffnen,</b> weil eine allein zufällig passen kann.</span></li>
+    <li><span><b>Die Stelle finden.</b> Steht die Aussage auf der Seite, samt dem, was dabeisteht?</span></li>
+    <li><span><b>Bewerten.</b> Von wem ist die Seite, und welches Datum steht auf ihr selbst, nicht in der Antwort?</span></li>
   </ol>
   <div class="anfrage">
 <pre id="websuche">Such im Web: Ab wann gelten in der EU Kennzeichnungspflichten für KI-erzeugte Inhalte, und für welche Inhalte?
@@ -296,34 +293,33 @@ Nenne zu jeder Aussage die Quelle mit Link und dem Datum, das auf der Seite steh
     <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Google Gemini</button>
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
-    <p>ChatGPT sucht oft von selbst im Web, wenn die Frage nach Aktuellem klingt. Mit „Such im Web“ am Anfang der Anfrage verlangst du es ausdrücklich. Die Quellen erscheinen als Verweise bei den Sätzen oder als Liste unter der Antwort. Ein Klick öffnet die Seite.</p>
-    <p>Fehlen Verweise ganz, frag nach: „Hast du im Web gesucht? Nenne die Quellen mit Link.“</p>
-    <div class="platzhalter" role="note" hidden>Hier kommt bald ein Bild hin.<br>Du brauchst es nicht für die Übung.</div>
+    <p>„Such im Web“ verlangt die Suche ausdrücklich. Quellen erscheinen als Verweise bei den Sätzen oder als Liste unter der Antwort. Fehlen sie, frag: „Hast du im Web gesucht? Nenne die Quellen mit Link.“</p>
+    <figure class="shot" hidden><img data-src="bilder/chatgpt-3-websuche.png" alt="ChatGPT: Antwort mit Websuche, bei den Sätzen und unter der Antwort sind Quellenangaben zu sehen." loading="lazy"><figcaption>Antwort mit Websuche. Die Quellenangaben sind markiert.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
-    <p>Copilot nennt Quellen als Verweise bei den Sätzen oder als Liste unter der Antwort. Ein Klick öffnet die Seite.</p>
-    <p>Was der Firmen-Copilot kann, hängt von Tarif und Firmeneinstellung ab. Microsoft 365 Copilot mit Lizenz kann auch interne Dateien als Quelle nennen, dann prüfst du die Stelle in der Datei. Zeigt dein Firmen-Copilot keine Webquellen, ist die Websuche vielleicht abgeschaltet. Mach die Übung dann im Privatkonto, die Frage enthält keine Firmendaten.</p>
-    <div class="platzhalter" role="note" hidden>Hier kommt bald ein Bild hin.<br>Du brauchst es nicht für die Übung.</div>
+    <p>Copilot nennt Quellen als Verweise bei den Sätzen oder als Liste unter der Antwort, ein Klick öffnet die Seite.</p>
+    <p>Was der Firmen-Copilot kann, hängt von Tarif und Firmeneinstellung ab. Zeigt er keine Webquellen, ist die Websuche vielleicht abgeschaltet. Mach die Übung dann im Privatkonto, die Frage enthält keine Firmendaten.</p>
+    <figure class="shot" hidden><img data-src="bilder/copilot-3-websuche.png" alt="Copilot: Antwort mit Websuche, bei den Sätzen und unter der Antwort sind Quellenangaben zu sehen." loading="lazy"><figcaption>Antwort mit Websuche. Die Quellenangaben sind markiert.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
     <p>Gemini zeigt Quellen meist unter der Antwort. Öffne sie und prüf die Stelle wie oben.</p>
   </div>
-  <p class="stand">Stand: November 2026. Oberflächen ändern sich oft. Wie die Quellenangaben in den Werkzeugen genau aussehen, haben wir nicht selbst nachgeprüft.</p>
+  <p class="stand">Stand: November 2026. Wie die Quellenangaben genau aussehen, haben wir nicht selbst nachgeprüft.</p>
 
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
-    <p>Zwei geöffnete Quellen, für jede ein Urteil: trägt, trägt nicht oder nicht auffindbar. Die amtliche Quelle für die Beispielfrage ist die KI-Verordnung auf EUR-Lex. Nennen deine Quellen dasselbe Datum wie sie? Tragen beide, hast du richtig geprüft. Trägt eine nicht, hast du genau den Fehler gefunden, um den es hier geht.</p>
+    <p>Zwei Quellen, je ein Urteil: trägt, trägt nicht, nicht auffindbar. Trägt eine nicht, hast du den typischen Fehler gefunden.</p>
+    <p><b>Lösung:</b> Die Pflichten stehen in Art. 50 der KI-Verordnung und gelten ab dem 2. August 2026, für manche ältere Systeme mit Übergangsfrist bis Dezember 2026. Sie betreffen zum Beispiel täuschend echte Bilder und Videos. Amtliche Quelle ist die Verordnung im Amtsblatt der EU auf EUR-Lex. „Dasselbe Datum“ heißt: Nennt eine Quelle einen anderen Starttermin als den 2. August 2026, ist sie ungenau oder veraltet.</p>
   </div>
 </section>
 
 <section aria-labelledby="h-pruef">
   <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
-<p>Die drei Handgriffe aus Etappe 2 gelten weiter, im Wortlaut in <a href="lr:e3-1">Einheit 1</a>. Bei Quellen aus dem Web heißt der erste: auf der Quellseite nachsehen statt im Dokument.</p>
-  <h3>Neu in Etappe 3: bei Quellen aus dem Web</h3>
+  <p>Die drei Handgriffe bleiben, im Wortlaut in <a href="lr:e3-1">Einheit 1</a>. Bei Quellen aus dem Web schlägst du die Zahlen auf der Quellseite nach. Neu in Etappe 3 kommt dazu:</p>
   <ul class="ampel">
-    <li><b>Öffnen</b><span>Jede Quelle, auf die sich eine wichtige Aussage stützt. Ein Link allein ist kein Beleg.</span></li>
-    <li><b>Auf der Quellseite nachsehen</b><span>Die Aussage muss auf der Seite stehen, samt dem, was dabeisteht. Sonst gilt sie nicht.</span></li>
-    <li><b>Datum und Herkunft</b><span>Von wem, und welches Datum steht auf der Seite? Bei Regeln und Fristen zählt die neueste Fassung der zuständigen Stelle.</span></li>
+    <li><b>Quelle öffnen</b><span>Jede Quelle, auf die sich eine wichtige Aussage stützt. Ein Link allein ist kein Beleg.</span></li>
+    <li><b>Stelle finden</b><span>Die Aussage muss dort stehen, samt dem, was dabeisteht.</span></li>
+    <li><b>Datum und Herkunft</b><span>Von wem, und welches Datum steht auf der Seite? Bei Fristen zählt die neueste Fassung der zuständigen Stelle.</span></li>
   </ul>
 </section>
 
@@ -334,22 +330,18 @@ Nenne zu jeder Aussage die Quelle mit Link und dem Datum, das auf der Seite steh
     <p>Noch nicht. Ein Link heißt nur, dass das Werkzeug diese Seite angibt. Ob es sie gelesen hat und ob sie die Aussage trägt, siehst du erst, wenn du sie öffnest und die Stelle findest.</p>
   </details>
   <details>
-    <summary>Der Link führt auf die Startseite eines Nachrichtenportals. Was nun?</summary>
-    <p>Die Quelle zählt nicht. Such die Aussage auf einer anderen Seite oder frag: „Gib mir den genauen Link zu der Seite, auf der das steht.“ Findest du sie nicht, ist die Aussage nicht belegt.</p>
-  </details>
-  <details>
     <summary>Ein Blogbeitrag und die Seite der zuständigen Behörde nennen verschiedene Fristen. Wem glaubst du?</summary>
-    <p>Der Behörde, wenn ihre Seite aktuell ist. Amtliche Quellen stehen oben in der Liste, und bei Fristen zählt die neueste Fassung der zuständigen Stelle.</p>
+    <p>Der Behörde, wenn ihre Seite aktuell ist.</p>
   </details>
   <details>
     <summary>Aus Einheit 1: Was prüfst du zusätzlich, wenn eine Antwort vollständig klingt?</summary>
-    <p>Vom Original aus, ob alles Wichtige drinsteht, besonders Bedingungen hinter Wörtern wie „nur“, „automatisch“ oder „gesondert“.</p>
+    <p>Vom Original aus, ob alles Wichtige drinsteht, besonders die Bedingungen.</p>
   </details>
 </section>
 
 <footer>
   <a class="weiter" href="lr:e3-3">Weiter: Einheit 3 · Aus Rollen gegenlesen lassen und die Prüftiefe wählen →</a>
-  <span class="leise" style="font-size:15px"><a href="lr:e3-1">Zurück: Einheit 1 · Gegen die Quelle prüfen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="leise" style="font-size:15px"><a href="lr:e3-1">Zurück: Einheit 1 · Gegen die Quelle prüfen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
   <span class="etikett">Stand 10.11.2026</span>
 </footer>
 </div>

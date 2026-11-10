@@ -168,8 +168,6 @@ footer .knopf{justify-self:start;text-decoration:none}
 <style>
 .tabelle-wrap{overflow-x:auto}
 td.fehl{color:var(--rot)}
-.basis{border:1px solid var(--linie);padding:4px 16px 8px;margin:10px 0}
-.basis .etikett{display:block;margin:10px 0 2px}
 .rolle{font-family:var(--f-etikett);font-size:14px;line-height:1.55;background:var(--sand);padding:10px 12px;margin:6px 0 10px;overflow-wrap:anywhere}
 </style>
 
@@ -177,7 +175,7 @@ td.fehl{color:var(--rot)}
 <header>
   <div class="kopfzeile">
     <span class="etikett rot">Etappe 3 · Einheit 3 von 3</span>
-    <span class="etikett">Lesen etwa 7 Minuten · Üben etwa 8 Minuten (Schätzung)</span>
+    <span class="etikett">Lesen etwa 5 Minuten · Üben etwa 8 Minuten (Schätzung)</span>
   </div>
   <h1>Aus Rollen gegenlesen lassen und die Prüftiefe wählen</h1>
   <p class="ziel">Danach kannst du einen Text von der KI aus einer anderen Sicht gegenlesen lassen und entscheidest nach den Folgen eines Fehlers, wie gründlich du selbst prüfst.</p>
@@ -224,15 +222,15 @@ td.fehl{color:var(--rot)}
 <text class="t rot" x="38" y="214">Hoch: gründlich,</text>
 <text class="t rot" x="38" y="232">Rolle und Mensch</text>
 </svg>
-    <figcaption>Je teurer ein Fehler, desto gründlicher prüfst du. Das Gegenlesen aus einer Rolle kommt bei wichtigen Texten dazu, es ersetzt dein eigenes Nachsehen nicht.</figcaption>
+    <figcaption>Je teurer ein Fehler, desto gründlicher prüfst du. Gegenlesen aus einer Rolle kommt bei wichtigen Texten dazu, es ersetzt dein Nachsehen nicht.</figcaption>
   </figure>
 </section>
 
 <section aria-labelledby="h-beispiel">
   <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
-  <p>Sabine hat ihre Empfehlung für die Bürostühle aus <a href="https://claude.ai/artifact/MgrJBfUYMzMaBE6WigSaST">Etappe 2, Einheit 3</a> fertig. <span class="leise">(Erfunden.)</span> Bevor sie abschickt, lässt sie die KI aus der Sicht der Chefin lesen:</p>
-  <div class="rolle">Du bist meine Chefin. Du hast wenig Zeit und willst wissen, was es kostet und ob die Stühle rechtzeitig kommen. Lies die Mail aus dieser Sicht und nenne höchstens drei Stellen, die unklar oder angreifbar sind, jeweils mit Zitat. Ändere den Text nicht.</div>
-  <p>Die KI findet zwei gute Punkte: Der Gesamtpreis steht nur netto da, und es fehlt, bis wann bestellt werden muss. Sabine ergänzt beides. Einen Fehler findet die Rolle aber nicht: In der Mail steht, Angebot C habe 24 Monate Gewährleistung. In Sabines Tabelle stehen 12. Gefunden hat Sabine den Fehler erst beim eigenen Nachsehen. Dafür gibt es zwei Gründe:</p>
+  <p>Die Chefin hat Angebot A genommen. Sabine entwirft eine Info-Mail an die Abteilung und lässt den ersten, noch ungeprüften Entwurf gegenlesen. <span class="leise">(Erfunden. Die Zahlen stehen in Sabines Tabelle in <a href="https://claude.ai/artifact/MgrJBfUYMzMaBE6WigSaST">Etappe 2, Einheit 3</a>.)</span></p>
+  <div class="rolle">Du bist eine Kollegin aus der Abteilung. Du willst wissen, wann die neuen Stühle kommen und was du tun musst. Lies die Mail aus dieser Sicht und nenne höchstens drei Stellen, die unklar oder angreifbar sind, jeweils mit Zitat. Ändere den Text nicht.</div>
+  <p>Die KI findet zwei gute Punkte: Es fehlt, wann die alten Stühle abgeholt werden, und wer am Liefertag Bescheid gibt. Nicht gefunden: Der Entwurf verspricht die Lieferung in 4 Wochen, Angebot A liefert laut Tabelle in 6. Das fand Sabine erst selbst, aus zwei Gründen:</p>
   <ul class="ampel">
     <li><b>Was du ihr gibst</b><span>Die Rolle kennt nur, was du ihr gibst. Geht es um Zahlen, gib das Original mit: „Hier ist meine Tabelle. Stimmt jede Zahl in der Mail damit?“</span></li>
     <li><b>Dieselben Lücken</b><span>Dasselbe Modell übersieht oft dieselben Dinge, mit oder ohne Rolle. Das ist eine Faustregel.</span></li>
@@ -246,23 +244,23 @@ td.fehl{color:var(--rot)}
   <table>
     <thead><tr><th scope="col">Wie teuer ist ein Fehler?</th><th scope="col">Beispiele</th><th scope="col">Prüftiefe</th></tr></thead>
     <tbody>
-      <tr><td>Gering, leicht zu korrigieren</td><td>Ideenliste, interne Notiz, Entwurf für dich selbst</td><td>Eine Zahl nachsehen, samt dem, was dabeisteht (Etappe 1)</td></tr>
-      <tr><td>Spürbar</td><td>Mail ans Team, Zusammenfassung für die Chefin, Protokoll</td><td>Die drei Handgriffe (Etappe 2)</td></tr>
+      <tr><td>Gering, leicht zu korrigieren</td><td>Ideenliste, interne Notiz</td><td>Eine Zahl nachsehen, samt dem, was dabeisteht (Etappe 1)</td></tr>
+      <tr><td>Spürbar</td><td>Mail ans Team, Zusammenfassung für die Chefin</td><td>Die drei Handgriffe (Etappe 2)</td></tr>
       <tr><td class="fehl">Hoch, schwer rückgängig zu machen</td><td>Geld, Verträge, Kunden, alles Öffentliche</td><td>Gründlich: Abschnitt für Abschnitt, Quellen öffnen, aus einer Rolle gegenlesen lassen, und eine zweite Person liest mit, etwa eine Kollegin oder eine Fachperson aus Buchhaltung, Einkauf oder Rechtsabteilung</td></tr>
     </tbody>
   </table>
   </div>
-  <p class="leise" style="font-size:15px">Die Einteilung ist eine Faustregel. Entscheidungen über Menschen, etwa Bewerbungen oder Beurteilungen, überlässt du der KI auf keiner Stufe.</p>
+  <p class="leise" style="font-size:15px">Faustregel. Entscheidungen über Menschen überlässt du der KI auf keiner Stufe.</p>
 </section>
 
 <section aria-labelledby="h-tun">
   <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
-  <p>Nimm einen eigenen Text aus dieser Reise, etwa die Mail aus <a href="https://claude.ai/artifact/UJyTgyB68HE5AcWNbgsnVt">Etappe 2, Einheit 1</a>, oder einen eigenen Text, in dem du Namen, Firmen und Beträge durch XXX ersetzt hast. Für die Übung reicht ein Text der Stufe „spürbar“.</p>
+  <p>Nimm einen Text, den du in Etappe 2 mit deiner eigenen Vorlage erzeugt hast, oder einen eigenen Text, in dem du Namen, Firmen und Beträge durch XXX ersetzt hast. Ein Text der Stufe „spürbar“ reicht.</p>
   <ol class="schritte">
-    <li><span><b>Prüftiefe wählen.</b> Ordne den Text in die Tabelle oben ein und schreib einen Satz: „Ein Fehler hier würde … kosten, also prüfe ich …“</span></li>
-    <li><span><b>Gegenlesen lassen.</b> Kopiere die Vorlage, setz ein, wer den Text liest, füge deinen Text darunter ein und schick ab.</span></li>
-    <li><span><b>Die Funde sortieren.</b> Ist jede der höchstens drei Stellen berechtigt? Übernimm nur, was dich überzeugt.</span></li>
-    <li><span><b>Selbst prüfen,</b> in der Tiefe aus Schritt 1. Die Rolle hat das nicht für dich erledigt.</span></li>
+    <li><span><b>Prüftiefe wählen.</b> Ordne den Text in die Tabelle ein.</span></li>
+    <li><span><b>Gegenlesen lassen,</b> in einem neuen Chat, der deine Absicht nicht kennt. Sonst neigt die KI dazu zuzustimmen (Faustregel). In ChatGPT schaltest du beim neuen Chat „Temporärer Chat“ ein. Bei Copilot und Gemini sieh in den Einstellungen unter Gedächtnis oder Personalisierung nach (nicht selbst nachgeprüft).</span></li>
+    <li><span><b>Funde sortieren.</b> Übernimm nur, was dich überzeugt, und schreib zu jedem Fund ein Wort: berechtigt oder nicht.</span></li>
+    <li><span><b>Selbst prüfen,</b> in der Tiefe aus Schritt 1.</span></li>
   </ol>
   <div class="anfrage">
 <pre id="rolle">Du bist [wer den Text liest, zum Beispiel eine Kundin, die wenig Zeit hat, oder eine Kollegin, die nur die Zahlen prüft].
@@ -271,53 +269,49 @@ Lies den folgenden Text aus dieser Sicht. Nenne höchstens drei Stellen, die unk
 [dein Text]</pre>
     <button class="knopf" type="button" data-kopie="rolle">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
-  <p class="leise" style="font-size:15px">Das geht in ChatGPT, Copilot, Gemini und ähnlichen Werkzeugen gleich: Text ins Eingabefeld, abschicken. Die KI spielt die Kundin, echte Kundenpost gehört nicht hinein. Nimm für das Gegenlesen einen neuen Chat, am besten einen temporären Chat oder einen mit abgeschaltetem Gedächtnis, falls dein Werkzeug sich Dinge über Chats hinweg merkt.</p>
-  <div class="platzhalter" role="note" hidden>Hier kommt bald ein Bild hin.<br>Du brauchst es nicht für die Übung.</div>
+  <p class="leise" style="font-size:15px">Die KI spielt die Kundin, echte Kundenpost gehört nicht hinein. Das geht in ChatGPT, Copilot und Gemini gleich.</p>
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
-    <p>Einen Satz zur Prüftiefe, bis zu drei Funde aus der Rolle und dein eigenes Urteil zu jedem. Findet die Rolle nichts, hast du trotzdem noch selbst zu prüfen.</p>
+    <p>Bis zu drei Funde und dein Urteil zu jedem. Übernimm nur Funde, deren Zitat du im Text wiederfindest. Auch ohne Funde prüfst du selbst.</p>
   </div>
 </section>
 
 <section aria-labelledby="h-pruef">
   <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
-<p>Die drei Handgriffe aus Etappe 2 gelten weiter, im Wortlaut in <a href="lr:e3-1">Einheit 1</a>.</p>
-  <h3>Neu in Etappe 3: Gegenlesen richtig einsetzen</h3>
-  <ul class="ampel">
-    <li><b>Erst die Tiefe</b><span>Entscheide vorher, wie gründlich du prüfst. Nicht danach, wie überzeugend der Text klingt.</span></li>
-    <li><b>Eigener Chat</b><span>Lass in einem neuen, am besten temporären Chat gegenlesen und gib eine klare Sicht vor, in der Form „Du bist …“.</span></li>
-    <li><b>Nachsehen bleibt</b><span>Zahlen, Fristen und Zusagen prüfst du selbst im Original, auch wenn die Rolle nichts gefunden hat.</span></li>
-  </ul>
+  <p>Die drei Handgriffe bleiben, im Wortlaut in <a href="lr:e3-1">Einheit 1</a>.</p>
+  <p><b>Neu in Etappe 3 kommt dazu:</b> Erst die Tiefe wählen, dann prüfen, nicht danach, wie überzeugend der Text klingt. Zahlen, Fristen und Zusagen siehst du selbst im Original nach, auch nach dem Gegenlesen.</p>
 </section>
 
 <section aria-labelledby="h-check">
   <h2 id="h-check"><span class="nr">4</span>Selbstcheck</h2>
   <details>
-    <summary>Die Rolle „kritischer Kunde“ findet nichts. Kannst du die Mail ungeprüft abschicken?</summary>
+    <summary>Die Rolle „kritische Kundin“ findet nichts. Kannst du die Mail ungeprüft abschicken?</summary>
     <p>Nein. Die Rolle kennt dein Original nicht, und dasselbe Modell übersieht oft dieselben Dinge. Zahlen und Zusagen siehst du selbst nach.</p>
   </details>
   <details>
     <summary>Du kündigst per Mail einen Vertrag mit Frist. Welche Prüftiefe?</summary>
-    <p>Hoch: Es geht um Geld und eine Frist, die sich nicht nachholen lässt. Abschnitt für Abschnitt gegen den Vertrag prüfen, und eine zweite Person liest mit. Steht im Vertrag „schriftlich“, klär vorher, ob eine Mail dafür genügt.</p>
-  </details>
-  <details>
-    <summary>Du lässt dir zehn Ideen für ein Teamfrühstück geben. Welche Prüftiefe?</summary>
-    <p>Gering. Ein Fehler kostet fast nichts. Steht eine Zahl drin, etwa ein Preis, siehst du die eine nach.</p>
+    <p>Hoch: Geld und eine Frist, die sich nicht nachholen lässt. Gründlich prüfen, und eine zweite Person liest mit. Steht im Vertrag „schriftlich“, klär vorher, ob eine Mail dafür genügt.</p>
   </details>
   <details>
     <summary>Warum lässt du in einem neuen Chat gegenlesen?</summary>
-    <p>Im alten Chat kennt die KI deine Absicht und neigt dazu zuzustimmen. Das ist eine Faustregel. Ein neuer Chat kennt die Absicht nicht, solange das Gedächtnis über Chats hinweg aus ist oder du einen temporären Chat nimmst.</p>
+    <p>Damit die KI deine Absicht nicht kennt. Kennt sie sie, neigt sie dazu zuzustimmen. Das ist eine Faustregel.</p>
   </details>
   <details>
     <summary>Aus Einheit 2: Unter einer Antwort steht ein Link. Wann ist die Aussage belegt?</summary>
-    <p>Wenn du die Seite geöffnet und die Stelle darin gefunden hast, und wenn die Quelle aktuell ist und von einer Stelle kommt, die es wissen kann.</p>
+    <p>Wenn du die Stelle auf der Seite gefunden hast und die Quelle aktuell ist und von einer Stelle kommt, die es wissen kann.</p>
   </details>
+</section>
+
+<section aria-labelledby="h-rueck">
+  <h2 id="h-rueck" class="etikett">Das kannst du jetzt</h2>
+  <ol class="griffe"><li><span>Eine Antwort vom Original aus prüfen und Auslassungen finden.</span></li><li><span>Quellen aus der Websuche öffnen und bewerten.</span></li><li><span>Gegenlesen lassen und die Prüftiefe nach den Folgen wählen.</span></li></ol>
+  <p class="leise" style="font-size:15px">Mitnehmen: die Tabelle zur Prüftiefe.</p>
 </section>
 
 <footer>
   <span class="weiter">Etappe 3 geschafft.</span>
   <a class="knopf" href="lr:start">Zum Start der Reise</a>
-  <span class="leise" style="font-size:15px"><a href="lr:e3-2">Zurück: Einheit 2 · Quellen aus der Websuche prüfen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="leise" style="font-size:15px"><a href="lr:e3-2">Zurück: Einheit 2 · Quellen aus der Websuche prüfen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
   <span class="etikett">Stand 10.11.2026</span>
 </footer>
 </div>

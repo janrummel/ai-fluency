@@ -169,7 +169,7 @@ def seite_bauen(quelle: pathlib.Path, zielpfad: str, kurz: str | None, sprache: 
     s = re.sub(r'href="(lr:[a-z0-9-]+)"', ersetze, s)
     # Bilder und Übungsdatei liegen einmal je Sprache
     s = s.replace('src="bilder/', f'src="{prefix}{sprache}/bilder/')
-    s = s.replace('href="uebungsangebot-kopierer.pdf"', f'href="{prefix}{sprache}/uebung/uebungsangebot-kopierer.pdf"')
+    s = re.sub(r'href="(uebung[a-z-]+\.pdf)"', lambda mm: f'href="{prefix}{sprache}/uebung/{mm.group(1)}"', s)
 
     # Kopf und Körper trennen: alles bis zum ersten Inhaltselement gehört in den <head>
     m = re.search(r"<(div|main|header|section)\b", s)
@@ -293,7 +293,7 @@ def pruefen(ziel: pathlib.Path) -> list[str]:
         if not t.startswith("<!doctype html>"):
             fehler.append(f"{rel}: kein doctype")
         # relative Verweise müssen existieren
-        for ref in re.findall(r'(?:href|src)="([^"#:]+)(?:#[^"]*)?"', t):
+        for ref in re.findall(r'(?<![-\w])(?:href|src)="([^"#:]+)(?:#[^"]*)?"', t):
             if ref.startswith("/") or ref.startswith("mailto"):
                 continue
             ziel_datei = (f.parent / ref).resolve()
@@ -314,7 +314,8 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(seite_bauen(WURZEL / "quellen/de" / datei, pfad, kurz, "de", links), encoding="utf-8")
     for unterordner in ("bilder", "uebung"):
-        shutil.copytree(WURZEL / "quellen/de" / unterordner, ZIEL / "de" / unterordner)
+        shutil.copytree(WURZEL / "quellen/de" / unterordner, ZIEL / "de" / unterordner,
+                        ignore=shutil.ignore_patterns("*-quelle.html"))
     shutil.copytree(WURZEL / "statisch/assets", ZIEL / "assets")
     (ZIEL / "en").mkdir()
     (ZIEL / "en/index.html").write_text(EN_INDEX, encoding="utf-8")
