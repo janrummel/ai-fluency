@@ -47,7 +47,7 @@ LEISTE_CSS = """
 .lr-leiste a{color:var(--tinte,#17181A);text-decoration:none;display:inline-flex;align-items:center;min-height:36px}
 .lr-leiste a:hover{text-decoration:underline;text-decoration-color:var(--rot,#C4472B)}
 .lr-leiste .lr-name{font-family:var(--f-titel,'Newsreader',Georgia,serif);font-size:17px;letter-spacing:0;text-transform:none;margin-right:auto}
-.lr-leiste .lr-hier{color:var(--grau,#6A6A66)}
+.lr-leiste .lr-hier{color:var(--grau,#666662)}
 .lr-farbe{font:inherit;letter-spacing:inherit;text-transform:inherit;color:var(--tinte,#17181A);background:transparent;border:1px solid var(--linie,#DAD8D0);min-height:36px;padding:0 10px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
 .lr-farbe[hidden]{display:none}
 .lr-farbe:hover{border-color:var(--rot,#C4472B)}
@@ -58,7 +58,7 @@ LEISTE_CSS = """
 .lr-fuss-innen{max-width:var(--lr-breite,760px);margin:0 auto;padding-block:26px 34px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:12px}
 .lr-fuss b{font-weight:500}
 .lr-fuss a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot,#C4472B)}
-.lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:12px;letter-spacing:.05em;color:var(--grau,#6A6A66);display:flex;flex-wrap:wrap;gap:4px 16px}
+.lr-fuss .lr-klein{font-family:var(--f-etikett,'IBM Plex Mono',ui-monospace,Menlo,monospace);font-size:12px;letter-spacing:.05em;color:var(--grau,#666662);display:flex;flex-wrap:wrap;gap:4px 16px}
 .lr-fuss .lr-klein a{display:inline-flex;align-items:center;min-height:32px}
 .lr-zaehlen{font:inherit;letter-spacing:inherit;color:inherit;background:transparent;border:0;padding:0;min-height:32px;cursor:pointer;text-decoration:underline;text-decoration-color:var(--rot,#C4472B);text-underline-offset:3px}
 .lr-zaehlen[hidden]{display:none}
@@ -203,7 +203,7 @@ WEITERLEITUNG_404 = """<!doctype html>
 <title>Seite nicht gefunden · Erst das Problem, dann die KI</title>
 <link rel="stylesheet" href="/ai-fluency/assets/schriften.css">
 <style>
-:root{--papier:#FBFAF6;--tinte:#17181A;--grau:#6A6A66;--linie:#DAD8D0;--rot:#C4472B;color-scheme:light}
+:root{--papier:#FBFAF6;--tinte:#17181A;--grau:#666662;--linie:#DAD8D0;--rot:#C4472B;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--papier:#18191B;--tinte:#ECE9E1;--grau:#A8A69F;--linie:#3A3A37;--rot:#E4704F;color-scheme:dark}}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--papier);color:var(--tinte);font:17px/1.6 'IBM Plex Sans',system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -262,7 +262,7 @@ EN_INDEX = """<!doctype html>
 <link rel="stylesheet" href="../assets/schriften.css">
 <script data-goatcounter="https://janrummel.goatcounter.com/count" async src="../assets/count.js"></script>
 <style>
-:root{--papier:#FBFAF6;--tinte:#17181A;--grau:#6A6A66;--linie:#DAD8D0;--rot:#C4472B;color-scheme:light}
+:root{--papier:#FBFAF6;--tinte:#17181A;--grau:#666662;--linie:#DAD8D0;--rot:#C4472B;color-scheme:light}
 @media (prefers-color-scheme:dark){:root{--papier:#18191B;--tinte:#ECE9E1;--grau:#A8A69F;--linie:#3A3A37;--rot:#E4704F;color-scheme:dark}}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--papier);color:var(--tinte);font:17px/1.6 'IBM Plex Sans',system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
