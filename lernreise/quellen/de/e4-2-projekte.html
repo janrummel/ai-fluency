@@ -232,8 +232,8 @@ footer .knopf{justify-self:start;text-decoration:none}
     <span class="etikett rot" id="h-ampel">Vorher kurz: Was darf hinein?</span>
     <ul class="ampel">
       <li><b>Im Job</b><span>Nur mit dem Konto, das deine Firma bereitstellt, und nur, wenn sie das Werkzeug freigegeben hat. Ein Gratiskonto, das du mit deiner Firmenadresse anlegst, zählt nicht: Das ist ein Privatkonto. Welches Konto und welche Werkzeuge freigegeben sind, sagt dir die IT oder das Intranet. Im Zweifel nichts Echtes hochladen, sondern beschreiben.</span></li>
-      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten. Steht so etwas drin, tipp den Text lieber ab und lass es weg, oder ersetz es durch XXX. Ersetz auch Umstände, an denen man die Person erkennt, etwa eine seltene Funktion oder ein Datum.</span></li>
-      <li><b>Zum Üben</b><span>Eine erfundene oder geschwärzte Datei, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
+      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten. Steht so etwas drin, lass es beim Abtippen weg oder ersetze es durch XXX. Ersetze auch Details, an denen man die Person erkennen kann, etwa eine seltene Funktion oder ein Datum.</span></li>
+      <li><b>Zum Üben</b><span>Eine erfundene Datei oder eine, in der Namen durch XXX ersetzt sind, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
     </ul>
     <p style="margin-top:6px"><a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr dazu in Etappe 1, Einheit 2</a></p>
   </div>
@@ -273,13 +273,13 @@ footer .knopf{justify-self:start;text-decoration:none}
   <ol class="schritte">
     <li><span><b>Projekt anlegen</b> mit klarem Namen, siehe Reiter.</span></li>
     <li><span><b>Anweisung eintragen.</b> Kopier die Vorlage und füll sie aus.</span></li>
-    <li><span><b>Eine Datei hineinlegen,</b> erfunden oder geschwärzt, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
+    <li><span><b>Eine Datei hineinlegen,</b> erfunden oder mit XXX statt Namen, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
     <li><span><b>Im Projekt fragen,</b> ohne die Anweisung zu wiederholen.</span></li>
   </ol>
   <div class="anfrage">
 <pre id="projekt-anweisung">Dieses Projekt ist für: [die wiederkehrende Aufgabe].
 Das Ergebnis soll so aussehen: [Format, Länge].
-Nutze nur die Dateien in diesem Projekt. Nenn bei jeder Angabe Datei und Fundstelle. Fehlt etwas, schreib „steht nicht drin“.</pre>
+Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei jeder Angabe Datei und Fundstelle. Fehlt etwas, schreib „steht nicht drin“.</pre>
     <button class="knopf" type="button" data-kopie="projekt-anweisung">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
 
@@ -291,7 +291,7 @@ Nutze nur die Dateien in diesem Projekt. Nenn bei jeder Angabe Datei und Fundste
     <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Claude</button>
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
-    <p>In der Seitenleiste legst du unter „Projekte“ ein neues Projekt an, trägst Anweisungen ein und fügst Dateien hinzu. Chats im Projekt sehen beides. Stellst du unter „Erinnerung“ „Nur Projekt“ ein, bleibt, was ChatGPT sich im Projekt merkt, im Projekt. Nach unserem Kenntnisstand gibt es Projekte auch im kostenlosen ChatGPT. Fehlen sie, nimm eine Notiz mit der Anweisung und häng die Datei jedes Mal neu an.</p>
+    <p>In der Seitenleiste legst du unter „Projekte“ ein neues Projekt an, trägst Anweisungen ein und fügst Dateien hinzu. Chats im Projekt sehen beides. Wählst du beim Anlegen „Erinnerungen nur für das Projekt“, bleibt, was ChatGPT sich im Projekt merkt, im Projekt. Nach unserem Kenntnisstand gibt es Projekte auch im kostenlosen ChatGPT. Fehlen sie, nimm eine Notiz mit der Anweisung und häng die Datei jedes Mal neu an.</p>
     <figure class="shot"><img src="bilder/chatgpt-5-projekt.png" alt="ChatGPT: Projekteinstellungen mit Name, Anweisung und Erinnerung „Nur Projekt“." loading="lazy"><figcaption>Die Projekt-Anweisung gilt für jeden Chat im Projekt.</figcaption></figure>
     <figure class="shot"><img src="bilder/chatgpt-5-projekt-datei.png" alt="ChatGPT: das Projekt mit dem Übungsangebot als Quelle." loading="lazy"><figcaption>Unter „Quellen“ liegt die Datei für alle Chats im Projekt.</figcaption></figure>
   </div>
@@ -301,11 +301,11 @@ Nutze nur die Dateien in diesem Projekt. Nenn bei jeder Angabe Datei und Fundste
     <figure class="shot" hidden><img data-src="bilder/copilot-5-projekt.png" alt="Copilot: ein Notebook mit Dateien und Notizen." loading="lazy"><figcaption>Ein Notebook mit Datei.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
-    <p>Bei Gemini gibt es „Gems“: Helfer mit eigener Anweisung und Dateien. Anders als in einem Projekt steht dort jeder Chat für sich.</p>
+    <p>Bei Gemini gibt es „Gems“: Helfer mit eigener Anweisung und Dateien. Anders als in einem Projekt steht dort jeder Chat für sich (nicht selbst nachgeprüft).</p>
     <figure class="shot" hidden><img data-src="bilder/gemini-5-projekt.png" alt="Gemini: ein Gem mit Anweisung und Datei." loading="lazy"><figcaption>Ein Gem mit Anweisung und Datei.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
-    <p>Bei Claude heißen sie ebenfalls „Projekte“. Rechts am Projekt trägst du unter „Anweisungen“ die Anweisung ein und legst unter „Kontext“ Dateien ab. Jeder Chat im Projekt sieht beides. Die Projekt-Anweisung gilt laut Claude zusätzlich zu deinen Anweisungen aus den Einstellungen. Das Projekt hat außerdem ein eigenes Gedächtnis. Im kostenlosen Konto gehen laut Anthropic bis zu fünf Projekte. <a href="https://support.claude.com/en/articles/9517075-what-are-projects">Hilfeseite bei Anthropic</a></p>
+    <p>Bei Claude heißen sie ebenfalls „Projekte“. Rechts am Projekt trägst du unter „Anweisungen“ die Anweisung ein und legst unter „Kontext“ Dateien ab. Jeder Chat im Projekt sieht beides. Die Projekt-Anweisung gilt laut Hinweis in der Oberfläche zusätzlich zu deinen Anweisungen aus den Einstellungen. Das Projekt hat außerdem ein eigenes Gedächtnis. Im kostenlosen Konto gehen laut Anthropic bis zu fünf Projekte. <a href="https://support.claude.com/en/articles/9517075-what-are-projects">Hilfeseite bei Anthropic</a></p>
     <figure class="shot"><img src="bilder/claude-5-projekt.png" alt="Claude: das Projekt Monatsbericht Übung, rechts Anweisungen, Kontext mit einer Datei, Gedächtnis und Geplant." loading="lazy"><figcaption>Rechts am Projekt: Anweisungen, Kontext mit der Datei, Gedächtnis.</figcaption></figure>
     <figure class="shot"><img src="bilder/claude-5-projekt-anweisung.png" alt="Claude: Fenster Projektanweisungen festlegen mit der Übungsanweisung." loading="lazy"><figcaption>Die Projekt-Anweisung gilt für jede Sitzung im Projekt.</figcaption></figure>
   </div>
@@ -315,7 +315,7 @@ Nutze nur die Dateien in diesem Projekt. Nenn bei jeder Angabe Datei und Fundste
     <ul>
       <li><b>Der Chat kennt die Datei nicht:</b> Lade sie im Projekt hoch, nicht im einzelnen Chat. Bei ChatGPT unter „Quellen“, bei Claude unter „Kontext“.</li>
       <li><b>Die Anweisung wirkt nicht:</b> Starte den Chat auf der Projektseite. Ein Chat außerhalb des Projekts kennt sie nicht.</li>
-      <li><b>Das Projekt bringt Fremdes ein:</b> Bei ChatGPT „Erinnerung: Nur Projekt“ wählen, bei Claude das Gedächtnis des Projekts ansehen.</li>
+      <li><b>Das Projekt bringt Fremdes ein:</b> Bei ChatGPT beim Anlegen „Erinnerungen nur für das Projekt“ wählen, bei Claude das Gedächtnis des Projekts ansehen.</li>
     </ul>
   </details>
 
@@ -342,7 +342,7 @@ Nutze nur die Dateien in diesem Projekt. Nenn bei jeder Angabe Datei und Fundste
   </details>
   <details>
     <summary>Darf die Liste mit echten Kundennamen in dein privates Projekt?</summary>
-    <p>Nein. Kundendaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Für die Übung nimm Erfundenes oder Geschwärztes.</p>
+    <p>Nein. Kundendaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Für die Übung nimm Erfundenes, oder ersetz Namen durch XXX. Schwarze Balken in PDF oder Word reichen nicht: Der Text darunter bleibt oft lesbar.</p>
   </details>
   <details>
     <summary>Aus Einheit 1: Was ist der Unterschied zwischen Daueranweisung und Projekt-Anweisung?</summary>
