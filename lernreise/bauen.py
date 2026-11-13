@@ -76,6 +76,12 @@ function zeig(){b.querySelector('span').textContent=n[a];b.setAttribute('aria-la
 zeig();b.hidden=false;
 b.addEventListener('click',function(){a=a==='auto'?'hell':a==='hell'?'dunkel':'auto';try{a==='auto'?localStorage.removeItem(k):localStorage.setItem(k,a)}catch(e){}setze(a);zeig()})})})();"""
 
+WERKZEUG_JS = """(function(){var k='werkzeug';
+document.addEventListener('DOMContentLoaded',function(){var l=document.querySelector('[role="tablist"][aria-label="Werkzeug wählen"]');if(!l)return;
+var t=[].slice.call(l.querySelectorAll('[role="tab"]')),v=null;try{v=localStorage.getItem(k)}catch(e){}
+t.forEach(function(b){var n=b.textContent.trim();if(v&&n===v&&b.getAttribute('aria-selected')!=='true')b.click();
+b.addEventListener('click',function(){try{localStorage.setItem(k,n)}catch(e){}})})})})();"""
+
 FARBE_KNOPF = ('<button class="lr-farbe" type="button" data-farbe hidden>'
                '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/>'
                '<path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg><span>Auto</span></button>')
@@ -140,7 +146,7 @@ def kopf(titel: str, beschreibung: str | None, prefix: str, url: str, sprache: s
         f'<link rel="icon" href="{prefix}favicon.svg" type="image/svg+xml">',
         f'<link rel="stylesheet" href="{prefix}assets/schriften.css">',
         f'<script data-goatcounter="https://janrummel.goatcounter.com/count" async src="{prefix}assets/count.js"></script>',
-        f"<script>{FARBE_JS}</script>",
+        f"<script>{FARBE_JS}{WERKZEUG_JS}</script>",
         f"<style>{LEISTE_CSS}</style>",
     ]
     return "\n".join(zeilen)
