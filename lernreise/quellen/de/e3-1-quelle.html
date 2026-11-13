@@ -173,6 +173,9 @@ td.fehl{color:var(--rot)}
 .signal li{font-family:var(--f-etikett);font-size:14px;border:1px solid var(--rot);color:var(--rot);padding:3px 9px}
 .basis{border:1px solid var(--linie);padding:4px 16px 8px;margin:10px 0}
 .basis .etikett{display:block;margin:10px 0 2px}
+.haken{list-style:none;padding:0;margin:8px 0;display:grid;gap:4px}
+.schritte .haken li{counter-increment:none;display:block;padding:0 0 0 26px;border-top:0;position:relative}
+.schritte .haken li::before{content:"";position:absolute;left:2px;top:.35em;width:13px;height:13px;border:1.5px solid var(--rot);border-radius:2px}
 </style>
 
 <div class="seite">
@@ -274,8 +277,16 @@ td.fehl{color:var(--rot)}
   </div>
   <ol class="schritte">
     <li><span><b>Antwort holen.</b> Öffne einen neuen Chat, häng das PDF an oder füge den Vertragstext ein, setz die Anfrage aus dem Kasten unten dazu und schick sie ab.</span></li>
-    <li><span><b>Original in Abschnitte teilen.</b> Schreib dir je Abschnitt ein Stichwort auf, etwa zehn insgesamt.</span></li>
-    <li><span><b>Abgleichen:</b> Steht jedes Stichwort in der Antwort, samt dem, was dabeisteht?</span></li>
+    <li><span><b>Abhaken:</b> Steht jeder dieser sechs Punkte in der Antwort, samt dem, was dabeisteht?
+      <ul class="haken">
+        <li>Reinigung 2. und 3. Stock, fünf Tage, nach 18 Uhr; Fenster zweimal im Jahr</li>
+        <li>1.150 € netto im Monat</li>
+        <li>Sonderreinigung gesondert, 120 € netto je Einsatz</li>
+        <li>24 Monate, Verlängerung um 12 Monate, Kündigung spätestens 6 Monate vorher schriftlich</li>
+        <li>Haftung für Schlüssel und Zugangskarten</li>
+        <li>Seife und Toilettenpapier nur gegen Aufpreis</li>
+      </ul>
+      Bei deinen eigenen Dokumenten schreibst du diese Liste selbst: ein Stichwort je Abschnitt.</span></li>
     <li><span><b>Bedingungswörter suchen:</b> „nur“, „automatisch“, „gesondert“, „schriftlich“, „nicht“.</span></li>
     <li><span><b>Erst jetzt fragen:</b> „Was hast du weggelassen?“ Vergleiche mit deiner Liste.</span></li>
   </ol>
@@ -293,7 +304,7 @@ td.fehl{color:var(--rot)}
   </details>
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
-    <p>Auf deiner Liste stehen auch die Sonderreinigung, die Verlängerung, wenn nicht spätestens 6 Monate vorher schriftlich gekündigt wird, die Schlüsselhaftung (ein verlorener Schlüssel kann neue Schlösser kosten) und der Aufpreis für Seife und Toilettenpapier. Stehen alle auf deiner Liste und hast du jeden in der Antwort gesucht, hast du gründlich geprüft. Fehlt einer, ohne dass die KI ihn als weggelassen nennt, hast du den typischen Fehler gefunden.</p>
+    <p>Die Antwort sollte auch die Sonderreinigung, die Verlängerung, wenn nicht spätestens 6 Monate vorher schriftlich gekündigt wird, die Schlüsselhaftung (ein verlorener Schlüssel kann neue Schlösser kosten) und den Aufpreis für Seife und Toilettenpapier nennen. Hast du alle sechs Punkte in der Antwort gesucht, hast du gründlich geprüft. Fehlt einer, ohne dass die KI ihn als weggelassen nennt, hast du den typischen Fehler gefunden.</p>
   </div>
   <p class="leise" style="font-size:15px">In unserem kleinen Test mit ChatGPT, Copilot, Gemini und Claude (Etappe 2) ließen zwei der vier „Schwarzweiß-Seiten inklusive“ weg, ohne es zu nennen. Ein Hinweis, keine Studie.</p>
 </section>
