@@ -19,7 +19,7 @@ WURZEL = pathlib.Path(__file__).resolve().parent
 REPO = WURZEL.parent
 ZIEL = REPO / "site"
 BASIS_URL = "https://janrummel.github.io/ai-fluency/"
-STAND = "10.11.2026"
+STAND = "16.11.2026"
 NAME = "Erst das Problem, dann die KI"
 
 # Quelle, Zielpfad unter de/, Vorschau-ID (claude.ai/artifact/<id>), Kurzname für die Kopfleiste
@@ -277,7 +277,7 @@ a{color:var(--tinte);text-decoration-color:var(--rot);text-underline-offset:3px}
 <main>
   <span class="etikett">English version · coming later</span>
   <h1>First the problem, then the AI.</h1>
-  <p>A free learning journey for working with ChatGPT, Copilot and Gemini at the office: clarify the task, ask well, check the answer. The German version comes first. The English one follows.</p>
+  <p>A free learning journey for working with ChatGPT, Copilot, Gemini and Claude at the office: clarify the task, ask well, check the answer. The German version comes first. The English one follows.</p>
   <p><a href="../de/">Go to the German version</a> · Questions: kontakt@janrummel.eu</p>
 </main>
 </body>

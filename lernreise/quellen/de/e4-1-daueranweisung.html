@@ -203,7 +203,7 @@ footer .knopf{justify-self:start;text-decoration:none}
 <rect class="kasten " x="252" y="10" width="216" height="76"/>
 <text class="nrz" x="262" y="56">2</text>
 <text class="t" x="286" y="43">Gedächtnis: das</text>
-<text class="t" x="286" y="61">Werkzeug merkt</text>
+<text class="t" x="286" y="61">Werkzeug merkt sich</text>
 <line class="pf" x1="468" y1="48" x2="502" y2="48" marker-end="url(#d1m)"/>
 <rect class="kasten pruef" x="504" y="10" width="216" height="76"/>
 <text class="nrz" x="514" y="56">3</text>
@@ -218,7 +218,7 @@ footer .knopf{justify-self:start;text-decoration:none}
 <line class="pf" x1="170" y1="66" x2="170" y2="94" marker-end="url(#d1n)"/>
 <rect class="kasten " x="1" y="96" width="338" height="62"/>
 <text class="nrz" x="12" y="135">2</text>
-<text class="t" x="38" y="131">Gedächtnis: das Werkzeug merkt</text>
+<text class="t" x="38" y="131">Gedächtnis: das Werkzeug merkt sich</text>
 <line class="pf" x1="170" y1="158" x2="170" y2="186" marker-end="url(#d1n)"/>
 <rect class="kasten pruef" x="1" y="188" width="338" height="62"/>
 <text class="nrz" x="12" y="227">3</text>
@@ -236,7 +236,7 @@ footer .knopf{justify-self:start;text-decoration:none}
   <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
   <p>Sabine aus dem Einkauf wiederholt in jeder Anfrage dasselbe: wer sie ist, netto und brutto getrennt, Fundstellen. <span class="leise">(Erfunden.)</span> Jetzt schreibt sie es einmal als Daueranweisung, im Arbeitskonto:</p>
   <div class="anweisung">Ich arbeite im Einkauf eines mittelgroßen Unternehmens. Ich vergleiche oft Angebote und schreibe kurze Mails an meine Chefin. Antworte auf Deutsch, knapp und sachlich. Nenne Beträge immer mit netto oder brutto. Bei Angaben aus Dokumenten nenn die Fundstelle. Wenn du etwas nicht weißt, sag es.</div>
-  <p>Dann stellt sie in einem neuen Chat dieselbe Testfrage: „Fasse dieses Angebot zusammen.“</p>
+  <p>Dann stellt sie in einem neuen Chat dieselbe Testfrage wie vor der Daueranweisung: „Fasse dieses Angebot zusammen.“</p>
   <div class="vergleich">
     <div>
       <span class="etikett">Vorher · nachgebaut</span>
@@ -269,10 +269,11 @@ footer .knopf{justify-self:start;text-decoration:none}
     <a class="knopf" href="uebungsangebot-kopierer.pdf" target="_blank" rel="noopener">PDF öffnen</a>
   </div>
   <ol class="schritte">
-    <li><span><b>Testfrage stellen,</b> bevor du etwas einträgst: Häng das Kopierer-Angebot an und schreib „Fasse das Angebot zusammen.“ Heb die Antwort auf.</span></li>
+    <li><span><b>Testfrage stellen,</b> bevor du etwas einträgst: Häng das Kopierer-Angebot an und schreib: „Fasse das Angebot zusammen.“ Heb die Antwort auf.</span></li>
     <li><span><b>Daueranweisung schreiben.</b> Vorlage kopieren, Klammern ausfüllen, ohne Namen.</span></li>
-    <li><span><b>Eintragen.</b> Wo das geht, zeigt der Reiter für dein Werkzeug.</span></li>
+    <li><span><b>Eintragen.</b> Wo das geht, zeigt dir unten die Anleitung für dein Werkzeug.</span></li>
     <li><span><b>Neu fragen und vergleichen:</b> neuer Chat, dieselbe Testfrage mit dem PDF.</span></li>
+    <li><span><b>Aufräumen.</b> Brauchst du die Übungsfassung nicht mehr, lösch sie wieder. Sonst gilt sie still in jedem neuen Chat weiter.</span></li>
   </ol>
   <div class="anfrage">
 <pre id="daueranweisung">Ich arbeite als [Rolle] im Bereich [Bereich, ohne Firmennamen]. Ich brauche oft: [deine typischen Aufgaben].
@@ -281,6 +282,8 @@ Nenne Zahlen immer mit dem, was dabeisteht (netto oder brutto, Wochen, Monate).
 Bei Angaben aus Dokumenten nenn die Fundstelle. Wenn du etwas nicht weißt, sag es.</pre>
     <button class="knopf" type="button" data-kopie="daueranweisung">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
+  <p class="leise sammeln" style="font-size:15px">In deine Sammlung: Leg die ausgefüllte Vorlage als „Daueranweisung“ mit Datum ab, etwa in einer Notiz. In Etappe 4 legst du alle an einem Ort ab.</p>
+  <p class="leise" style="font-size:15px">Der letzte Satz hilft etwas, verlässlich ist er nicht: Die KI merkt oft nicht, dass sie etwas nicht weiß. Schweigt sie dazu, heißt das nicht, dass alles stimmt.</p>
 
   <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
   <div role="tablist" aria-label="Werkzeug wählen">
@@ -290,26 +293,26 @@ Bei Angaben aus Dokumenten nenn die Fundstelle. Wenn du etwas nicht weißt, sag 
     <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Claude</button>
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
-    <p>In den Einstellungen unter „Personalisierung“ steht das Feld „Benutzerdefinierte Anweisungen“. Dort trägst du ein, was ChatGPT über dich wissen und wie es antworten soll. Was ChatGPT sich selbst gemerkt hat, findest du unter „Speicher“ (nicht selbst nachgeprüft). Einzelne Einträge kannst du löschen oder das Gedächtnis ganz abschalten.</p>
-    <p>Für einen Chat ohne Gedächtnis nimmst du „Temporärer Chat“, wie beim Gegenlesen in Etappe 3. Die Daueranweisung gilt dort wohl weiter (nicht selbst nachgeprüft), schreib deshalb keine Absicht hinein, etwa „finde meine Entwürfe gut“.</p>
-    <figure class="shot"><img src="bilder/chatgpt-4-daueranweisung.png" alt="ChatGPT: Feld „Benutzerdefinierte Anweisungen“ mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du die Daueranweisung ein.</figcaption></figure>
+    <p>In den Einstellungen unter „Personalisierung“ steht das Feld „Benutzerdefinierte Anweisungen“. Dort trägst du ein, was ChatGPT über dich wissen und wie es antworten soll. Was ChatGPT sich selbst gemerkt hat, findest du ebenfalls unter „Personalisierung“, je nach Version unter „Erinnerung“ oder „Speicher“. Einzelne Einträge kannst du löschen oder das Gedächtnis ganz abschalten.</p>
+    <p>Für einen Chat ohne Gedächtnis nimmst du „Temporärer Chat“, wie beim Gegenlesen in Etappe 3. Laut OpenAI ist er von Haus aus nicht personalisiert, die Daueranweisung gilt dort dann nicht (nicht selbst nachgeprüft). Schreib trotzdem keine Absicht in die Daueranweisung, etwa „finde meine Entwürfe gut“: Sonst färbt sie jeden normalen Chat.</p>
+    <figure class="shot"><img src="bilder/chatgpt-4-daueranweisung.png" width="810" height="390" alt="ChatGPT: Feld „Benutzerdefinierte Anweisungen“ mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du die Daueranweisung ein.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
     <p>Auch der private Copilot hat ein Feld dafür: Einstellungen, dann „Personalisierung“, dann „Anpassen von Copilot“. Dort schreibst du die Anweisung hinein oder wählst einen der Vorschläge.</p>
     <p>Ob Copilot frühere Chats einbezieht, ist eine eigene Einstellung. Dort siehst du Gemerktes, löschst es oder schaltest es ab. Im Firmen-Copilot hängt das von Tarif und Firmeneinstellung ab.</p>
-    <p><b>Im Firmen-Copilot (Microsoft 365 Copilot)</b> findest du vielleicht kein Feld dafür. Dann leg die Anweisung als Textbaustein in Word oder OneNote ab und kopier sie vor jede Anfrage. Und frag deine IT: „Können wir in Microsoft 365 Copilot eigene Anweisungen hinterlegen, und welche Einstellungen gelten bei uns fürs Gedächtnis?“</p>
-    <figure class="shot"><img src="bilder/copilot-4-daueranweisung.png" alt="Copilot: Einstellungen, Personalisierung, Anpassen von Copilot, mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du im privaten Copilot die Daueranweisung ein.</figcaption></figure>
+    <p><b>Im Firmen-Copilot (Microsoft 365 Copilot)</b> findest du laut Microsoft unter Einstellungen → Personalisierung ein Feld für eigene Anweisungen, sofern deine IT es freigeschaltet hat. Fehlt es, dann leg die Anweisung als Textbaustein in Word oder OneNote ab und kopier sie vor jede Anfrage. Und frag deine IT: „Können wir in Microsoft 365 Copilot eigene Anweisungen hinterlegen, und welche Einstellungen gelten bei uns fürs Gedächtnis?“</p>
+    <figure class="shot"><img src="bilder/copilot-4-daueranweisung.png" width="798" height="656" alt="Copilot: Einstellungen, Personalisierung, Anpassen von Copilot, mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du im privaten Copilot die Daueranweisung ein.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
-    <p>Bei Gemini trägst du unter „Gespeicherte Infos“ selbst ein, was es wissen soll. Ob es frühere Chats einbezieht, ist eine eigene Einstellung, die du abschalten kannst.</p>
-    <figure class="shot" hidden><img data-src="bilder/gemini-4-daueranweisung.png" alt="Gemini: Gespeicherte Infos mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du bei Gemini die Daueranweisung ein.</figcaption></figure>
+    <p>Bei Gemini öffnest du über das Zahnrad unten links „Persönlicher Kontext“. Bei den Anweisungen fügst du einen Eintrag hinzu; das Fenster fragt „Was soll sich Gemini für dich merken?“. Darüber sitzt der Schalter „Memory“: Damit lernt Gemini aus deinen früheren Chats. Den kannst du abschalten.</p>
+    <figure class="shot"><img src="bilder/gemini-4-daueranweisung.png" width="860" height="740" alt="Gemini: Persönlicher Kontext, Schalter Memory aus, darunter das Fenster Was soll sich Gemini für dich merken mit der Übungsfassung." loading="lazy"><figcaption>Hier trägst du bei Gemini die Daueranweisung ein.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
-    <p>Bei Claude trägst du in den Einstellungen unter „Konto“ in das Feld „Anweisungen für Claude“ ein, was in jedem Chat gelten soll. Das Gedächtnis hat in den Einstellungen einen eigenen Punkt „Gedächtnis“: Dort siehst und änderst du das Gemerkte oder schaltest es ab. Im kostenlosen Konto ist das Gedächtnis laut Anthropic von Anfang an eingeschaltet. <a href="https://support.claude.com/de/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context">Hilfeseite bei Anthropic</a></p>
+    <p>Bei Claude trägst du in den Einstellungen unter „Konto“ in das Feld „Anweisungen für Claude“ ein, was in jedem Chat gelten soll. Das Gedächtnis hat in den Einstellungen einen eigenen Punkt, laut Anthropic „Ihr Claude“ (früher „Speicher“): Dort siehst und änderst du das Gemerkte oder schaltest es ab. Im kostenlosen Konto ist das Gedächtnis laut Anthropic von Anfang an eingeschaltet. <a href="https://support.claude.com/de/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context">Hilfeseite bei Anthropic</a></p>
     <p>Für einen Chat ohne Gedächtnis nimmst du den Inkognito-Chat, das Geistersymbol oben rechts. Deine Anweisungen gelten dort laut Anthropic weiter.</p>
-    <figure class="shot"><img src="bilder/claude-4-daueranweisung.png" alt="Claude: Feld Anweisungen für Claude mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du bei Claude die Daueranweisung ein.</figcaption></figure>
+    <figure class="shot"><img src="bilder/claude-4-daueranweisung.png" width="790" height="210" alt="Claude: Feld Anweisungen für Claude mit einer Übungsfassung der Daueranweisung." loading="lazy"><figcaption>Hier trägst du bei Claude die Daueranweisung ein.</figcaption></figure>
   </div>
-  <p class="stand">Stand: November 2026. Die Felder für Anweisungen in ChatGPT, im privaten Copilot und in Claude haben wir am 10. und 11.11.2026 selbst gesehen. Gemini und die übrigen Menüpfade haben wir nicht nachgeprüft.</p>
+  <p class="stand">Stand: November 2026. Die Felder für Anweisungen in ChatGPT, im privaten Copilot, in Claude und in Gemini haben wir zwischen 10. und 16.11.2026 selbst gesehen. Die übrigen Menüpfade haben wir nicht nachgeprüft.</p>
   <details class="klapp">
     <summary>Wenn es hakt</summary>
     <ul>
@@ -342,18 +345,18 @@ Bei Angaben aus Dokumenten nenn die Fundstelle. Wenn du etwas nicht weißt, sag 
   </details>
   <details>
     <summary>Seit deinem Wechsel in eine neue Abteilung passen die Antworten nicht mehr. Woran kann das liegen?</summary>
-    <p>An einer alten Daueranweisung oder einer Erinnerung, die still weiter gilt. Sieh nach und lösch, was nicht mehr stimmt.</p>
+    <p>An einer alten Daueranweisung oder einem Eintrag im Gedächtnis, der still weiter gilt. Sieh nach und lösch, was nicht mehr stimmt.</p>
   </details>
   <details>
     <summary>Aus Etappe 3: Warum nimmst du zum Gegenlesen einen Chat ohne Gedächtnis?</summary>
-    <p>Damit die KI deine Absicht nicht kennt. Kennt sie sie, neigt sie dazu zuzustimmen.</p>
+    <p>Damit die KI deine Absicht nicht kennt. Kennt die KI deine Absicht, neigt sie dazu, dir zuzustimmen.</p>
   </details>
 </section>
 
 <footer>
   <a class="weiter" href="lr:e4-2">Weiter: Einheit 2 · Ein Projekt für wiederkehrende Aufgaben →</a>
   <span class="leise" style="font-size:15px"><a href="lr:e3-3">Zurück: Etappe 3 · Einheit 3 · Gegenlesen und Prüftiefe</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
-  <span class="etikett">Stand 10.11.2026</span>
+  <span class="etikett">Stand 16.11.2026</span>
 </footer>
 </div>
 
