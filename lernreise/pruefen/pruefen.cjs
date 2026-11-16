@@ -11,7 +11,7 @@ async function route(ctx){ await ctx.route('**/*', async r => { const u = new UR
   const f = path.join(SITE, p);
   if (fs.existsSync(f) && fs.statSync(f).isFile()) return r.fulfill({status:200, body:fs.readFileSync(f), contentType:typ[path.extname(f)]||'application/octet-stream'});
   return r.fulfill({status:404, body:fs.readFileSync(path.join(SITE,'404.html')), contentType:typ['.html']}); }); }
-const SEITEN = ['de/','de/karte/','de/etappe-1/aufgabe-waehlen/','de/etappe-1/konto-und-daten/','de/etappe-1/erste-anfrage/','de/etappe-2/anfrage-bauen/','de/etappe-2/dokument-pruefen/','de/etappe-2/in-runden/','de/etappe-3/gegen-die-quelle/','de/etappe-3/websuche/','de/etappe-3/gegenlesen/','de/etappe-4/daueranweisung/','de/etappe-4/projekte/','de/abschluss/','en/','','de/l1-first-steps/01-what-is-ai/'];
+const SEITEN = ['de/','de/karte/','de/quellen/','de/etappe-1/aufgabe-waehlen/','de/etappe-1/konto-und-daten/','de/etappe-1/erste-anfrage/','de/etappe-2/anfrage-bauen/','de/etappe-2/dokument-pruefen/','de/etappe-2/in-runden/','de/etappe-3/gegen-die-quelle/','de/etappe-3/websuche/','de/etappe-3/gegenlesen/','de/etappe-4/daueranweisung/','de/etappe-4/projekte/','de/abschluss/','en/','','de/l1-first-steps/01-what-is-ai/'];
 (async () => { let fehler = 0;
  for (const [n, bt, o] of [['desktop', chromium, {viewport:{width:1280,height:900}}], ['iphone', webkit, devices['iPhone 13']], ['dunkel', chromium, {viewport:{width:1280,height:900}, colorScheme:'dark'}]]) {
   const b = await bt.launch();

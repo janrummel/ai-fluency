@@ -9,7 +9,7 @@ hat(){ # url text beschreibung
   if curl -sL -A "Mozilla/5.0" "$1" | grep -q "$2"; then ok "$3"; else fehlt "$3 ($1)"; fi; }
 
 # Lernreise: alle Seiten mit eigenem Titel
-for p in de/ de/karte/ de/etappe-1/aufgabe-waehlen/ de/etappe-1/konto-und-daten/ de/etappe-1/erste-anfrage/ \
+for p in de/ de/karte/ de/quellen/ de/etappe-1/aufgabe-waehlen/ de/etappe-1/konto-und-daten/ de/etappe-1/erste-anfrage/ \
   de/etappe-2/anfrage-bauen/ de/etappe-2/dokument-pruefen/ de/etappe-2/in-runden/ \
   de/etappe-3/gegen-die-quelle/ de/etappe-3/websuche/ de/etappe-3/gegenlesen/ \
   de/etappe-4/daueranweisung/ de/etappe-4/projekte/ de/abschluss/; do

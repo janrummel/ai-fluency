@@ -1,0 +1,101 @@
+<title>Quellen</title>
+<meta name="description" content="Die Belege zu den Zahlen und Studien in der Lernreise, nach Einheiten geordnet.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FBFAF6; --tinte:#17181A; --grau:#666662; --linie:#DAD8D0;
+  --rot:#B03E24; --rot-hell:#F5E4DE; --sand:#EFE9DD; --flaeche:#FFFFFF;
+  --f-titel:'Newsreader',Georgia,serif; --f-text:'IBM Plex Sans',system-ui,-apple-system,sans-serif; --f-etikett:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+    --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#18191B; --tinte:#ECE9E1; --grau:#A8A69F; --linie:#3A3A37;
+  --rot:#E4704F; --rot-hell:#3A2520; --sand:#24231F; --flaeche:#1F2022;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--tinte)}
+body{background:var(--papier);color:var(--tinte);font-family:var(--f-text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--rot)}
+a:focus-visible,button:focus-visible,summary:focus-visible,[role="tab"]:focus-visible{outline:2px solid var(--rot);outline-offset:3px}
+.seite{max-width:760px;margin:0 auto;padding:40px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+.etikett{font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--grau)}
+.etikett.rot{color:var(--rot)}
+h1,h2{font-family:var(--f-titel);font-weight:400;letter-spacing:-.015em}
+h1{font-size:clamp(34px,6vw,52px);line-height:1.08;margin:12px 0 16px;text-wrap:balance}
+h2{font-size:clamp(26px,4vw,32px);line-height:1.15;margin-bottom:14px}
+h2 .nr{font-style:italic;color:var(--rot);margin-right:10px}
+h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin:22px 0 8px}
+p{margin-bottom:12px}
+.ziel{font-family:var(--f-titel);font-size:clamp(20px,3vw,24px);line-height:1.35;margin-bottom:14px}
+.leise{color:var(--grau)}
+section{padding:36px 0;border-top:1px solid var(--linie)}
+header{padding-bottom:28px;border-bottom:2px solid var(--tinte)}
+.kopfzeile{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+.etappe{list-style:none;margin-top:22px;border-top:1px solid var(--linie)}
+.etappe li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;padding:8px 0;border-bottom:1px solid var(--linie);color:var(--grau)}
+.etappe li b{font-family:var(--f-titel);font-style:italic;font-weight:400;color:var(--grau)}
+.etappe li[aria-current="step"]{color:var(--tinte);font-weight:500}
+.etappe li[aria-current="step"] b{color:var(--rot)}
+.etappe li[aria-current="step"] span::after{content:"  · hier";font-family:var(--f-etikett);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rot);font-weight:400}
+
+.belege{list-style:none}
+.belege li{padding:10px 0;border-top:1px solid var(--linie)}
+.belege li:first-child{border-top:0}
+footer{border-top:2px solid var(--tinte);padding-top:22px;display:grid;gap:12px}
+</style>
+
+<div class="seite">
+<header>
+  <div class="kopfzeile">
+    <span class="etikett rot">Quellen</span>
+  </div>
+  <h1>Woher die Zahlen stammen</h1>
+  <p class="ziel">Hier stehen die Belege zu den Zahlen, Studien und Rechtsfragen aus den Einheiten. Für die Reise selbst musst du diese Seite nicht lesen.</p>
+</header>
+
+<section aria-labelledby="h-e12">
+  <h2 id="h-e12">Etappe 1 · Einheit 2: <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Das richtige Konto</a></h2>
+  <ul class="belege">
+    <li>38 % der Erwerbstätigen sagen, ihr Unternehmen biete eine KI an (<a href="https://www.bitkom.org/sites/main/files/2026-06/bitkom-studienbericht-ki-bevoelkerung.pdf">Bitkom 2026</a>).</li>
+    <li>29,1 % der beruflichen KI-Nutzenden verwenden Werkzeuge, die der Betrieb nicht bereitstellt (<a href="https://www.iwkoeln.de/fileadmin/user_upload/Studien/Kurzberichte/PDF/2026/IW-Kurzbericht_2026-Schatten-KI.pdf">IW 2026</a>). Viele arbeiten also mit einem Konto, für das die Vereinbarungen der Firma mit dem Anbieter nicht gelten.</li>
+  </ul>
+  <h3 id="recht">Rechtslage</h3>
+  <ul class="belege">
+    <li><b>Art. 4 KI-Verordnung:</b> verlangt von Unternehmen, die KI einsetzen, Maßnahmen zur Unterstützung der KI-Kompetenz ihrer Leute, geändert durch die <a href="https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=OJ:L_202601744">Verordnung (EU) 2026/1744</a>.</li>
+    <li><b>Art. 50 KI-Verordnung:</b> Für bestimmte veröffentlichte Inhalte, etwa täuschend echte Bilder oder Videos (Deepfakes), gelten seit dem 2. August 2026 Kennzeichnungspflichten. Die Übergangsfrist bis Dezember 2026 betrifft nur die technische Markierung durch Anbieter älterer Systeme, nicht deine Pflicht, Deepfakes offenzulegen. Eine normale Büro-Mail gehört nicht dazu (<a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=de">KI-Verordnung (EU) 2024/1689</a>).</li>
+  </ul>
+  <p class="leise" style="font-size:15px">Keine Rechtsberatung.</p>
+</section>
+
+<section aria-labelledby="h-e22">
+  <h2 id="h-e22">Etappe 2 · Einheit 2: <a href="https://claude.ai/artifact/M835sRMTgTn6hWcvfv5ZqK">Ein Dokument hineingeben und die Antwort prüfen</a></h2>
+  <ul class="belege">
+    <li>In unserem eigenen Test (10. bis 13.11.2026, kein Vergleichstest) fanden alle vier Werkzeuge die Punkte 5.1 bis 5.4, aber zwei ließen „Schwarzweiß-Seiten inklusive“ ohne Hinweis weg.</li>
+    <li>Ein öffentlicher Vergleich zählt bei den Modellen hinter ChatGPT, Gemini und Claude in etwa 6 bis 14 von 100 Zusammenfassungen eine Behauptung, die nicht im Text steht (<a href="https://github.com/vectara/hallucination-leaderboard">Vectara-Leaderboard</a>, Stand 22.10.2026).</li>
+  </ul>
+</section>
+
+<section aria-labelledby="h-e32">
+  <h2 id="h-e32">Etappe 3 · Einheit 2: <a href="lr:e3-2">Quellen aus der Websuche</a></h2>
+  <ul class="belege">
+    <li>Journalistinnen und Journalisten aus 22 öffentlich-rechtlichen Medienorganisationen in 18 Ländern bewerteten mehr als 3.000 Antworten von vier KI-Assistenten auf Nachrichtenfragen. 45 % hatten mindestens ein erhebliches Problem, 31 % gravierende Probleme mit den Quellen: fehlend, irreführend oder falsch (<a href="https://www.bbc.co.uk/mediacentre/2025/new-ebu-research-ai-assistants-news-content">EBU und BBC, veröffentlicht am 22. Oktober 2025</a>).</li>
+    <li>Getestet wurde 2025 mit Nachrichtenfragen, neuere Versionen und Büroaufgaben können anders abschneiden. Den vollständigen Bericht haben wir nicht selbst nachgeprüft, nur die Pressemitteilung.</li>
+  </ul>
+</section>
+
+<footer>
+  <span class="leise" style="font-size:15px"><a href="lr:start">Zur Startseite</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
+  <span class="etikett">Stand 16.11.2026</span>
+</footer>
+</div>
