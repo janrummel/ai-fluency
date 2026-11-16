@@ -228,15 +228,7 @@ footer .knopf{justify-self:start;text-decoration:none}
 </section>
 
 <section aria-labelledby="h-ampel">
-  <div class="merk">
-    <span class="etikett rot" id="h-ampel">Vorher kurz: Was darf hinein?</span>
-    <ul class="ampel">
-      <li><b>Im Job</b><span>Nur mit dem Konto, das deine Firma bereitstellt, und nur, wenn sie das Werkzeug freigegeben hat. Ein kostenloses Konto, das du mit deiner Firmenadresse anlegst, zählt nicht: Das ist ein Privatkonto. Welches Konto und welche Werkzeuge freigegeben sind, sagt dir die IT oder das Intranet. Im Zweifel nichts Echtes hochladen, sondern beschreiben.</span></li>
-      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten. Steht so etwas drin, lass es beim Abtippen weg oder ersetze es durch XXX. Ersetze auch Details, an denen man die Person erkennen kann, etwa eine seltene Funktion oder ein Datum.</span></li>
-      <li><b>Zum Üben</b><span>Eine erfundene Datei oder eine, in der Namen durch XXX ersetzt sind, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
-    </ul>
-    <p style="margin-top:6px"><a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr dazu in Etappe 1, Einheit 2</a></p>
-  </div>
+  <p class="leise" style="font-size:15px" id="h-ampel"><b>Daten:</b> im Job nur das Arbeitskonto, im Zweifel nichts Echtes hochladen, sondern beschreiben. Zum Üben eine erfundene Datei, etwa das Kopierer-Angebot aus Etappe 2. <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr in Etappe 1, Einheit 2</a></p>
 </section>
 
 <section aria-labelledby="h-beispiel">
@@ -273,7 +265,7 @@ footer .knopf{justify-self:start;text-decoration:none}
   <ol class="schritte">
     <li><span><b>Projekt anlegen</b> mit klarem Namen. Wie das geht, zeigt dir unten die Anleitung für dein Werkzeug.</span></li>
     <li><span><b>Anweisung eintragen.</b> Kopier die Vorlage und füll sie aus.</span></li>
-    <li><span><b>Eine Datei hineinlegen,</b> erfunden oder mit XXX statt Namen, etwa das Kopierer-Angebot aus Etappe 2.</span></li>
+    <li><span><b>Eine Datei hineinlegen,</b> etwa das Kopierer-Angebot.</span></li>
     <li><span><b>Im Projekt fragen,</b> ohne die Anweisung zu wiederholen.</span></li>
   </ol>
   <div class="anfrage">
@@ -282,10 +274,10 @@ Das Ergebnis soll so aussehen: [Format, Länge].
 Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei jeder Angabe Datei und Fundstelle. Fehlt etwas, schreib „steht nicht drin“.</pre>
     <button class="knopf" type="button" data-kopie="projekt-anweisung">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
-  <p class="leise sammeln" style="font-size:15px">In deine Sammlung: Leg die ausgefüllte Vorlage als „Projekt-Anweisung“ mit Datum ab, etwa in einer Notiz. In Etappe 4 legst du alle an einem Ort ab.</p>
+  <p class="leise sammeln" style="font-size:15px">Für deine Sammlung: „Projekt-Anweisung“, mit Datum.</p>
 
   <p><b>Gleiche Sache, vier Namen:</b> ChatGPT und Claude sagen „Projekt“, Copilot „Notizbuch“ oder „Notebook“, Gemini „Notebook“. Gemeint ist immer ein Arbeitsbereich mit Anweisung und Dateien.</p>
-  <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
+  <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug.</b></p>
   <div role="tablist" aria-label="Werkzeug wählen">
     <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">ChatGPT</button>
     <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Copilot</button>
@@ -299,16 +291,16 @@ Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei je
   </div>
   <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
     <p>Im Firmen-Copilot (Microsoft 365 Copilot) heißen Arbeitsbereiche dieser Art „Notebooks“: Dort sammelst du Dateien und Notizen zu einem Thema und fragst dazu. Gibt es kein Feld für die Anweisung, leg sie als Notiz ins Notebook. Gibt es bei euch keine Notebooks, nimm eine Word-Datei mit Anweisung und Vorlage und häng sie jedes Mal an.</p>
-    <p>Auch der private Copilot zeigt in der Seitenleiste „Notizbücher“, im kostenlosen Konto. Ein neues legst du über „Neues Notizbuch“ an, das Fenster heißt dann „Neues Notebook“. Laut Oberfläche sammelt es Chats und alles, was du darin erstellst, an einem Ort.</p>
+    <p>Im privaten Copilot, auch kostenlos, legst du in der Seitenleiste ein „Neues Notizbuch“ an.</p>
     <figure class="shot"><img src="bilder/copilot-5-projekt.png" width="650" height="300" alt="Copilot: Fenster Neues Notebook mit Erklärung und Feld für den Namen." loading="lazy"><figcaption>Im privaten Copilot: ein Notizbuch anlegen.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
-    <p>Bei Gemini heißen Projekte „Notebooks“, auch im kostenlosen Konto. In der Seitenleiste legst du ein „Neues Notebook“ an und lädst über „Quellen hinzufügen“ Dateien hoch. Die Chats im Notebook bleiben zusammen. Ein eigenes Feld für eine feste Anweisung haben wir dort nicht gesehen: Schreib sie an den Anfang des Chats. Eine feste Anweisung haben „Gems“, eigene Gemini-Varianten (Zahnrad → Gems). Dort steht aber jeder Chat für sich.</p>
+    <p>Bei Gemini heißen Projekte „Notebooks“, auch im kostenlosen Konto. In der Seitenleiste legst du ein „Neues Notebook“ an und lädst über „Quellen hinzufügen“ Dateien hoch. Die Chats im Notebook bleiben zusammen. Ein eigenes Feld für eine feste Anweisung haben wir dort nicht gesehen: Schreib sie an den Anfang des Chats.</p>
     <figure class="shot"><img src="bilder/gemini-5-projekt.png" width="730" height="320" alt="Gemini: das Notebook Übung Angebote mit dem Knopf Quellen hinzufügen." loading="lazy"><figcaption>Das Notebook mit „Quellen hinzufügen“.</figcaption></figure>
     <figure class="shot"><img src="bilder/gemini-5-quellen.png" width="880" height="360" alt="Gemini: Fenster Quellen mit Dateien hochladen, Google Drive, Websites, kopiertem Text und dem Übungs-PDF." loading="lazy"><figcaption>Das Übungs-PDF liegt als Quelle im Notebook.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
-    <p>Bei Claude heißen sie ebenfalls „Projekte“. Rechts am Projekt trägst du unter „Anweisungen“ die Anweisung ein und legst unter „Kontext“ Dateien ab. Jeder Chat im Projekt sieht beides. Die Projekt-Anweisung gilt laut Hinweis in der Oberfläche zusätzlich zu deinen Anweisungen aus den Einstellungen. Das Projekt hat außerdem ein eigenes Gedächtnis. Im kostenlosen Konto gehen laut Anthropic bis zu fünf Projekte. <a href="https://support.claude.com/en/articles/9517075-what-are-projects">Hilfeseite bei Anthropic</a></p>
+    <p>Bei Claude heißen sie ebenfalls „Projekte“. Rechts am Projekt trägst du unter „Anweisungen“ die Anweisung ein und legst unter „Kontext“ Dateien ab. Jeder Chat im Projekt sieht beides. Das Projekt hat außerdem ein eigenes Gedächtnis. Im kostenlosen Konto gehen laut Anthropic bis zu fünf Projekte. <a href="https://support.claude.com/en/articles/9517075-what-are-projects">Hilfeseite bei Anthropic</a></p>
     <figure class="shot"><img src="bilder/claude-5-projekt.png" width="1125" height="370" alt="Claude: das Projekt Monatsbericht Übung, rechts Anweisungen, Kontext mit einer Datei, Gedächtnis und Geplant." loading="lazy"><figcaption>Rechts am Projekt: Anweisungen, Kontext mit der Datei, Gedächtnis.</figcaption></figure>
     <figure class="shot"><img src="bilder/claude-5-projekt-anweisung.png" width="718" height="500" alt="Claude: Fenster Projektanweisungen festlegen mit der Übungsanweisung." loading="lazy"><figcaption>Die Projekt-Anweisung gilt für jeden Chat im Projekt.</figcaption></figure>
   </div>
@@ -355,7 +347,7 @@ Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei je
 
 <footer>
   <a class="weiter" href="lr:e4-3">Weiter: Einheit 3 · Vorlagen ablegen und Regeln fürs Team →</a>
-  <span class="leise" style="font-size:15px"><a href="lr:e4-1">Zurück: Einheit 1 · Eine Daueranweisung geben</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
+  <span class="leise" style="font-size:15px"><a href="lr:e4-1">Zurück: Einheit 1 · Eine Daueranweisung geben</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
   <span class="etikett">Stand 16.11.2026</span>
 </footer>
 </div>
