@@ -222,7 +222,7 @@ td.fehl{color:var(--rot)}
 <text class="t rot" x="38" y="214">Hoch: gründlich,</text>
 <text class="t rot" x="38" y="232">Rolle und Mensch</text>
 </svg>
-    <figcaption>Je teurer ein Fehler, desto gründlicher prüfst du. Gegenlesen aus einer Rolle kommt bei wichtigen Texten dazu, es ersetzt dein Nachsehen nicht.</figcaption>
+    <figcaption>Je teurer ein Fehler, desto gründlicher prüfst du. Gegenlesen aus einer Rolle kommt bei wichtigen Texten dazu, ersetzt aber dein Nachsehen nicht.</figcaption>
   </figure>
 </section>
 
@@ -230,13 +230,13 @@ td.fehl{color:var(--rot)}
   <h2 id="h-beispiel"><span class="nr">1</span>Ein Beispiel</h2>
   <p>Die Chefin hat Angebot A genommen. Sabine entwirft eine Info-Mail an die Abteilung und lässt den ersten, noch ungeprüften Entwurf gegenlesen. <span class="leise">(Erfunden. Die Zahlen stehen in Sabines Tabelle in <a href="https://claude.ai/artifact/MgrJBfUYMzMaBE6WigSaST">Etappe 2, Einheit 3</a>.)</span></p>
   <div class="rolle">Du bist eine Kollegin aus der Abteilung. Du willst wissen, wann die neuen Stühle kommen und was du tun musst. Lies die Mail aus dieser Sicht und nenne höchstens drei Stellen, die unklar oder angreifbar sind, jeweils mit Zitat. Ändere den Text nicht.</div>
-  <p>Die KI findet zwei gute Punkte: Es fehlt, wann die alten Stühle abgeholt werden und wer am Liefertag Bescheid gibt. Nicht gefunden: Der Entwurf verspricht die Lieferung in 4 Wochen, Angebot A liefert laut Tabelle in 6. Das fand Sabine erst selbst, aus zwei Gründen:</p>
+  <p>Die KI findet zwei gute Punkte: Es fehlt, wann die alten Stühle abgeholt werden und wer am Liefertag Bescheid gibt. Nicht gefunden: Der Entwurf verspricht die Lieferung in 4 Wochen, Angebot A liefert laut Tabelle in 6. Das fand Sabine erst selbst. Die KI übersah es aus zwei Gründen:</p>
   <ul class="ampel">
     <li><b>Was du ihr gibst</b><span>Die Rolle kennt nur, was du ihr gibst. Geht es um Zahlen, gib das Original mit: „Hier ist meine Tabelle. Stimmt jede Zahl in der Mail damit?“</span></li>
     <li><b>Dieselben Lücken</b><span>Dasselbe Modell übersieht oft dieselben Dinge, mit oder ohne Rolle. Das ist eine Faustregel.</span></li>
   </ul>
   <div class="merk">
-    <p><b>Gegenlesen</b> aus einer Rolle hilft, Unklares und Angreifbares zu finden. Genauer macht es die KI nicht.</p>
+    <p><b>Gegenlesen</b> aus einer Rolle hilft, Unklares und Angreifbares zu finden. Genauer wird die KI dadurch nicht.</p>
   </div>
 
   <h3>Wie gründlich, wofür?</h3>
@@ -262,7 +262,7 @@ td.fehl{color:var(--rot)}
 
 <section aria-labelledby="h-tun">
   <h2 id="h-tun"><span class="nr">2</span>Selbst ausprobieren</h2>
-  <p>Nimm einen Text, den du in Etappe 2 mit deiner eigenen Vorlage erzeugt hast, oder einen eigenen Text, in dem du Namen, Firmen und Beträge durch XXX ersetzt hast. Ein Text der Stufe „spürbar“ reicht.</p>
+  <p>Nimm Sabines Entwurf unten, einen Text, den du in Etappe 2 mit deiner eigenen Vorlage erzeugt hast, oder einen eigenen Text, in dem du Namen, Firmen und Beträge durch XXX ersetzt hast. Ein Text der Stufe „spürbar“ reicht.</p>
   <ol class="schritte">
     <li><span><b>Prüftiefe wählen.</b> Ordne den Text in die Tabelle ein.</span></li>
     <li><span><b>Gegenlesen lassen,</b> in einem neuen Chat, der deine Absicht nicht kennt. Sonst neigt die KI dazu zuzustimmen (Faustregel). In ChatGPT schaltest du beim neuen Chat „Temporärer Chat“ ein, in Claude den Inkognito-Chat über das Geistersymbol oben rechts. Bei Copilot und Gemini sieh in den Einstellungen unter Gedächtnis oder Personalisierung nach (nicht selbst nachgeprüft).</span></li>
@@ -276,10 +276,27 @@ Lies den folgenden Text aus dieser Sicht. Nenne höchstens drei Stellen, die unk
 [dein Text]</pre>
     <button class="knopf" type="button" data-kopie="rolle">Vorlage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
   </div>
+  <p class="leise sammeln" style="font-size:15px">In deine Sammlung: Leg die ausgefüllte Vorlage als „Gegenlesen aus einer Rolle“ mit Datum ab, etwa in einer Notiz. In Etappe 4 legst du alle an einem Ort ab.</p>
+  <details class="klapp">
+    <summary>Sabines Entwurf zum Üben (erfunden)</summary>
+    <div class="anfrage">
+<pre id="uebungsmail">Betreff: Neue Bürostühle
+
+Liebe Kolleginnen und Kollegen,
+
+die neuen Bürostühle sind bestellt. Wir haben uns für Sitzwerk entschieden: 40 Stühle mit 24 Monaten Gewährleistung. Die Lieferung kommt in 4 Wochen. Bitte räumt bis dahin eure Arbeitsplätze frei, damit die Stühle direkt aufgestellt werden können.
+
+Viele Grüße
+Sabine</pre>
+      <button class="knopf" type="button" data-kopie="uebungsmail">Entwurf kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
+    </div>
+    <p>Zum Vergleich, Angebot A aus Etappe 2: Sitzwerk, 8.400 € netto, 6 Wochen Lieferzeit, 24 Monate Gewährleistung.</p>
+  </details>
   <p class="leise" style="font-size:15px">Die KI spielt die Kundin, echte Kundenpost gehört nicht hinein. Das geht in ChatGPT, Copilot, Gemini und Claude gleich.</p>
   <div class="sehen">
     <span class="etikett">Du solltest sehen</span>
     <p>Bis zu drei Funde und dein Urteil zu jedem. Übernimm nur Funde, deren Zitat du im Text wiederfindest. Auch ohne Funde prüfst du selbst.</p>
+    <p>Mit Sabines Entwurf: Findet die Rolle die falschen 4 Wochen? Meist nicht. Der Blick in Angebot A findet sie: Es liefert in 6 Wochen.</p>
   </div>
 </section>
 
@@ -301,7 +318,7 @@ Lies den folgenden Text aus dieser Sicht. Nenne höchstens drei Stellen, die unk
   </details>
   <details>
     <summary>Warum lässt du in einem neuen Chat gegenlesen?</summary>
-    <p>Damit die KI deine Absicht nicht kennt. Kennt sie sie, neigt sie dazu zuzustimmen. Das ist eine Faustregel.</p>
+    <p>Damit die KI deine Absicht nicht kennt. Kennt die KI deine Absicht, neigt sie dazu, dir zuzustimmen. Das ist eine Faustregel.</p>
   </details>
   <details>
     <summary>Aus Einheit 2: Unter einer Antwort steht ein Link. Wann ist die Aussage belegt?</summary>

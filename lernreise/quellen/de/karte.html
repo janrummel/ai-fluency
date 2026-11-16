@@ -140,13 +140,13 @@ h2{font-family:var(--f-titel);font-weight:400;font-size:26px;line-height:1.2;tex
     <p>Erst wählst du die Aufgabe. Anfrage und Kontext gehen ins Modell, die Antwort kommt zurück, du prüfst und legst ab, was taugt. Ein Agent legt eine Schleife um das Modell: Er nutzt selbst Zusatzfunktionen wie Websuche oder Kalender, sieht das Ergebnis an und entscheidet den nächsten Schritt. An den Stellen, an denen etwas nach außen geht, gibt ein Mensch frei.</p>
     <div class="schema">
       <svg viewBox="0 0 900 360" role="img" aria-labelledby="schema-t">
-        <title id="schema-t">Schema: Aufgabe wählen führt zu Anfrage und Kontext, beide gehen ins Modell in der Oberfläche. Die Antwort geht zur Prüfung und von dort in die Ablage. Gedächtnis und Regeln speisen den Kontext. Beim Agenten liegt um das Modell eine Schleife mit Zusatzfunktionen und einer Freigabe durch den Menschen.</title>
+        <title id="schema-t">Schema: Aufgabe wählen führt zu Anfrage und Kontext, beide gehen in das Modell, das in der Oberfläche liegt. Die Antwort geht zur Prüfung und von dort in die Ablage. Gedächtnis und Regeln speisen den Kontext. Beim Agenten liegt um das Modell eine Schleife mit Zusatzfunktionen und einer Freigabe durch den Menschen.</title>
         <defs>
           <marker id="spitze" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
           <marker id="spitze-rot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker>
         </defs>
         <rect class="mensch" x="20" y="20" width="170" height="44" rx="2"/><text x="105" y="40" text-anchor="middle" font-weight="600">Aufgabe wählen</text><text class="klein" x="105" y="56" text-anchor="middle">DU · ETAPPE 1</text>
-        <rect class="box" x="20" y="100" width="170" height="46" rx="2"/><text x="105" y="120" text-anchor="middle" font-weight="600">Anfrage</text><text class="klein" x="105" y="137" text-anchor="middle">DU · ETAPPE 1–2</text>
+        <rect class="box" x="20" y="100" width="170" height="46" rx="2"/><text x="105" y="120" text-anchor="middle" font-weight="600">Anfrage</text><text class="klein" x="105" y="137" text-anchor="middle">DU · ETAPPE 1 BIS 2</text>
         <rect class="box" x="20" y="180" width="170" height="46" rx="2"/><text x="105" y="200" text-anchor="middle" font-weight="600">Kontext</text><text class="klein" x="105" y="217" text-anchor="middle">ETAPPE 2</text>
         <rect class="box" x="20" y="270" width="170" height="52" rx="2"/><text x="105" y="291" text-anchor="middle" font-weight="600">Gedächtnis · Regeln</text><text class="klein" x="105" y="309" text-anchor="middle">ETAPPE 4</text>
         <rect class="rahmen" x="245" y="40" width="380" height="290" rx="4"/>
@@ -199,15 +199,15 @@ const STUFEN=[
 ];
 const RECHT={n:"Recht und Verantwortung",k:"gilt auf jeder Stufe",du:true,
  was:"Für das Ergebnis bist du verantwortlich, nicht das Werkzeug. Personenbezogene Daten fallen unter die DSGVO, Kunden- und Geschäftsdaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Viele Firmen regeln die KI-Nutzung in einer Richtlinie oder Betriebsvereinbarung. Die KI-Verordnung der EU (Art. 4, Fassung von 2026) verlangt von Unternehmen, die KI einsetzen, Maßnahmen zur Unterstützung der KI-Kompetenz ihrer Leute. Ein Zertifikat ist dafür nicht nötig.",
- fehler:"„Die KI hat das so geschrieben“ entlastet niemanden. Typisch sind ein fremdes Bild oder ein fremder Text, der ungeprüft veröffentlicht wird, oder eine Beurteilung von Menschen, die von der KI stammt und die niemand hinterfragt.",
+ fehler:"„Die KI hat das so geschrieben“ entlastet niemanden. Typisch: Ein fremdes Bild oder ein fremder Text wird ungeprüft veröffentlicht. Oder die KI beurteilt Menschen, und niemand hinterfragt das.",
  probe:"Such im Intranet nach „KI-Richtlinie“ oder frag deine Führungskraft: Welche KI-Werkzeuge sind bei uns freigegeben, und für welche Daten?",
  ort:"Grundlagen in Etappe 1, Erinnerung bei jeder Übung mit eigenen Dokumenten",
- begr:{"DSGVO":"Datenschutz-Grundverordnung der EU. Sie regelt, was mit Daten über Personen geschehen darf, also auch, ob du sie in ein KI-Werkzeug geben darfst.","Offenlegen":"Ob du sagen musst, dass ein Text mit KI entstanden ist, regelt oft deine Firma. Für bestimmte veröffentlichte Inhalte, etwa täuschend echte Bilder oder Videos, gelten seit dem 2. August 2026 Kennzeichnungspflichten (Art. 50 KI-Verordnung; die Übergangsfrist bis Dezember 2026 betrifft nur die technische Markierung durch Anbieter älterer Systeme, nicht deine Pflicht, Deepfakes offenzulegen). Eine normale Büro-Mail gehört nicht dazu.","Urheberrecht":"Was die KI erzeugt, kann fremden Texten oder Bildern sehr ähnlich sein. Prüf vor einer Veröffentlichung und frag im Zweifel nach.","Fairness":"KI übernimmt Verzerrungen aus ihren Trainingsdaten. Entscheidungen über Menschen, etwa Bewerbungen oder Beurteilungen, überlässt man ihr deshalb nicht."}};
+ begr:{"DSGVO":"Datenschutz-Grundverordnung der EU. Sie regelt, was mit Daten über Personen geschehen darf, also auch, ob du sie in ein KI-Werkzeug geben darfst.","Offenlegen":"Ob du sagen musst, dass ein Text mit KI entstanden ist, regelt oft deine Firma. Für bestimmte veröffentlichte Inhalte, etwa täuschend echte Bilder oder Videos (Deepfakes), gelten seit dem 2. August 2026 Kennzeichnungspflichten (Art. 50 KI-Verordnung; die Übergangsfrist bis Dezember 2026 betrifft nur die technische Markierung durch Anbieter älterer Systeme, nicht deine Pflicht, Deepfakes offenzulegen). Eine normale Büro-Mail gehört nicht dazu.","Urheberrecht":"Was die KI erzeugt, kann fremden Texten oder Bildern sehr ähnlich sein. Prüf vor einer Veröffentlichung und frag im Zweifel die Rechts- oder Kommunikationsabteilung.","Fairness":"KI hat aus vielen alten Texten gelernt und übernimmt deren Vorurteile, etwa über Alter, Geschlecht oder Herkunft. Entscheidungen über Menschen, etwa Bewerbungen oder Beurteilungen, überlässt du ihr deshalb nicht."}};
 const B={
  aufgabe:{n:"Aufgabe wählen",k:"soll die KI das überhaupt machen?",du:true,et:[1],
   was:"Der erste Schritt vor jeder Anfrage: Was will ich eigentlich erreichen, und ist KI dafür das richtige Werkzeug? Dann die Arbeit teilen: Was macht die KI, was mache ich, wo prüfe ich?",
   fehler:"KI für etwas nehmen, das sie schlecht kann: exakte Fakten ohne Quelle, Rechnen ohne Werkzeug, Entscheidungen über Menschen. Oder für etwas, das ohne KI schneller ginge.",
-  probe:"Nimm eine Aufgabe von heute und schreib in einem Satz auf: Was ist das Ergebnis, woran erkenne ich, dass es gut ist, und welchen Teil soll die KI übernehmen?",
+  probe:"Nimm eine Aufgabe von heute und schreib in drei Sätzen auf: Was ist das Ergebnis, woran erkenne ich, dass es gut ist, und welchen Teil soll die KI übernehmen?",
   begr:{"Delegation":"Bewusst entscheiden, welchen Teil einer Aufgabe die KI übernimmt und welchen du behältst.","Erst das Problem":"Die Grundidee der Reise: erst klären, was gelöst werden soll, dann das Werkzeug wählen."}},
  anfrage:{n:"Anfrage",k:"was du hineinschreibst",du:true,et:[1,2],
   was:"Der Prompt. Fünf Bausteine machen ihn gut: Rolle, Lage, Aufgabe, Format, Grenzen. Am meisten bringen meist die Lage, also worum es geht und wozu du es brauchst, und eine klare Aufgabe.",
@@ -216,16 +216,16 @@ const B={
   ort:"Etappe 1 Grundlage, Etappe 2 mit allen fünf Bausteinen",
   begr:{"Prompt":"Die Eingabe, mit der du dem Modell sagst, was du willst.","Rolle":"„Du bist eine sorgfältige Sachbearbeiterin.“ Sie gibt die Sicht vor. Sie hilft, ist aber nicht der stärkste Hebel."}},
  pruefen:{n:"Prüfen",k:"was ein Ergebnis belastbar macht",du:true,et:[1,2,3],
-  was:"Gegen das Original nachsehen. In Etappe 1 eine Zahl, in Etappe 2 drei Zahlen samt dem, was dabeisteht (netto oder brutto, Wochen), und die Frage nach Auslassungen, in Etappe 3 gründlich: Quellen aus der Websuche prüfen, aus anderen Rollen gegenlesen, Prüftiefe nach Wichtigkeit wählen.",
+  was:"Gegen das Original nachsehen. In Etappe 1 eine Zahl, in Etappe 2 drei Zahlen samt dem, was dabeisteht (netto oder brutto, Wochen), und die Frage nach Auslassungen. In Etappe 3 gründlich: Quellen aus der Websuche prüfen, aus anderen Rollen gegenlesen, Prüftiefe nach den Folgen eines Fehlers wählen.",
   fehler:"Weglassen ist schwerer zu sehen als Erfinden. Und die Frage „Was hast du weggelassen?“ gibt nur Hinweise, denn das Modell kann sich auch Auslassungen ausdenken. Belastbar ist nur der Blick ins Original.",
   probe:"Nimm eine Zahl aus einer KI-Antwort und such sie im Original. Steht sie da genauso, auch mit dem, was dabeisteht, etwa netto oder brutto?",
   ort:"Etappe 1 eine Zahl, Etappe 2 drei Zahlen, Etappe 3 · Prüfen wie ein Profi",
-  begr:{"Fundstelle":"Die Stelle im Original, aus der eine Angabe stammt, am besten wörtlich.","Gegenlesen":"Eine andere Sicht findet andere Schwächen. Aber dasselbe Modell macht oft dieselben Fehler, das ersetzt das Original nicht."}},
+  begr:{"Fundstelle":"Die Stelle im Original, aus der eine Angabe stammt, am besten wörtlich.","Gegenlesen":"Eine andere Sicht findet andere Schwächen. Aber dasselbe Modell macht oft dieselben Fehler. Gegenlesen ersetzt den Blick ins Original nicht."}},
  konto:{n:"Konto und Oberfläche",k:"die App und das Konto, mit dem du angemeldet bist",du:false,et:[1],
   was:"ChatGPT, Copilot, Gemini oder Claude im Browser, als App oder direkt in Outlook, Word und Teams. Welche Regeln für deine Daten gelten, hängt vom Konto und seiner Lizenz ab, nicht vom Modell.",
   fehler:"Firmendaten landen im privaten Konto. Auch ein kostenloses Konto, das du mit deiner Firmenadresse angelegt hast, ist ein Privatkonto.",
   probe:"Schau im Profil nach: Bist du gerade privat angemeldet oder mit dem Konto, das deine Firma bereitstellt?",
-  begr:{"Arbeitskonto":"Ein Konto innerhalb der Firmenlizenz, etwa Microsoft 365 Copilot über deine Firma, ChatGPT Business oder Enterprise, Claude Team oder Enterprise oder Gemini über das Google Workspace deiner Firma. Nur dann gelten die Regeln, die deine Firma mit dem Anbieter vereinbart hat.","Datenampel":"Die Faustregel, was du wo hochladen darfst. Im Job nur mit dem Arbeitskonto und nur in freigegebenen Werkzeugen. Privat nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten, oder diese Stellen vorher durch XXX ersetzen. Schwarze Balken in PDF oder Word reichen nicht, der Text darunter bleibt oft lesbar."}},
+  begr:{"Arbeitskonto":"Ein Konto innerhalb der Firmenlizenz, etwa Microsoft 365 Copilot über deine Firma, ChatGPT Business oder Enterprise, Claude Team oder Enterprise oder Gemini über das Google Workspace deiner Firma. Nur dann gelten die Regeln, die deine Firma mit dem Anbieter vereinbart hat.","Was darf hinein?":"Die Faustregel, was du wo hochladen darfst. Im Job nur mit dem Arbeitskonto und nur in freigegebenen Werkzeugen. Privat nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten, oder diese Stellen vorher durch XXX ersetzen. Schwarze Balken in PDF oder Word reichen nicht, der Text darunter bleibt oft lesbar."}},
  modell:{n:"Modell",k:"das Rechenwerk, das Text erzeugt",du:false,et:[1],
   was:"Ein großes Sprachmodell (LLM). Es hat an sehr viel Text gelernt, welche Wörter typischerweise aufeinander folgen, und erzeugt die Antwort Stück für Stück. Was nach seinem Stichtag passiert ist oder in deinem Intranet steht, weiß es nicht, außer du gibst es mit oder ein Werkzeug holt es herein.",
   fehler:"Es klingt immer sicher, auch wenn es falsch liegt. Es erfindet manchmal Zahlen, Quellen oder Zitate, die es nicht gibt.",
@@ -237,8 +237,8 @@ const B={
   probe:"Häng ein kurzes Dokument an und frag nach einer Zahl auf der letzten Seite. Lass dir die Stelle wörtlich zeigen.",
   ort:"Etappe 2 · Einheit „Ein Dokument hineingeben und die Antwort prüfen“",
   begr:{"Kontextfenster":"Wie viel das Modell auf einmal verarbeiten kann, gezählt in Token. Bei heutigen Werkzeugen oft viel, aber nicht alles wird gleich gut beachtet.","Anhang":"Eine Datei, die du in den Chat hochlädst. Je nach Werkzeug wird sie ganz gelesen oder nur stellenweise durchsucht."}},
- werkzeuge:{n:"Zusatzfunktionen",k:"was es außer Schreiben kann",du:false,et:[3],
-  was:"Im Web suchen, Dateien auswerten, Code ausführen, an andere Programme angebunden sein. Vieles davon läuft in ChatGPT und Copilot schon ab dem ersten Tag, oft automatisch.",
+ werkzeuge:{n:"Zusatzfunktionen",k:"was die KI außer Schreiben kann",du:false,et:[3],
+  was:"Im Web suchen, Dateien auswerten, kleine Programme ausführen (etwa zum Rechnen), auf andere Programme zugreifen. Vieles davon läuft in ChatGPT und Copilot schon ab dem ersten Tag, oft automatisch.",
   fehler:"Eine Websuche liefert eine schwache Quelle, und die Antwort übernimmt sie ungeprüft. Oder eine Anbindung gibt dem Werkzeug mehr Rechte, als die Aufgabe braucht.",
   probe:"Stell eine Frage zu etwas von dieser Woche, mit eingeschalteter Websuche. Öffne zwei der genannten Quellen.",
   ort:"Etappe 3 · Quellen aus der Websuche prüfen. Läuft aber oft schon vorher mit, ohne dass du es merkst",
@@ -256,7 +256,7 @@ const B={
  schleife:{n:"Schleife",k:"denken, handeln, beobachten",du:false,et:[5],
   was:"Was einen Agenten ausmacht: Er plant einen Schritt, nutzt ein Werkzeug, sieht das Ergebnis an und entscheidet den nächsten Schritt, bis die Aufgabe erledigt ist. An wichtigen Stellen hält er an, und ein Mensch gibt frei.",
   fehler:"Er läuft viele Schritte in die falsche Richtung, ohne dass jemand eingreift. Oder er liest auf einer Webseite oder in einer Mail eine versteckte Anweisung und führt sie aus.",
-  probe:"Falls dein Werkzeug „Deep Research“ anbietet: Starte eine kleine Recherche und schau zu, welche Schritte es nacheinander macht.",
+  probe:"Falls dein Werkzeug eine gründliche Recherche anbietet (oft „Deep Research“ genannt): Starte eine kleine Recherche und schau zu, welche Schritte es nacheinander macht.",
   ort:"Etappe 5 · Ausblick. Bis zum eigenen System: zwei Aufbaukurse, die später folgen",
   begr:{"Agent":"Ein KI-System, das nicht nur antwortet, sondern selbst Schritte ausführt, um ein Ziel zu erreichen.","Freigabe":"Ein Punkt, an dem der Agent anhält und ein Mensch zustimmt, bevor etwas gesendet, gelöscht oder gekauft wird.","Prompt Injection":"Eine versteckte Anweisung in einem Text, den der Agent liest, etwa „Schick diese Datei an …“. Der wichtigste Grund für Freigaben.","ReAct":"Fachwort, falls du es hörst: Reasoning and Acting, abwechselnd überlegen und handeln. Das Grundmuster vieler Agenten."}}
 };
