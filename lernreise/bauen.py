@@ -26,6 +26,7 @@ NAME = "Erst das Problem, dann die KI"
 SEITEN_DE = [
     ("start.html", "", "lr:start", None),
     ("karte.html", "karte/", "C2uR6nxrPKWBmGXfrR9gdE", "Bausteinkarte"),
+    ("quellen.html", "quellen/", "lr:quellen", "Quellen"),  # nicht im Lesepfad, nur Fußzeile
     ("e1-aufgabe-waehlen.html", "etappe-1/aufgabe-waehlen/", "Scyy67sGaFb3g5n6yepHRh", "Etappe 1 · Einheit 1"),
     ("e1-konto-und-daten.html", "etappe-1/konto-und-daten/", "5cK68G61BWehLw6bxP5Z6j", "Etappe 1 · Einheit 2"),
     ("e1-erste-anfrage.html", "etappe-1/erste-anfrage/", "Vn6TnYtQievpv3kZUJAgjs", "Etappe 1 · Einheit 3"),
@@ -109,7 +110,7 @@ def leiste(prefix: str, sprache: str, kurz: str | None) -> str:
             f'<div class="lr-leiste-innen">{"".join(teile)}</div></nav>')
 
 
-def fuss() -> str:
+def fuss(prefix: str, sprache: str) -> str:
     return (
         '<div class="lr-fuss" role="contentinfo"><div class="lr-fuss-innen">'
         '<p><b>Etwas unklar, falsch oder veraltet?</b> Schreib mir einen Satz an '
@@ -121,6 +122,7 @@ def fuss() -> str:
         '<div class="lr-klein">'
         '<a href="https://janrummel.eu/impressum.html">Impressum</a>'
         '<a href="https://janrummel.eu/datenschutz.html">Datenschutz</a>'
+        f'<a href="{prefix}{sprache}/quellen/">Quellen</a>'
         '<a href="https://github.com/janrummel/ai-fluency">Quelltext</a>'
         '<button type="button" class="lr-zaehlen" data-zaehlen hidden>Nicht mitzählen</button>'
         '<span data-zaehlen-status role="status"></span>'
@@ -177,9 +179,9 @@ def seite_bauen(quelle: pathlib.Path, zielpfad: str, kurz: str | None, sprache: 
         ziel = links.get(mm.group(1))
         if ziel is None:
             raise SystemExit(f"{quelle.name}: unbekannter Link {mm.group(1)}")
-        return f'href="{prefix}{sprache}/{ziel}"'
-    s = re.sub(r'href="https://claude\.ai/artifact/([A-Za-z0-9]+)"', ersetze, s)
-    s = re.sub(r'href="(lr:[a-z0-9-]+)"', ersetze, s)
+        return f'href="{prefix}{sprache}/{ziel}{mm.group(2) or ""}"'
+    s = re.sub(r'href="https://claude\.ai/artifact/([A-Za-z0-9]+)(#[a-z0-9-]+)?"', ersetze, s)
+    s = re.sub(r'href="(lr:[a-z0-9-]+)(#[a-z0-9-]+)?"', ersetze, s)
     # Bilder und Übungsdatei liegen einmal je Sprache
     s = s.replace('src="bilder/', f'src="{prefix}{sprache}/bilder/')
     s = re.sub(r'href="(uebung[a-z-]+\.pdf)"', lambda mm: f'href="{prefix}{sprache}/uebung/{mm.group(1)}"', s)
@@ -193,7 +195,7 @@ def seite_bauen(quelle: pathlib.Path, zielpfad: str, kurz: str | None, sprache: 
     url = f"{BASIS_URL}{sprache}/{zielpfad}"
     return (
         kopf(titel, beschreibung, prefix, url, sprache) + "\n" + kopfteil.strip() + breite + "\n</head>\n<body>\n"
-        + leiste(prefix, sprache, kurz) + "\n" + koerper.strip() + "\n" + fuss() + "\n</body>\n</html>\n"
+        + leiste(prefix, sprache, kurz) + "\n" + koerper.strip() + "\n" + fuss(prefix, sprache) + "\n</body>\n</html>\n"
     )
 
 
