@@ -190,7 +190,7 @@ td.fehl{color:var(--rot)}
 <section aria-labelledby="h-schema">
   <h2 id="h-schema" class="etikett">Die Schleife eines Agenten</h2>
   <figure class="schema">
-<svg class="breit" viewBox="0 0 720 96" role="img" aria-labelledby="a5b"><title id="a5b">Die Schleife eines Agenten: einen Schritt planen, ein Werkzeug nutzen, das Ergebnis ansehen und wieder von vorn. An wichtigen Stellen steht die Freigabe durch einen Menschen, rot markiert.</title>
+<svg class="breit" viewBox="0 0 720 96" role="img" aria-labelledby="a5b"><title id="a5b">Die Schleife eines Agenten: einen Schritt planen, eine Zusatzfunktion nutzen, das Ergebnis ansehen und wieder von vorn. An wichtigen Stellen steht die Freigabe durch einen Menschen, rot markiert.</title>
 <defs><marker id="a5m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
 <rect class="kasten " x="0" y="10" width="153" height="76"/>
 <text class="nrz" x="10" y="56">1</text>
@@ -199,7 +199,7 @@ td.fehl{color:var(--rot)}
 <line class="pf" x1="153" y1="48" x2="187" y2="48" marker-end="url(#a5m)"/>
 <rect class="kasten " x="189" y="10" width="153" height="76"/>
 <text class="nrz" x="199" y="56">2</text>
-<text class="t" x="223" y="43">Werkzeug</text>
+<text class="t" x="223" y="43">Funktion</text>
 <text class="t" x="223" y="61">nutzen</text>
 <line class="pf" x1="342" y1="48" x2="376" y2="48" marker-end="url(#a5m)"/>
 <rect class="kasten " x="378" y="10" width="153" height="76"/>
@@ -212,7 +212,7 @@ td.fehl{color:var(--rot)}
 <text class="t rot" x="601" y="43">Freigabe</text>
 <text class="t rot" x="601" y="61">durch dich</text>
 </svg>
-<svg class="hoch" viewBox="0 0 340 368" role="img" aria-labelledby="a5h"><title id="a5h">Die Schleife eines Agenten: einen Schritt planen, ein Werkzeug nutzen, das Ergebnis ansehen und wieder von vorn. An wichtigen Stellen steht die Freigabe durch einen Menschen, rot markiert.</title>
+<svg class="hoch" viewBox="0 0 340 368" role="img" aria-labelledby="a5h"><title id="a5h">Die Schleife eines Agenten: einen Schritt planen, eine Zusatzfunktion nutzen, das Ergebnis ansehen und wieder von vorn. An wichtigen Stellen steht die Freigabe durch einen Menschen, rot markiert.</title>
 <defs><marker id="a5n" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path class="spitze" d="M0,0 L10,5 L0,10 z"/></marker></defs>
 <rect class="kasten " x="1" y="4" width="338" height="62"/>
 <text class="nrz" x="12" y="43">1</text>
@@ -220,7 +220,7 @@ td.fehl{color:var(--rot)}
 <line class="pf" x1="170" y1="66" x2="170" y2="94" marker-end="url(#a5n)"/>
 <rect class="kasten " x="1" y="96" width="338" height="62"/>
 <text class="nrz" x="12" y="135">2</text>
-<text class="t" x="38" y="131">Werkzeug nutzen</text>
+<text class="t" x="38" y="131">Funktion nutzen</text>
 <line class="pf" x1="170" y1="158" x2="170" y2="186" marker-end="url(#a5n)"/>
 <rect class="kasten " x="1" y="188" width="338" height="62"/>
 <text class="nrz" x="12" y="227">3</text>
@@ -240,13 +240,13 @@ td.fehl{color:var(--rot)}
 
 <section aria-labelledby="h-unterschied">
   <h2 id="h-unterschied"><span class="nr">1</span>Chat und Agent</h2>
-  <p>Im Chat fragst du, die KI antwortet, und den nächsten Schritt machst du. Ein Agent macht mehrere Schritte selbst: Er plant einen Schritt, nutzt ein Werkzeug, sieht das Ergebnis an und entscheidet den nächsten Schritt. Ein bekanntes Muster dafür heißt ReAct (Yao u. a. 2022), von „Reasoning and Acting“, also Denken und Handeln.</p>
+  <p>Im Chat fragst du, die KI antwortet, und den nächsten Schritt machst du. Ein Agent macht mehrere Schritte selbst: Er plant einen Schritt, nutzt eine Zusatzfunktion wie die Websuche, sieht das Ergebnis an und entscheidet den nächsten Schritt. Ein bekanntes Muster dafür heißt ReAct (Yao u. a. 2022), von „Reasoning and Acting“, also Denken und Handeln.</p>
   <div class="tabelle-wrap">
   <table>
     <thead><tr><th scope="col"></th><th scope="col">Chat</th><th scope="col">Agent</th></tr></thead>
     <tbody>
       <tr><td>Wer macht den nächsten Schritt?</td><td>Du</td><td>Der Agent</td></tr>
-      <tr><td>Werkzeuge</td><td>Websuche, hochgeladene Dateien</td><td>Websuche, Dateien, Kalender, Mail, andere Programme</td></tr>
+      <tr><td>Zusatzfunktionen</td><td>Websuche, hochgeladene Dateien</td><td>Websuche, Dateien, Kalender, Mail, andere Programme</td></tr>
       <tr><td>Was du prüfst</td><td>Die Antwort</td><td>Die Antwort und die Schritte dorthin</td></tr>
     </tbody>
   </table>
@@ -268,7 +268,7 @@ td.fehl{color:var(--rot)}
   <table>
     <thead><tr><th scope="col">Folgen eines Fehlers</th><th scope="col">Beispiel</th><th scope="col">Was der Agent darf</th></tr></thead>
     <tbody>
-      <tr><td>Gering</td><td>Quellen zu einem Thema sammeln, einen Entwurf schreiben</td><td>Allein, aber nur mit den Werkzeugen, die er braucht, etwa Websuche ohne Mail und ohne deine Dateien. Du siehst eine Zahl nach.</td></tr>
+      <tr><td>Gering</td><td>Quellen zu einem Thema sammeln, einen Entwurf schreiben</td><td>Allein, aber nur mit den Zusatzfunktionen, die er braucht, etwa Websuche ohne Mail und ohne deine Dateien. Du siehst eine Zahl nach.</td></tr>
       <tr><td>Spürbar</td><td>Eine Zusammenfassung für die Chefin vorbereiten</td><td>Arbeiten, du prüfst vor der Weitergabe mit den drei Handgriffen</td></tr>
       <tr><td class="fehl">Hoch</td><td>Mail senden, bestellen, bezahlen, Daten löschen, Termine für andere buchen</td><td>Nur mit deiner Freigabe überall dort, wo etwas nach außen geht, Geld fließt oder etwas gelöscht wird. Bei Geld, Verträgen und Kunden liest eine zweite Person mit.</td></tr>
     </tbody>
@@ -306,7 +306,7 @@ Das mache ich selbst: [ … ]</pre>
       <p><b>Hier hält er wieder an:</b> bevor er den Raum bucht und die Einladung an alle schickt.</p>
       <p><b>Das macht Thomas selbst:</b> die Tagesordnung.</p>
     </div>
-    <p>Hat dein Plan eine Halte-Stelle überall dort, wo etwas nach außen geht, Geld fließt oder etwas gelöscht wird, hast du die Freigabe richtig gesetzt.</p>
+    <p>Hat dein Plan eine Halte-Stelle überall dort, wo etwas nach außen geht, Geld fließt oder etwas gelöscht wird, hast du die Freigabe an den richtigen Stellen gesetzt. Ob du dort dann wirklich prüfst, entscheidet sich erst im Alltag.</p>
   </div>
   <p class="leise" style="font-size:15px">Falls dein Werkzeug eine gründliche Recherche anbietet: Starte eine kleine zu einem harmlosen Thema und schau zu, welche Schritte es nacheinander macht.</p>
 </section>
@@ -316,7 +316,7 @@ Das mache ich selbst: [ … ]</pre>
   <p>Die drei Handgriffe bleiben, im Wortlaut in <a href="lr:e3-1">Etappe 3, Einheit 1</a>. Neu bei Agenten kommt dazu:</p>
   <ul class="ampel">
     <li><b>Die Schritte</b><span>Prüf nicht nur das Ergebnis, sondern auch den Weg: Welche Seiten hat er geöffnet, was hat er verändert?</span></li>
-    <li><b>Die Rechte</b><span>Gib ihm nur die Werkzeuge, die die Aufgabe braucht.</span></li>
+    <li><b>Die Rechte</b><span>Gib ihm nur die Zusatzfunktionen, die die Aufgabe braucht.</span></li>
   </ul>
 </section>
 
@@ -324,7 +324,7 @@ Das mache ich selbst: [ … ]</pre>
   <h2 id="h-check"><span class="nr">5</span>Selbstcheck</h2>
   <details>
     <summary>Was unterscheidet einen Agenten von einem Chat?</summary>
-    <p>Er macht mehrere Schritte selbst, nutzt dabei Werkzeuge und entscheidet den nächsten Schritt nach dem, was er beobachtet.</p>
+    <p>Er macht mehrere Schritte selbst, nutzt dabei Zusatzfunktionen wie Websuche oder Kalender und entscheidet den nächsten Schritt nach dem, was er beobachtet.</p>
   </details>
   <details>
     <summary>Ein Agent soll Rechnungen sortieren und dabei auch gleich bezahlen. Was sagst du?</summary>
@@ -363,7 +363,7 @@ Das mache ich selbst: [ … ]</pre>
   <span class="weiter">Die Reise ist geschafft.</span>
   <a class="knopf" href="lr:start">Zum Start der Reise</a>
   <span class="leise" style="font-size:15px"><a href="lr:e4-3">Zurück: Etappe 4 · Einheit 3 · Vorlagen ablegen und Regeln fürs Team</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
-  <span class="etikett">Stand 10.11.2026</span>
+  <span class="etikett">Stand 16.11.2026</span>
 </footer>
 </div>
 
