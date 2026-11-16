@@ -278,15 +278,7 @@ footer .knopf{justify-self:start;text-decoration:none}
 </section>
 
 <section aria-labelledby="h-ampel">
-  <div class="merk">
-    <span class="etikett rot" id="h-ampel">Vorher kurz: Was darf hinein?</span>
-    <ul class="ampel">
-      <li><b>Im Job</b><span>Nur mit dem Konto, das deine Firma bereitstellt, und nur, wenn sie das Werkzeug freigegeben hat. Ein kostenloses Konto, das du mit deiner Firmenadresse anlegst, zählt nicht: Das ist ein Privatkonto. Welches Konto und welche Werkzeuge freigegeben sind, sagt dir die IT oder das Intranet. Im Zweifel nichts Echtes hochladen, sondern beschreiben.</span></li>
-      <li><b>Privat, Verein</b><span>Nichts mit Namen, Adressen, Kontonummern oder Gesundheitsdaten. Steht so etwas drin, lass es beim Abtippen weg oder ersetze es durch XXX. Ersetze auch Details, an denen man die Person erkennen kann, etwa eine seltene Funktion oder ein Datum.</span></li>
-      <li><b>Zum Üben</b><span>Das erfundene Übungsangebot auf dieser Seite.</span></li>
-    </ul>
-    <p style="margin-top:6px"><a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr dazu in Etappe 1, Einheit 2</a></p>
-  </div>
+  <p class="leise" style="font-size:15px" id="h-ampel"><b>Daten:</b> im Job nur das Arbeitskonto, im Zweifel nichts Echtes hochladen, sondern beschreiben. Zum Üben nimmst du das erfundene Angebot auf dieser Seite. <a href="https://claude.ai/artifact/5cK68G61BWehLw6bxP5Z6j">Mehr in Etappe 1, Einheit 2</a></p>
 </section>
 
 <section aria-labelledby="h-beispiel">
@@ -359,7 +351,7 @@ footer .knopf{justify-self:start;text-decoration:none}
   <p class="leise" style="font-size:15px">Klappt es nicht, nimm den Text unter „Anhängen klappt nicht?“.</p>
 
   <h3>Zweitens: die Datei anhängen</h3>
-  <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug:</b> Tippe auf den Namen, den du benutzt. Die Anleitung darunter wechselt.</p>
+  <p class="waehle"><span class="pfeil" aria-hidden="true">↓</span> <b>Wähle dein Werkzeug.</b></p>
   <div role="tablist" aria-label="Werkzeug wählen">
     <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">ChatGPT</button>
     <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Copilot</button>
@@ -368,12 +360,12 @@ footer .knopf{justify-self:start;text-decoration:none}
   </div>
   <div role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0">
     <p>Klicke auf das <b>Plus</b> links im Eingabefeld, dann auf <b>„Fotos und Dateien hinzufügen“</b>, und wähle die Datei.</p>
+    <p>In der App: Plus-Zeichen neben dem Eingabefeld antippen, dann „Dateien“.</p>
     <figure class="shot"><img src="bilder/chatgpt-1-plusmenue.png" width="790" height="190" alt="ChatGPT: Das Menü hinter dem Plus ist offen, oben steht Fotos und Dateien hinzufügen." loading="lazy"><figcaption>1 · Plus, dann „Fotos und Dateien hinzufügen“</figcaption></figure>
     <figure class="shot"><img src="bilder/chatgpt-2-angehaengt.png" width="790" height="440" alt="ChatGPT: Das Übungs-PDF hängt als Kärtchen über der eingefügten Anfrage, noch nicht abgeschickt." loading="lazy"><figcaption>2 · Das PDF hängt an, die Anfrage steht darunter. Jetzt abschicken.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" hidden>
-    <p>Im Job mit dem Arbeitskonto, privat mit dem Microsoft-Konto. Klicke auf das <b>Plus</b> links im Eingabefeld, dann auf <b>„Bilder und Dateien hochladen“</b>, und wähle die Datei.</p>
-    <p class="leise" style="font-size:15px">Microsoft Copilot (privat) und Microsoft 365 Copilot (über die Firma) sind zwei Angebote mit ähnlicher Oberfläche.</p>
+    <p>Klicke auf das <b>Plus</b> links im Eingabefeld, dann auf <b>„Bilder und Dateien hochladen“</b>, und wähle die Datei.</p>
     <figure class="shot"><img src="bilder/copilot-1-plusmenue.png" width="790" height="320" alt="Copilot: Das Menü hinter dem Plus ist offen, darin Bilder und Dateien hochladen." loading="lazy"><figcaption>1 · Plus, dann „Bilder und Dateien hochladen“</figcaption></figure>
     <figure class="shot"><img src="bilder/copilot-2-angehaengt.png" width="790" height="455" alt="Copilot: Das Übungs-PDF hängt an, darüber der Hinweis, dass eine Kopie an OneDrive gesendet wird." loading="lazy"><figcaption>2 · Das PDF hängt an. Beachte den Hinweis oben.</figcaption></figure>
     <p class="leise" style="font-size:15px">Mit privatem Konto zeigt Copilot: „Beim Hochladen vom Gerät aus wird eine Kopie an OneDrive (Privat) gesendet.“ Lade also nur hoch, was dort liegen darf.</p>
@@ -384,16 +376,16 @@ footer .knopf{justify-self:start;text-decoration:none}
   </div>
   <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" hidden>
     <p>Klicke auf das <b>Plus</b> neben dem Eingabefeld, dann auf <b>„Dateien hochladen“</b>, und wähle die Datei.</p>
-    <p class="stand">Am 10.11.2026 in der App getestet: Plus antippen, Datei wählen. Am Rechner heißt der Menüpunkt „Dateien hochladen“ (16.11.2026).</p>
+    <p class="stand">Selbst getestet am 10. und 16.11.2026.</p>
     <figure class="shot"><img src="bilder/gemini-2-angehaengt.png" width="670" height="385" alt="Gemini: Das Übungs-PDF hängt über der eingefügten Anfrage." loading="lazy"><figcaption>Das PDF hängt an, die Anfrage steht darunter.</figcaption></figure>
   </div>
   <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" hidden>
     <p>Klicke auf das <b>Plus</b> unten links im Eingabefeld, dann auf <b>„Dateien hochladen oder hinzufügen“</b>, und wähle die Datei. Du kannst sie auch ins Eingabefeld ziehen.</p>
+    <p>In der App: Plus-Zeichen neben dem Eingabefeld antippen, dann „Dateien“.</p>
     <figure class="shot"><img src="bilder/claude-2-angehaengt.png" width="655" height="362" alt="Claude: Das Übungs-PDF hängt als Vorschaubild über der eingefügten Anfrage, noch nicht abgeschickt." loading="lazy"><figcaption>Das PDF hängt an, die Anfrage steht darunter.</figcaption></figure>
     <p class="stand">Am 11.11.2026 selbst ausprobiert (Privatkonto).</p>
   </div>
   <p class="handy"><b>Am Handy:</b> Plus- oder Büroklammer-Symbol, dahinter „Dateien“. Fotografierst du ein Papier, prüf die Zahlen besonders sorgfältig: Auf Fotos werden Ziffern leicht falsch gelesen.</p>
-  <p class="stand">Stand: November 2026. Perplexity und Le Chat funktionieren vermutlich ähnlich (nicht selbst nachgeprüft).</p>
 
   <h3>Drittens: diese Anfrage einfügen und abschicken</h3>
   <div class="anfrage">
@@ -406,9 +398,9 @@ Zum Schluss: Was hast du weggelassen?</pre>
     <button class="knopf" type="button" data-kopie="anfrage-text">Anfrage kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
     <a class="knopf" style="text-decoration:none" href="https://chatgpt.com/?q=Du%20bist%20eine%20sorgf%C3%A4ltige%20Sachbearbeiterin.%0AIm%20Anhang%20ist%20ein%20Dokument.%20Es%20geht%20um%3A%20ein%20Wartungsangebot%20f%C3%BCr%20unsere%20drei%20Kopierer.%20Ich%20will%20wissen%2C%20was%20es%20im%20Jahr%20kostet%20und%20wie%20wir%20wieder%20aus%20dem%20Vertrag%20kommen.%0AFasse%20die%20wichtigsten%20Punkte%20zusammen%3A%20Betr%C3%A4ge%2C%20Fristen%2C%20Pflichten%2C%20Bedingungen.%0AAls%20Tabelle%20mit%20den%20Spalten%20Punkt%2C%20Inhalt%2C%20Fundstelle%20%28Abschnitt%20oder%20Seite%20und%20ein%20kurzes%20w%C3%B6rtliches%20Zitat%29.%0ANimm%20nur%20auf%2C%20was%20im%20Dokument%20steht.%20Fehlt%20etwas%2C%20schreib%20%E2%80%9Esteht%20nicht%20drin%E2%80%9C.%0AZum%20Schluss%3A%20Was%20hast%20du%20weggelassen%3F" target="_blank" rel="noopener">In ChatGPT öffnen</a>
     <a class="knopf" style="text-decoration:none" href="https://claude.ai/new?q=Du%20bist%20eine%20sorgf%C3%A4ltige%20Sachbearbeiterin.%0AIm%20Anhang%20ist%20ein%20Dokument.%20Es%20geht%20um%3A%20ein%20Wartungsangebot%20f%C3%BCr%20unsere%20drei%20Kopierer.%20Ich%20will%20wissen%2C%20was%20es%20im%20Jahr%20kostet%20und%20wie%20wir%20wieder%20aus%20dem%20Vertrag%20kommen.%0AFasse%20die%20wichtigsten%20Punkte%20zusammen%3A%20Betr%C3%A4ge%2C%20Fristen%2C%20Pflichten%2C%20Bedingungen.%0AAls%20Tabelle%20mit%20den%20Spalten%20Punkt%2C%20Inhalt%2C%20Fundstelle%20%28Abschnitt%20oder%20Seite%20und%20ein%20kurzes%20w%C3%B6rtliches%20Zitat%29.%0ANimm%20nur%20auf%2C%20was%20im%20Dokument%20steht.%20Fehlt%20etwas%2C%20schreib%20%E2%80%9Esteht%20nicht%20drin%E2%80%9C.%0AZum%20Schluss%3A%20Was%20hast%20du%20weggelassen%3F" target="_blank" rel="noopener">In Claude öffnen</a>
-    <p class="leise" style="font-size:15px;margin-top:6px">Die Knöpfe öffnen ChatGPT oder Claude mit der Anfrage im Eingabefeld. Häng dann das PDF an und schick ab. Bei Copilot und Gemini kopierst du und fügst ein.</p>
+    <p class="leise" style="font-size:15px;margin-top:6px">Danach das PDF anhängen und abschicken.</p>
   </div>
-  <p class="leise sammeln" style="font-size:15px">In deine Sammlung: Leg die ausgefüllte Vorlage als „Dokument zusammenfassen mit Fundstellen“ mit Datum ab, etwa in einer Notiz. In Etappe 4 legst du alle an einem Ort ab.</p>
+  <p class="leise sammeln" style="font-size:15px">Für deine Sammlung: „Dokument zusammenfassen mit Fundstellen“, mit Datum.</p>
   <p class="leise" style="font-size:15px">Fundstelle heißt: wo genau es im Dokument steht. Bei einem eigenen Dokument ersetzt du alles nach „Es geht um:“ bis zum Zeilenende durch deinen eigenen Satz.</p>
   <details class="klapp">
     <summary>Anhängen klappt nicht? Text zum Einfügen</summary>
@@ -436,23 +428,18 @@ Wartungsvertrag für 3 Kopierer
 <section aria-labelledby="h-pruef">
   <h2 id="h-pruef"><span class="nr">3</span>Prüfen: drei Handgriffe</h2>
   <ol class="griffe">
-    <li><span><b>Drei Zahlen nachsehen, samt dem, was dabeisteht (netto oder brutto, Wochen, Monate).</b> Schlag drei Beträge, Fristen oder Mengen aus der Antwort im Dokument nach. Hat die KI etwas ausgerechnet, etwa eine Jahressumme, rechne selbst nach. Keine Zahlen drin? Dann drei Fakten: Termine, Namen, Zusagen.</span></li>
+    <li><span><b>Drei Zahlen nachsehen, samt dem, was dabeisteht (netto oder brutto, Wochen, Monate).</b> Hat die KI etwas ausgerechnet, etwa eine Jahressumme, rechne selbst nach.</span></li>
     <li><span><b>Nach Auslassungen fragen.</b> Die Antwort auf „Was hast du weggelassen?“ ist ein Hinweis, kein Beweis, denn die KI kann sich auch Auslassungen ausdenken. Überflieg das Kleingedruckte deshalb selbst.</span></li>
     <li><span><b>Bei Abweichung die Fundstelle verlangen.</b> Schreib: „Zeig mir die Stelle im Dokument, wörtlich.“ Gibt es sie nicht, gilt der Punkt nicht.</span></li>
   </ol>
   <details class="klapp">
-    <summary>Hintergrund: unser Test und ein öffentlicher Vergleich</summary>
-    <p>Im Test am 10.11.2026 fanden ChatGPT, Copilot und Gemini die Punkte 5.1 bis 5.4. Zwei ließen aber „Schwarzweiß-Seiten inklusive“ ohne Hinweis weg, und Gemini schrieb nie „steht nicht drin“. Gemini ließ den Punkt auch in einem zweiten Durchlauf am 13.11.2026 weg. Claude fand am 11.11.2026 alle Punkte, nannte „Schwarzweiß-Seiten inklusive“ und schrieb „steht nicht drin“, wo etwas fehlte. Je Werkzeug ein Durchlauf, bei Gemini zwei. Das ist kein Vergleichstest.</p>
-    <p>Ein öffentlicher Vergleich lässt KI-Modelle Texte zusammenfassen und zählt, wie oft sie etwas behaupten, das nicht im Text steht: bei den getesteten aktuellen Modellen etwa 2 bis 24 von 100 Zusammenfassungen, bei den Modellen hinter ChatGPT, Gemini und Claude etwa 6 bis 14, je nach Modell, also KI-Version (<a href="https://github.com/vectara/hallucination-leaderboard">Vectara-Leaderboard</a>, Stand 22.10.2026). Weglassen misst dieser Vergleich nicht.</p>
+    <summary>Woher wir das wissen</summary>
+    <p>In unserem eigenen Test (10. bis 13.11.2026, kein Vergleichstest) fanden alle vier Werkzeuge die Punkte 5.1 bis 5.4, aber zwei ließen „Schwarzweiß-Seiten inklusive“ ohne Hinweis weg. Ein öffentlicher Vergleich zählt bei den Modellen hinter ChatGPT, Gemini und Claude in etwa 6 bis 14 von 100 Zusammenfassungen eine Behauptung, die nicht im Text steht (<a href="https://github.com/vectara/hallucination-leaderboard">Vectara-Leaderboard</a>, Stand 22.10.2026).</p>
   </details>
 </section>
 
 <section aria-labelledby="h-check">
   <h2 id="h-check"><span class="nr">4</span>Selbstcheck</h2>
-  <details>
-    <summary>Die KI schreibt „Preis: 9.996 €“. Wie klärst du, ob das netto oder brutto ist?</summary>
-    <p>Im Dokument, nicht in der Antwort: 8.400 € netto plus 19 % Mehrwertsteuer ergibt 9.996 € brutto.</p>
-  </details>
   <details>
     <summary>Übung: Was hätte die KI beim Kopierer-Angebot nicht weglassen dürfen?</summary>
     <p>Die vier entscheidenden Punkte 5.1 bis 5.4 auf Seite 2: 0,09 € netto je Farbseite, automatische Verlängerung um 12 Monate (Kündigung spätestens 3 Monate vorher), bis zu 5 % Preiserhöhung im Jahr, 85 € netto je Einsatz außerhalb der Geschäftszeiten. Die Jahreskosten können deshalb deutlich über 12 mal 147 € netto liegen, also über 1.764 € netto.</p>
@@ -465,7 +452,7 @@ Wartungsvertrag für 3 Kopierer
 
 <footer>
   <a class="weiter" href="https://claude.ai/artifact/MgrJBfUYMzMaBE6WigSaST">Weiter: Einheit 3 · In Runden verbessern →</a>
-  <span class="leise" style="font-size:15px"><a href="https://claude.ai/artifact/UJyTgyB68HE5AcWNbgsnVt">Zurück: Einheit 1 · Eine Anfrage aus fünf Bausteinen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte: das ganze Bild auf einer Seite</a></span>
+  <span class="leise" style="font-size:15px"><a href="https://claude.ai/artifact/UJyTgyB68HE5AcWNbgsnVt">Zurück: Einheit 1 · Eine Anfrage aus fünf Bausteinen</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
   <span class="etikett">Stand 16.11.2026 · Bildschirmfotos ChatGPT und Copilot privat, 10.11.2026</span>
 </footer>
 </div>

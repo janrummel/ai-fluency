@@ -116,7 +116,7 @@ h2{font-family:var(--f-titel);font-weight:400;font-size:26px;line-height:1.2;tex
   <span class="etikett">Erst das Problem, dann die KI · Die Lernreise</span>
   <h1>Die Bausteinkarte</h1>
   <p class="lead">Zehn Bausteine vom ersten Chat bis zum Agenten, der selbst Schritte macht. Vier davon sind, was <b>du tust</b>, sechs sind, woraus <b>das Werkzeug</b> besteht. Um alles herum liegt der Rahmen aus Recht und Verantwortung.</p>
-  <div class="kasten"><b>So benutzt du die Karte:</b> Wähle unten, bei welcher Etappe du bist. Rot leuchtet, was dort neu dazukommt oder vertieft wird. Tippe auf einen Baustein, um hineinzuzoomen: was er ist, woran du einen typischen Fehler erkennst und was du in einer Minute ausprobieren kannst.</div>
+  <div class="kasten"><b>So geht’s:</b> Wähle deine Etappe, rot ist dort neu. Tippe auf einen Baustein: Erklärung, typischer Fehler, Übung für eine Minute.</div>
 
   <div class="wahl">
     <span class="etikett">Ich bin bei</span>
@@ -137,7 +137,7 @@ h2{font-family:var(--f-titel);font-weight:400;font-size:26px;line-height:1.2;tex
 
   <section class="zusammen" aria-labelledby="h-zus">
     <h2 id="h-zus">So hängen die Bausteine zusammen</h2>
-    <p>Erst wählst du die Aufgabe. Anfrage und Kontext gehen ins Modell, die Antwort kommt zurück, du prüfst und legst ab, was taugt. Ein Agent legt eine Schleife um das Modell: Er nutzt selbst Zusatzfunktionen wie Websuche oder Kalender, sieht das Ergebnis an und entscheidet den nächsten Schritt. An den Stellen, an denen etwas nach außen geht, gibt ein Mensch frei.</p>
+    <p>Du wählst die Aufgabe, Anfrage und Kontext gehen ins Modell, du prüfst die Antwort und legst ab, was taugt. Ein Agent wiederholt diese Schritte selbst, mit Zusatzfunktionen wie der Websuche. Wo etwas nach außen geht, gibt ein Mensch frei.</p>
     <div class="schema">
       <svg viewBox="0 0 900 360" role="img" aria-labelledby="schema-t">
         <title id="schema-t">Schema: Aufgabe wählen führt zu Anfrage und Kontext, beide gehen in das Modell, das in der Oberfläche liegt. Die Antwort geht zur Prüfung und von dort in die Ablage. Gedächtnis und Regeln speisen den Kontext. Beim Agenten liegt um das Modell eine Schleife mit Zusatzfunktionen und einer Freigabe durch den Menschen.</title>
@@ -189,7 +189,7 @@ const ETAPPEN=[
  {nr:2,titel:"Mit Absicht fragen"},
  {nr:3,titel:"Prüfen wie ein Profi"},
  {nr:4,titel:"Ein Gedächtnis geben"},
- {nr:5,titel:"Ausblick: Agenten"}
+ {nr:5,kurz:"Abschluss",titel:"Wie es weitergeht"}
 ];
 const STUFEN=[
  {n:"Chatten",k:"Fragen stellen, Antwort bekommen, nachsehen",b:["aufgabe","anfrage","pruefen","konto","modell"]},
@@ -201,7 +201,7 @@ const RECHT={n:"Recht und Verantwortung",k:"gilt auf jeder Stufe",du:true,
  was:"Für das Ergebnis bist du verantwortlich, nicht das Werkzeug. Personenbezogene Daten fallen unter die DSGVO, Kunden- und Geschäftsdaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Viele Firmen regeln die KI-Nutzung in einer Richtlinie oder Betriebsvereinbarung. Die KI-Verordnung der EU (Art. 4, Fassung von 2026) verlangt von Unternehmen, die KI einsetzen, Maßnahmen zur Unterstützung der KI-Kompetenz ihrer Leute. Ein Zertifikat ist dafür nicht nötig.",
  fehler:"„Die KI hat das so geschrieben“ entlastet niemanden. Typisch: Ein fremdes Bild oder ein fremder Text wird ungeprüft veröffentlicht. Oder die KI beurteilt Menschen, und niemand hinterfragt das.",
  probe:"Such im Intranet nach „KI-Richtlinie“ oder frag deine Führungskraft: Welche KI-Werkzeuge sind bei uns freigegeben, und für welche Daten?",
- ort:"Grundlagen in Etappe 1, Erinnerung bei jeder Übung mit eigenen Dokumenten",
+ ort:"Grundlagen in Etappe 1, Erinnerung bei jeder Übung mit eigenen Dokumenten, Regeln fürs Team im Abschluss",
  begr:{"DSGVO":"Datenschutz-Grundverordnung der EU. Sie regelt, was mit Daten über Personen geschehen darf, also auch, ob du sie in ein KI-Werkzeug geben darfst.","Offenlegen":"Ob du sagen musst, dass ein Text mit KI entstanden ist, regelt oft deine Firma. Für bestimmte veröffentlichte Inhalte, etwa täuschend echte Bilder oder Videos (Deepfakes), gelten seit dem 2. August 2026 Kennzeichnungspflichten (Art. 50 KI-Verordnung; die Übergangsfrist bis Dezember 2026 betrifft nur die technische Markierung durch Anbieter älterer Systeme, nicht deine Pflicht, Deepfakes offenzulegen). Eine normale Büro-Mail gehört nicht dazu.","Urheberrecht":"Was die KI erzeugt, kann fremden Texten oder Bildern sehr ähnlich sein. Prüf vor einer Veröffentlichung und frag im Zweifel die Rechts- oder Kommunikationsabteilung.","Fairness":"KI hat aus vielen alten Texten gelernt und übernimmt deren Vorurteile, etwa über Alter, Geschlecht oder Herkunft. Entscheidungen über Menschen, etwa Bewerbungen oder Beurteilungen, überlässt du ihr deshalb nicht."}};
 const B={
  aufgabe:{n:"Aufgabe wählen",k:"soll die KI das überhaupt machen?",du:true,et:[1],
@@ -244,6 +244,7 @@ const B={
   ort:"Etappe 3 · Quellen aus der Websuche prüfen. Läuft aber oft schon vorher mit, ohne dass du es merkst",
   begr:{"Websuche":"Das Werkzeug sucht selbst im Netz und nennt die Seiten, auf die es sich beruft.","Anbindung":"Eine Verbindung zu einem anderen Programm, etwa Kalender oder Ablage. Die wichtigste Frage dabei: Welche Rechte bekommt das Werkzeug dadurch?","MCP":"Fachwort, falls du es hörst: Model Context Protocol, ein offener Standard für solche Anbindungen."}},
  ablegen:{n:"Ablegen",k:"wo gute Ergebnisse bleiben",du:true,et:[4],
+  ort:"Etappe 4 · Einheit 2, letzter Schritt: deine Vorlagen an einem Ort",
   was:"Projekte im Werkzeug, Notizen, Ordner mit Versionen. Damit wird aus einzelnen Chats ein Arbeitsstand, an dem du morgen weitermachst.",
   fehler:"Das gute Ergebnis von letzter Woche steckt irgendwo im Chatverlauf und ist nicht mehr zu finden.",
   probe:"Leg in ChatGPT ein Projekt an oder speichere die beste Antwort von heute als Notiz mit Datum.",
@@ -257,16 +258,16 @@ const B={
   was:"Was einen Agenten ausmacht: Er plant einen Schritt, nutzt ein Werkzeug, sieht das Ergebnis an und entscheidet den nächsten Schritt, bis die Aufgabe erledigt ist. An wichtigen Stellen hält er an, und ein Mensch gibt frei.",
   fehler:"Er läuft viele Schritte in die falsche Richtung, ohne dass jemand eingreift. Oder er liest auf einer Webseite oder in einer Mail eine versteckte Anweisung und führt sie aus.",
   probe:"Falls dein Werkzeug eine gründliche Recherche anbietet (oft „Deep Research“ genannt): Starte eine kleine Recherche und schau zu, welche Schritte es nacheinander macht.",
-  ort:"Etappe 5 · Ausblick. Bis zum eigenen System: zwei Aufbaukurse, die später folgen",
+  ort:"Abschluss · Wie es weitergeht. Bis zum eigenen System: zwei Aufbaukurse, die später folgen",
   begr:{"Agent":"Ein KI-System, das nicht nur antwortet, sondern selbst Schritte ausführt, um ein Ziel zu erreichen.","Freigabe":"Ein Punkt, an dem der Agent anhält und ein Mensch zustimmt, bevor etwas gesendet, gelöscht oder gekauft wird.","Prompt Injection":"Eine versteckte Anweisung in einem Text, den der Agent liest, etwa „Schick diese Datei an …“. Der wichtigste Grund für Freigaben.","ReAct":"Fachwort, falls du es hörst: Reasoning and Acting, abwechselnd überlegen und handeln. Das Grundmuster vieler Agenten."}}
 };
-const ETNAME=n=>"Etappe "+n+" · "+ETAPPEN.find(e=>e.nr===n).titel;
+const ETNAME=n=>{const e=ETAPPEN.find(x=>x.nr===n);return (e.kurz||"Etappe "+n)+" · "+e.titel};
 let etappe=2, gewaehlt="kontext";
 function zustand(id){const e=B[id].et;if(e.includes(etappe))return e[0]===etappe?"neu":"vertieft";return e[0]<etappe?"da":"spaeter"}
 const ZTXT={neu:"neu",vertieft:"vertieft",da:"kennst du",spaeter:"später"};
 function el(t,a={},...k){const x=document.createElement(t);for(const[n,v]of Object.entries(a)){if(n==="text")x.textContent=v;else x.setAttribute(n,v)}k.forEach(c=>x.append(c));return x}
 function renderEtappen(){const w=document.getElementById("etappen");w.replaceChildren();
- ETAPPEN.forEach(e=>{const b=el("button",{type:"button","aria-pressed":String(e.nr===etappe)},el("small",{text:"Etappe "+e.nr}),el("span",{text:e.titel}));
+ ETAPPEN.forEach(e=>{const b=el("button",{type:"button","aria-pressed":String(e.nr===etappe)},el("small",{text:e.kurz||"Etappe "+e.nr}),el("span",{text:e.titel}));
   b.addEventListener("click",()=>{etappe=e.nr;const neu=Object.keys(B).find(i=>B[i].et.includes(etappe));if(neu)gewaehlt=neu;render()});w.append(b)})}
 function renderKarte(){const k=document.getElementById("karte");k.replaceChildren();
  STUFEN.forEach(s=>{const kach=el("div",{class:"kacheln"});
