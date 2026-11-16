@@ -12,11 +12,13 @@ hat(){ # url text beschreibung
 for p in de/ de/karte/ de/etappe-1/aufgabe-waehlen/ de/etappe-1/konto-und-daten/ de/etappe-1/erste-anfrage/ \
   de/etappe-2/anfrage-bauen/ de/etappe-2/dokument-pruefen/ de/etappe-2/in-runden/ \
   de/etappe-3/gegen-die-quelle/ de/etappe-3/websuche/ de/etappe-3/gegenlesen/ \
-  de/etappe-4/daueranweisung/ de/etappe-4/projekte/ de/etappe-4/ablage-und-regeln/ de/etappe-5/ausblick-agenten/; do
+  de/etappe-4/daueranweisung/ de/etappe-4/projekte/ de/abschluss/; do
   c=$(curl -s -o /dev/null -w "%{http_code}" "$B/ai-fluency/$p"); [ "$c" = 200 ] && ok "Lernreise $p" || fehlt "Lernreise $p ($c)"
 done
 hat "$B/ai-fluency/de/" "Kein Anbieter bezahlt uns" "Startseite ist der neue Stand"
 hat "$B/ai-fluency/de/etappe-4/projekte/" "claude-5-projekt" "Etappe 4 mit Claude-Bildern"
+hat "$B/ai-fluency/de/etappe-4/ablage-und-regeln/" "etappe-4/projekte/" "Alte Adresse Etappe 4 · Einheit 3 leitet weiter"
+hat "$B/ai-fluency/de/etappe-5/ausblick-agenten/" "de/abschluss/" "Alte Adresse Etappe 5 leitet weiter"
 hat "$B/ai-fluency/de/l1-first-steps/01-what-is-ai/" "Lernreise" "Alte AI-Fluency-Adresse zeigt Hinweis"
 hat "$B/ai-fluency/de/uebung/uebungsangebot-kopierer.pdf" "PDF" "Übungs-PDF erreichbar"
 

@@ -65,9 +65,6 @@ header{padding-bottom:30px;border-bottom:2px solid var(--tinte)}
 .einheiten{list-style:none;display:grid;gap:2px;margin-top:4px}
 .einheiten a{display:inline-flex;align-items:center;min-height:36px}
 .einheiten .min{font-family:var(--f-etikett);font-size:12px;letter-spacing:.06em;color:var(--grau);margin-left:8px}
-.karte-link{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--flaeche);border:1px solid var(--linie);padding:16px 18px;text-decoration:none}
-.karte-link b{font-family:var(--f-titel);font-weight:400;font-size:22px;display:block}
-.karte-link .pfeil{color:var(--rot);font-size:24px}
 .zwei{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
 @media (max-width:620px){.zwei{grid-template-columns:minmax(0,1fr)}}
 .zwei h3{font-family:var(--f-etikett);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--grau);margin-bottom:6px}
@@ -77,10 +74,10 @@ header{padding-bottom:30px;border-bottom:2px solid var(--tinte)}
 <header>
   <span class="etikett rot">Die Lernreise · kostenlos · ohne Anmeldung</span>
   <h1>Erst das Problem, dann die KI.</h1>
-  <p class="ziel">Für alle, die im Büro mit ChatGPT, Copilot, Gemini oder Claude arbeiten wollen, ohne sich auf die erste Antwort zu verlassen. Du übst an deinen eigenen Aufgaben: klären, fragen, prüfen.</p>
+  <p class="ziel">Für alle, die im Büro, im Verein oder im Ehrenamt mit ChatGPT, Copilot, Gemini oder Claude arbeiten wollen, etwa für Mitgliederbriefe oder das Vorstandsprotokoll, ohne sich auf die erste Antwort zu verlassen. Du übst an deinen eigenen Aufgaben: klären, fragen, prüfen.</p>
   <ul class="fakten">
-    <li><b>4 Etappen</b> plus Ausblick</li>
-    <li><b>je 3 Einheiten</b> zu etwa 15 Minuten</li>
+    <li><b>4 Etappen</b> plus Abschluss</li>
+    <li><b>11 Einheiten</b> zu etwa 15 Minuten</li>
     <li><b>bei jeder Etappe</b> kannst du einsteigen</li>
   </ul>
 </header>
@@ -160,33 +157,24 @@ header{padding-bottom:30px;border-bottom:2px solid var(--tinte)}
       <span class="nrz">4</span>
       <div>
         <h3>Ein Gedächtnis geben </h3>
-        <p class="leise">Daueranweisungen und Projekte anlegen, Vorlagen und Regeln fürs Team, Wissen ablegen.</p>
+        <p class="leise">Daueranweisungen und Projekte anlegen und deine Vorlagen an einem Ort ablegen.</p>
         <ul class="einheiten">
           <li><a href="etappe-4/daueranweisung/">Eine Daueranweisung geben</a></li>
           <li><a href="etappe-4/projekte/">Ein Projekt für wiederkehrende Aufgaben</a></li>
-          <li><a href="etappe-4/ablage-und-regeln/">Vorlagen ablegen und Regeln fürs Team</a></li>
         </ul>
       </div>
     </li>
     <li>
-      <span class="nrz">5</span>
+      <span class="nrz">+</span>
       <div>
-        <h3>Ausblick: Agenten </h3>
-        <p class="leise">Was ein Agent anders macht als ein Chat und was du ihm überlassen kannst.</p>
+        <h3>Abschluss: Wie es weitergeht </h3>
+        <p class="leise">Was ein Agent anders macht als ein Chat, wo er anhalten muss, und drei Regeln fürs Team.</p>
         <ul class="einheiten">
-          <li><a href="etappe-5/ausblick-agenten/">Ausblick: Was ein Agent anders macht</a></li>
+          <li><a href="abschluss/">Abschluss: Wie es weitergeht</a></li>
         </ul>
       </div>
     </li>
   </ol>
-</section>
-
-<section aria-labelledby="h-karte">
-  <h2 id="h-karte" class="etikett">Das ganze Bild</h2>
-  <a class="karte-link" href="karte/">
-    <span><b>Die Bausteinkarte</b><span class="leise">Zehn Bausteine auf einer Seite, mit ihrem Ort in der Reise.</span></span>
-    <span class="pfeil" aria-hidden="true">→</span>
-  </a>
 </section>
 
 <section aria-labelledby="h-brauchst">
@@ -201,6 +189,7 @@ header{padding-bottom:30px;border-bottom:2px solid var(--tinte)}
       <p>Keine Produkttour und keine Werbung. Knöpfe ändern sich, die Handgriffe bleiben: Aufgabe klären, gut fragen, Antwort prüfen. Kein Anbieter bezahlt uns.</p>
     </div>
   </div>
+  <p class="leise" style="margin-top:18px">Zum Nachschlagen: <a href="karte/">die Bausteinkarte</a>, zehn Bausteine auf einer Seite, mit ihrem Ort in der Reise.</p>
 </section>
 </div>
 

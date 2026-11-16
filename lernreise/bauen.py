@@ -37,9 +37,14 @@ SEITEN_DE = [
     ("e3-3-rollen.html", "etappe-3/gegenlesen/", "lr:e3-3", "Etappe 3 · Einheit 3"),
     ("e4-1-daueranweisung.html", "etappe-4/daueranweisung/", "lr:e4-1", "Etappe 4 · Einheit 1"),
     ("e4-2-projekte.html", "etappe-4/projekte/", "lr:e4-2", "Etappe 4 · Einheit 2"),
-    ("e4-3-ablage-regeln.html", "etappe-4/ablage-und-regeln/", "lr:e4-3", "Etappe 4 · Einheit 3"),
-    ("e5-ausblick-agenten.html", "etappe-5/ausblick-agenten/", "lr:e5", "Etappe 5 · Ausblick"),
+    ("abschluss.html", "abschluss/", "lr:abschluss", "Abschluss"),
 ]
+
+# Frühere Adressen, die es nicht mehr als eigene Seite gibt: alter Pfad -> neuer Pfad (beide unter de/)
+UMZUEGE_DE = {
+    "etappe-4/ablage-und-regeln/": "etappe-4/projekte/",
+    "etappe-5/ausblick-agenten/": "abschluss/",
+}
 
 LEISTE_CSS = """
 .lr-leiste{border-bottom:1px solid var(--linie,#DAD8D0);background:var(--papier,#FBFAF6)}
@@ -99,8 +104,6 @@ def leiste(prefix: str, sprache: str, kurz: str | None) -> str:
     if kurz:
         teile.append(f'<span class="lr-hier">{html.escape(kurz)}</span>')
     teile.append(f'<a href="{start}">Start</a>')
-    if kurz != "Bausteinkarte":
-        teile.append(f'<a href="{start}karte/">Karte</a>')
     teile.append(FARBE_KNOPF)
     return ('<nav class="lr-leiste" aria-label="Lernreise">'
             f'<div class="lr-leiste-innen">{"".join(teile)}</div></nav>')
@@ -191,6 +194,24 @@ def seite_bauen(quelle: pathlib.Path, zielpfad: str, kurz: str | None, sprache: 
     return (
         kopf(titel, beschreibung, prefix, url, sprache) + "\n" + kopfteil.strip() + breite + "\n</head>\n<body>\n"
         + leiste(prefix, sprache, kurz) + "\n" + koerper.strip() + "\n" + fuss() + "\n</body>\n</html>\n"
+    )
+
+
+def umzug(alt: str, neu: str, sprache: str) -> str:
+    """Kleine Weiterleitungsseite am alten Pfad, damit alte Links nicht brechen."""
+    ziel = tiefe_prefix(alt, sprache) + f"{sprache}/{neu}"
+    url = f"{BASIS_URL}{sprache}/{neu}"
+    return (
+        "<!doctype html>\n"
+        f'<html lang="{sprache}">\n<head>\n<meta charset="utf-8">\n'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">\n'
+        '<meta name="robots" content="noindex">\n'
+        f"<title>Umgezogen · {NAME}</title>\n"
+        f'<link rel="canonical" href="{url}">\n'
+        f'<meta http-equiv="refresh" content="0; url={ziel}">\n'
+        "</head>\n<body>\n"
+        f'<p>Diese Seite ist umgezogen. <a href="{ziel}">Weiter zur neuen Seite</a></p>\n'
+        "</body>\n</html>\n"
     )
 
 
@@ -323,6 +344,10 @@ def main():
         out = ZIEL / "de" / pfad / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(seite_bauen(WURZEL / "quellen/de" / datei, pfad, kurz, "de", links), encoding="utf-8")
+    for alt, neu in UMZUEGE_DE.items():
+        out = ZIEL / "de" / alt / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(umzug(alt, neu, "de"), encoding="utf-8")
     for unterordner in ("bilder", "uebung"):
         shutil.copytree(WURZEL / "quellen/de" / unterordner, ZIEL / "de" / unterordner,
                         ignore=shutil.ignore_patterns("*-quelle.html"))

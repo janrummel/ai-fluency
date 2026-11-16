@@ -11,7 +11,7 @@ async function route(ctx){ await ctx.route('**/*', async r => { const u = new UR
   const f = path.join(SITE, p);
   if (fs.existsSync(f) && fs.statSync(f).isFile()) return r.fulfill({status:200, body:fs.readFileSync(f), contentType:typ[path.extname(f)]||'application/octet-stream'});
   return r.fulfill({status:404, body:fs.readFileSync(path.join(SITE,'404.html')), contentType:typ['.html']}); }); }
-const SEITEN = ['de/','de/karte/','de/etappe-1/aufgabe-waehlen/','de/etappe-1/konto-und-daten/','de/etappe-1/erste-anfrage/','de/etappe-2/anfrage-bauen/','de/etappe-2/dokument-pruefen/','de/etappe-2/in-runden/','de/etappe-3/gegen-die-quelle/','de/etappe-3/websuche/','de/etappe-3/gegenlesen/','de/etappe-4/daueranweisung/','de/etappe-4/projekte/','de/etappe-4/ablage-und-regeln/','de/etappe-5/ausblick-agenten/','en/','','de/l1-first-steps/01-what-is-ai/'];
+const SEITEN = ['de/','de/karte/','de/etappe-1/aufgabe-waehlen/','de/etappe-1/konto-und-daten/','de/etappe-1/erste-anfrage/','de/etappe-2/anfrage-bauen/','de/etappe-2/dokument-pruefen/','de/etappe-2/in-runden/','de/etappe-3/gegen-die-quelle/','de/etappe-3/websuche/','de/etappe-3/gegenlesen/','de/etappe-4/daueranweisung/','de/etappe-4/projekte/','de/abschluss/','en/','','de/l1-first-steps/01-what-is-ai/'];
 (async () => { let fehler = 0;
  for (const [n, bt, o] of [['desktop', chromium, {viewport:{width:1280,height:900}}], ['iphone', webkit, devices['iPhone 13']], ['dunkel', chromium, {viewport:{width:1280,height:900}, colorScheme:'dark'}]]) {
   const b = await bt.launch();
@@ -32,5 +32,5 @@ const SEITEN = ['de/','de/karte/','de/etappe-1/aufgabe-waehlen/','de/etappe-1/ko
  const ok = sel[0]==='true' && sel[1]===false && sel[2]===true;
  console.log('Werkzeug gemerkt:', ok ? 'ja' : 'NEIN ' + JSON.stringify(sel)); if (!ok) fehler++;
  await b.close();
- console.log(fehler ? `ROT: ${fehler} Befunde` : 'GRÜN: 18 Adressen x 3 Ansichten, Werkzeugwahl gemerkt');
+ console.log(fehler ? `ROT: ${fehler} Befunde` : `GRÜN: ${SEITEN.length} Adressen x 3 Ansichten, Werkzeugwahl gemerkt`);
  process.exit(fehler ? 1 : 0); })();

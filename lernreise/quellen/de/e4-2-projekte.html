@@ -176,8 +176,8 @@ footer .knopf{justify-self:start;text-decoration:none}
 <div class="seite">
 <header>
   <div class="kopfzeile">
-    <span class="etikett rot">Etappe 4 · Einheit 2 von 3</span>
-    <span class="etikett">Lesen etwa 5 Minuten · Üben etwa 10 Minuten (Schätzung)</span>
+    <span class="etikett rot">Etappe 4 · Einheit 2 von 2</span>
+    <span class="etikett">Lesen etwa 6 Minuten · Üben etwa 15 Minuten (Schätzung)</span>
   </div>
   <h1>Ein Projekt für wiederkehrende Aufgaben</h1>
   <p class="ziel">Danach kannst du für eine Aufgabe, die immer wiederkommt, ein Projekt mit eigener Anweisung und eigenen Dateien anlegen und weißt, wann ein neuer Chat besser ist.</p>
@@ -185,7 +185,6 @@ footer .knopf{justify-self:start;text-decoration:none}
   <ol class="etappe">
     <li><b>1</b><span>Eine Daueranweisung geben</span></li>
     <li aria-current="step"><b>2</b><span>Ein Projekt für wiederkehrende Aufgaben</span></li>
-    <li><b>3</b><span>Vorlagen ablegen und Regeln fürs Team</span></li>
   </ol>
 </header>
 
@@ -318,6 +317,56 @@ Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei je
     <span class="etikett">Du solltest sehen</span>
     <p>Eine Antwort, die deiner Projekt-Anweisung folgt und Datei und Fundstelle nennt, obwohl du nur kurz gefragt hast. Fehlt die Fundstelle, prüf zuerst, ob die Anweisung im Projekt gespeichert ist. Steht sie dort, frag nach: Die KI hält sich nicht immer an Anweisungen.</p>
   </div>
+
+  <h3>Zum Schluss: deine Vorlagen an einen Ort</h3>
+  <p>Leg die Vorlagen aus dieser Reise an einem Ort ab, in einem Dokument oder einer Notiz, im Job dort, wo deine Firma es erlaubt. Jede bekommt Namen und Datum, etwa „Anfrage aus fünf Bausteinen · 2026-11-10“. Das Datum zeigt dir später, welche Vorlage alt ist. Ändert sich eine, speicherst du die neue Fassung mit neuem Datum und lässt die alte stehen.</p>
+  <details class="klapp">
+    <summary>Du hast nicht alle gesammelt? Hier sind alle sieben Vorlagen auf einmal</summary>
+    <div class="anfrage">
+<pre id="alle-vorlagen">== Aufgabe in drei Sätzen ==
+Ergebnis: Am Ende will ich [was genau, für wen].
+Gut ist es, wenn [woran du es erkennst: eine Zahl, eine Frist, eine Länge].
+Wer macht was: Die KI übernimmt [welchen Teil]. Ich übernehme [welchen Teil] und prüfe [was].
+
+== Anfrage aus fünf Bausteinen ==
+Du bist [deine Rolle, zum Beispiel Sachbearbeiterin im Einkauf].
+Es geht um: [die Lage in zwei Sätzen: was ist passiert oder geplant, wer liest das Ergebnis, und wozu brauchst du es].
+Schreib [die Aufgabe: was genau soll entstehen].
+Format: [zum Beispiel höchstens 100 Wörter, Stichpunkte, Tabelle mit den Spalten …].
+Grenzen: Erfinde nichts dazu, was ich nicht genannt habe. Fehlt dir eine Angabe, setz [fehlt] ein, statt zu raten. [Weitere Grenzen, zum Beispiel keine Fachbegriffe.]
+
+== Dokument zusammenfassen mit Fundstellen ==
+Du bist eine sorgfältige Sachbearbeiterin.
+Im Anhang ist ein Dokument. Es geht um: ein Wartungsangebot für unsere drei Kopierer. Ich will wissen, was es im Jahr kostet und wie wir wieder aus dem Vertrag kommen.
+Fasse die wichtigsten Punkte zusammen: Beträge, Fristen, Pflichten, Bedingungen.
+Als Tabelle mit den Spalten Punkt, Inhalt, Fundstelle (Abschnitt oder Seite und ein kurzes wörtliches Zitat).
+Nimm nur auf, was im Dokument steht. Fehlt etwas, schreib „steht nicht drin“.
+Zum Schluss: Was hast du weggelassen?
+
+== Rückmeldung in Runden ==
+Gut ist: [was dir gefällt].
+Ändere nur: [eine Sache, zum Beispiel: kürzer auf 80 Wörter, oder: freundlicherer Ton].
+Lass alles andere, wie es ist.
+
+== Gegenlesen aus einer Rolle ==
+Du bist [wer den Text liest, zum Beispiel eine Kundin, die wenig Zeit hat, oder eine Kollegin, die nur die Zahlen prüft].
+Lies den folgenden Text aus dieser Sicht. Nenne höchstens drei Stellen, die unklar, missverständlich oder angreifbar sind, jeweils mit Zitat. Ändere den Text nicht.
+
+[dein Text]
+
+== Daueranweisung ==
+Ich arbeite als [Rolle] im Bereich [Bereich, ohne Firmennamen]. Ich brauche oft: [deine typischen Aufgaben].
+Antworte [Sprache, Länge, Ton].
+Nenne Zahlen immer mit dem, was dabeisteht (netto oder brutto, Wochen, Monate).
+Bei Angaben aus Dokumenten nenn die Fundstelle. Wenn du etwas nicht weißt, sag es.
+
+== Projekt-Anweisung ==
+Dieses Projekt ist für: [die wiederkehrende Aufgabe].
+Das Ergebnis soll so aussehen: [Format, Länge].
+Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei jeder Angabe Datei und Fundstelle. Fehlt etwas, schreib „steht nicht drin“.</pre>
+      <button class="knopf" type="button" data-kopie="alle-vorlagen">Alle sieben kopieren</button><span class="rueck" role="status" aria-live="polite"></span>
+    </div>
+  </details>
 </section>
 
 <section aria-labelledby="h-pruef">
@@ -336,17 +385,13 @@ Nutze nur die Dateien in diesem Projekt und was ich im Chat mitgebe. Nenn bei je
     <p>Neuer Chat. Die Frage kommt nicht wieder, und es gibt keine Unterlagen dazu.</p>
   </details>
   <details>
-    <summary>Darf die Liste mit echten Kundennamen in dein privates Projekt?</summary>
+    <summary>Aus Etappe 1: Darf die Liste mit echten Kundennamen in dein privates Projekt?</summary>
     <p>Nein. Kundendaten gehören nur in Werkzeuge, die deine Firma freigegeben hat. Für die Übung nimm Erfundenes, oder ersetz Namen durch XXX. Schwarze Balken in PDF oder Word reichen nicht: Der Text darunter bleibt oft lesbar.</p>
-  </details>
-  <details>
-    <summary>Aus Einheit 1: Was ist der Unterschied zwischen Daueranweisung und Projekt-Anweisung?</summary>
-    <p>Die Daueranweisung gilt in jedem Chat, die Projekt-Anweisung nur im Projekt.</p>
   </details>
 </section>
 
 <footer>
-  <a class="weiter" href="lr:e4-3">Weiter: Einheit 3 · Vorlagen ablegen und Regeln fürs Team →</a>
+  <a class="weiter" href="lr:abschluss">Weiter: Abschluss · Wie es weitergeht →</a>
   <span class="leise" style="font-size:15px"><a href="lr:e4-1">Zurück: Einheit 1 · Eine Daueranweisung geben</a> · <a href="https://claude.ai/artifact/C2uR6nxrPKWBmGXfrR9gdE">Bausteinkarte</a></span>
   <span class="etikett">Stand 16.11.2026</span>
 </footer>
